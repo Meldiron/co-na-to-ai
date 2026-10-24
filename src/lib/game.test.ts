@@ -36,6 +36,12 @@ describe("applyGuess", () => {
     expect(total).toBe(answers.reduce((s, a) => s + a.votes * 10, 0) + CLEAR_BONUS)
   })
 
+  it("refuses multi-word guesses without a strike", () => {
+    const { state, outcome } = applyGuess(initialState, answers, "my many words")
+    expect(outcome.kind).toBe("multi")
+    expect(state).toBe(initialState)
+  })
+
   it("ignores guesses after the game is over", () => {
     const over = play(["a1", "a2", "a3", "a4", "a5"])
     expect(applyGuess(over, answers, "pivo").outcome.kind).toBe("over")
@@ -92,8 +98,8 @@ describe("shareText", () => {
   it("shows the board in slot order and the guesses in order, without spoilers", () => {
     const state = play(["pivo", "auto", "kytara"])
     const hinted = applyGuess(revealLetter(state, answers, 2), answers, "kniha").state
-    const text = shareText({ label: "24. 10. 2026", state: hinted, answers, total: 335, url: "https://example.cz/" })
-    expect(text).toBe(["Ptali jsme se 100 AI · 24. 10. 2026", "🟩⬜🟨⬜⬜⬜⬜🟩 3/8", "🟩🟥🟩🟩", "335 bodů", "https://example.cz/"].join("\n"))
+    const text = shareText({ label: "24. 10. 2026", question: "Co si berete na chatu?", state: hinted, answers, total: 335, url: "https://example.cz/" })
+    expect(text).toBe(["Ptali jsme se 100 AI · 24. 10. 2026", "Co si berete na chatu?", "🟩⬜🟨⬜⬜⬜⬜🟩 3/8", "🟩🟥🟩🟩", "335 bodů", "https://example.cz/"].join("\n"))
     expect(text).not.toMatch(/pivo|kytara/i)
   })
 })

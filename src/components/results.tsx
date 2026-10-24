@@ -99,7 +99,7 @@ function Share({
 
   const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
   const url = `${origin}${path}`
-  const text = shareText({ label: gameLabel(payload), state, answers, total, url })
+  const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url })
   const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
 
   async function image(): Promise<Blob | null> {
@@ -154,7 +154,7 @@ function Share({
       </div>
       <div className="flex flex-col gap-6 md:col-span-4 md:col-start-9">
         <h2 className="head reveal">Pochlubte se</h2>
-        <p>Jízdenka nic neprozradí: ukazuje jen, kolik odpovědí jste našli a kolik bodů máte.</p>
+        <p>Jízdenka neprozradí žádnou odpověď: ukazuje jen otázku, kolik odpovědí jste našli a kolik bodů máte.</p>
         <div className="flex flex-wrap gap-3">
           <Button onClick={share} className="h-12 px-6 text-base font-semibold">
             Sdílet výsledek
@@ -200,34 +200,45 @@ function Ticket({
         <rect x="0" y="0" width="22" height="315" fill="var(--field)" />
       </svg>
       <div className="absolute inset-y-0 left-[6%] flex w-[62%] flex-col justify-between py-[5.5%]">
-        <div className="flex items-baseline justify-between gap-[2cqw]">
-          <p className="text-[3.8cqw] leading-none font-bold [font-stretch:85%]">Ptali jsme se 100 AI</p>
-          <p className="truncate text-[3.2cqw] leading-none">{host}</p>
-        </div>
-        <p className="text-[15cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">
-          {total}
-          <span className="ml-[1.5cqw] text-[4cqw] tracking-normal [font-stretch:85%]">{pointsWord(total)}</span>
+        <p
+          className={`line-clamp-2 leading-[1.05] font-bold tracking-[-0.01em] [font-stretch:82%] ${
+            payload.question.length > 72 ? "text-[3.3cqw]" : payload.question.length > 58 ? "text-[3.8cqw]" : "text-[4.6cqw]"
+          }`}
+        >
+          {payload.question}
         </p>
-        <div className="flex items-center gap-[1cqw]">
-          {answers.map((answer, index) => (
-            <span key={answer.rank} className={`size-[4.4cqw] ${state.found.includes(index) ? "bg-field" : "bg-paper-step"}`} />
-          ))}
-          <span className="ml-[2cqw] flex gap-[0.6cqw]">
-            {Array.from({ length: MAX_STRIKES }, (_, i) => (
-              <svg key={i} viewBox="0 0 24 24" className={`size-[3.4cqw] ${i < state.strikes ? "text-red" : "text-paper-step"}`} aria-hidden>
-                <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" strokeWidth="4" fill="none" />
-              </svg>
+        <p className="text-[12cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">
+          {total}
+          <span className="ml-[1.5cqw] text-[3.6cqw] tracking-normal [font-stretch:85%]">{pointsWord(total)}</span>
+        </p>
+        <div>
+          <div className="flex items-center gap-[0.8cqw]">
+            {answers.map((answer, index) => (
+              <span key={answer.rank} className={`size-[3.6cqw] ${state.found.includes(index) ? "bg-field" : "bg-paper-step"}`} />
             ))}
-          </span>
+            <span className="ml-[1.6cqw] flex gap-[0.5cqw]">
+              {Array.from({ length: MAX_STRIKES }, (_, i) => (
+                <svg key={i} viewBox="0 0 24 24" className={`size-[3cqw] ${i < state.strikes ? "text-red" : "text-paper-step"}`} aria-hidden>
+                  <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" strokeWidth="4" fill="none" />
+                </svg>
+              ))}
+            </span>
+          </div>
+          <p className="mt-[1.8cqw] text-[3cqw] leading-none text-ink-soft">{host}</p>
         </div>
       </div>
       <div className="absolute inset-y-0 right-0 flex w-[24.6%] flex-col justify-between py-[5.5%] pr-[3cqw] pl-[2cqw]">
-        <p className="text-[3.2cqw] leading-tight">{payload.kind === "custom" ? "Vlastní hra" : weekday.format(new Date(`${payload.date}T12:00:00Z`))}</p>
-        <p className="text-[9cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">{formatDayMonth(payload.date)}</p>
-        <p className="text-[3.2cqw] leading-tight">
-          {payload.date.slice(0, 4)}
+        <p className="text-[3.4cqw] leading-[1.05] font-bold [font-stretch:85%]">
+          Ptali jsme se
           <br />
-          {state.found.length} z {answers.length} odpovědí
+          100 AI
+        </p>
+        <div>
+          <p className="text-[3cqw] leading-tight">{payload.kind === "custom" ? "Vlastní hra" : weekday.format(new Date(`${payload.date}T12:00:00Z`))}</p>
+          <p className="mt-[1cqw] text-[9cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">{formatDayMonth(payload.date)}</p>
+        </div>
+        <p className="text-[3cqw] leading-tight">
+          {payload.date.slice(0, 4)} · {state.found.length} z {answers.length}
         </p>
       </div>
     </div>

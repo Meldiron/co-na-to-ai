@@ -63,6 +63,7 @@
   --flap: #1a2743;
   --flap-low: #141f37;
   --flap-seam: #0f182c;
+  --flap-hover: #223155;
   --flap-ink: #f5f7fa;
   --flap-dim: #8c9dba;
   --paper: #ffffff;
@@ -72,6 +73,7 @@
   --ground: #eef2f7;
   --ground-step: #d6dfeb;
   --red: #d7141a;
+  --red-low: #b90f15;
   --red-ink: #ffffff;
 
   --background: var(--ground);
@@ -215,6 +217,40 @@
   }
   .flap[data-tone="dim"] {
     color: var(--flap-dim);
+  }
+  .flap[data-tone="key"] {
+    color: var(--field-ink);
+    font-weight: 700;
+  }
+  .flap[data-tone="key"] .flap-top {
+    background: var(--field);
+  }
+  .flap[data-tone="key"] .flap-bottom {
+    background: var(--field-step);
+  }
+  .hint-row .flap-half {
+    transition: background-color 140ms var(--ease-out);
+  }
+  .hint-row:hover .flap:not([data-tone="key"]) .flap-half,
+  .hint-row:has(.hint-trigger:focus-visible) .flap:not([data-tone="key"]) .flap-half,
+  .hint-row:has(.hint-trigger[data-state="open"]) .flap:not([data-tone="key"]) .flap-half {
+    background: var(--flap-hover);
+  }
+  .hint-row:hover .flap[data-tone="key"] .flap-top,
+  .hint-row:has(.hint-trigger:focus-visible) .flap[data-tone="key"] .flap-top,
+  .hint-row:has(.hint-trigger[data-state="open"]) .flap[data-tone="key"] .flap-top {
+    background: var(--red);
+  }
+  .hint-row:hover .flap[data-tone="key"] .flap-bottom,
+  .hint-row:has(.hint-trigger:focus-visible) .flap[data-tone="key"] .flap-bottom,
+  .hint-row:has(.hint-trigger[data-state="open"]) .flap[data-tone="key"] .flap-bottom {
+    background: var(--red-low);
+  }
+  .hint-trigger {
+    cursor: pointer;
+  }
+  .hint-trigger:focus-visible {
+    outline-offset: -3px;
   }
   .flap[data-align="center"] .flap-half {
     justify-content: center;
@@ -365,12 +401,6 @@
     opacity: 0.45;
   }
 
-  .ticket-notch {
-    --n: 18px;
-    mask:
-      radial-gradient(circle var(--n) at 0 50%, #0000 98%, #000) left / 51% 100% no-repeat,
-      radial-gradient(circle var(--n) at 100% 50%, #0000 98%, #000) right / 51% 100% no-repeat;
-  }
 
   .inverted-row {
     display: flex;

@@ -32,22 +32,27 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
           const delay = shown && !isFound ? 160 * reveal++ : 0
           const used = hints[index] ?? 0
           const text = shown && answer.text ? answer.text : used && answer.text ? hintPattern(answer.text, used) : ""
-          const answerFlap = <Flap text={text} tone={isFound || (!shown && used) ? undefined : "dim"} delay={delay} className="h-full" />
+          const asking = interactive && !shown && !!answer.text
           return (
-            <li key={answer.rank} className="grid h-[44px] grid-cols-[2.75rem_1fr_3.75rem] gap-[3px] sm:h-[52px] md:h-[72px] md:grid-cols-[4rem_1fr_5rem]">
+            <li
+              key={answer.rank}
+              className={`relative grid h-[44px] grid-cols-[2.75rem_1fr_3.75rem] gap-[3px] sm:h-[52px] md:h-[72px] md:grid-cols-[4rem_1fr_5rem] ${asking ? "hint-row" : ""}`}
+            >
               <Flap text={booted ? String(answer.rank) : ""} align="center" delay={index * 70} className="h-full" />
-              {interactive && !shown && answer.text ? (
+              <Flap text={text} tone={isFound || (!shown && used) ? undefined : "dim"} delay={delay} className="h-full" />
+              <Flap
+                text={shown && answer.votes ? String(answer.votes) : asking ? "?" : ""}
+                tone={asking ? "key" : isFound ? undefined : "dim"}
+                align={asking ? "center" : "end"}
+                delay={shown ? delay + 120 : index * 70 + 200}
+                className="h-full"
+              />
+              {asking && answer.text && (
                 <Popover>
                   <PopoverTrigger
-                    className="group relative block h-full w-full text-left focus-visible:outline-offset-[-3px]"
+                    className="hint-trigger absolute inset-y-0 right-0 left-[calc(2.75rem+3px)] z-[4] md:left-[calc(4rem+3px)]"
                     aria-label={`Nápověda k odpovědi číslo ${answer.rank}`}
-                  >
-                    {answerFlap}
-                    <span aria-hidden className="pointer-events-none absolute inset-y-0 right-2 z-[3] flex items-center text-sm text-flap-dim transition-colors group-hover:text-flap-ink md:right-3">
-                      <span className="hidden sm:inline">nápověda</span>
-                      <span className="sm:hidden">?</span>
-                    </span>
-                  </PopoverTrigger>
+                  />
                   <SlotHelp
                     rank={answer.rank}
                     left={maxHints({ text: answer.text }) - used}
@@ -56,10 +61,7 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
                     onClue={() => onClue(index)}
                   />
                 </Popover>
-              ) : (
-                answerFlap
               )}
-              <Flap text={shown && answer.votes ? String(answer.votes) : ""} tone={isFound ? undefined : "dim"} align="end" delay={delay + 120} className="h-full" />
             </li>
           )
         })}
@@ -78,7 +80,7 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
 
 function SlotHelp({ rank, left, clue, onLetter, onClue }: { rank: number; left: number; clue: string | null; onLetter: () => void; onClue: () => void }) {
   return (
-    <PopoverContent align="start" sideOffset={6} className="w-[min(22rem,calc(100vw-2rem))]">
+    <PopoverContent align="end" sideOffset={6} className="w-[min(22rem,calc(100vw-2rem))]">
       <p className="px-3 pt-2 text-sm text-ink-soft">Nápověda k odpovědi č. {rank}</p>
       <button type="button" disabled={left <= 0} onClick={onLetter} className="flex flex-col items-start px-3 py-2.5 text-left transition-colors hover:bg-paper-step disabled:cursor-default disabled:opacity-55 disabled:hover:bg-transparent">
         <span className="font-semibold">Odkrýt písmeno</span>

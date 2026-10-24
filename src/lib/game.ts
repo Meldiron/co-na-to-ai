@@ -28,6 +28,7 @@ export type GuessOutcome =
   | { kind: "repeat"; index: number }
   | { kind: "repeat-miss" }
   | { kind: "empty" }
+  | { kind: "multi" }
   | { kind: "over" }
 
 export const initialState: GameState = {
@@ -86,6 +87,7 @@ export function applyGuess(
   if (state.status !== "playing") return { state, outcome: { kind: "over" } }
   const cleaned = text.trim()
   if (!normalize(cleaned)) return { state, outcome: { kind: "empty" } }
+  if (/\s/.test(cleaned)) return { state, outcome: { kind: "multi" } }
 
   const result = matchGuess(cleaned, answers, new Set(state.found))
   if (result.kind === "repeat") return { state, outcome: result }
@@ -140,18 +142,20 @@ export function maxScore(answers: Array<BoardAnswer>): number {
 
 export function shareText(opts: {
   label: string
+  question: string
   state: GameState
   answers: Array<BoardAnswer>
   total: number
   url: string
 }): string {
-  const { label, state, answers, total, url } = opts
+  const { label, question, state, answers, total, url } = opts
   const board = answers
     .map((_, i) => (!state.found.includes(i) ? "⬜" : hintsUsed(state, i) ? "🟨" : "🟩"))
     .join("")
   const guesses = state.guesses.map((g) => (g.result === "hit" ? "🟩" : "🟥")).join("")
   return [
     `Ptali jsme se 100 AI · ${label}`,
+    question,
     `${board} ${state.found.length}/${answers.length}`,
     guesses,
     `${total} ${pointsWord(total)}`,

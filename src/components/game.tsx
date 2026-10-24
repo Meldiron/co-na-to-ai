@@ -82,6 +82,9 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
       case "empty":
         setMessage({ tone: "info", text: "Napište odpověď." })
         break
+      case "multi":
+        setMessage({ tone: "info", text: "Odpovědi jsou vždy jedno slovo. Chybu za to nepočítáme." })
+        break
       case "over":
         break
     }
@@ -103,7 +106,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
               answers={ready ? secret.answers : null}
               found={state.found}
               revealAll={over}
-              title={`Odpovědělo ${payload.answered} ze ${payload.asked} AI. Klepněte na skrytou odpověď a dostanete nápovědu.`}
+              title={`Odpovědělo ${payload.answered} ze ${payload.asked} AI. Otazník u skryté odpovědi nabízí nápovědu: písmeno, nebo kdo ji řekl.`}
               missKey={missKey}
               hints={state.hints ?? []}
               interactive={ready && !over}
@@ -145,8 +148,16 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
                   id="tip"
                   ref={inputRef}
                   value={value}
-                  onChange={(e) => setValue(e.target.value)}
-                  placeholder="Napište odpověď…"
+                  onChange={(e) => {
+                    const next = e.target.value
+                    if (/\s/.test(next)) {
+                      setValue(next.replace(/\s+/g, ""))
+                      setMessage({ tone: "info", text: "Odpovědi jsou vždy jedno slovo, mezera tu není potřeba." })
+                      return
+                    }
+                    setValue(next)
+                  }}
+                  placeholder="Jedno slovo…"
                   autoCapitalize="off"
                   autoCorrect="off"
                   spellCheck={false}

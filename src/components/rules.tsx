@@ -8,7 +8,7 @@ export function Rules() {
     ["Kolik mám pokusů?", `Chyby jsou ${MAX_STRIKES}. Správných tipů můžete dát kolik chcete. Zopakovaný tip ani odpověď, která už na tabuli je, se za chybu nepočítá.`],
     ["Jak se počítají body?", `Odpověď má 10 bodů za každou umělou inteligenci, která ji řekla. Čím výš na tabuli, tím víc bodů. Za celou tabuli je ${CLEAR_BONUS} bodů navíc.`],
     ["Jaké jsou nápovědy?", "Klepněte na skrytou odpověď. Odkrýt písmeno můžete až třikrát, každé ubere čtvrtinu bodů za tu odpověď, takže uhodnutá odpověď s nápovědou pořád stojí za to. Nápověda Kdo to řekl je zdarma: prozradí, jaké postavy odpověď daly, třeba že hlavně důchodci z Moravy."],
-    ["Musím psát přesně?", "Ne. Velká písmena a diakritika nevadí, drobné překlepy také ne. Uznáváme i jiné tvary a blízká synonyma, která jsme připravili předem."],
+    ["Musím psát přesně?", "Ne. Odpovědi jsou vždy jedno slovo. Velká písmena a diakritika nevadí, drobné překlepy ani záměna i a y také ne. Uznáváme i jiné tvary a blízká synonyma, která jsme připravili předem."],
     ["Kdo odpovídá?", `Sto jazykových modelů od ${providerCount} firem, od malých po největší. Každý hraje jinou českou postavu s věkem, bydlištěm a povoláním, aby odpovědi nebyly všechny stejné.`],
     ["Kdy je nová otázka?", "Každý den o půlnoci českého času. Otázka je pro všechny stejná a tabule je připravená dopředu, nikdo ji během dne nemění."],
     [
