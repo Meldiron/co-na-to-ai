@@ -4,8 +4,8 @@ import { type Attempt, pickQuestion, targetDates } from "../../../pipeline/daily
 import { generatePuzzle } from "../../../pipeline/generate.ts"
 import { catalogue, client } from "../../../pipeline/lib/openrouter.ts"
 import { finaleVerdict, probe, verdict } from "../../../pipeline/probe.ts"
-import { addDays, pragueDate, puzzleNumber } from "../../../src/lib/day.ts"
-import { FINALE_SLOTS, finaleNumber, weekOf } from "../../../src/lib/finale.ts"
+import { pragueDate, puzzleNumber } from "../../../src/lib/day.ts"
+import { FINALE_SLOTS, finaleNumber, finaleSchedule } from "../../../src/lib/finale.ts"
 import type { Question } from "../../../src/lib/types.ts"
 
 type Context = {
@@ -147,8 +147,7 @@ export default async ({ req, res, log, error }: Context) => {
     }
   }
 
-  const today = pragueDate()
-  finale: for (const week of [weekOf(today), addDays(weekOf(today), 7)]) {
+  finale: for (const week of finaleSchedule(pragueDate())) {
     for (let slot = 0; slot < FINALE_SLOTS; slot++) {
       while (!finaleRows.some((r) => r.week === week && r.slot === slot && r.passed)) {
         if (finaleRows.filter((r) => r.week === week && !r.passed).length >= FINALE_MAX_FAILURES) {

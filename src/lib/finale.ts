@@ -6,7 +6,7 @@ export const FINALE_SLOTS = 5
 export const FINALE_SECONDS = 30
 export const FINALE_GRACE_MS = 3000
 export const FINALE_GOAL = 100
-export const FINALE_LAUNCH = "2026-10-19"
+export const FINALE_LAUNCH = "2026-10-05"
 
 export type FinaleQuestion = { slot: number; question: string; answered: number; answers: Array<Pick<BoardAnswer, "rank" | "text" | "votes" | "aliases">> }
 export type FinaleAnswer = { text: string; index: number | null; points: number; late: boolean }
@@ -17,6 +17,12 @@ export function weekOf(date: string): string {
 
 export function isFinaleWeek(week: string, current: string): boolean {
   return isValidDate(week) && weekOf(week) === week && week >= FINALE_LAUNCH && week <= current
+}
+
+export function finaleSchedule(today: string): Array<string> {
+  const current = weekOf(today)
+  const older = Array.from({ length: Math.max(0, daysBetween(FINALE_LAUNCH, current) / 7) }, (_, i) => addDays(current, -7 * (i + 1)))
+  return [current, addDays(current, 7), ...older]
 }
 
 export function finaleNumber(week: string): number {

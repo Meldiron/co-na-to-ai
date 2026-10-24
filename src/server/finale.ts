@@ -142,6 +142,19 @@ export async function answerFinale(userId: string, week: string, questions: Arra
   return view(await save(row, week, spent > FINALE_SECONDS * 1000 ? timeUp(answers) : answers), questions)
 }
 
+export type FinaleResult = { status: "playing" | "finished"; score: number }
+
+export async function finaleResults(userId: string): Promise<Record<string, FinaleResult>> {
+  const { rows } = await db().listRows<GameRow>({
+    databaseId: DATABASE,
+    tableId: GAMES,
+    queries: [Query.equal("userId", userId), Query.select(["week", "status", "score", "startedAt"]), Query.limit(1000)],
+  })
+  return Object.fromEntries(
+    rows.map((r) => [r.week, { status: r.status === "playing" && elapsed(r) > FINALE_SECONDS * 1000 + FINALE_GRACE_MS ? "finished" : r.status, score: r.score }]),
+  )
+}
+
 export type FinaleLeaderboard = {
   players: number
   winners: number

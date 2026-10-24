@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { finaleNumber, finaleShareText, isFinaleWeek, scoreAnswer, timeUp, weekLabel, weekOf, type FinaleQuestion } from "./finale"
+import { finaleNumber, finaleSchedule, finaleShareText, isFinaleWeek, scoreAnswer, timeUp, weekLabel, weekOf, type FinaleQuestion } from "./finale"
 
 const question: FinaleQuestion = {
   slot: 0,
@@ -25,7 +25,8 @@ describe("isFinaleWeek", () => {
     expect(isFinaleWeek("2026-10-19", "2026-10-26")).toBe(true)
     expect(isFinaleWeek("2026-10-26", "2026-10-26")).toBe(true)
     expect(isFinaleWeek("2026-11-02", "2026-10-26")).toBe(false)
-    expect(isFinaleWeek("2026-10-12", "2026-10-26")).toBe(false)
+    expect(isFinaleWeek("2026-10-05", "2026-10-26")).toBe(true)
+    expect(isFinaleWeek("2026-09-28", "2026-10-26")).toBe(false)
     expect(isFinaleWeek("2026-10-20", "2026-10-26")).toBe(false)
     expect(isFinaleWeek("nesmysl", "2026-10-26")).toBe(false)
   })
@@ -33,9 +34,16 @@ describe("isFinaleWeek", () => {
 
 describe("finaleNumber and weekLabel", () => {
   it("counts weeks from launch", () => {
-    expect(finaleNumber("2026-10-19")).toBe(1)
-    expect(finaleNumber("2026-11-02")).toBe(3)
+    expect(finaleNumber("2026-10-05")).toBe(1)
+    expect(finaleNumber("2026-10-19")).toBe(3)
     expect(weekLabel("2026-10-26")).toBe("26. 10. – 1. 11.")
+  })
+})
+
+describe("finaleSchedule", () => {
+  it("covers this week, next week, then every older week back to launch", () => {
+    expect(finaleSchedule("2026-10-24")).toEqual(["2026-10-19", "2026-10-26", "2026-10-12", "2026-10-05"])
+    expect(finaleSchedule("2026-10-06")).toEqual(["2026-10-05", "2026-10-12"])
   })
 })
 
@@ -73,7 +81,7 @@ describe("finaleShareText", () => {
       { text: "e", index: 0, points: 25, late: false },
     ]
     expect(finaleShareText("2026-10-19", answers, "https://example.cz/finale")).toBe(
-      ["Co na to AI · Finále č. 1", "🟩🟨⬜🟩🟩 115 bodů, vyhráno", "https://example.cz/finale"].join("\n"),
+      ["Co na to AI · Finále č. 3", "🟩🟨⬜🟩🟩 115 bodů, vyhráno", "https://example.cz/finale"].join("\n"),
     )
   })
 })

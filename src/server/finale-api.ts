@@ -3,7 +3,7 @@ import { notFound } from "@tanstack/react-router"
 import { z } from "zod"
 import { FINALE_GOAL, FINALE_SLOTS, isFinaleWeek } from "@/lib/finale"
 import { appwrite } from "./appwrite"
-import { answerFinale, currentWeek, finaleLeaderboard, finaleState, finaleWeeks, loadFinale, startFinale } from "./finale"
+import { answerFinale, currentWeek, finaleLeaderboard, finaleResults, finaleState, finaleWeeks, loadFinale, startFinale } from "./finale"
 import { currentSession, ensureSession } from "./session"
 
 const week = z.object({ week: z.string().max(10).optional() })
@@ -57,6 +57,11 @@ export const answerFinaleQuestion = createServerFn({ method: "POST" })
     if (!session) throw new Error("Finále se nepodařilo uložit.")
     return answerFinale(session.user.$id, target, questions, data.slot, data.text)
   })
+
+export const getMyFinales = createServerFn({ method: "GET" }).handler(async () => {
+  const session = await currentSession()
+  return session ? finaleResults(session.user.$id) : null
+})
 
 export const getFinaleLeaderboard = createServerFn({ method: "GET" })
   .validator(week)

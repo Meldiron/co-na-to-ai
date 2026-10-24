@@ -2,11 +2,14 @@ import { Link, createFileRoute } from "@tanstack/react-router"
 import { useRef, useState, type KeyboardEvent } from "react"
 import { z } from "zod"
 import { SiteHeader } from "@/components/site-header"
+import { useFinaleResults } from "@/hooks/use-finale-results"
 import { useResults } from "@/hooks/use-results"
 import { addDays, formatLong } from "@/lib/day"
+import { FINALE_GOAL, finaleNumber, weekLabel, weekOf } from "@/lib/finale"
 import { pointsWord } from "@/lib/game"
 import type { Result } from "@/lib/storage"
 import { SITE_URL } from "@/lib/site"
+import type { FinaleResult } from "@/server/finale"
 import { getArchive } from "@/server/api"
 
 export const Route = createFileRoute("/archiv")({
@@ -81,6 +84,46 @@ function Arrow({ flip = false }: { flip?: boolean }) {
   )
 }
 
+function FinaleRow({ week, current, result }: { week: string; current: boolean; result: FinaleResult | null }) {
+  const finished = result?.status === "finished"
+  const status: Status = current ? "today" : !finished ? "open" : result.score >= FINALE_GOAL ? "cleared" : "played"
+  const number = finaleNumber(week)
+  return (
+    <li>
+      <Link
+        to={current ? "/finale" : "/finale/$tyden"}
+        params={{ tyden: week }}
+        aria-current={current ? "date" : undefined}
+        className="grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-x-4 bg-paper p-3 transition-colors hover:bg-paper-step md:grid-cols-[3.5rem_minmax(0,1fr)_auto] md:gap-x-5 md:py-4 md:pr-5"
+      >
+        <span aria-hidden className={`grid aspect-square place-items-center text-[1.2rem] leading-none font-bold [font-stretch:75%] md:text-[1.4rem] ${status === "open" ? "bg-ground text-ink" : TONES[status]}`}>
+          F{number}
+        </span>
+        <span className="grid gap-0.5">
+          <span className="text-sm text-ink-soft">
+            {weekLabel(week)}
+            {current && <span className="font-semibold text-red"> · tento týden</span>}
+          </span>
+          <span className="leading-snug font-semibold">Finále č. {number}</span>
+        </span>
+        {finished ? (
+          <span className="grid justify-items-end text-right">
+            <span className="font-bold whitespace-nowrap tabular-nums">
+              {result.score} <span className="font-normal">{pointsWord(result.score)}</span>
+            </span>
+            <span className="text-sm whitespace-nowrap text-ink-soft">{result.score >= FINALE_GOAL ? "vyhráno" : "nevyhráno"}</span>
+          </span>
+        ) : (
+          <span className="inline-flex items-center gap-1 font-semibold whitespace-nowrap text-red">
+            {result ? "Dohrát" : "Hrát"}
+            <Arrow />
+          </span>
+        )}
+      </Link>
+    </li>
+  )
+}
+
 function Step({ to, label, flip = false }: { to: string | undefined; label: string; flip?: boolean }) {
   const box = "grid size-12 shrink-0 place-items-center bg-paper"
   if (!to) {
@@ -132,17 +175,19 @@ function Picker({ id, label, value, options, onChange, className = "" }: PickerP
 }
 
 function Archive() {
-  const { today, puzzles } = Route.useLoaderData()
+  const { today, puzzles, finales } = Route.useLoaderData()
   const { mesic } = Route.useSearch()
   const navigate = Route.useNavigate()
   const results = useResults()
+  const finaleResults = useFinaleResults()
   const [active, setActive] = useState<string | null>(null)
   const [cursor, setCursor] = useState<string | null>(null)
   const gridRef = useRef<HTMLTableElement>(null)
 
-  const months = [...new Set(puzzles.map((p) => p.date.slice(0, 7)))]
+  const months = [...new Set([...puzzles.map((p) => p.date.slice(0, 7)), ...finales.map((w) => w.slice(0, 7))])].sort().reverse()
   const month = mesic && months.includes(mesic) ? mesic : months[0]
   const days = puzzles.filter((p) => p.date.startsWith(month))
+  const weeks = finales.filter((w) => w.startsWith(month))
   const byDate = new Map(days.map((p) => [p.date, p]))
   const resultOf = (date: string) => (results && date in results ? results[date] : null)
   const focusable = cursor && byDate.has(cursor) ? cursor : byDate.has(today) ? today : days[0]?.date
@@ -306,48 +351,67 @@ function Archive() {
             </div>
           </div>
 
-          <ol aria-label={`Otázky, ${title}`} className="grid gap-[3px] md:col-span-6 md:col-start-7">
-            {days.map((puzzle) => {
-              const result = resultOf(puzzle.date)
-              const status = statusOf(puzzle.date, today, result)
-              const isToday = puzzle.date === today
-              return (
-                <li key={puzzle.date}>
-                  <Link
-                    to={isToday ? "/" : "/hra/$datum"}
-                    params={{ datum: puzzle.date }}
-                    aria-current={isToday ? "date" : undefined}
-                    {...highlight(puzzle.date)}
-                    className={`grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-x-4 bg-paper p-3 transition-colors hover:bg-paper-step md:grid-cols-[3.5rem_minmax(0,1fr)_auto] md:gap-x-5 md:py-4 md:pr-5 ${active === puzzle.date ? "bg-paper-step" : ""}`}
-                  >
-                    <span aria-hidden className={`grid aspect-square place-items-center text-[1.35rem] leading-none font-bold [font-stretch:75%] md:text-[1.6rem] ${status === "open" ? "bg-ground text-ink" : TONES[status]}`}>
-                      {Number(puzzle.date.slice(8))}
-                    </span>
-                    <span className="grid gap-0.5">
-                      <span className="text-sm text-ink-soft">
-                        {formatLong(puzzle.date)}
-                        {isToday && <span className="font-semibold text-red"> · dnes</span>}
-                      </span>
-                      <span className="leading-snug font-semibold">{puzzle.question}</span>
-                    </span>
-                    {result ? (
-                      <span className="grid justify-items-end text-right">
-                        <span className="font-bold whitespace-nowrap tabular-nums">
-                          {result.score} <span className="font-normal">{pointsWord(result.score)}</span>
+          <div className="grid gap-10 md:col-span-6 md:col-start-7">
+            {weeks.length > 0 && (
+              <section aria-labelledby="archiv-finale">
+                <h2 id="archiv-finale" className="text-[1.25rem] font-bold">
+                  Týdenní finále
+                </h2>
+                <ol className="mt-3 grid gap-[3px]">
+                  {weeks.map((week) => (
+                    <FinaleRow key={week} week={week} current={week === weekOf(today)} result={finaleResults?.[week] ?? null} />
+                  ))}
+                </ol>
+              </section>
+            )}
+            <section aria-labelledby="archiv-otazky">
+              <h2 id="archiv-otazky" className="text-[1.25rem] font-bold">
+                Otázky dne
+              </h2>
+              <ol className="mt-3 grid gap-[3px]">
+                {days.map((puzzle) => {
+                  const result = resultOf(puzzle.date)
+                  const status = statusOf(puzzle.date, today, result)
+                  const isToday = puzzle.date === today
+                  return (
+                    <li key={puzzle.date}>
+                      <Link
+                        to={isToday ? "/" : "/hra/$datum"}
+                        params={{ datum: puzzle.date }}
+                        aria-current={isToday ? "date" : undefined}
+                        {...highlight(puzzle.date)}
+                        className={`grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-x-4 bg-paper p-3 transition-colors hover:bg-paper-step md:grid-cols-[3.5rem_minmax(0,1fr)_auto] md:gap-x-5 md:py-4 md:pr-5 ${active === puzzle.date ? "bg-paper-step" : ""}`}
+                      >
+                        <span aria-hidden className={`grid aspect-square place-items-center text-[1.35rem] leading-none font-bold [font-stretch:75%] md:text-[1.6rem] ${status === "open" ? "bg-ground text-ink" : TONES[status]}`}>
+                          {Number(puzzle.date.slice(8))}
                         </span>
-                        <span className="text-sm whitespace-nowrap text-ink-soft">{result.cleared ? "celá tabule" : `${result.found} z 8`}</span>
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1 font-semibold whitespace-nowrap text-red">
-                        Hrát
-                        <Arrow />
-                      </span>
-                    )}
-                  </Link>
-                </li>
-              )
-            })}
-          </ol>
+                        <span className="grid gap-0.5">
+                          <span className="text-sm text-ink-soft">
+                            {formatLong(puzzle.date)}
+                            {isToday && <span className="font-semibold text-red"> · dnes</span>}
+                          </span>
+                          <span className="leading-snug font-semibold">{puzzle.question}</span>
+                        </span>
+                        {result ? (
+                          <span className="grid justify-items-end text-right">
+                            <span className="font-bold whitespace-nowrap tabular-nums">
+                              {result.score} <span className="font-normal">{pointsWord(result.score)}</span>
+                            </span>
+                            <span className="text-sm whitespace-nowrap text-ink-soft">{result.cleared ? "celá tabule" : `${result.found} z 8`}</span>
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 font-semibold whitespace-nowrap text-red">
+                            Hrát
+                            <Arrow />
+                          </span>
+                        )}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ol>
+            </section>
+          </div>
         </div>
       </section>
     </>
