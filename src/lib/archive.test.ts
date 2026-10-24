@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { buildArchive, dayTone, monthsOf, weekTone } from "./archive"
+import { buildArchive, dayMark, monthsOf, weekMark } from "./archive"
 
 const archive = buildArchive({
   today: "2026-10-24",
@@ -14,10 +14,17 @@ const archive = buildArchive({
 })
 
 describe("buildArchive", () => {
-  it("attaches results and tones to days and weeks", () => {
+  it("marks what was played, what was perfect and what is live", () => {
     expect(archive.week).toBe("2026-10-19")
-    expect(archive.days.map((d) => dayTone(d, archive.today))).toEqual(["today", "cleared", "open"])
-    expect(archive.weeks.map((w) => weekTone(w, archive.week))).toEqual(["today", "cleared"])
+    expect(archive.days.map((d) => dayMark(d, archive.today))).toEqual([
+      { played: false, perfect: false, live: true },
+      { played: true, perfect: true, live: false },
+      { played: false, perfect: false, live: false },
+    ])
+    expect(archive.weeks.map((w) => weekMark(w, archive.week))).toEqual([
+      { played: false, perfect: false, live: true },
+      { played: true, perfect: true, live: false },
+    ])
     expect(monthsOf(archive)).toEqual(["2026-10", "2026-09"])
   })
 })

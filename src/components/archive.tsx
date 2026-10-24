@@ -1,23 +1,28 @@
 import { Link } from "@tanstack/react-router"
 import { useRef, useState, type KeyboardEvent } from "react"
-import { dayTone, finished, weekTone, type Archive as ArchiveData, type ArchiveDay, type ArchiveWeek, type Tone } from "@/lib/archive"
+import { dayMark, finished, weekMark, type Archive as ArchiveData, type ArchiveDay, type ArchiveWeek, type Mark } from "@/lib/archive"
 import { addDays, formatLong } from "@/lib/day"
 import { FINALE_GOAL, weekLabel } from "@/lib/finale"
 import { pointsWord } from "@/lib/game"
 import type { Result } from "@/lib/storage"
 
-const TONES: Record<Tone, string> = {
-  cleared: "bg-field text-field-ink",
-  played: "bg-field-soft text-ink",
-  open: "bg-paper text-ink",
-  today: "bg-red text-red-ink",
+function tile(mark: Mark, open: string): string {
+  return `relative ${mark.played ? "bg-field text-field-ink" : open} ${mark.live ? "shadow-[inset_0_0_0_3px_var(--red)]" : ""}`
 }
 
-const LEGEND: Array<[Tone, string]> = [
-  ["cleared", "Celá tabule nebo vyhrané finále"],
-  ["played", "Odehráno"],
-  ["open", "Nehráno"],
-  ["today", "Dnes a tento týden"],
+function Star({ className = "top-1 right-1 size-3" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden className={`absolute ${className}`}>
+      <path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" fill="currentColor" />
+    </svg>
+  )
+}
+
+const LEGEND: Array<[Mark, string]> = [
+  [{ played: true, perfect: false, live: false }, "Odehráno"],
+  [{ played: false, perfect: false, live: false }, "Nehráno"],
+  [{ played: true, perfect: true, live: false }, "Celá tabule nebo vyhrané finále"],
+  [{ played: false, perfect: false, live: true }, "Dnes a tento týden"],
 ]
 
 const WEEKDAYS = [
@@ -271,8 +276,9 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
                               aria-current={date === today ? "date" : undefined}
                               aria-label={dayLabel(day, today)}
                               {...highlight(date, () => setCursor(date))}
-                              className={`grid aspect-square content-center justify-items-center gap-[0.2em] ${TONES[dayTone(day, today)]} ${active === date ? "outline-3 outline-offset-2 outline-ink" : ""}`}
+                              className={`grid aspect-square content-center justify-items-center gap-[0.2em] ${tile(dayMark(day, today), "bg-paper text-ink")} ${active === date ? "outline-3 outline-offset-2 outline-ink" : ""}`}
                             >
+                              {day.result?.cleared && <Star className="top-[6%] right-[6%] size-[clamp(0.625rem,2.4cqw,0.875rem)]" />}
                               <span className="text-[clamp(1.05rem,4.6cqw,1.6rem)] leading-none font-bold [font-stretch:75%]">{Number(date.slice(8))}</span>
                               <span className="min-h-[1em] text-[clamp(0.6875rem,2.4cqw,0.875rem)] leading-none tabular-nums">
                                 {day.result ? day.result.score : date === today ? "dnes" : ""}
@@ -288,9 +294,14 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
             </div>
 
             <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-              {LEGEND.map(([tone, label]) => (
-                <li key={tone} className="flex items-center gap-2">
-                  <span aria-hidden className={`size-4 shrink-0 ${TONES[tone]} ${tone === "open" ? "shadow-[inset_0_0_0_1px_var(--ink-soft)]" : ""}`} />
+              {LEGEND.map(([mark, label]) => (
+                <li key={label} className="flex items-center gap-2">
+                  <span
+                    aria-hidden
+                    className={`relative size-5 shrink-0 ${mark.played ? "bg-field text-field-ink" : "bg-paper"} ${mark.live ? "shadow-[inset_0_0_0_2px_var(--red)]" : mark.played ? "" : "shadow-[inset_0_0_0_1px_var(--ink-soft)]"}`}
+                  >
+                    {mark.perfect && <Star className="top-0.5 right-0.5 size-2.5" />}
+                  </span>
                   {label}
                 </li>
               ))}
@@ -307,7 +318,7 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
               <ol className="mt-3 grid gap-[3px]">
                 {weeks.map((week) => {
                   const current = week.week === archive.week
-                  const tone = weekTone(week, archive.week)
+                  const mark = weekMark(week, archive.week)
                   return (
                     <li key={week.week}>
                       <Link
@@ -315,7 +326,8 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
                         aria-current={current ? "date" : undefined}
                         className="grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-x-4 bg-paper p-3 transition-colors hover:bg-paper-step md:grid-cols-[3.5rem_minmax(0,1fr)_auto] md:gap-x-5 md:py-4 md:pr-5"
                       >
-                        <span aria-hidden className={`grid aspect-square place-items-center text-[1.2rem] leading-none font-bold [font-stretch:75%] md:text-[1.4rem] ${tone === "open" ? "bg-ground text-ink" : TONES[tone]}`}>
+                        <span aria-hidden className={`grid aspect-square place-items-center text-[1.2rem] leading-none font-bold [font-stretch:75%] md:text-[1.4rem] ${tile(mark, "bg-ground text-ink")}`}>
+                          {mark.perfect && <Star />}
                           F{week.number}
                         </span>
                         <span className="grid gap-0.5">
@@ -340,7 +352,7 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
             <ol className="mt-3 grid gap-[3px]">
               {days.map((day) => {
                 const isToday = day.date === today
-                const tone = dayTone(day, today)
+                const mark = dayMark(day, today)
                 return (
                   <li key={day.date}>
                     <Link
@@ -349,7 +361,8 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
                       {...highlight(day.date)}
                       className={`grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-x-4 bg-paper p-3 transition-colors hover:bg-paper-step md:grid-cols-[3.5rem_minmax(0,1fr)_auto] md:gap-x-5 md:py-4 md:pr-5 ${active === day.date ? "bg-paper-step" : ""}`}
                     >
-                      <span aria-hidden className={`grid aspect-square place-items-center text-[1.35rem] leading-none font-bold [font-stretch:75%] md:text-[1.6rem] ${tone === "open" ? "bg-ground text-ink" : TONES[tone]}`}>
+                      <span aria-hidden className={`grid aspect-square place-items-center text-[1.35rem] leading-none font-bold [font-stretch:75%] md:text-[1.6rem] ${tile(mark, "bg-ground text-ink")}`}>
+                        {mark.perfect && <Star />}
                         {Number(day.date.slice(8))}
                       </span>
                       <span className="grid gap-0.5">

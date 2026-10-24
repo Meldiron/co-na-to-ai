@@ -6,7 +6,6 @@ export type FinaleOutcome = { status: "playing" | "finished"; score: number }
 export type ArchiveDay = { date: string; number: number; question: string; result: Result | null }
 export type ArchiveWeek = { week: string; number: number; result: FinaleOutcome | null }
 export type Archive = { today: string; week: string; days: Array<ArchiveDay>; weeks: Array<ArchiveWeek>; loaded: boolean }
-export type Tone = "cleared" | "played" | "open" | "today"
 
 export function buildArchive(input: {
   today: string
@@ -25,16 +24,15 @@ export function buildArchive(input: {
   }
 }
 
-export function dayTone(day: ArchiveDay, today: string): Tone {
-  if (day.date === today) return "today"
-  if (!day.result) return "open"
-  return day.result.cleared ? "cleared" : "played"
+export type Mark = { played: boolean; perfect: boolean; live: boolean }
+
+export function dayMark(day: ArchiveDay, today: string): Mark {
+  return { played: !!day.result, perfect: !!day.result?.cleared, live: day.date === today }
 }
 
-export function weekTone(week: ArchiveWeek, current: string): Tone {
-  if (week.week === current) return "today"
-  if (week.result?.status !== "finished") return "open"
-  return week.result.score >= FINALE_GOAL ? "cleared" : "played"
+export function weekMark(week: ArchiveWeek, current: string): Mark {
+  const played = finished(week)
+  return { played, perfect: played && (week.result?.score ?? 0) >= FINALE_GOAL, live: week.week === current }
 }
 
 export const finished = (week: ArchiveWeek) => week.result?.status === "finished"
