@@ -2,6 +2,8 @@
 
 Daily Czech guessing game in the spirit of Family Feud / *5 proti 5*. Every day one survey question goes to 100 AI answerers (a different OpenRouter model per answerer, each playing a different Czech persona). Their answers are merged, and the player guesses the 8 most common. Five wrong guesses and the game is over.
 
+Scoring: an answer is worth 10 points per AI that gave it, and clearing the board adds 200. Tapping a hidden answer offers two clues. "Odkrýt písmeno" reveals the next letter, up to 3, and never the whole word; each one takes a quarter of that answer's points, so a hinted answer is always worth more than a miss and less than finding it with fewer letters. "Kdo to řekl?" is free: it describes the personas who gave the answer ("hlavně důchodci z Moravy") and names the youngest and the oldest.
+
 Stack: TanStack Start, React 19, Tailwind 4, shadcn/ui (radix). Node 22.18+ (the pipeline runs TypeScript directly with Node's type stripping).
 
 ## Run the game
@@ -69,9 +71,29 @@ Questions live in `questions/YYYY-MM.json`:
 
 Custom games are written to `custom/<id>.json` (or `CUSTOM_GAMES_DIR`) at runtime, so the server needs a writable disk. They don't count towards stats or streaks.
 
-## Deploy
+## Deploy (Appwrite)
 
-`npm run build` produces a TanStack Start server build in `dist/`. Puzzles are bundled into the server build, one chunk per day, so deploy again after the queue workflow commits new puzzles. Any host that runs TanStack Start (Node) works.
+Live at https://ai100.appwrite.network. It runs in the Appwrite project *Playground* (`6adc843b0015374f957c`, org *Almost apps*, region fra), and `appwrite.config.json` points the CLI at it.
+
+| Resource | ID | Notes |
+| --- | --- | --- |
+| Site | `ai100` | TanStack Start, SSR, `npm ci` and `npm run build`, output `./dist`. The per-request key is scoped to `files.*` and `execution.*`. Secret variable `ADMIN_PASSWORD`. |
+| Function | `custom-game` | Node 22, 900 s timeout, scopes `files.read` and `files.write`, no public execute. Secret variable `OPENROUTER_API_KEY`. Runs one custom game (the 100 calls plus the judge) and saves it to the bucket. |
+| Bucket | `custom-games` | One JSON file per custom game, server access only. |
+
+A Site request may run for at most 30 s, so the admin starts the Function asynchronously and polls the execution. Locally (no `x-appwrite-key` header) custom games run in-process and save to `custom/`.
+
+```bash
+# site: deploy exactly what is committed (never uploads .env)
+git archive --format=tar HEAD | tar -x -C /tmp/ai100 && cd /tmp/ai100 \
+  && appwrite sites create-deployment --site-id ai100 --code . --activate --config-file <repo>/appwrite.config.json
+
+# function: bundle, then deploy package.json + dist/main.js
+npm run build:function
+appwrite functions create-deployment --function-id custom-game --code <folder with package.json and dist/main.js> --entrypoint dist/main.js --activate
+```
+
+Daily puzzles are bundled into the Site build, one chunk per day, so every new day needs a pipeline run and a redeploy.
 
 ## Credits
 
