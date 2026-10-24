@@ -1,0 +1,5 @@
+{
+  "title": "Scroll to the result",
+  "summary": "When the game ends during the visit (fifth miss, full board or giving up), the remaining answers flip in and about 1.8 s later the page scrolls smoothly to 'Váš výsledek'. Reopening a finished game stays at the board; with reduced motion nothing moves.",
+  "tradeoffs": "The board's final reveal is visible only briefly before the scroll; a player who wanted to study the board scrolls back up."
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "scenario": "who-said",
+    "width": "desktop",
+    "url": "/",
+    "overflow": 0,
+    "small": [],
+    "title": "Co si berete s sebou na chatu? · Ptali jsme se 100 AI",
+    "h1": "Co si berete s sebou na chatu?",
+    "logs": [],
+    "extras": {
+      "copied": null,
+      "shared": null,
+      "blob": null
+    }
+  },
+  {
+    "scenario": "who-said",
+    "width": "phone",
+    "url": "/",
+    "overflow": 0,
+    "small": [
+      "a \"Ptali jsme se100AI\" 149×26",
+      "button \"Lukáš\" 46×26",
+      "button \"Aneta\" 46×26",
+      "button \"Jiří\" 21×26",
+      "button \"Pavel\" 42×26",
+      "button \"Bohdan\" 61×26",
+      "button \"Martina\" 62×26",
+      "button \"Václav\" 51×26",
+      "button \"Daniel\" 49×26",
+      "button \"Radek\" 50×26",
+      "button \"Natálie\" 56×26",
+      "button \"Antonín\" 62×26"
+    ],
+    "title": "Co si berete s sebou na chatu? · Ptali jsme se 100 AI",
+    "h1": "Co si berete s sebou na chatu?",
+    "logs": [],
+    "extras": {
+      "copied": null,
+      "shared": null,
+      "blob": null
+    }
+  }
+]

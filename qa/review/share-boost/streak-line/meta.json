@@ -1,0 +1,6 @@
+{
+  "title": "Streak and score title",
+  "summary": "The ticket and the share text gain a playful title by score band (\"Zkušený tipař\", \"Čte myšlenky strojům\") in red under the score, plus the current streak (\"Série 8 dní\") when it is two days or more. The shared link becomes /hra/<date>.",
+  "tradeoffs": "Adds a gamified label that some players may find cheesy; titles are generic, not question-specific.",
+  "shareText": "Ptali jsme se 100 AI \u00b7 24. 10. 2026\nCo si berete s sebou na chatu?\n\ud83d\udfe9\ud83d\udfe9\u2b1c\ud83d\udfe8\u2b1c\ud83d\udfe9\u2b1c\u2b1c 4/8\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\n483 bod\u016f \u00b7 Zku\u0161en\u00fd tipa\u0159\nS\u00e9rie 8 dn\u00ed\nhttp://localhost:3104/hra/2026-10-24"
+}

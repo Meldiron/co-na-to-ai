@@ -1,0 +1,5 @@
+{
+  "title": "First-visit dialog",
+  "summary": "On the first visit a \"Jak hrát\" dialog explains the game in three lines, each with a board-style tile: one word (PIVO tile), the blue \"?\" key for clues and their cost, five lives and scoring. \"Hrát\" closes it for good; a \"Jak hrát\" link in the header reopens it on game pages.",
+  "tradeoffs": "Interrupts the very first visit with a modal before the player sees the board; returning players never see it again (stored in localStorage, so private-mode visitors see it each time)."
+}

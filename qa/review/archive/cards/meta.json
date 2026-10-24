@@ -1,0 +1,5 @@
+{
+  "title": "Paper slips by week",
+  "summary": "Replaces the table with one paper slip per day, grouped under \"Tento týden\" / \"Minulý týden\": flap-style weekday and date tiles (red \"Dnes\" for today), the question large, a result line (\"905 bodů · celá tabule\" or \"Nehráno\") and a clear \"Hrát\" / \"Výsledek\" label. The whole slip is the link and turns blue on hover.",
+  "tradeoffs": "Much more inviting and thumb-friendly, but takes about twice the height per day, so a long archive needs more scrolling (fine for months, would want pagination after a year)."
+}

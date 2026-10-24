@@ -1,0 +1,5 @@
+{
+  "title": "Chips under the input",
+  "summary": "A 'Zkoušeli jste:' row under the input lists every missed word as a small dark chip, in the order tried; it appears with the first miss.",
+  "tradeoffs": "Adds one line of height to the hero while misses exist; on a phone it pushes the status line a little further down."
+}

@@ -1,0 +1,53 @@
+diff --git a/src/components/who-said.tsx b/src/components/who-said.tsx
+index 7b056f7..eb3c0ff 100644
+--- a/src/components/who-said.tsx
++++ b/src/components/who-said.tsx
+@@ -16,24 +16,21 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+   const silent = secret.responses.filter((r) => !r.raw)
+   const invalid = secret.responses.filter((r) => r.raw && !r.answer)
+ 
+-  const chip = (answererId: string) => {
++  const face = (answererId: string) => {
+     const response = byAnswerer.get(answererId)
+     const persona = response && personaOf(response.persona)
+     if (!response || !persona) return null
++    const label = `${firstName(persona)}, ${persona.age} · ${modelOf(response.model).name}`
+     return (
+       <li key={answererId}>
+         <button
+           type="button"
+           onClick={() => setOpen(response)}
+-          className="flex h-full items-center gap-2.5 bg-ground-step py-2 pr-3 pl-2 text-left transition-colors hover:bg-field hover:text-field-ink focus-visible:bg-field focus-visible:text-field-ink"
++          title={label}
++          aria-label={label}
++          className="block transition-transform hover:-translate-y-0.5 focus-visible:-translate-y-0.5"
+         >
+-          <PersonaAvatar id={persona.id} size={36} className="shrink-0" />
+-          <span className="flex flex-col">
+-            <span className="font-semibold">
+-              {firstName(persona)}, {persona.age}
+-            </span>
+-            <span className="text-sm opacity-80">{modelOf(response.model).name}</span>
+-          </span>
++          <PersonaAvatar id={persona.id} size={44} />
+         </button>
+       </li>
+     )
+@@ -45,7 +42,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+         <div className="grid gap-4 md:grid-cols-12 md:gap-6">
+           <h2 className="head reveal md:col-span-4">Kdo co řekl</h2>
+           <p className="reveal max-w-[60ch] md:col-span-7 md:col-start-6">
+-            Všech {secret.responses.length} odpovědí, seřazených podle tabule. Klikněte na jméno a uvidíte, kdo za odpovědí stojí, jak přesně odpověděl a který model ji napsal.
++            Všech {secret.responses.length} odpovědí, seřazených podle tabule. Každá tvář je jedna postava: klikněte na ni a uvidíte, kdo to je, jak přesně odpověděl a který model ji hrál.
+           </p>
+         </div>
+ 
+@@ -60,7 +57,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+                   {answer.votes} {votesWord(answer.votes)}
+                 </p>
+               </div>
+-              <ul className="flex flex-wrap gap-2 md:col-span-8 md:col-start-5">{answer.answerers.map(chip)}</ul>
++              <ul className="flex flex-wrap gap-1.5 md:col-span-8 md:col-start-5">{answer.answerers.map(face)}</ul>
+             </li>
+           ))}
+         </ol>

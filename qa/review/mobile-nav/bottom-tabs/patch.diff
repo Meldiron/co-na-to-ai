@@ -1,0 +1,106 @@
+diff --git a/src/components/phone-tabs.tsx b/src/components/phone-tabs.tsx
+new file mode 100644
+index 0000000..56d1644
+--- /dev/null
++++ b/src/components/phone-tabs.tsx
+@@ -0,0 +1,29 @@
++import { Link } from "@tanstack/react-router"
++
++const tabs = [
++  { to: "/", label: "Hra" },
++  { to: "/archiv", label: "Archiv" },
++  { to: "/obsazeni", label: "Obsazení" },
++] as const
++
++const tabClass = "relative flex h-16 flex-1 items-center justify-center font-semibold transition-colors"
++
++export function PhoneTabs() {
++  return (
++    <nav aria-label="Hlavní" className="tab-bar fixed inset-x-0 bottom-0 z-40 flex bg-board pb-[env(safe-area-inset-bottom)] text-flap-dim md:hidden">
++      {tabs.map((tab) => (
++        <Link key={tab.to} to={tab.to} activeOptions={{ exact: true }} className={`${tabClass} data-[status=active]:text-flap-ink`}>
++          {({ isActive }) => (
++            <>
++              {isActive && <span aria-hidden className="absolute inset-x-4 top-0 h-[3px] bg-red" />}
++              {tab.label}
++            </>
++          )}
++        </Link>
++      ))}
++      <a href="/#pravidla" className={`${tabClass} hover:text-flap-ink`}>
++        Pravidla
++      </a>
++    </nav>
++  )
++}
+diff --git a/src/components/site-header.tsx b/src/components/site-header.tsx
+index 951d0f3..884214c 100644
+--- a/src/components/site-header.tsx
++++ b/src/components/site-header.tsx
+@@ -14,9 +14,9 @@ export function Wordmark({ className = "" }: { className?: string }) {
+ }
+ 
+ const links = [
+-  { to: "/", label: "Dnešní hra", phone: false },
+-  { to: "/archiv", label: "Archiv", phone: true },
+-  { to: "/obsazeni", label: "Obsazení", phone: false },
++  { to: "/", label: "Dnešní hra" },
++  { to: "/archiv", label: "Archiv" },
++  { to: "/obsazeni", label: "Obsazení" },
+ ] as const
+ 
+ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
+@@ -26,18 +26,18 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
+         <Link to="/" className="text-base md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
+           <Wordmark />
+         </Link>
+-        <nav className="flex items-center gap-1 md:gap-2" aria-label="Hlavní">
++        <nav className="hidden items-center gap-2 md:flex" aria-label="Hlavní">
+           {links.map((link) => (
+             <Link
+               key={link.to}
+               to={link.to}
+               activeOptions={{ exact: true }}
+-              className={`${link.phone ? "inline-flex" : "hidden md:inline-flex"} h-11 items-center px-3 underline-offset-[6px] hover:underline data-[status=active]:underline`}
++              className="inline-flex h-11 items-center px-3 underline-offset-[6px] hover:underline data-[status=active]:underline"
+             >
+               {link.label}
+             </Link>
+           ))}
+-          <a href="/#pravidla" className="hidden h-11 items-center px-3 underline-offset-[6px] hover:underline md:inline-flex">
++          <a href="/#pravidla" className="inline-flex h-11 items-center px-3 underline-offset-[6px] hover:underline">
+             Pravidla
+           </a>
+         </nav>
+diff --git a/src/routes/__root.tsx b/src/routes/__root.tsx
+index 979edef..52ae558 100644
+--- a/src/routes/__root.tsx
++++ b/src/routes/__root.tsx
+@@ -1,4 +1,5 @@
+ import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-router"
++import { PhoneTabs } from "@/components/phone-tabs"
+ import { SiteFooter } from "@/components/site-footer"
+ import { SiteHeader } from "@/components/site-header"
+ import appCss from "../styles.css?url"
+@@ -42,6 +43,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
+       <body>
+         <main className="bg-ground">{children}</main>
+         <SiteFooter />
++        <PhoneTabs />
+         <Scripts />
+       </body>
+     </html>
+diff --git a/src/styles.css b/src/styles.css
+index 17b84ee..8682e74 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -504,3 +504,9 @@
+     transform: none;
+   }
+ }
++
++@media (max-width: 767px) {
++  body:has(.tab-bar) {
++    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
++  }
++}

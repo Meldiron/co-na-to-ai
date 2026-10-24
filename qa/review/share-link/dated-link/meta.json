@@ -1,0 +1,6 @@
+{
+  "title": "Dated share link",
+  "summary": "Daily results always share /hra/<date>, so a friend who opens the link tomorrow plays the same question as the shared result. Nothing visible changes on the page.",
+  "tradeoffs": "Friends land on an archive-style page instead of the home page; the archive page's streak rules still apply (a past day does not count towards the series).",
+  "shareText": "Ptali jsme se 100 AI \u00b7 24. 10. 2026\nCo si berete s sebou na chatu?\n\ud83d\udfe9\ud83d\udfe9\u2b1c\ud83d\udfe8\u2b1c\ud83d\udfe9\u2b1c\u2b1c 4/8\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\n483 bod\u016f\nhttp://localhost:3104/hra/2026-10-24"
+}

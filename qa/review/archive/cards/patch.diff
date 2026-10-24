@@ -1,0 +1,124 @@
+diff --git a/src/routes/archiv.tsx b/src/routes/archiv.tsx
+index 4316cac..35959ae 100644
+--- a/src/routes/archiv.tsx
++++ b/src/routes/archiv.tsx
+@@ -1,9 +1,10 @@
+ import { Link, createFileRoute } from "@tanstack/react-router"
+ import { useEffect, useState } from "react"
+ import { SiteHeader } from "@/components/site-header"
+-import { formatShort } from "@/lib/day"
++import { addDays, formatDayMonth } from "@/lib/day"
+ import { pointsWord } from "@/lib/game"
+ import { loadResults, type Result } from "@/lib/storage"
++import type { PuzzleSummary } from "@/lib/types"
+ import { getArchive } from "@/server/api"
+ 
+ export const Route = createFileRoute("/archiv")({
+@@ -12,6 +13,29 @@ export const Route = createFileRoute("/archiv")({
+   component: Archive,
+ })
+ 
++const weekday = new Intl.DateTimeFormat("cs-CZ", { weekday: "short", timeZone: "UTC" })
++
++function mondayOf(date: string): string {
++  const day = new Date(`${date}T12:00:00Z`).getUTCDay()
++  return addDays(date, -((day + 6) % 7))
++}
++
++function weekTitle(monday: string, today: string): string {
++  const current = mondayOf(today)
++  if (monday === current) return "Tento týden"
++  if (monday === addDays(current, -7)) return "Minulý týden"
++  return `${formatDayMonth(monday)} – ${formatDayMonth(addDays(monday, 6))}`
++}
++
++function groupByWeek(puzzles: Array<PuzzleSummary>): Array<[string, Array<PuzzleSummary>]> {
++  const weeks = new Map<string, Array<PuzzleSummary>>()
++  for (const puzzle of puzzles) {
++    const monday = mondayOf(puzzle.date)
++    weeks.set(monday, [...(weeks.get(monday) ?? []), puzzle])
++  }
++  return [...weeks.entries()]
++}
++
+ function Archive() {
+   const { today, puzzles } = Route.useLoaderData()
+   const [results, setResults] = useState<Record<string, Result>>({})
+@@ -32,47 +56,40 @@ function Archive() {
+         {puzzles.length === 0 ? (
+           <p className="mt-16 bg-ground-step p-6">Zatím nevyšla žádná tabule. První otázka přijde o půlnoci.</p>
+         ) : (
+-          <div className="mt-14 overflow-x-auto md:mt-20">
+-            <table className="w-full border-collapse text-left">
+-              <caption className="sr-only">Seznam vydaných otázek od nejnovější</caption>
+-              <thead>
+-                <tr className="text-sm text-muted-foreground">
+-                  <th scope="col" className="w-28 py-3 pr-4 font-normal sm:w-32">
+-                    Datum
+-                  </th>
+-                  <th scope="col" className="py-3 pr-4 font-normal">
+-                    Otázka
+-                  </th>
+-                  <th scope="col" className="w-28 py-3 text-right font-normal">
+-                    Váš výsledek
+-                  </th>
+-                </tr>
+-              </thead>
+-              <tbody>
+-                {puzzles.map((puzzle) => {
++          groupByWeek(puzzles).map(([monday, days]) => (
++            <div key={monday} className="mt-14 grid gap-4 md:mt-20 md:grid-cols-12 md:gap-6">
++              <h2 className="text-[1.25rem] font-bold md:col-span-3">{weekTitle(monday, today)}</h2>
++              <ul className="grid gap-2 md:col-span-9">
++                {days.map((puzzle) => {
+                   const result = puzzle.date in results ? results[puzzle.date] : null
++                  const isToday = puzzle.date === today
+                   return (
+-                    <tr key={puzzle.date} className="group border-t border-ground-step">
+-                      <td className="py-4 pr-4 align-top tabular-nums">{formatShort(puzzle.date)}</td>
+-                      <td className="py-4 pr-4 align-top">
+-                        <Link
+-                          to={puzzle.date === today ? "/" : "/hra/$datum"}
+-                          params={{ datum: puzzle.date }}
+-                          className="font-semibold underline-offset-4 group-hover:underline"
+-                        >
+-                          {puzzle.question}
+-                        </Link>
+-                        {puzzle.date === today && <span className="ml-2 bg-red px-2 py-0.5 text-sm text-red-ink">dnes</span>}
+-                      </td>
+-                      <td className="py-4 text-right align-top tabular-nums">
+-                        {result ? `${result.score} ${pointsWord(result.score)}` : <span className="text-muted-foreground">nehráno</span>}
+-                      </td>
+-                    </tr>
++                    <li key={puzzle.date}>
++                      <Link
++                        to={isToday ? "/" : "/hra/$datum"}
++                        params={{ datum: puzzle.date }}
++                        className="group grid grid-cols-[1fr_auto] items-center gap-x-5 gap-y-3 bg-paper p-4 transition-colors hover:bg-field hover:text-field-ink sm:grid-cols-[auto_1fr_auto] md:p-5"
++                      >
++                        <span className="col-start-1 row-start-1 flex gap-[6px]">
++                          <span className={`tile min-w-[3.9rem] justify-center ${isToday ? "tile-red" : ""}`}>{isToday ? "Dnes" : weekday.format(new Date(`${puzzle.date}T12:00:00Z`))}</span>
++                          <span className="tile min-w-[4.6rem] justify-center">{formatDayMonth(puzzle.date)}</span>
++                        </span>
++                        <span className="col-span-2 col-start-1 row-start-2 sm:col-span-1 sm:col-start-2 sm:row-start-1">
++                          <span className="block text-[1.25rem] leading-tight font-semibold">{puzzle.question}</span>
++                          <span className={`mt-1 block ${result ? "" : "text-muted-foreground group-hover:text-field-soft"}`}>
++                            {result
++                              ? `${result.score} ${pointsWord(result.score)} · ${result.cleared ? "celá tabule" : `${result.found} z 8 odpovědí`}`
++                              : "Nehráno"}
++                          </span>
++                        </span>
++                        <span className="col-start-2 row-start-1 justify-self-end font-semibold sm:col-start-3">{result ? "Výsledek" : "Hrát"}</span>
++                      </Link>
++                    </li>
+                   )
+                 })}
+-              </tbody>
+-            </table>
+-          </div>
++              </ul>
++            </div>
++          ))
+         )}
+       </section>
+     </>

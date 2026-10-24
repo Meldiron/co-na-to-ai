@@ -1,0 +1,5 @@
+{
+  "title": "Result in the hero",
+  "summary": "After the game, the hero's end row shows 'Konec hry.' or 'Celá tabule!', the eight result squares (found white, missed dark), a red 'Sdílet výsledek' button that shares or copies the text right there, and a 'Celý výsledek' link; strikes and score stay on the right.",
+  "tradeoffs": "Shares text only from the hero (the ticket image stays in the share section below); 'Kdo co řekl' loses its button in the hero and is reached by scrolling."
+}

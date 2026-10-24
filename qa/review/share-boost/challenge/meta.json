@@ -1,0 +1,6 @@
+{
+  "title": "Challenge a friend",
+  "summary": "Sharing is reframed as a challenge: the share text opens with \"Dáte víc než 483 bodů?\", the ticket asks \"Překonáte mě?\" in red, the section heading and main button read \"Vyzvěte kamarády\" / \"Vyzvat kamarády\", and the link goes to /hra/<date> so friends get the same question.",
+  "tradeoffs": "The share text drops the separate score line (the score is in the opening question); the competitive tone may not suit every player.",
+  "shareText": "D\u00e1te v\u00edc ne\u017e 483 bod\u016f?\nPtali jsme se 100 AI \u00b7 24. 10. 2026\nCo si berete s sebou na chatu?\n\ud83d\udfe9\ud83d\udfe9\u2b1c\ud83d\udfe8\u2b1c\ud83d\udfe9\u2b1c\u2b1c 4/8\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\nhttp://localhost:3104/hra/2026-10-24"
+}

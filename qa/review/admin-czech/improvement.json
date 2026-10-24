@@ -1,0 +1,5 @@
+{
+  "title": "English quality flags in the Czech admin",
+  "category": "bug",
+  "problem": "In the admin, a custom game that fails the quality check shows its reasons in English (\"Neprošla: only 6 answers with 2+ votes (min 8)\") inside an otherwise Czech interface."
+}

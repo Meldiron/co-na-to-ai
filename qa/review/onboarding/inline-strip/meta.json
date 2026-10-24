@@ -1,0 +1,5 @@
+{
+  "title": "Inline guide strip",
+  "summary": "On the first visit a navy strip sits between the intro sentence and the board with three board-style tiles and one line each: PIVO \"Odpovídejte jedním slovem\", a blue \"?\" \"Otazník dává nápovědu\", a red X \"Pět chyb a konec\", plus a \"Rozumím\" button that hides it for good. No modal; the player can start typing straight away.",
+  "tradeoffs": "On a phone the strip pushes the board and the input about 170px down on the first visit; it does not explain scoring or the clue costs in detail."
+}

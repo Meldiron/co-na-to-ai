@@ -1,0 +1,101 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..e036cdb 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -190,7 +190,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+                   setMessage(null)
+                   surrender()
+                 }}
+-                className="text-sm text-field-soft underline underline-offset-4 hover:text-field-ink">
++                className="inline-flex h-11 items-center bg-field-step px-4 text-sm font-semibold text-field-ink transition-colors hover:bg-board">
+                 Vzdát se a ukázat odpovědi
+               </button>
+             )}
+diff --git a/src/components/site-footer.tsx b/src/components/site-footer.tsx
+index a09dade..a308d9a 100644
+--- a/src/components/site-footer.tsx
++++ b/src/components/site-footer.tsx
+@@ -7,29 +7,29 @@ export function SiteFooter() {
+         <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-12">
+           <div className="md:col-span-3">
+             <p className="font-semibold">Hra</p>
+-            <ul className="mt-2 grid gap-1 text-flap-dim">
++            <ul className="mt-1 grid text-flap-dim">
+               <li>
+-                <Link to="/" className="hover:text-flap-ink">
++                <Link to="/" className="flex h-11 items-center hover:text-flap-ink">
+                   Dnešní otázka
+                 </Link>
+               </li>
+               <li>
+-                <Link to="/archiv" className="hover:text-flap-ink">
++                <Link to="/archiv" className="flex h-11 items-center hover:text-flap-ink">
+                   Archiv
+                 </Link>
+               </li>
+               <li>
+-                <Link to="/obsazeni" className="hover:text-flap-ink">
++                <Link to="/obsazeni" className="flex h-11 items-center hover:text-flap-ink">
+                   Obsazení: sto postav
+                 </Link>
+               </li>
+               <li>
+-                <a href="/#pravidla" className="hover:text-flap-ink">
++                <a href="/#pravidla" className="flex h-11 items-center hover:text-flap-ink">
+                   Pravidla
+                 </a>
+               </li>
+               <li>
+-                <Link to="/admin" className="hover:text-flap-ink">
++                <Link to="/admin" className="flex h-11 items-center hover:text-flap-ink">
+                   Administrace
+                 </Link>
+               </li>
+diff --git a/src/components/site-header.tsx b/src/components/site-header.tsx
+index 951d0f3..f4a9af4 100644
+--- a/src/components/site-header.tsx
++++ b/src/components/site-header.tsx
+@@ -23,7 +23,7 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
+   return (
+     <header className={tone === "field" ? "bg-field text-field-ink" : "bg-ground text-foreground"}>
+       <div className="page flex h-16 items-center justify-between gap-4 md:h-20">
+-        <Link to="/" className="text-base md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
++        <Link to="/" className="inline-flex h-11 items-center text-base md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
+           <Wordmark />
+         </Link>
+         <nav className="flex items-center gap-1 md:gap-2" aria-label="Hlavní">
+diff --git a/src/components/who-said.tsx b/src/components/who-said.tsx
+index 7b056f7..cf71339 100644
+--- a/src/components/who-said.tsx
++++ b/src/components/who-said.tsx
+@@ -74,7 +74,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+               </p>
+               <ul className="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                 {secret.others.map((other) => (
+-                  <li key={other.text} className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
++                  <li key={other.text} className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+                     <span className="font-semibold">{other.text}</span>
+                     <span className="text-muted-foreground">
+                       {other.votes} {votesWord(other.votes)}:
+@@ -83,7 +83,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+                       const response = byAnswerer.get(id)
+                       const persona = response && personaOf(response.persona)
+                       return response && persona ? (
+-                        <button key={id} type="button" onClick={() => setOpen(response)} className="underline underline-offset-4 hover:text-red">
++                        <button key={id} type="button" onClick={() => setOpen(response)} className="inline-flex h-11 items-center bg-ground-step px-3 font-semibold transition-colors hover:bg-field hover:text-field-ink">
+                           {firstName(persona)}
+                         </button>
+                       ) : null
+diff --git a/src/routes/admin.tsx b/src/routes/admin.tsx
+index aa1705f..d97483a 100644
+--- a/src/routes/admin.tsx
++++ b/src/routes/admin.tsx
+@@ -134,7 +134,7 @@ function Dashboard({ state }: { state: State }) {
+           <p className="mt-5 max-w-[46ch]">
+             Položte stovce AI vlastní otázku. Za minutu až dvě z ní bude hra s vlastním odkazem. Do statistik ani do archivu se nepočítá.
+           </p>
+-          <button type="button" onClick={signOut} className="mt-6 text-sm underline underline-offset-4 hover:text-red">
++          <button type="button" onClick={signOut} className="mt-6 inline-flex h-11 items-center bg-ground-step px-4 font-semibold transition-colors hover:bg-red hover:text-red-ink">
+             Odhlásit se
+           </button>
+         </div>

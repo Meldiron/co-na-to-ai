@@ -1,0 +1,68 @@
+diff --git a/src/components/board.tsx b/src/components/board.tsx
+index d74695d..154a624 100644
+--- a/src/components/board.tsx
++++ b/src/components/board.tsx
+@@ -100,16 +100,27 @@ function SlotHelp({ rank, left, clue, onLetter, onClue }: { rank: number; left:
+   )
+ }
+ 
+-export function Strikes({ count, max }: { count: number; max: number }) {
++export function Strikes({ count, max, words = [] }: { count: number; max: number; words?: ReadonlyArray<string> }) {
++  const label = words.length ? `Chyby: ${count} ze ${max}, zkoušeli jste ${words.join(", ")}` : `Chyby: ${count} ze ${max}`
+   return (
+-    <div className="flex gap-[6px]" role="img" aria-label={`Chyby: ${count} ze ${max}`}>
+-      {Array.from({ length: max }, (_, i) => (
+-        <span key={i} className={`grid size-10 place-items-center sm:size-12 md:size-14 ${i < count ? "bg-red text-red-ink" : "bg-field-step text-field-soft/40"}`}>
+-          <svg viewBox="0 0 24 24" className="size-5 sm:size-6 md:size-7" aria-hidden>
+-            <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" strokeWidth="3.5" strokeLinecap="square" fill="none" />
+-          </svg>
+-        </span>
+-      ))}
++    <div className="flex gap-[6px]" role="img" aria-label={label}>
++      {Array.from({ length: max }, (_, i) => {
++        const word = i < count ? words[i] : undefined
++        return word ? (
++          <span key={i} className="flex h-10 max-w-16 min-w-10 flex-col items-center justify-center gap-0.5 bg-red px-1.5 text-red-ink sm:h-12 sm:max-w-32 sm:min-w-12 sm:px-2 md:h-14 md:min-w-14">
++            <svg viewBox="0 0 24 24" className="hidden size-4 shrink-0 sm:block md:size-5" aria-hidden>
++              <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" strokeWidth="3.5" strokeLinecap="square" fill="none" />
++            </svg>
++            <span className="max-w-full truncate text-sm leading-none font-semibold">{word}</span>
++          </span>
++        ) : (
++          <span key={i} className={`grid size-10 place-items-center sm:size-12 md:size-14 ${i < count ? "bg-red text-red-ink" : "bg-field-step text-field-soft/40"}`}>
++            <svg viewBox="0 0 24 24" className="size-5 sm:size-6 md:size-7" aria-hidden>
++              <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" strokeWidth="3.5" strokeLinecap="square" fill="none" />
++            </svg>
++          </span>
++        )
++      })}
+     </div>
+   )
+ }
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..b46932d 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -50,6 +50,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+     return secret.answers.map((a) => personaClue(a.answerers.map((id) => personaByAnswerer.get(id)).filter((p): p is Persona => !!p)))
+   }, [secret])
+   const openClues = [...(state.clues ?? [])].sort((a, b) => a - b)
++  const misses = state.guesses.filter((g) => g.result === "miss").map((g) => g.text)
+ 
+   function submit(event: FormEvent) {
+     event.preventDefault()
+@@ -170,10 +171,10 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+                 </Button>
+               </form>
+             )}
+-            <div className="flex items-center justify-between gap-4 md:contents">
+-              <Strikes count={state.strikes} max={MAX_STRIKES} />
+-              <div className="flex items-center gap-3">
+-                <span className="text-sm text-field-soft">Body</span>
++            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 md:contents">
++              <Strikes count={state.strikes} max={MAX_STRIKES} words={misses} />
++              <div className="flex flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-3">
++                <span className="text-sm leading-none text-field-soft">Body</span>
+                 <Flap text={String(total)} align="center" className="h-12 w-[4.5rem] md:h-14 md:w-20" />
+               </div>
+             </div>

@@ -1,0 +1,5 @@
+{
+  "title": "404 for invalid and pre-launch dates",
+  "summary": "Invalid dates (/hra/nesmysl) and dates before launch now show the regular 404 page with HTTP status 404. A past date without a board would say \"Pro tento den tabule není\"; future dates keep \"Tahle otázka ještě nevyšla\".",
+  "tradeoffs": "None of note; the 404 page has no countdown or statistics, unlike the current misleading page."
+}

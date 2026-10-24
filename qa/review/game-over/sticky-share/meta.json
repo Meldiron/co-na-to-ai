@@ -1,0 +1,5 @@
+{
+  "title": "Sticky share bar",
+  "summary": "After the game a dark bar slides up from the bottom with the score ('483 bodů · 4 z 8', a link to the result) and a red 'Sdílet výsledek' button that shares or copies right away; it disappears for good once the result section has been on screen.",
+  "tradeoffs": "A fixed bar covers the bottom ~64px of the hero until the player scrolls to the result; it is one more element competing with the board in the end state."
+}

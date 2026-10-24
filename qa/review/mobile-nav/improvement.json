@@ -1,0 +1,5 @@
+{
+  "title": "Navigation on phones",
+  "problem": "On a phone the header only shows \"Archiv\"; Obsazení and Pravidla are reachable only from the footer at the very bottom. The before shots show the home and archive headers at 390px (desktop is shown for comparison and should not change).",
+  "category": "ux"
+}

@@ -1,0 +1,5 @@
+{
+  "title": "\"Menu\" opens a full-screen sheet",
+  "summary": "On phones the header shows the wordmark and a \"Menu\" button; it opens a full-height Czech-blue sheet with the same top row (wordmark, \"Zavřít\" in the Menu button's place) and four large links: Dnešní hra (underlined when active), Archiv, Obsazení, Pravidla. Desktop keeps its inline links. Shots: home and archive headers, then the open sheet.",
+  "tradeoffs": "Every destination is one extra tap away and \"Archiv\" no longer sits in the phone header; it adds a dialog, but no fixed UI covering content."
+}

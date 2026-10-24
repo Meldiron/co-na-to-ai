@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ai100 design review</title>
+<style>
+  :root {
+    --ground: #f3f4f7;
+    --paper: #ffffff;
+    --step: #e7eaf0;
+    --ink: #0b1a33;
+    --soft: #4a5872;
+    --blue: #11457e;
+    --red: #d7141a;
+    --green: #1f6b3a;
+    --amber: #8a5a00;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body { margin: 0; font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--ground); }
+  a { color: var(--blue); }
+  button { font: inherit; cursor: pointer; }
+  .bar { position: sticky; top: 0; z-index: 20; background: var(--ink); color: #fff; }
+  .bar-inner { max-width: 1480px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; }
+  .bar h1 { font-size: 18px; margin: 0; }
+  .bar .meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .seg { display: inline-flex; background: #ffffff1f; }
+  .seg button { border: 0; background: transparent; color: #fff; padding: 6px 14px; }
+  .seg button[aria-pressed="true"] { background: #fff; color: var(--ink); font-weight: 600; }
+  .saved { font-size: 14px; opacity: 0.85; min-width: 9em; }
+  .layout { max-width: 1480px; margin: 0 auto; padding: 24px; display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 32px; }
+  nav.toc { position: sticky; top: 72px; align-self: start; max-height: calc(100vh - 96px); overflow: auto; }
+  nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  nav.toc a { display: flex; gap: 8px; align-items: baseline; padding: 6px 10px; text-decoration: none; color: var(--ink); }
+  nav.toc a:hover { background: var(--step); }
+  .dot { width: 9px; height: 9px; flex: none; background: var(--step); display: inline-block; }
+  .dot.keep { background: var(--soft); }
+  .dot.change { background: var(--red); }
+  .intro { background: var(--paper); padding: 24px 28px; margin-bottom: 32px; }
+  .intro h2 { margin: 0 0 8px; font-size: 28px; line-height: 1.15; }
+  .intro p { margin: 6px 0; max-width: 75ch; }
+  section.item { background: var(--paper); padding: 28px; margin-bottom: 32px; scroll-margin-top: 80px; }
+  .item-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; }
+  .item-head h2 { margin: 0; font-size: 26px; line-height: 1.15; }
+  .tag { font-size: 13px; padding: 2px 8px; background: var(--step); color: var(--soft); text-transform: lowercase; }
+  .tag.bug { background: #fde3e3; color: #8c1014; }
+  .tag.marketing { background: #e5eefb; color: var(--blue); }
+  .tag.a11y { background: #fdf0d9; color: var(--amber); }
+  .problem { max-width: 80ch; margin: 10px 0 0; }
+  h3 { font-size: 16px; margin: 24px 0 10px; }
+  .shots { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+  .shots img { display: block; height: 260px; width: auto; background: var(--step); cursor: zoom-in; border: 0; }
+  .shots.phone img { height: 360px; }
+  .empty { color: var(--soft); font-size: 14px; }
+  .variants { display: grid; gap: 18px; }
+  .variant { background: var(--ground); padding: 18px; display: grid; gap: 10px; }
+  .variant.chosen { background: #fbe9ea; }
+  .v-head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; }
+  .v-title { display: flex; gap: 10px; align-items: baseline; }
+  .v-letter { display: inline-grid; place-items: center; min-width: 30px; height: 30px; background: var(--ink); color: #fff; font-weight: 700; }
+  .v-title strong { font-size: 18px; }
+  .v-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .pick { display: inline-flex; gap: 8px; align-items: center; padding: 8px 14px; background: var(--paper); font-weight: 600; user-select: none; }
+  .pick input { width: 18px; height: 18px; accent-color: var(--red); }
+  .diffbtn { border: 0; background: var(--paper); padding: 8px 14px; }
+  .diffbtn:hover, .pick:hover { background: var(--step); }
+  .v-text { margin: 0; max-width: 85ch; }
+  .v-trade { margin: 0; color: var(--soft); font-size: 14px; max-width: 85ch; }
+  .v-files { margin: 0; color: var(--soft); font-size: 13px; }
+  .decision { margin-top: 24px; display: grid; gap: 12px; background: var(--ground); padding: 18px; }
+  .choices { display: flex; flex-wrap: wrap; gap: 10px; }
+  .choices label { display: inline-flex; gap: 8px; align-items: center; padding: 8px 14px; background: var(--paper); font-weight: 600; }
+  .choices input { accent-color: var(--ink); width: 18px; height: 18px; }
+  textarea { width: 100%; min-height: 80px; font: inherit; padding: 10px 12px; border: 0; background: var(--paper); resize: vertical; }
+  textarea:focus, button:focus-visible, input:focus-visible { outline: 3px solid #6caef4; outline-offset: 1px; }
+  .summary-line { font-size: 14px; color: var(--soft); }
+  dialog { border: 0; padding: 0; max-width: min(1400px, 96vw); max-height: 94vh; background: var(--paper); box-shadow: 0 20px 60px #0006; }
+  dialog::backdrop { background: #0b1a33cc; }
+  .lb { display: grid; grid-template-rows: auto 1fr; max-height: 94vh; }
+  .lb-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px; background: var(--ink); color: #fff; }
+  .lb-bar button { border: 0; background: #ffffff22; color: #fff; padding: 6px 12px; }
+  .lb-img { overflow: auto; background: var(--step); }
+  .lb-img img { display: block; max-width: 100%; margin: 0 auto; }
+  pre.diff { margin: 0; padding: 14px 16px; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; overflow: auto; max-height: calc(94vh - 52px); background: #0d1424; color: #d8dee9; }
+  pre.diff .a { color: #8fdc9a; background: #12301c; display: block; }
+  pre.diff .r { color: #ffa5a5; background: #3a1418; display: block; }
+  pre.diff .h { color: #7fb4ff; display: block; }
+  pre.diff .f { color: #fff; font-weight: 700; display: block; margin-top: 10px; }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    nav.toc { position: static; max-height: none; }
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="bar-inner">
+    <h1>ai100 · design review</h1>
+    <div class="meta">
+      <span id="progress">0 of 0 decided</span>
+      <span class="seg" role="group" aria-label="Viewport">
+        <button type="button" data-view="desktop" aria-pressed="true">Desktop</button>
+        <button type="button" data-view="phone" aria-pressed="false">Phone</button>
+        <button type="button" data-view="both" aria-pressed="false">Both</button>
+      </span>
+      <span class="saved" id="saved" aria-live="polite">Loading…</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <nav class="toc" aria-label="Proposals"><ol id="toc"></ol></nav>
+  <main>
+    <div class="intro">
+      <h2>Pick what to change</h2>
+      <p>Each proposal shows how the site looks now and three or more alternative designs, each built as a real code change on the live codebase. Choose <strong>Keep as is</strong> or <strong>Change</strong>; you may tick several variants to combine them. Add a note wherever you want something different.</p>
+      <p>Answers save automatically to <code>qa/answers.json</code>. Every variant's code diff is stored next to its screenshots in <code>qa/review/&lt;proposal&gt;/&lt;variant&gt;/patch.diff</code>; open it with <em>Code diff</em>.</p>
+    </div>
+    <div id="items"><p class="empty">Loading proposals…</p></div>
+  </main>
+</div>
+
+<dialog id="lightbox"><div class="lb"><div class="lb-bar"><span id="lb-title"></span><span><button type="button" id="lb-prev">←</button> <button type="button" id="lb-next">→</button> <button type="button" id="lb-close">Close</button></span></div><div class="lb-img"><img id="lb-img" alt="" /></div></div></dialog>
+<dialog id="diff"><div class="lb"><div class="lb-bar"><span id="diff-title"></span><button type="button" id="diff-close">Close</button></div><pre class="diff" id="diff-body"></pre></div></dialog>
+
+<script>
+const state = { manifest: [], answers: {}, view: "desktop", saveTimer: null }
+const $ = (sel, root = document) => root.querySelector(sel)
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c])
+const LETTERS = "ABCDEFGH"
+const asText = (v) => (Array.isArray(v) ? v.join("\n") : String(v))
+const extraBlocks = (m) =>
+  [m.shareText ? `<p class="v-files">Share text</p><pre class="diff" style="max-height:none">${esc(asText(m.shareText))}</pre>` : "", m.head ? `<p class="v-files">Page &lt;head&gt;</p><pre class="diff" style="max-height:none">${esc(asText(m.head))}</pre>` : ""].join("")
+
+function overlapNote(item, v) {
+  const same = (v.overlaps ?? []).filter((k) => k.startsWith(`${item.id}/`)).map((k) => LETTERS[item.variants.findIndex((x) => `${item.id}/${x.id}` === k)])
+  const other = (v.overlaps ?? []).filter((k) => !k.startsWith(`${item.id}/`)).length
+  if (!same.length && !other) return ""
+  const parts = [same.length ? `edits the same code as ${same.join(", ")} here` : "", other ? `and ${other} variant${other === 1 ? "" : "s"} of other proposals` : ""].filter(Boolean)
+  return `<p class="v-files">Combining: ${parts.join(" ")}. Any combination works; overlapping code gets merged by hand when applied.</p>`
+}
+
+function variantName(key) {
+  const [itemId, variantId] = key.split("/")
+  const item = state.manifest.find((i) => i.id === itemId)
+  const i = item?.variants.findIndex((v) => v.id === variantId) ?? -1
+  return item && i >= 0 ? `${item.title} ${LETTERS[i]} (${item.variants[i].title})` : key
+}
+
+function shotsFor(list, base) {
+  const desktop = list.filter((f) => f.startsWith("desktop")).map((f) => `${base}/${f}`)
+  const phone = list.filter((f) => f.startsWith("phone")).map((f) => `${base}/${f}`)
+  const other = list.filter((f) => !f.startsWith("desktop") && !f.startsWith("phone")).map((f) => `${base}/${f}`)
+  return { desktop, phone, other }
+}
+
+function shotRow(s, label) {
+  const rows = []
+  const add = (files, cls, name) => {
+    if (!files.length) return
+    rows.push(`<div class="shots ${cls}" data-group="${esc(label)} · ${name}">${files.map((src) => `<img loading="lazy" src="${src}" alt="${esc(label)} ${name}" data-src="${src}">`).join("")}</div>`)
+  }
+  if (state.view !== "phone") add(s.desktop, "desktop", "desktop")
+  if (state.view !== "desktop") add(s.phone, "phone", "phone")
+  add(s.other, "desktop", "image")
+  return rows.join("") || `<p class="empty">No screenshots for this viewport.</p>`
+}
+
+function answerFor(id) {
+  return (state.answers[id] ??= { decision: null, variants: [], comment: "" })
+}
+
+function render() {
+  const items = $("#items")
+  if (!state.manifest.length) {
+    items.innerHTML = `<p class="empty">No proposals yet. They appear here as soon as the variants are ready; reload the page.</p>`
+    return renderToc()
+  }
+  items.innerHTML = state.manifest
+    .map((item) => {
+      const a = answerFor(item.id)
+      const before = shotsFor(item.before, `review/${item.id}/before`)
+      const variants = item.variants
+        .map((v, i) => {
+          const s = shotsFor(v.shots, `review/${item.id}/${v.id}`)
+          const chosen = a.variants.includes(v.id)
+          return `<article class="variant ${chosen ? "chosen" : ""}">
+            <div class="v-head">
+              <div class="v-title"><span class="v-letter">${LETTERS[i] ?? i + 1}</span><strong>${esc(v.title ?? v.id)}</strong></div>
+              <div class="v-actions">
+                ${v.patch ? `<button type="button" class="diffbtn" data-diff="${v.patch}" data-title="${esc(item.title)} · ${esc(v.title ?? v.id)}">Code diff (+${v.added} −${v.removed})</button>` : ""}
+                <label class="pick"><input type="checkbox" data-item="${item.id}" data-variant="${v.id}" ${chosen ? "checked" : ""}> Use this</label>
+              </div>
+            </div>
+            ${v.summary ? `<p class="v-text">${esc(v.summary)}</p>` : ""}
+            ${v.tradeoffs ? `<p class="v-trade">Trade-off: ${esc(v.tradeoffs)}</p>` : ""}
+            ${extraBlocks(v)}
+            ${overlapNote(item, v)}
+            ${v.files.length ? `<p class="v-files">${v.files.map(esc).join(" · ")}</p>` : ""}
+            ${shotRow(s, `${LETTERS[i] ?? i + 1}: ${v.title ?? v.id}`)}
+          </article>`
+        })
+        .join("")
+      return `<section class="item" id="${item.id}">
+        <div class="item-head"><h2>${esc(item.title)}</h2><span class="tag ${esc(item.category)}">${esc(item.category ?? "")}</span></div>
+        ${item.problem ? `<p class="problem">${esc(item.problem)}</p>` : ""}
+        <h3>Now</h3>
+        ${item.before.length ? shotRow(before, `${item.title}: now`) : ""}
+        ${extraBlocks(item.beforeMeta ?? {})}
+        ${!item.before.length && !item.beforeMeta?.shareText && !item.beforeMeta?.head ? `<p class="empty">Nothing visual to show; see the variant notes.</p>` : ""}
+        <h3>Variants</h3>
+        <div class="variants">${variants || `<p class="empty">Variants are still being built. Reload later.</p>`}</div>
+        <div class="decision">
+          <div class="choices" role="radiogroup" aria-label="Decision for ${esc(item.title)}">
+            <label><input type="radio" name="d-${item.id}" value="keep" ${a.decision === "keep" ? "checked" : ""}> Keep as is</label>
+            <label><input type="radio" name="d-${item.id}" value="change" ${a.decision === "change" ? "checked" : ""}> Change (use the ticked variants)</label>
+          </div>
+          <p class="summary-line" data-summary="${item.id}">${summaryText(item, a)}</p>
+          <textarea data-comment="${item.id}" placeholder="Comment: what you like, what to tweak, how to combine…">${esc(a.comment)}</textarea>
+        </div>
+      </section>`
+    })
+    .join("")
+  renderToc()
+}
+
+function summaryText(item, a) {
+  if (a.decision === "keep") return "Decision: keep the current design."
+  if (a.decision === "change" && !a.variants.length) return "Decision: change, but no variant ticked yet (describe it in the comment, or tick one or more)."
+  if (a.decision === "change") {
+    const names = a.variants.map((id) => {
+      const i = item.variants.findIndex((v) => v.id === id)
+      return `${LETTERS[i] ?? "?"} (${item.variants[i]?.title ?? id})`
+    })
+    return `Decision: change with ${names.join(" + ")}.`
+  }
+  return "Not decided yet."
+}
+
+function renderToc() {
+  $("#toc").innerHTML = state.manifest
+    .map((item) => {
+      const d = state.answers[item.id]?.decision
+      return `<li><a href="#${item.id}"><span class="dot ${d ?? ""}"></span><span>${esc(item.title)}</span></a></li>`
+    })
+    .join("")
+  const decided = state.manifest.filter((i) => state.answers[i.id]?.decision).length
+  $("#progress").textContent = `${decided} of ${state.manifest.length} decided`
+}
+
+function refreshItem(id) {
+  const item = state.manifest.find((i) => i.id === id)
+  const a = answerFor(id)
+  $(`[data-summary="${id}"]`).textContent = summaryText(item, a)
+  document.querySelectorAll(`input[data-item="${id}"]`).forEach((box) => box.closest(".variant").classList.toggle("chosen", box.checked))
+  const radio = document.querySelector(`input[name="d-${id}"][value="${a.decision}"]`)
+  if (radio) radio.checked = true
+  renderToc()
+}
+
+function save() {
+  $("#saved").textContent = "Saving…"
+  clearTimeout(state.saveTimer)
+  state.saveTimer = setTimeout(async () => {
+    try {
+      const res = await fetch("/api/answers", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ answers: state.answers }) })
+      $("#saved").textContent = res.ok ? `Saved ${new Date().toLocaleTimeString()}` : "Save failed"
+    } catch {
+      $("#saved").textContent = "Save failed (is the server running?)"
+    }
+  }, 400)
+}
+
+document.addEventListener("change", (e) => {
+  const t = e.target
+  if (t.matches("input[data-variant]")) {
+    const a = answerFor(t.dataset.item)
+    a.variants = t.checked ? [...new Set([...a.variants, t.dataset.variant])] : a.variants.filter((v) => v !== t.dataset.variant)
+    if (t.checked) a.decision = "change"
+    refreshItem(t.dataset.item)
+    save()
+  }
+  if (t.matches('input[type="radio"][name^="d-"]')) {
+    const id = t.name.slice(2)
+    const a = answerFor(id)
+    a.decision = t.value
+    if (t.value === "keep") {
+      a.variants = []
+      document.querySelectorAll(`input[data-item="${id}"]`).forEach((box) => (box.checked = false))
+    }
+    refreshItem(id)
+    save()
+  }
+})
+
+document.addEventListener("input", (e) => {
+  if (e.target.matches("textarea[data-comment]")) {
+    answerFor(e.target.dataset.comment).comment = e.target.value
+    save()
+  }
+})
+
+let lbList = []
+let lbIndex = 0
+function showLightbox() {
+  const src = lbList[lbIndex]
+  $("#lb-img").src = src
+  $("#lb-title").textContent = `${decodeURIComponent(src.replace(/^review\//, ""))} (${lbIndex + 1}/${lbList.length})`
+}
+document.addEventListener("click", async (e) => {
+  const img = e.target.closest(".shots img")
+  if (img) {
+    lbList = [...img.parentElement.querySelectorAll("img")].map((i) => i.dataset.src)
+    lbIndex = lbList.indexOf(img.dataset.src)
+    showLightbox()
+    $("#lightbox").showModal()
+  }
+  const diff = e.target.closest("[data-diff]")
+  if (diff) {
+    $("#diff-title").textContent = diff.dataset.title
+    $("#diff-body").textContent = "Loading…"
+    $("#diff").showModal()
+    const text = await (await fetch(diff.dataset.diff)).text()
+    $("#diff-body").innerHTML = text
+      .split("\n")
+      .map((l) => `<span class="${l.startsWith("diff --git") ? "f" : l.startsWith("@@") ? "h" : l.startsWith("+") && !l.startsWith("+++") ? "a" : l.startsWith("-") && !l.startsWith("---") ? "r" : ""}">${esc(l) || " "}</span>`)
+      .join("\n")
+  }
+})
+$("#lb-prev").onclick = () => { lbIndex = (lbIndex - 1 + lbList.length) % lbList.length; showLightbox() }
+$("#lb-next").onclick = () => { lbIndex = (lbIndex + 1) % lbList.length; showLightbox() }
+$("#lb-close").onclick = () => $("#lightbox").close()
+$("#diff-close").onclick = () => $("#diff").close()
+document.addEventListener("keydown", (e) => {
+  if (!$("#lightbox").open) return
+  if (e.key === "ArrowRight") $("#lb-next").click()
+  if (e.key === "ArrowLeft") $("#lb-prev").click()
+})
+document.querySelectorAll("[data-view]").forEach((b) =>
+  b.addEventListener("click", () => {
+    state.view = b.dataset.view
+    document.querySelectorAll("[data-view]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)))
+    render()
+  }),
+)
+
+;(async () => {
+  const [manifest, saved] = await Promise.all([fetch("/api/manifest").then((r) => r.json()), fetch("/api/answers").then((r) => r.json())])
+  state.manifest = manifest
+  state.answers = saved.answers ?? {}
+  render()
+  $("#saved").textContent = saved.updatedAt ? `Last saved ${new Date(saved.updatedAt).toLocaleString()}` : "Not saved yet"
+})()
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..7024212 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -1,4 +1,4 @@
+-import { useMemo, useRef, useState, type FormEvent } from "react"
++import { useEffect, useMemo, useRef, useState, type FormEvent } from "react"
+ import { Button } from "@/components/ui/button"
+ import { Input } from "@/components/ui/input"
+ import { useGame } from "@/hooks/use-game"
+@@ -50,6 +50,17 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+     return secret.answers.map((a) => personaClue(a.answerers.map((id) => personaByAnswerer.get(id)).filter((p): p is Persona => !!p)))
+   }, [secret])
+   const openClues = [...(state.clues ?? [])].sort((a, b) => a - b)
++  const wasPlaying = useRef<boolean | null>(null)
++
++  useEffect(() => {
++    if (!ready) return
++    const playing = state.status === "playing"
++    const ended = wasPlaying.current === true && !playing
++    wasPlaying.current = playing
++    if (!ended || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
++    const timer = setTimeout(() => document.getElementById("vysledek")?.scrollIntoView({ behavior: "smooth", block: "start" }), 1800)
++    return () => clearTimeout(timer)
++  }, [ready, state.status])
+ 
+   function submit(event: FormEvent) {
+     event.preventDefault()

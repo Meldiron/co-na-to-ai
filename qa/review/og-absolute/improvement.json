@@ -1,0 +1,5 @@
+{
+  "title": "Relative link-preview image",
+  "category": "marketing",
+  "problem": "og:image is the relative path \"/og.png\" and there is no og:url, which Facebook, LinkedIn and several chat apps ignore or resolve wrongly, so shared links often appear without a preview image."
+}

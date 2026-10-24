@@ -1,0 +1,5 @@
+{
+  "title": "Small tap targets on phones",
+  "problem": "On a 390px phone several controls are only 19–26px tall: \"Vzdát se a ukázat odpovědi\", the footer links, the persona names under \"Mimo tabuli\" (\"Jiří\" is 19×26) and the wordmark link. Apple and Google recommend at least 44–48px, so they are easy to miss with a thumb.",
+  "category": "a11y"
+}

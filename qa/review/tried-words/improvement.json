@@ -1,0 +1,5 @@
+{
+  "title": "Remember missed guesses",
+  "problem": "A missed guess only flashes a big red X and one status line, which the next message replaces. Two guesses later players no longer know what they already tried and type the same word again (it is not counted, but it wastes the turn). The strike tiles show how many misses there were, never which words.",
+  "category": "ux"
+}

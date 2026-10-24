@@ -1,0 +1,5 @@
+{
+  "title": "Czech quality reasons",
+  "summary": "The admin explains a failed quality check in Czech, built from the stored numbers and thresholds, e.g. \"Neprošla: jen 6 odpovědí má aspoň 2 hlasy (potřeba 8)\" or \"Rajčata má 78 % hlasů (nejvýš 45 %)\". The gate also records an explicit offensive flag for future runs.",
+  "tradeoffs": "Games generated before this change carry no offensive flag, so that one reason can only appear for new games."
+}

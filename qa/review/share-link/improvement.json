@@ -1,0 +1,5 @@
+{
+  "title": "Shared link changes meaning tomorrow",
+  "category": "bug",
+  "problem": "Sharing from today's page copies a link to \"/\". Anyone who opens it after midnight Prague time gets a different question than the one in the shared result."
+}

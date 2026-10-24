@@ -1,0 +1,186 @@
+diff --git a/src/components/results.tsx b/src/components/results.tsx
+index 88f624c..519f5b5 100644
+--- a/src/components/results.tsx
++++ b/src/components/results.tsx
+@@ -1,8 +1,9 @@
+ import { useEffect, useRef, useState } from "react"
+ import { domToBlob } from "modern-screenshot"
+ import { Button } from "@/components/ui/button"
+-import { formatDayMonth } from "@/lib/day"
+-import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, maxScore, pointsFor, pointsWord, scoreLines, shareText, type GameState } from "@/lib/game"
++import { formatDayMonth, pragueDate } from "@/lib/day"
++import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, maxScore, pointsFor, pointsWord, scoreLines, scoreTitle, shareText, streakText, type GameState } from "@/lib/game"
++import { computeStats, loadResults } from "@/lib/storage"
+ import type { BoardAnswer, PuzzlePayload } from "@/lib/types"
+ import { gameLabel } from "./game"
+ 
+@@ -94,12 +95,17 @@ function Share({
+   const ticketRef = useRef<HTMLDivElement>(null)
+   const [status, setStatus] = useState("")
+   const [origin, setOrigin] = useState("")
++  const [streak, setStreak] = useState(0)
+ 
+-  useEffect(() => setOrigin(window.location.origin), [])
++  useEffect(() => {
++    setOrigin(window.location.origin)
++    setStreak(computeStats(loadResults(), pragueDate()).streak)
++  }, [])
+ 
+-  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
++  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : `/hra/${payload.date}`
+   const url = `${origin}${path}`
+-  const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url })
++  const title = scoreTitle(total, maxScore(answers))
++  const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url, title, streak: daily ? streak : 0 })
+   const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
+ 
+   async function image(): Promise<Blob | null> {
+@@ -150,7 +156,7 @@ function Share({
+   return (
+     <div className="page grid gap-10 pb-24 md:grid-cols-12 md:gap-6 md:pb-40">
+       <div className="md:col-span-7">
+-        <Ticket ref={ticketRef} payload={payload} state={state} answers={answers} total={total} host={origin.replace(/^https?:\/\//, "")} />
++        <Ticket ref={ticketRef} payload={payload} state={state} answers={answers} total={total} title={title} streak={daily ? streak : 0} host={origin.replace(/^https?:\/\//, "")} />
+       </div>
+       <div className="flex flex-col gap-6 md:col-span-4 md:col-start-9">
+         <h2 className="head reveal">Pochlubte se</h2>
+@@ -180,6 +186,8 @@ function Ticket({
+   state,
+   answers,
+   total,
++  title,
++  streak,
+   host,
+ }: {
+   ref: React.Ref<HTMLDivElement>
+@@ -187,6 +195,8 @@ function Ticket({
+   state: GameState
+   answers: Array<BoardAnswer>
+   total: number
++  title: string
++  streak: number
+   host: string
+ }) {
+   return (
+@@ -207,10 +217,13 @@ function Ticket({
+         >
+           {payload.question}
+         </p>
+-        <p className="text-[12cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">
+-          {total}
+-          <span className="ml-[1.5cqw] text-[3.6cqw] tracking-normal [font-stretch:85%]">{pointsWord(total)}</span>
+-        </p>
++        <div>
++          <p className="text-[12cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">
++            {total}
++            <span className="ml-[1.5cqw] text-[3.6cqw] tracking-normal [font-stretch:85%]">{pointsWord(total)}</span>
++          </p>
++          <p className="mt-[1.6cqw] text-[3.4cqw] leading-none font-semibold text-red">{title}</p>
++        </div>
+         <div>
+           <div className="flex items-center gap-[0.8cqw]">
+             {answers.map((answer, index) => (
+@@ -239,6 +252,12 @@ function Ticket({
+         </div>
+         <p className="text-[3cqw] leading-tight">
+           {payload.date.slice(0, 4)} · {state.found.length} z {answers.length}
++          {streak > 1 && (
++            <>
++              <br />
++              <span className="font-semibold">{streakText(streak)}</span>
++            </>
++          )}
+         </p>
+       </div>
+     </div>
+diff --git a/src/lib/game.test.ts b/src/lib/game.test.ts
+index fbc445f..85ee7a8 100644
+--- a/src/lib/game.test.ts
++++ b/src/lib/game.test.ts
+@@ -1,5 +1,5 @@
+ import { describe, expect, it } from "vitest"
+-import { CLEAR_BONUS, applyGuess, hintPattern, initialState, maxHints, pointsFor, pointsWord, revealLetter, scoreLines, shareText, type GameState } from "./game"
++import { CLEAR_BONUS, applyGuess, hintPattern, initialState, maxHints, pointsFor, pointsWord, revealLetter, scoreLines, scoreTitle, shareText, streakText, type GameState } from "./game"
+ import type { BoardAnswer } from "./types"
+ 
+ const answers: Array<BoardAnswer> = ["Pivo", "Repelent", "Kniha", "Karty", "Svetr", "Jídlo", "Deštník", "Kytara"].map((text, i) => ({
+@@ -104,6 +104,21 @@ describe("shareText", () => {
+   })
+ })
+ 
++describe("share extras", () => {
++  it("adds the score title and a streak of two days or more", () => {
++    const state = play(["pivo", "auto"])
++    const text = shareText({ label: "24. 10. 2026", question: "Q?", state, answers, total: 200, url: "https://example.cz/hra/2026-10-24", title: "Zkušený tipař", streak: 7 })
++    expect(text.split("\n").slice(-3)).toEqual(["200 bodů · Zkušený tipař", "Série 7 dní", "https://example.cz/hra/2026-10-24"])
++    expect(shareText({ label: "x", question: "Q?", state, answers, total: 200, url: "u", streak: 1 })).not.toMatch(/Série/)
++  })
++
++  it("names score bands and day counts in Czech", () => {
++    expect(scoreTitle(950, 1000)).toBe("Čte myšlenky strojům")
++    expect(scoreTitle(100, 1000)).toBe("Čistě lidský rozum")
++    expect([1, 3, 5].map(streakText)).toEqual(["Série 1 den", "Série 3 dny", "Série 5 dní"])
++  })
++})
++
+ describe("pointsWord", () => {
+   it("uses Czech plural forms", () => {
+     expect([0, 1, 2, 4, 5, 22, 100].map(pointsWord)).toEqual(["bodů", "bod", "body", "body", "bodů", "bodů", "bodů"])
+diff --git a/src/lib/game.ts b/src/lib/game.ts
+index d77472a..db90783 100644
+--- a/src/lib/game.ts
++++ b/src/lib/game.ts
+@@ -140,6 +140,26 @@ export function maxScore(answers: Array<BoardAnswer>): number {
+   return answers.reduce((sum, a) => sum + pointsFor(a.votes, 0), 0) + CLEAR_BONUS
+ }
+ 
++const plural = new Intl.PluralRules("cs-CZ")
++
++const TITLES: Array<[number, string]> = [
++  [0.85, "Čte myšlenky strojům"],
++  [0.65, "Mluví řečí AI"],
++  [0.45, "Zkušený tipař"],
++  [0.25, "Začínající věštec"],
++  [0, "Čistě lidský rozum"],
++]
++
++export function scoreTitle(total: number, max: number): string {
++  const ratio = max ? total / max : 0
++  return TITLES.find(([min]) => ratio >= min)?.[1] ?? TITLES[TITLES.length - 1][1]
++}
++
++export function streakText(days: number): string {
++  const category = plural.select(days)
++  return `Série ${days} ${category === "one" ? "den" : category === "few" ? "dny" : "dní"}`
++}
++
+ export function shareText(opts: {
+   label: string
+   question: string
+@@ -147,8 +167,10 @@ export function shareText(opts: {
+   answers: Array<BoardAnswer>
+   total: number
+   url: string
++  title?: string
++  streak?: number
+ }): string {
+-  const { label, question, state, answers, total, url } = opts
++  const { label, question, state, answers, total, url, title, streak } = opts
+   const board = answers
+     .map((_, i) => (!state.found.includes(i) ? "⬜" : hintsUsed(state, i) ? "🟨" : "🟩"))
+     .join("")
+@@ -158,12 +180,12 @@ export function shareText(opts: {
+     question,
+     `${board} ${state.found.length}/${answers.length}`,
+     guesses,
+-    `${total} ${pointsWord(total)}`,
++    title ? `${total} ${pointsWord(total)} · ${title}` : `${total} ${pointsWord(total)}`,
++    ...(streak && streak > 1 ? [streakText(streak)] : []),
+     url,
+   ].join("\n")
+ }
+ 
+-const plural = new Intl.PluralRules("cs-CZ")
+ const pointWords: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "bod", few: "body" }
+ 
+ export function pointsWord(n: number): string {

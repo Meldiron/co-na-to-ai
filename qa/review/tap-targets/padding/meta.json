@@ -1,0 +1,5 @@
+{
+  "title": "Invisible bigger hit areas",
+  "summary": "Adds a small .tap-area utility: an invisible pseudo-element that grows the clickable area of a control to at least 44×44px around its centre. Applied to \"Vzdát se\", every footer link, the Mimo tabuli names, the wordmark and \"Odhlásit se\". Nothing changes visually, so the screenshots look the same as before. See phone-hitareas.jpg for the enlarged areas outlined in red (debug overlay, not part of the design).",
+  "tradeoffs": "Zero visual change and tiny code, but neighbouring hit areas can overlap in tight lists (the footer, Mimo tabuli), and the targets still look small, so users may not trust them."
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Invitation slip",
+  "summary": "With no games the slip turns into an invitation: 'Vaše statistiky začnou dnes', one line of explanation, the four things it will track with muted dash values and dot leaders, and a red full-width 'Začít hrát · dnešní tabule' row (the receipt's total row) that scrolls to the board and focuses the input.",
+  "tradeoffs": "Shows dashes instead of numbers, so the slip still looks like a list of blanks; adds one more red call to action on the page."
+}

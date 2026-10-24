@@ -1,0 +1,5 @@
+{
+  "title": "First eight, then \"a dalších\"",
+  "summary": "Answers with 12 or more people show only the first 8 chips, followed by a blue \"a dalších 21\" chip that expands the rest in place (\"Méně\" collapses it again); smaller answers stay complete. The 29-person top answer shrinks from four phone screens to about one.",
+  "tradeoffs": "Keeps the familiar chips and every name one tap away, but the full crowd behind a big answer is hidden by default."
+}

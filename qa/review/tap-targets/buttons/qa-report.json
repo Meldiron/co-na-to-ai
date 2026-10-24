@@ -1,0 +1,66 @@
+[
+  {
+    "scenario": "taps",
+    "width": "desktop",
+    "url": "/",
+    "overflow": 0,
+    "small": [],
+    "title": "Co si berete s sebou na chatu? · Ptali jsme se 100 AI",
+    "h1": "Co si berete s sebou na chatu?",
+    "logs": [],
+    "extras": {
+      "copied": null,
+      "shared": null,
+      "blob": null
+    }
+  },
+  {
+    "scenario": "taps-fresh",
+    "width": "desktop",
+    "url": "/",
+    "overflow": 0,
+    "small": [],
+    "title": "Co si berete s sebou na chatu? · Ptali jsme se 100 AI",
+    "h1": "Co si berete s sebou na chatu?",
+    "logs": [],
+    "extras": {
+      "copied": null,
+      "shared": null,
+      "blob": null
+    }
+  },
+  {
+    "scenario": "taps",
+    "width": "phone",
+    "url": "/",
+    "overflow": 0,
+    "small": [
+      "a \"archivu\" 59×21"
+    ],
+    "title": "Co si berete s sebou na chatu? · Ptali jsme se 100 AI",
+    "h1": "Co si berete s sebou na chatu?",
+    "logs": [],
+    "extras": {
+      "copied": null,
+      "shared": null,
+      "blob": null
+    }
+  },
+  {
+    "scenario": "taps-fresh",
+    "width": "phone",
+    "url": "/",
+    "overflow": 0,
+    "small": [
+      "a \"archivu\" 59×21"
+    ],
+    "title": "Co si berete s sebou na chatu? · Ptali jsme se 100 AI",
+    "h1": "Co si berete s sebou na chatu?",
+    "logs": [],
+    "extras": {
+      "copied": null,
+      "shared": null,
+      "blob": null
+    }
+  }
+]

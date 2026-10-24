@@ -1,0 +1,5 @@
+{
+  "title": "Ghost histogram",
+  "summary": "The statistics rows stay, but with no games the histogram turns into pale placeholder bars in a typical bell shape (no numbers, hidden from screen readers) under one sentence: 'Po první hře tu uvidíte, kolik odpovědí z osmi obvykle najdete.'",
+  "tradeoffs": "The zero rows above still read as an empty report; the placeholder shape could be mistaken for real data at a glance."
+}

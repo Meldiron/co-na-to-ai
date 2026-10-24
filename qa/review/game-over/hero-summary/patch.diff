@@ -1,0 +1,103 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..b72a615 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -5,11 +5,11 @@ import { useGame } from "@/hooks/use-game"
+ import { formatShort } from "@/lib/day"
+ import { personaOf } from "@/lib/cast"
+ import { personaClue } from "@/lib/clue"
+-import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, pointsFor, pointsWord, scoreLines } from "@/lib/game"
++import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, pointsFor, pointsWord, scoreLines, shareText } from "@/lib/game"
+ import type { Persona, PuzzlePayload } from "@/lib/types"
+ import { Board, Strikes } from "./board"
+ import { Flap } from "./flap"
+-import { Results } from "./results"
++import { Results, shareOrCopy, sharePath } from "./results"
+ import { WhoSaid } from "./who-said"
+ 
+ type Message = { text: string; tone: "hit" | "miss" | "info" }
+@@ -51,6 +51,13 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+   }, [secret])
+   const openClues = [...(state.clues ?? [])].sort((a, b) => a - b)
+ 
++  async function shareResult() {
++    const url = `${window.location.origin}${sharePath(payload, daily)}`
++    const outcome = await shareOrCopy(shareText({ label: gameLabel(payload), question: payload.question, state, answers: secret.answers, total, url }))
++    if (outcome === "copied") setMessage({ tone: "info", text: "Výsledek je ve schránce, stačí ho vložit do zprávy." })
++    if (outcome === "failed") setMessage({ tone: "info", text: "Sdílení se nepovedlo. Celý výsledek i obrázek najdete níže." })
++  }
++
+   function submit(event: FormEvent) {
+     event.preventDefault()
+     const { outcome, state: next } = guess(value)
+@@ -130,14 +137,21 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+ 
+           <div className="mt-4 grid gap-4 md:grid-cols-[minmax(0,1fr)_auto_auto] md:items-center md:gap-6">
+             {over ? (
+-              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
++              <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+                 <p className="head">{state.status === "won" ? "Celá tabule!" : "Konec hry."}</p>
+-                <a href="#vysledek" className="inline-flex h-12 items-center bg-red px-5 font-semibold text-red-ink transition-transform active:translate-y-px hover:bg-red/90">
+-                  Výsledek a sdílení
+-                </a>
+-                <a href="#kdo-co-rekl" className="inline-flex h-12 items-center bg-field-step px-5 font-semibold transition-colors hover:bg-board">
+-                  Kdo co řekl
+-                </a>
++                <ul className="flex gap-1" aria-label={`Našli jste ${state.found.length} z ${secret.answers.length} odpovědí`}>
++                  {secret.answers.map((answer, index) => (
++                    <li key={answer.rank} className={`size-5 md:size-6 ${state.found.includes(index) ? "bg-paper" : "bg-field-step"}`} />
++                  ))}
++                </ul>
++                <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
++                  <Button onClick={shareResult} className="h-12 px-5 font-semibold">
++                    Sdílet výsledek
++                  </Button>
++                  <a href="#vysledek" className="font-semibold underline underline-offset-4 hover:text-field-soft">
++                    Celý výsledek
++                  </a>
++                </div>
+               </div>
+             ) : (
+               <form onSubmit={submit} className="flex min-w-0" autoComplete="off">
+diff --git a/src/components/results.tsx b/src/components/results.tsx
+index 88f624c..c87f18d 100644
+--- a/src/components/results.tsx
++++ b/src/components/results.tsx
+@@ -78,6 +78,27 @@ export function Results({ payload, state, answers, daily }: ResultsProps) {
+   )
+ }
+ 
++export function sharePath(payload: PuzzlePayload, daily: boolean): string {
++  return payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
++}
++
++export async function shareOrCopy(text: string): Promise<"shared" | "copied" | "cancelled" | "failed"> {
++  try {
++    if ("share" in navigator) {
++      await navigator.share({ text })
++      return "shared"
++    }
++  } catch (error) {
++    if (error instanceof DOMException && error.name === "AbortError") return "cancelled"
++  }
++  try {
++    await navigator.clipboard.writeText(text)
++    return "copied"
++  } catch {
++    return "failed"
++  }
++}
++
+ function Share({
+   payload,
+   state,
+@@ -97,8 +118,7 @@ function Share({
+ 
+   useEffect(() => setOrigin(window.location.origin), [])
+ 
+-  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
+-  const url = `${origin}${path}`
++  const url = `${origin}${sharePath(payload, daily)}`
+   const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url })
+   const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
+ 

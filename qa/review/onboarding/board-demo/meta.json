@@ -1,0 +1,5 @@
+{
+  "title": "The board demonstrates itself",
+  "summary": "On the first visit, about a second after the board boots, slot 1 flips to a lit example row (\"PŘÍKLAD: PIVO\", 23 votes) for ~2.7 s and flips back; then a paper coach mark pointing at its blue \"?\" says \"Tady je nápověda. Odkryje písmeno, nebo prozradí, kdo odpověď řekl.\" with \"Rozumím\". The first guess or \"Rozumím\" ends it for good. Shot 0 is the example, shot 1 the coach mark.",
+  "tradeoffs": "Shows rather than tells and never blocks typing, but explains only the clue key; one-word answers, lives and scoring stay implicit, and someone who looks away during the 2.7 s misses the example."
+}

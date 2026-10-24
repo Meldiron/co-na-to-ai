@@ -1,0 +1,95 @@
+diff --git a/pipeline/build.ts b/pipeline/build.ts
+index 76d1967..df6e040 100644
+--- a/pipeline/build.ts
++++ b/pipeline/build.ts
+@@ -17,6 +17,7 @@ export type GateResult = {
+   topShare: number
+   boardShare: number
+   clustersWithTwo: number
++  offensive?: boolean
+   flags: Array<string>
+ }
+ 
+@@ -58,7 +59,7 @@ export function gate(grouped: Array<Grouped>, answered: number, judgement: Judge
+   if (clustersWithTwo < GATE.minClustersWithTwo) flags.push(`only ${clustersWithTwo} answers with 2+ votes (min ${GATE.minClustersWithTwo})`)
+   if (boardShare < GATE.minBoardShare) flags.push(`the board holds only ${Math.round(boardShare * 100)} % of answers (min ${GATE.minBoardShare * 100} %)`)
+   if (judgement.offensive) flags.push("judge flagged offensive content")
+-  return { passed: flags.length === 0, answered, topShare, boardShare, clustersWithTwo, flags }
++  return { passed: flags.length === 0, answered, topShare, boardShare, clustersWithTwo, offensive: judgement.offensive, flags }
+ }
+ 
+ export function buildPuzzle(opts: {
+diff --git a/src/lib/gate-text.test.ts b/src/lib/gate-text.test.ts
+new file mode 100644
+index 0000000..22cd636
+--- /dev/null
++++ b/src/lib/gate-text.test.ts
+@@ -0,0 +1,21 @@
++import { describe, expect, it } from "vitest"
++import { gateReasons } from "./gate-text"
++
++const base = { passed: false, answered: 99, topShare: 0.3, boardShare: 0.9, clustersWithTwo: 9, flags: [] }
++
++describe("gateReasons", () => {
++  it("explains each failed check in Czech from the structured values", () => {
++    expect(gateReasons({ ...base, clustersWithTwo: 6 })).toEqual(["jen 6 odpovědí má aspoň 2 hlasy (potřeba 8)"])
++    expect(gateReasons({ ...base, clustersWithTwo: 3 })).toEqual(["jen 3 odpovědi mají aspoň 2 hlasy (potřeba 8)"])
++    expect(gateReasons({ ...base, topShare: 0.78 }, "Rajčata")).toEqual(["Rajčata má 78 % hlasů (nejvýš 45 %)"])
++    expect(gateReasons({ ...base, answered: 60, boardShare: 0.38, offensive: true })).toEqual([
++      "odpovědělo jen 60 AI (potřeba 80)",
++      "tabule pokrývá jen 38 % odpovědí (potřeba 50 %)",
++      "rozhodčí model označil nevhodný obsah",
++    ])
++  })
++
++  it("returns nothing for a passing board", () => {
++    expect(gateReasons({ ...base, passed: true })).toEqual([])
++  })
++})
+diff --git a/src/lib/gate-text.ts b/src/lib/gate-text.ts
+new file mode 100644
+index 0000000..1c9467c
+--- /dev/null
++++ b/src/lib/gate-text.ts
+@@ -0,0 +1,20 @@
++import { GATE, type GateResult } from "../../pipeline/build.ts"
++
++const plural = new Intl.PluralRules("cs-CZ")
++const percent = (share: number) => `${Math.round(share * 100)} %`
++
++function withTwoVotes(n: number): string {
++  if (n === 0) return "žádná odpověď nemá"
++  const category = plural.select(n)
++  return category === "one" ? `jen ${n} odpověď má` : category === "few" ? `jen ${n} odpovědi mají` : `jen ${n} odpovědí má`
++}
++
++export function gateReasons(gate: GateResult, topAnswer?: string): Array<string> {
++  const reasons: Array<string> = []
++  if (gate.answered < GATE.minAnswered) reasons.push(`odpovědělo jen ${gate.answered} AI (potřeba ${GATE.minAnswered})`)
++  if (gate.topShare > GATE.maxTopShare) reasons.push(`${topAnswer ?? "nejčastější odpověď"} má ${percent(gate.topShare)} hlasů (nejvýš ${percent(GATE.maxTopShare)})`)
++  if (gate.clustersWithTwo < GATE.minClustersWithTwo) reasons.push(`${withTwoVotes(gate.clustersWithTwo)} aspoň 2 hlasy (potřeba ${GATE.minClustersWithTwo})`)
++  if (gate.boardShare < GATE.minBoardShare) reasons.push(`tabule pokrývá jen ${percent(gate.boardShare)} odpovědí (potřeba ${percent(GATE.minBoardShare)})`)
++  if (gate.offensive) reasons.push("rozhodčí model označil nevhodný obsah")
++  return reasons
++}
+diff --git a/src/server/admin-api.ts b/src/server/admin-api.ts
+index 3775c7a..34ed59f 100644
+--- a/src/server/admin-api.ts
++++ b/src/server/admin-api.ts
+@@ -1,6 +1,7 @@
+ import { createServerFn } from "@tanstack/react-start"
+ import { z } from "zod"
+ import { pragueDate } from "@/lib/day"
++import { gateReasons } from "@/lib/gate-text"
+ import { checkPassword, endSession, isAdmin, requireAdmin, startSession } from "./auth"
+ import { deleteCustom, getJob, listCustom, loadCustom, startJob } from "./custom"
+ import { loadPuzzle, recentSummaries, toPayload } from "./puzzles"
+@@ -22,7 +23,7 @@ export const getAdminState = createServerFn({ method: "GET" }).handler(async ()
+       answered: g.answered,
+       costUsd: g.meta.costUsd,
+       passed: g.gate.passed,
+-      flags: g.gate.flags,
++      flags: gateReasons(g.gate, g.answers[0]?.text),
+       top: g.answers.map((a) => [a.text, a.votes] as const),
+     })),
+   }

@@ -1,0 +1,113 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..ff92f8f 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -190,7 +190,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+                   setMessage(null)
+                   surrender()
+                 }}
+-                className="text-sm text-field-soft underline underline-offset-4 hover:text-field-ink">
++                className="tap-area text-sm text-field-soft underline underline-offset-4 hover:text-field-ink">
+                 Vzdát se a ukázat odpovědi
+               </button>
+             )}
+diff --git a/src/components/site-footer.tsx b/src/components/site-footer.tsx
+index a09dade..6f81611 100644
+--- a/src/components/site-footer.tsx
++++ b/src/components/site-footer.tsx
+@@ -9,27 +9,27 @@ export function SiteFooter() {
+             <p className="font-semibold">Hra</p>
+             <ul className="mt-2 grid gap-1 text-flap-dim">
+               <li>
+-                <Link to="/" className="hover:text-flap-ink">
++                <Link to="/" className="tap-area hover:text-flap-ink">
+                   Dnešní otázka
+                 </Link>
+               </li>
+               <li>
+-                <Link to="/archiv" className="hover:text-flap-ink">
++                <Link to="/archiv" className="tap-area hover:text-flap-ink">
+                   Archiv
+                 </Link>
+               </li>
+               <li>
+-                <Link to="/obsazeni" className="hover:text-flap-ink">
++                <Link to="/obsazeni" className="tap-area hover:text-flap-ink">
+                   Obsazení: sto postav
+                 </Link>
+               </li>
+               <li>
+-                <a href="/#pravidla" className="hover:text-flap-ink">
++                <a href="/#pravidla" className="tap-area hover:text-flap-ink">
+                   Pravidla
+                 </a>
+               </li>
+               <li>
+-                <Link to="/admin" className="hover:text-flap-ink">
++                <Link to="/admin" className="tap-area hover:text-flap-ink">
+                   Administrace
+                 </Link>
+               </li>
+diff --git a/src/components/site-header.tsx b/src/components/site-header.tsx
+index 951d0f3..b2a31d6 100644
+--- a/src/components/site-header.tsx
++++ b/src/components/site-header.tsx
+@@ -23,7 +23,7 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
+   return (
+     <header className={tone === "field" ? "bg-field text-field-ink" : "bg-ground text-foreground"}>
+       <div className="page flex h-16 items-center justify-between gap-4 md:h-20">
+-        <Link to="/" className="text-base md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
++        <Link to="/" className="tap-area text-base md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
+           <Wordmark />
+         </Link>
+         <nav className="flex items-center gap-1 md:gap-2" aria-label="Hlavní">
+diff --git a/src/components/who-said.tsx b/src/components/who-said.tsx
+index 7b056f7..8d16485 100644
+--- a/src/components/who-said.tsx
++++ b/src/components/who-said.tsx
+@@ -83,7 +83,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+                       const response = byAnswerer.get(id)
+                       const persona = response && personaOf(response.persona)
+                       return response && persona ? (
+-                        <button key={id} type="button" onClick={() => setOpen(response)} className="underline underline-offset-4 hover:text-red">
++                        <button key={id} type="button" onClick={() => setOpen(response)} className="tap-area underline underline-offset-4 hover:text-red">
+                           {firstName(persona)}
+                         </button>
+                       ) : null
+diff --git a/src/routes/admin.tsx b/src/routes/admin.tsx
+index aa1705f..5354586 100644
+--- a/src/routes/admin.tsx
++++ b/src/routes/admin.tsx
+@@ -134,7 +134,7 @@ function Dashboard({ state }: { state: State }) {
+           <p className="mt-5 max-w-[46ch]">
+             Položte stovce AI vlastní otázku. Za minutu až dvě z ní bude hra s vlastním odkazem. Do statistik ani do archivu se nepočítá.
+           </p>
+-          <button type="button" onClick={signOut} className="mt-6 text-sm underline underline-offset-4 hover:text-red">
++          <button type="button" onClick={signOut} className="tap-area mt-6 text-sm underline underline-offset-4 hover:text-red">
+             Odhlásit se
+           </button>
+         </div>
+diff --git a/src/styles.css b/src/styles.css
+index 17b84ee..47ba1c4 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -292,6 +292,19 @@
+     color: var(--red-ink);
+   }
+ 
++  .tap-area {
++    position: relative;
++  }
++  .tap-area::after {
++    content: "";
++    position: absolute;
++    top: 50%;
++    left: 50%;
++    width: max(100%, 44px);
++    height: max(100%, 44px);
++    transform: translate(-50%, -50%);
++  }
++
+   .zigzag-bottom {
+     --zz: 12px;
+     clip-path: polygon(

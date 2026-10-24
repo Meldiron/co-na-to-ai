@@ -1,0 +1,5 @@
+{
+  "title": "Words on the strike tiles",
+  "summary": "Each used red strike tile carries the missed word: on desktop the X with the word under it, on a phone the word alone; unused tiles stay as they are. No extra row is added.",
+  "tradeoffs": "Long words are truncated on the tile (full list stays in the screen-reader label); on phones the 'Body' label sits above the score to keep one row."
+}

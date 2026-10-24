@@ -1,0 +1,5 @@
+{
+  "title": "\"Jak hrát?\" tile next to the date",
+  "summary": "No first-visit interruption: a paper-coloured \"JAK HRÁT?\" tile joins the DNES / SOBOTA / date tiles and turns red on hover. Tapping it opens a popover with the three rules (one word, the blue \"?\" clues and their cost, five lives and scoring) and a \"Celá pravidla\" link to the rules section. Shot 0 is closed, shot 1 open.",
+  "tradeoffs": "Always visible and never in the way, but a newcomer has to notice and tap it; on phones it wraps onto a second line under the date tiles."
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Who said it, in numbers",
+  "summary": "Each answer shows the persona-clue sentence (\"Tohle řekli hlavně důchodci, většinou z Moravy…\") and two small stacked bars in shades of the board blue: where the people are from (Praha, Čechy, Morava) and their age band. The name chips sit behind a \"Zobrazit všech 29\" button.",
+  "tradeoffs": "Tells the story (who tends to say what) instead of listing names, and is the most analytical; the playful faces and names are one tap further away."
+}

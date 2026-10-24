@@ -1,0 +1,58 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..f8ac95f 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -1,6 +1,7 @@
+ import { useMemo, useRef, useState, type FormEvent } from "react"
+ import { Button } from "@/components/ui/button"
+ import { Input } from "@/components/ui/input"
++import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+ import { useGame } from "@/hooks/use-game"
+ import { formatShort } from "@/lib/day"
+ import { personaOf } from "@/lib/cast"
+@@ -28,6 +29,20 @@ function DateStrip({ payload, daily }: { payload: PuzzlePayload; daily: boolean
+       <span className={`tile ${daily ? "tile-red" : ""}`}>{tag}</span>
+       <span className="tile">{weekday.format(new Date(`${payload.date}T12:00:00Z`))}</span>
+       <span className="tile">{formatShort(payload.date)}</span>
++      <Popover>
++        <PopoverTrigger className="tile tile-paper">Jak hrát?</PopoverTrigger>
++        <PopoverContent align="start" sideOffset={6} className="w-[min(24rem,calc(100vw-2rem))] gap-3 p-4">
++          <p className="font-semibold">Jak hrát</p>
++          <p>Napište jedním slovem, co podle vás odpověděla stovka umělých inteligencí. Hledáte osm nejčastějších odpovědí.</p>
++          <p>Modrý otazník u skryté odpovědi nabízí nápovědu. Odkryté písmeno ubere čtvrtinu bodů za tu odpověď, prozradit, kdo ji řekl, je zdarma.</p>
++          <p>
++            Máte {MAX_STRIKES} životů. Odpověď má 10 bodů za každou AI, která ji řekla, za celou tabuli je {CLEAR_BONUS} bodů navíc.
++          </p>
++          <a href="#pravidla" className="font-semibold text-ink underline underline-offset-4 hover:text-red">
++            Celá pravidla
++          </a>
++        </PopoverContent>
++      </Popover>
+     </p>
+   )
+ }
+diff --git a/src/styles.css b/src/styles.css
+index 17b84ee..d6637b8 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -286,6 +286,20 @@
+     z-index: -1;
+     background: var(--tile-low);
+   }
++  .tile-paper {
++    --tile: var(--paper);
++    --tile-low: var(--paper-step);
++    color: var(--ink);
++  }
++  button.tile {
++    cursor: pointer;
++  }
++  button.tile-paper:hover,
++  button.tile-paper[data-state="open"] {
++    --tile: var(--red);
++    --tile-low: var(--red-low);
++    color: var(--red-ink);
++  }
+   .tile-red {
+     --tile: var(--red);
+     --tile-low: #b90f15;

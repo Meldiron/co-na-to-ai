@@ -1,0 +1,157 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..d2f6431 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -1,6 +1,7 @@
+ import { useMemo, useRef, useState, type FormEvent } from "react"
+ import { Button } from "@/components/ui/button"
+ import { Input } from "@/components/ui/input"
++import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+ import { useGame } from "@/hooks/use-game"
+ import { formatShort } from "@/lib/day"
+ import { personaOf } from "@/lib/cast"
+@@ -168,6 +169,28 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+                 <Button type="submit" className="h-14 px-5 text-base font-semibold md:h-16 md:px-8">
+                   Tipnout
+                 </Button>
++                {ready && (
++                  <Popover>
++                    <PopoverTrigger
++                      aria-label="Další možnosti"
++                      className="ml-[3px] grid h-14 w-12 shrink-0 place-items-center bg-field-step text-[1.5rem] leading-none font-bold text-field-ink transition-colors hover:bg-board md:h-16 md:w-14"
++                    >
++                      ⋯
++                    </PopoverTrigger>
++                    <PopoverContent align="end" sideOffset={6} className="w-64">
++                      <button
++                        type="button"
++                        onClick={() => {
++                          setMessage(null)
++                          surrender()
++                        }}
++                        className="flex h-12 items-center px-3 text-left font-semibold transition-colors hover:bg-paper-step"
++                      >
++                        Vzdát se a ukázat odpovědi
++                      </button>
++                    </PopoverContent>
++                  </Popover>
++                )}
+               </form>
+             )}
+             <div className="flex items-center justify-between gap-4 md:contents">
+@@ -183,17 +206,6 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+             <p aria-live="polite" className={`min-h-[1.5em] ${message?.tone === "miss" ? "font-semibold" : ""}`}>
+               {message?.text ?? (over ? `${state.found.length} z 8 odpovědí, ${total} ${pointsWord(total)}.` : "Diakritika, velká písmena ani drobné překlepy nevadí.")}
+             </p>
+-            {!over && ready && (
+-              <button
+-                type="button"
+-                onClick={() => {
+-                  setMessage(null)
+-                  surrender()
+-                }}
+-                className="text-sm text-field-soft underline underline-offset-4 hover:text-field-ink">
+-                Vzdát se a ukázat odpovědi
+-              </button>
+-            )}
+           </div>
+         </div>
+       </section>
+diff --git a/src/components/site-footer.tsx b/src/components/site-footer.tsx
+index a09dade..6e09380 100644
+--- a/src/components/site-footer.tsx
++++ b/src/components/site-footer.tsx
+@@ -5,31 +5,31 @@ export function SiteFooter() {
+     <footer className="bg-board text-flap-ink">
+       <div className="page grid gap-16 pt-16 pb-5 md:min-h-[70svh] md:grid-rows-[auto_1fr_auto] md:pt-20">
+         <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-12">
+-          <div className="md:col-span-3">
++          <div className="col-span-2 md:col-span-3">
+             <p className="font-semibold">Hra</p>
+-            <ul className="mt-2 grid gap-1 text-flap-dim">
++            <ul className="mt-3 grid grid-cols-2 gap-[3px] md:grid-cols-1">
+               <li>
+-                <Link to="/" className="hover:text-flap-ink">
++                <Link to="/" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
+                   Dnešní otázka
+                 </Link>
+               </li>
+               <li>
+-                <Link to="/archiv" className="hover:text-flap-ink">
++                <Link to="/archiv" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
+                   Archiv
+                 </Link>
+               </li>
+               <li>
+-                <Link to="/obsazeni" className="hover:text-flap-ink">
+-                  Obsazení: sto postav
++                <Link to="/obsazeni" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
++                  Obsazení
+                 </Link>
+               </li>
+               <li>
+-                <a href="/#pravidla" className="hover:text-flap-ink">
++                <a href="/#pravidla" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
+                   Pravidla
+                 </a>
+               </li>
+               <li>
+-                <Link to="/admin" className="hover:text-flap-ink">
++                <Link to="/admin" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
+                   Administrace
+                 </Link>
+               </li>
+diff --git a/src/components/site-header.tsx b/src/components/site-header.tsx
+index 951d0f3..f4a9af4 100644
+--- a/src/components/site-header.tsx
++++ b/src/components/site-header.tsx
+@@ -23,7 +23,7 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
+   return (
+     <header className={tone === "field" ? "bg-field text-field-ink" : "bg-ground text-foreground"}>
+       <div className="page flex h-16 items-center justify-between gap-4 md:h-20">
+-        <Link to="/" className="text-base md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
++        <Link to="/" className="inline-flex h-11 items-center text-base md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
+           <Wordmark />
+         </Link>
+         <nav className="flex items-center gap-1 md:gap-2" aria-label="Hlavní">
+diff --git a/src/components/who-said.tsx b/src/components/who-said.tsx
+index 7b056f7..69b9c91 100644
+--- a/src/components/who-said.tsx
++++ b/src/components/who-said.tsx
+@@ -74,7 +74,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+               </p>
+               <ul className="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                 {secret.others.map((other) => (
+-                  <li key={other.text} className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
++                  <li key={other.text} className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+                     <span className="font-semibold">{other.text}</span>
+                     <span className="text-muted-foreground">
+                       {other.votes} {votesWord(other.votes)}:
+@@ -83,7 +83,13 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+                       const response = byAnswerer.get(id)
+                       const persona = response && personaOf(response.persona)
+                       return response && persona ? (
+-                        <button key={id} type="button" onClick={() => setOpen(response)} className="underline underline-offset-4 hover:text-red">
++                        <button
++                          key={id}
++                          type="button"
++                          onClick={() => setOpen(response)}
++                          className="inline-flex h-11 items-center gap-2 bg-ground-step pr-3 pl-1.5 font-semibold transition-colors hover:bg-field hover:text-field-ink"
++                        >
++                          <PersonaAvatar id={persona.id} size={30} className="shrink-0" />
+                           {firstName(persona)}
+                         </button>
+                       ) : null
+diff --git a/src/routes/admin.tsx b/src/routes/admin.tsx
+index aa1705f..d97483a 100644
+--- a/src/routes/admin.tsx
++++ b/src/routes/admin.tsx
+@@ -134,7 +134,7 @@ function Dashboard({ state }: { state: State }) {
+           <p className="mt-5 max-w-[46ch]">
+             Položte stovce AI vlastní otázku. Za minutu až dvě z ní bude hra s vlastním odkazem. Do statistik ani do archivu se nepočítá.
+           </p>
+-          <button type="button" onClick={signOut} className="mt-6 text-sm underline underline-offset-4 hover:text-red">
++          <button type="button" onClick={signOut} className="mt-6 inline-flex h-11 items-center bg-ground-step px-4 font-semibold transition-colors hover:bg-red hover:text-red-ink">
+             Odhlásit se
+           </button>
+         </div>

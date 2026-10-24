@@ -1,0 +1,5 @@
+{
+  "title": "Archive page",
+  "problem": "The archive is a bare three-column table: date, question and a score. It says nothing about how each day went (which answers you found, whether you cleared the board) and gives no direct call to play the days you skipped; on a phone the question column wraps into narrow three-line cells.",
+  "category": "design"
+}

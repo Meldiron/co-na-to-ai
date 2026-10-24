@@ -1,0 +1,5 @@
+{
+  "title": "Soft focus inside the menu",
+  "summary": "The first option keeps keyboard focus when the menu opens, but focus now shows as a pale tone step with a 4px red bar on the left instead of the blue outline, matching the hover state and the board's red.",
+  "tradeoffs": "The first option still looks highlighted on open, just more gently; the red bar is subtler for low-vision keyboard users than the 3px outline."
+}

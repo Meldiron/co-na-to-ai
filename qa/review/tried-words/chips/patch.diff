@@ -1,0 +1,32 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..7896adc 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -50,6 +50,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+     return secret.answers.map((a) => personaClue(a.answerers.map((id) => personaByAnswerer.get(id)).filter((p): p is Persona => !!p)))
+   }, [secret])
+   const openClues = [...(state.clues ?? [])].sort((a, b) => a - b)
++  const misses = state.guesses.filter((g) => g.result === "miss").map((g) => g.text)
+ 
+   function submit(event: FormEvent) {
+     event.preventDefault()
+@@ -179,6 +180,19 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+             </div>
+           </div>
+ 
++          {misses.length > 0 && (
++            <div className="mt-3 flex flex-wrap items-center gap-2">
++              <span className="text-sm text-field-soft">Zkoušeli jste:</span>
++              <ul className="contents" aria-label="Tipy, které na tabuli nejsou">
++                {misses.map((word) => (
++                  <li key={word} className="inline-flex h-8 items-center bg-board px-3 text-sm font-semibold text-flap-ink">
++                    {word}
++                  </li>
++                ))}
++              </ul>
++            </div>
++          )}
++
+           <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+             <p aria-live="polite" className={`min-h-[1.5em] ${message?.tone === "miss" ? "font-semibold" : ""}`}>
+               {message?.text ?? (over ? `${state.found.length} z 8 odpovědí, ${total} ${pointsWord(total)}.` : "Diakritika, velká písmena ani drobné překlepy nevadí.")}

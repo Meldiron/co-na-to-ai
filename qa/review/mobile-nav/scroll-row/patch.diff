@@ -1,0 +1,46 @@
+diff --git a/src/components/site-header.tsx b/src/components/site-header.tsx
+index 951d0f3..cc37860 100644
+--- a/src/components/site-header.tsx
++++ b/src/components/site-header.tsx
+@@ -14,30 +14,33 @@ export function Wordmark({ className = "" }: { className?: string }) {
+ }
+ 
+ const links = [
+-  { to: "/", label: "Dnešní hra", phone: false },
+-  { to: "/archiv", label: "Archiv", phone: true },
+-  { to: "/obsazeni", label: "Obsazení", phone: false },
++  { to: "/", label: "Dnešní hra" },
++  { to: "/archiv", label: "Archiv" },
++  { to: "/obsazeni", label: "Obsazení" },
+ ] as const
+ 
+ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
+   return (
+     <header className={tone === "field" ? "bg-field text-field-ink" : "bg-ground text-foreground"}>
+-      <div className="page flex h-16 items-center justify-between gap-4 md:h-20">
+-        <Link to="/" className="text-base md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
++      <div className="page flex flex-wrap items-center justify-between md:h-20 md:flex-nowrap md:gap-4">
++        <Link to="/" className="flex h-14 items-center text-base md:h-auto md:text-[1.25rem]" aria-label="Ptali jsme se 100 AI, dnešní hra">
+           <Wordmark />
+         </Link>
+-        <nav className="flex items-center gap-1 md:gap-2" aria-label="Hlavní">
++        <nav
++          className="-mx-[var(--margin)] flex w-[calc(100%+2*var(--margin))] items-center overflow-x-auto px-[var(--margin)] pb-1 [scrollbar-width:none] md:mx-0 md:w-auto md:gap-2 md:overflow-visible md:p-0"
++          aria-label="Hlavní"
++        >
+           {links.map((link) => (
+             <Link
+               key={link.to}
+               to={link.to}
+               activeOptions={{ exact: true }}
+-              className={`${link.phone ? "inline-flex" : "hidden md:inline-flex"} h-11 items-center px-3 underline-offset-[6px] hover:underline data-[status=active]:underline`}
++              className="inline-flex h-11 shrink-0 items-center px-3 whitespace-nowrap underline-offset-[6px] hover:underline data-[status=active]:underline max-md:first:pl-0"
+             >
+               {link.label}
+             </Link>
+           ))}
+-          <a href="/#pravidla" className="hidden h-11 items-center px-3 underline-offset-[6px] hover:underline md:inline-flex">
++          <a href="/#pravidla" className="inline-flex h-11 shrink-0 items-center px-3 whitespace-nowrap underline-offset-[6px] hover:underline">
+             Pravidla
+           </a>
+         </nav>

@@ -1,0 +1,121 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..df45506 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -10,6 +10,7 @@ import type { Persona, PuzzlePayload } from "@/lib/types"
+ import { Board, Strikes } from "./board"
+ import { Flap } from "./flap"
+ import { Results } from "./results"
++import { StickyShare } from "./sticky-share"
+ import { WhoSaid } from "./who-said"
+ 
+ type Message = { text: string; tone: "hit" | "miss" | "info" }
+@@ -202,6 +203,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+         <>
+           <Results payload={payload} state={state} answers={secret.answers} daily={daily} />
+           <WhoSaid secret={secret} />
++          <StickyShare payload={payload} state={state} answers={secret.answers} total={total} daily={daily} />
+         </>
+       )}
+     </>
+diff --git a/src/components/results.tsx b/src/components/results.tsx
+index 88f624c..c87f18d 100644
+--- a/src/components/results.tsx
++++ b/src/components/results.tsx
+@@ -78,6 +78,27 @@ export function Results({ payload, state, answers, daily }: ResultsProps) {
+   )
+ }
+ 
++export function sharePath(payload: PuzzlePayload, daily: boolean): string {
++  return payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
++}
++
++export async function shareOrCopy(text: string): Promise<"shared" | "copied" | "cancelled" | "failed"> {
++  try {
++    if ("share" in navigator) {
++      await navigator.share({ text })
++      return "shared"
++    }
++  } catch (error) {
++    if (error instanceof DOMException && error.name === "AbortError") return "cancelled"
++  }
++  try {
++    await navigator.clipboard.writeText(text)
++    return "copied"
++  } catch {
++    return "failed"
++  }
++}
++
+ function Share({
+   payload,
+   state,
+@@ -97,8 +118,7 @@ function Share({
+ 
+   useEffect(() => setOrigin(window.location.origin), [])
+ 
+-  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
+-  const url = `${origin}${path}`
++  const url = `${origin}${sharePath(payload, daily)}`
+   const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url })
+   const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
+ 
+diff --git a/src/components/sticky-share.tsx b/src/components/sticky-share.tsx
+new file mode 100644
+index 0000000..d3485f7
+--- /dev/null
++++ b/src/components/sticky-share.tsx
+@@ -0,0 +1,53 @@
++import { useEffect, useState } from "react"
++import { Button } from "@/components/ui/button"
++import { pointsWord, shareText, type GameState } from "@/lib/game"
++import type { BoardAnswer, PuzzlePayload } from "@/lib/types"
++import { gameLabel } from "./game"
++import { shareOrCopy, sharePath } from "./results"
++
++type Props = { payload: PuzzlePayload; state: GameState; answers: Array<BoardAnswer>; total: number; daily: boolean }
++
++export function StickyShare({ payload, state, answers, total, daily }: Props) {
++  const [seen, setSeen] = useState(false)
++  const [copied, setCopied] = useState(false)
++
++  useEffect(() => {
++    const target = document.getElementById("vysledek")
++    if (!target) return
++    const io = new IntersectionObserver(
++      ([entry]) => {
++        if (entry.isIntersecting) setSeen(true)
++      },
++      { threshold: 0.15 },
++    )
++    io.observe(target)
++    return () => io.disconnect()
++  }, [])
++
++  async function share() {
++    const url = `${window.location.origin}${sharePath(payload, daily)}`
++    const outcome = await shareOrCopy(shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url }))
++    if (outcome === "copied") {
++      setCopied(true)
++      setTimeout(() => setCopied(false), 2400)
++    }
++    if (outcome === "failed") document.getElementById("vysledek")?.scrollIntoView({ behavior: "smooth" })
++  }
++
++  if (seen) return null
++  return (
++    <div className="fixed inset-x-0 bottom-0 z-40 bg-board pb-[env(safe-area-inset-bottom)] text-flap-ink animate-in slide-in-from-bottom-full duration-300 motion-reduce:animate-none">
++      <div className="page flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
++        <a href="#vysledek" className="flex min-w-0 items-baseline gap-2 hover:text-flap-dim">
++          <span className="head tabular-nums">{total}</span>
++          <span className="truncate">
++            {pointsWord(total)} · {state.found.length} z {answers.length}
++          </span>
++        </a>
++        <Button onClick={share} className="h-11 shrink-0 px-5 font-semibold">
++          {copied ? "Zkopírováno" : "Sdílet výsledek"}
++        </Button>
++      </div>
++    </div>
++  )
++}

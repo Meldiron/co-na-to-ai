@@ -1,0 +1,5 @@
+{
+  "title": "Faces only",
+  "summary": "Each answer shows its people as a dense grid of blobatar faces (44px buttons) instead of name chips; hovering shows the name, age and model, tapping opens the persona dialog. The whole 100-person section fits in about one desktop screen and two phone screens.",
+  "tradeoffs": "Most compact and playful, but names and models are no longer readable at a glance; you have to tap or hover to learn who a face is."
+}

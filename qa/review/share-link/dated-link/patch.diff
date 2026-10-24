@@ -1,0 +1,66 @@
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..a09f780 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -200,7 +200,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+ 
+       {over && ready && (
+         <>
+-          <Results payload={payload} state={state} answers={secret.answers} daily={daily} />
++          <Results payload={payload} state={state} answers={secret.answers} />
+           <WhoSaid secret={secret} />
+         </>
+       )}
+diff --git a/src/components/results.tsx b/src/components/results.tsx
+index 88f624c..a10acab 100644
+--- a/src/components/results.tsx
++++ b/src/components/results.tsx
+@@ -10,7 +10,6 @@ type ResultsProps = {
+   payload: PuzzlePayload
+   state: GameState
+   answers: Array<BoardAnswer>
+-  daily: boolean
+ }
+ 
+ const plural = new Intl.PluralRules("cs-CZ")
+@@ -20,7 +19,7 @@ const pick = (n: number, one: string, few: string, many: string) => {
+   return category === "one" ? one : category === "few" ? few : many
+ }
+ 
+-export function Results({ payload, state, answers, daily }: ResultsProps) {
++export function Results({ payload, state, answers }: ResultsProps) {
+   const { bonus, total } = scoreLines(state, answers)
+ 
+   return (
+@@ -73,7 +72,7 @@ export function Results({ payload, state, answers, daily }: ResultsProps) {
+         </div>
+       </div>
+ 
+-      <Share payload={payload} state={state} answers={answers} total={total} daily={daily} />
++      <Share payload={payload} state={state} answers={answers} total={total} />
+     </section>
+   )
+ }
+@@ -83,13 +82,11 @@ function Share({
+   state,
+   answers,
+   total,
+-  daily,
+ }: {
+   payload: PuzzlePayload
+   state: GameState
+   answers: Array<BoardAnswer>
+   total: number
+-  daily: boolean
+ }) {
+   const ticketRef = useRef<HTMLDivElement>(null)
+   const [status, setStatus] = useState("")
+@@ -97,7 +94,7 @@ function Share({
+ 
+   useEffect(() => setOrigin(window.location.origin), [])
+ 
+-  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
++  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : `/hra/${payload.date}`
+   const url = `${origin}${path}`
+   const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url })
+   const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`

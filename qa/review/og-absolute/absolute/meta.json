@@ -1,0 +1,6 @@
+{
+  "title": "Absolute preview tags",
+  "summary": "Every page gets an absolute og:image and twitter:image (https://ai100.appwrite.network/og.png) and its own absolute og:url (/, /hra/<date>, /archiv, /obsazeni, /vlastni/<id>). The base URL comes from VITE_SITE_URL with the production domain as default.",
+  "tradeoffs": "The domain is baked in at build time; a different domain needs VITE_SITE_URL set for the build. Nothing visible changes on the page.",
+  "head": ["/  <meta property=\"og:url\" content=\"https://ai100.appwrite.network/\"/>", "/  <meta property=\"og:image\" content=\"https://ai100.appwrite.network/og.png\"/>", "/  <meta name=\"twitter:image\" content=\"https://ai100.appwrite.network/og.png\"/>", "/hra/2026-10-20  <meta property=\"og:image\" content=\"https://ai100.appwrite.network/og.png\"/>", "/hra/2026-10-20  <meta name=\"twitter:image\" content=\"https://ai100.appwrite.network/og.png\"/>", "/hra/2026-10-20  <meta property=\"og:url\" content=\"https://ai100.appwrite.network/hra/2026-10-20\"/>", "/archiv  <meta property=\"og:image\" content=\"https://ai100.appwrite.network/og.png\"/>", "/archiv  <meta name=\"twitter:image\" content=\"https://ai100.appwrite.network/og.png\"/>", "/archiv  <meta property=\"og:url\" content=\"https://ai100.appwrite.network/archiv\"/>"]
+}

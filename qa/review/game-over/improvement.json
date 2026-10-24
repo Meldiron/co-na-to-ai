@@ -1,0 +1,5 @@
+{
+  "title": "Get to the result after the game",
+  "problem": "When the game ends, the hero only says 'Konec hry.' with two anchor buttons; the score, the share ticket and 'Kdo co řekl' sit one to two screens below. On a phone the end state shows only the board and one button, so the most shareable moment needs a deliberate scroll.",
+  "category": "ux"
+}

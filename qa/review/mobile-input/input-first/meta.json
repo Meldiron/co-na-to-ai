@@ -1,0 +1,5 @@
+{
+  "title": "Input above the board on phones",
+  "summary": "On phones the input row (field, \"Tipnout\", strikes, score) and the feedback line move above the board, right under the intro, using CSS order only; with the keyboard open the field and the top of the board stay in view and new answers flip in just below. Desktop keeps the current order.",
+  "tradeoffs": "Tiny change, but the bottom half of the board scrolls out of view when the keyboard is open, and the board no longer opens the page on phones, which weakens the first impression of the split-flap board."
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Compact board on phones",
+  "summary": "On phones the board rows shrink from 44px to 36px with 20px flap type and tighter gaps, and the intro collapses to one line (\"Najděte 8 nejčastějších odpovědí stovky AI. Pět životů.\"), so the whole board, the input and the strikes fit on the first screen together, even with a clue line open. Tablet and desktop are unchanged.",
+  "tradeoffs": "Smallest change and no new UI, but with the keyboard open the board still scrolls out of view on short phones; the phone intro no longer mentions the 100 Czech personas."
+}

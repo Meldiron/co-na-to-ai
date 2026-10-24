@@ -1,0 +1,5 @@
+{
+  "title": "Friendly empty note",
+  "summary": "With no finished games, the statistics slip shows a single sentence ('Zatím tu nic není. Dohrajte první tabuli…') and a dark 'Na dnešní tabuli' button that scrolls to the board and focuses the input; with history the slip is unchanged.",
+  "tradeoffs": "The slip becomes much shorter than the column next to it on desktop; first-timers do not see what will be tracked."
+}

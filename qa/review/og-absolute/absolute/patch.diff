@@ -1,0 +1,107 @@
+diff --git a/src/lib/site.ts b/src/lib/site.ts
+new file mode 100644
+index 0000000..84d47c6
+--- /dev/null
++++ b/src/lib/site.ts
+@@ -0,0 +1 @@
++export const SITE_URL = String(import.meta.env.VITE_SITE_URL ?? "https://ai100.appwrite.network").replace(/\/+$/, "")
+diff --git a/src/routes/__root.tsx b/src/routes/__root.tsx
+index 979edef..757a5b2 100644
+--- a/src/routes/__root.tsx
++++ b/src/routes/__root.tsx
+@@ -1,6 +1,7 @@
+ import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-router"
+ import { SiteFooter } from "@/components/site-footer"
+ import { SiteHeader } from "@/components/site-header"
++import { SITE_URL } from "@/lib/site"
+ import appCss from "../styles.css?url"
+ 
+ export const Route = createRootRoute({
+@@ -18,10 +19,12 @@ export const Route = createRootRoute({
+       { property: "og:description", content: "Uhodnete, co odpověděla stovka umělých inteligencí? Nová otázka každý den." },
+       { property: "og:type", content: "website" },
+       { property: "og:locale", content: "cs_CZ" },
+-      { property: "og:image", content: "/og.png" },
++      { property: "og:url", content: `${SITE_URL}/` },
++      { property: "og:image", content: `${SITE_URL}/og.png` },
+       { property: "og:image:width", content: "1200" },
+       { property: "og:image:height", content: "630" },
+       { name: "twitter:card", content: "summary_large_image" },
++      { name: "twitter:image", content: `${SITE_URL}/og.png` },
+     ],
+     links: [
+       { rel: "stylesheet", href: appCss },
+diff --git a/src/routes/archiv.tsx b/src/routes/archiv.tsx
+index 4316cac..be0958e 100644
+--- a/src/routes/archiv.tsx
++++ b/src/routes/archiv.tsx
+@@ -4,11 +4,12 @@ import { SiteHeader } from "@/components/site-header"
+ import { formatShort } from "@/lib/day"
+ import { pointsWord } from "@/lib/game"
+ import { loadResults, type Result } from "@/lib/storage"
++import { SITE_URL } from "@/lib/site"
+ import { getArchive } from "@/server/api"
+ 
+ export const Route = createFileRoute("/archiv")({
+   loader: () => getArchive(),
+-  head: () => ({ meta: [{ title: "Archiv otázek · Ptali jsme se 100 AI" }] }),
++  head: () => ({ meta: [{ title: "Archiv otázek · Ptali jsme se 100 AI" }, { property: "og:url", content: `${SITE_URL}/archiv` }] }),
+   component: Archive,
+ })
+ 
+diff --git a/src/routes/hra.$datum.tsx b/src/routes/hra.$datum.tsx
+index 86d5caf..337d12c 100644
+--- a/src/routes/hra.$datum.tsx
++++ b/src/routes/hra.$datum.tsx
+@@ -1,6 +1,7 @@
+ import { createFileRoute } from "@tanstack/react-router"
+ import { PuzzlePage } from "@/components/puzzle-page"
+ import { formatShort } from "@/lib/day"
++import { SITE_URL } from "@/lib/site"
+ import { getPuzzle } from "@/server/api"
+ 
+ export const Route = createFileRoute("/hra/$datum")({
+@@ -10,6 +11,7 @@ export const Route = createFileRoute("/hra/$datum")({
+       ? [
+           { title: `${loaderData.puzzle.question} · ${formatShort(loaderData.puzzle.date)} · Ptali jsme se 100 AI` },
+           { property: "og:title", content: `${formatShort(loaderData.puzzle.date)}: ${loaderData.puzzle.question}` },
++          { property: "og:url", content: `${SITE_URL}/hra/${loaderData.puzzle.date}` },
+         ]
+       : [{ title: "Hra nenalezena · Ptali jsme se 100 AI" }],
+   }),
+diff --git a/src/routes/obsazeni.tsx b/src/routes/obsazeni.tsx
+index f9cbf7e..e9b8b7a 100644
+--- a/src/routes/obsazeni.tsx
++++ b/src/routes/obsazeni.tsx
+@@ -2,10 +2,11 @@ import { createFileRoute } from "@tanstack/react-router"
+ import { PersonaAvatar } from "@/components/persona-avatar"
+ import { SiteHeader } from "@/components/site-header"
+ import { answerers, modelOf, personaOf, providerCount } from "@/lib/cast"
++import { SITE_URL } from "@/lib/site"
+ import type { ModelInfo, Persona } from "@/lib/types"
+ 
+ export const Route = createFileRoute("/obsazeni")({
+-  head: () => ({ meta: [{ title: "Obsazení: sto postav · Ptali jsme se 100 AI" }] }),
++  head: () => ({ meta: [{ title: "Obsazení: sto postav · Ptali jsme se 100 AI" }, { property: "og:url", content: `${SITE_URL}/obsazeni` }] }),
+   component: Cast,
+ })
+ 
+diff --git a/src/routes/vlastni.$id.tsx b/src/routes/vlastni.$id.tsx
+index 7053af6..7f33101 100644
+--- a/src/routes/vlastni.$id.tsx
++++ b/src/routes/vlastni.$id.tsx
+@@ -1,5 +1,6 @@
+ import { createFileRoute } from "@tanstack/react-router"
+ import { PuzzlePage } from "@/components/puzzle-page"
++import { SITE_URL } from "@/lib/site"
+ import { getCustomPuzzle } from "@/server/admin-api"
+ 
+ export const Route = createFileRoute("/vlastni/$id")({
+@@ -9,6 +10,7 @@ export const Route = createFileRoute("/vlastni/$id")({
+       ? [
+           { title: `${loaderData.puzzle.question} · vlastní hra · Ptali jsme se 100 AI` },
+           { property: "og:title", content: `Vlastní hra: ${loaderData.puzzle.question}` },
++          { property: "og:url", content: `${SITE_URL}/vlastni/${loaderData.puzzle.id}` },
+           { name: "robots", content: "noindex" },
+         ]
+       : [{ title: "Hra nenalezena · Ptali jsme se 100 AI" }],

@@ -1,0 +1,20 @@
+diff --git a/src/routes/hra.$datum.tsx b/src/routes/hra.$datum.tsx
+index 86d5caf..557164f 100644
+--- a/src/routes/hra.$datum.tsx
++++ b/src/routes/hra.$datum.tsx
+@@ -1,9 +1,13 @@
+-import { createFileRoute } from "@tanstack/react-router"
++import { createFileRoute, redirect } from "@tanstack/react-router"
+ import { PuzzlePage } from "@/components/puzzle-page"
+-import { formatShort } from "@/lib/day"
++import { LAUNCH_DATE, formatShort, isValidDate } from "@/lib/day"
+ import { getPuzzle } from "@/server/api"
+ 
+ export const Route = createFileRoute("/hra/$datum")({
++  beforeLoad: ({ params }) => {
++    if (!isValidDate(params.datum)) throw redirect({ to: "/" })
++    if (params.datum < LAUNCH_DATE) throw redirect({ to: "/archiv" })
++  },
+   loader: ({ params }) => getPuzzle({ data: { date: params.datum } }),
+   head: ({ loaderData }) => ({
+     meta: loaderData?.puzzle

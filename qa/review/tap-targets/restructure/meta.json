@@ -1,0 +1,5 @@
+{
+  "title": "Restructure the small controls",
+  "summary": "Footer links become a grid of 48px board-style tiles (two columns on phones, \"Obsazení: sto postav\" shortened to \"Obsazení\" to fit), \"Vzdát se a ukázat odpovědi\" moves into a \"⋯\" menu button next to \"Tipnout\", the Mimo tabuli names become 44px chips with the person's face, and the wordmark and \"Odhlásit se\" get 44px boxes.",
+  "tradeoffs": "Most thorough and gives the footer a stronger board look, but giving up is now hidden behind \"⋯\" (less discoverable, which may be a feature) and the footer changes noticeably."
+}

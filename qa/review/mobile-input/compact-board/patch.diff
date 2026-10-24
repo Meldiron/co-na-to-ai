@@ -1,0 +1,69 @@
+diff --git a/src/components/board.tsx b/src/components/board.tsx
+index d74695d..7bfbb0e 100644
+--- a/src/components/board.tsx
++++ b/src/components/board.tsx
+@@ -24,8 +24,8 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
+   let reveal = 0
+ 
+   return (
+-    <section aria-label="Tabule odpovědí" className="relative bg-board p-2 sm:p-3 md:p-4">
+-      <ol className="grid gap-[5px] md:grid-flow-col md:grid-cols-2 md:grid-rows-4 md:gap-x-4">
++    <section aria-label="Tabule odpovědí" className="board-compact relative bg-board p-1.5 sm:p-3 md:p-4">
++      <ol className="grid gap-1 sm:gap-[5px] md:grid-flow-col md:grid-cols-2 md:grid-rows-4 md:gap-x-4">
+         {slots.map((answer, index) => {
+           const isFound = found.includes(index)
+           const shown = isFound || revealAll
+@@ -36,7 +36,7 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
+           return (
+             <li
+               key={answer.rank}
+-              className={`relative grid h-[44px] grid-cols-[2.75rem_1fr_3.75rem] gap-[3px] sm:h-[52px] md:h-[72px] md:grid-cols-[4rem_1fr_5rem] ${asking ? "hint-row" : ""}`}
++              className={`relative grid h-9 grid-cols-[2.5rem_1fr_3.25rem] gap-[3px] sm:h-[52px] sm:grid-cols-[2.75rem_1fr_3.75rem] md:h-[72px] md:grid-cols-[4rem_1fr_5rem] ${asking ? "hint-row" : ""}`}
+             >
+               <Flap text={booted ? String(answer.rank) : ""} align="center" delay={index * 70} className="h-full" />
+               <Flap text={text} tone={isFound || (!shown && used) ? undefined : "dim"} delay={delay} className="h-full" />
+@@ -50,7 +50,7 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
+               {asking && answer.text && (
+                 <Popover>
+                   <PopoverTrigger
+-                    className="hint-trigger absolute inset-y-0 right-0 left-[calc(2.75rem+3px)] z-[4] md:left-[calc(4rem+3px)]"
++                    className="hint-trigger absolute inset-y-0 right-0 left-[calc(2.5rem+3px)] z-[4] sm:left-[calc(2.75rem+3px)] md:left-[calc(4rem+3px)]"
+                     aria-label={`Nápověda k odpovědi číslo ${answer.rank}`}
+                   />
+                   <SlotHelp
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..a306b7e 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -97,11 +97,14 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+         <div className="page pt-5 pb-14 md:pt-12 md:pb-20">
+           <h1 className="display">{payload.question}</h1>
+           <DateStrip payload={payload} daily={daily} />
+-          <p className="mt-4 max-w-[62ch] text-base md:mt-5">
+-            Ptali jsme se stovky umělých inteligencí, každé v roli jiného Čecha. Najděte jejich osm nejčastějších odpovědí. Máte pět životů.
++          <p className="mt-3 max-w-[62ch] text-base sm:mt-4 md:mt-5">
++            <span className="sm:hidden">Najděte 8 nejčastějších odpovědí stovky AI. Pět životů.</span>
++            <span className="hidden sm:inline">
++              Ptali jsme se stovky umělých inteligencí, každé v roli jiného Čecha. Najděte jejich osm nejčastějších odpovědí. Máte pět životů.
++            </span>
+           </p>
+ 
+-          <div className="mt-5 md:mt-10">
++          <div className="mt-4 sm:mt-5 md:mt-10">
+             <Board
+               answers={ready ? secret.answers : null}
+               found={state.found}
+diff --git a/src/styles.css b/src/styles.css
+index 17b84ee..6220fd2 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -504,3 +504,9 @@
+     transform: none;
+   }
+ }
++
++@media (max-width: 639px) {
++  .board-compact .flap {
++    font-size: 1.25rem;
++  }
++}

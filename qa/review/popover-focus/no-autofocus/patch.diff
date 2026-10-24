@@ -1,0 +1,30 @@
+diff --git a/src/components/board.tsx b/src/components/board.tsx
+index d74695d..e07d321 100644
+--- a/src/components/board.tsx
++++ b/src/components/board.tsx
+@@ -1,4 +1,4 @@
+-import { useEffect, useState } from "react"
++import { useEffect, useRef, useState } from "react"
+ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+ import { hintPattern, maxHints } from "@/lib/game"
+ import type { BoardAnswer } from "@/lib/types"
+@@ -79,8 +79,18 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
+ }
+ 
+ function SlotHelp({ rank, left, clue, onLetter, onClue }: { rank: number; left: number; clue: string | null; onLetter: () => void; onClue: () => void }) {
++  const content = useRef<HTMLDivElement>(null)
+   return (
+-    <PopoverContent align="end" sideOffset={6} className="w-[min(22rem,calc(100vw-2rem))]">
++    <PopoverContent
++      ref={content}
++      align="end"
++      sideOffset={6}
++      onOpenAutoFocus={(event) => {
++        event.preventDefault()
++        content.current?.focus()
++      }}
++      className="w-[min(22rem,calc(100vw-2rem))] focus:outline-none"
++    >
+       <p className="px-3 pt-2 text-sm text-ink-soft">Nápověda k odpovědi č. {rank}</p>
+       <button type="button" disabled={left <= 0} onClick={onLetter} className="flex flex-col items-start px-3 py-2.5 text-left transition-colors hover:bg-paper-step disabled:cursor-default disabled:opacity-55 disabled:hover:bg-transparent">
+         <span className="font-semibold">Odkrýt písmeno</span>

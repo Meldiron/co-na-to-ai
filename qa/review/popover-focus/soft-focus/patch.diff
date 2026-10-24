@@ -1,0 +1,31 @@
+diff --git a/src/components/board.tsx b/src/components/board.tsx
+index d74695d..8a347b5 100644
+--- a/src/components/board.tsx
++++ b/src/components/board.tsx
+@@ -82,7 +82,12 @@ function SlotHelp({ rank, left, clue, onLetter, onClue }: { rank: number; left:
+   return (
+     <PopoverContent align="end" sideOffset={6} className="w-[min(22rem,calc(100vw-2rem))]">
+       <p className="px-3 pt-2 text-sm text-ink-soft">Nápověda k odpovědi č. {rank}</p>
+-      <button type="button" disabled={left <= 0} onClick={onLetter} className="flex flex-col items-start px-3 py-2.5 text-left transition-colors hover:bg-paper-step disabled:cursor-default disabled:opacity-55 disabled:hover:bg-transparent">
++      <button
++        type="button"
++        disabled={left <= 0}
++        onClick={onLetter}
++        className="flex flex-col items-start border-l-4 border-transparent py-2.5 pr-3 pl-2 text-left transition-colors hover:bg-paper-step focus-visible:border-red focus-visible:bg-paper-step focus-visible:outline-none disabled:cursor-default disabled:opacity-55 disabled:hover:bg-transparent"
++      >
+         <span className="font-semibold">Odkrýt písmeno</span>
+         <span className="text-sm text-ink-soft">
+           {left > 0 ? `Za odpověď pak dostanete o čtvrtinu bodů méně. Zbývá odkrýt: ${left}.` : "Víc písmen už neprozradíme."}
+@@ -91,7 +96,11 @@ function SlotHelp({ rank, left, clue, onLetter, onClue }: { rank: number; left:
+       {clue ? (
+         <p className="bg-paper-step px-3 py-2.5">{clue}</p>
+       ) : (
+-        <button type="button" onClick={onClue} className="flex flex-col items-start px-3 py-2.5 text-left transition-colors hover:bg-paper-step">
++        <button
++          type="button"
++          onClick={onClue}
++          className="flex flex-col items-start border-l-4 border-transparent py-2.5 pr-3 pl-2 text-left transition-colors hover:bg-paper-step focus-visible:border-red focus-visible:bg-paper-step focus-visible:outline-none"
++        >
+           <span className="font-semibold">Kdo to řekl?</span>
+           <span className="text-sm text-ink-soft">Zdarma a bez vlivu na body. Prozradí, jaké postavy tuhle odpověď daly.</span>
+         </button>

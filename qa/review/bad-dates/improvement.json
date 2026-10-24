@@ -1,0 +1,5 @@
+{
+  "title": "Wrong messages for bad and early dates",
+  "category": "bug",
+  "problem": "/hra/nesmysl (not a date) says \"Tahle otázka ještě nevyšla\", and /hra/2026-10-01 (before launch) says \"Dnešní tabule ještě není hotová\", although it is neither today nor upcoming. Both send players a false message instead of a 404 or a sensible destination."
+}

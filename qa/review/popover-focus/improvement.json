@@ -1,0 +1,5 @@
+{
+  "title": "Hint menu opens looking pre-selected",
+  "category": "design",
+  "problem": "When the hint menu opens, the first option \"Odkrýt písmeno\" gets a blue focus outline, which reads as if it was already chosen (see the before screenshots)."
+}

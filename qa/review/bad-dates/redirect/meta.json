@@ -1,0 +1,5 @@
+{
+  "title": "Redirect bad dates",
+  "summary": "Invalid dates (/hra/nesmysl) redirect to today's game and dates before launch redirect to the archive, so a mistyped link still lands somewhere playable. Future dates keep \"Tahle otázka ještě nevyšla\".",
+  "tradeoffs": "Silent redirects hide the mistake from the player and search engines see a redirect rather than a 404."
+}

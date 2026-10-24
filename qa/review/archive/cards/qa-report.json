@@ -1,0 +1,39 @@
+[
+  {
+    "scenario": "arch-history",
+    "width": "desktop",
+    "url": "/archiv",
+    "overflow": 0,
+    "small": [],
+    "title": "Archiv otázek · Ptali jsme se 100 AI",
+    "h1": "Archiv otázek",
+    "logs": [],
+    "extras": {
+      "copied": null,
+      "shared": null,
+      "blob": null
+    }
+  },
+  {
+    "scenario": "arch-history",
+    "width": "phone",
+    "url": "/archiv",
+    "overflow": 0,
+    "small": [
+      "a \"Ptali jsme se100AI\" 149×26",
+      "a \"Dnešní otázka\" 112×21",
+      "a \"Archiv\" 50×21",
+      "a \"Obsazení: sto postav\" 164×21",
+      "a \"Pravidla\" 63×21",
+      "a \"Administrace\" 105×21"
+    ],
+    "title": "Archiv otázek · Ptali jsme se 100 AI",
+    "h1": "Archiv otázek",
+    "logs": [],
+    "extras": {
+      "copied": null,
+      "shared": null,
+      "blob": null
+    }
+  }
+]

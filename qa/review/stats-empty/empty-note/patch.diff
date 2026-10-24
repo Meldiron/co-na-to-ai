@@ -1,0 +1,37 @@
+diff --git a/src/components/departure.tsx b/src/components/departure.tsx
+index 0c8d091..546166e 100644
+--- a/src/components/departure.tsx
++++ b/src/components/departure.tsx
+@@ -42,6 +42,12 @@ function useStats(today: string): { stats: Stats; todayResult: Result | null; re
+   return value
+ }
+ 
++function goToBoard() {
++  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
++  document.querySelector("section[aria-label='Tabule odpovědí']")?.scrollIntoView({ behavior, block: "center" })
++  document.getElementById("tip")?.focus({ preventScroll: true })
++}
++
+ export function Departure({ today, recent }: { today: string; recent: Array<PuzzleSummary> }) {
+   const [hours, minutes, seconds] = useCountdown()
+   const data = useStats(today)
+@@ -106,7 +112,18 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
+         <div className="md:col-span-5 md:col-start-8">
+           <div className="zigzag-bottom bg-paper px-6 pt-6 pb-14 text-ink md:px-8">
+             <p className="font-semibold">Vaše statistiky</p>
+-            {stats ? (
++            {stats?.played === 0 ? (
++              <>
++                <p className="mt-5 max-w-[34ch]">Zatím tu nic není. Dohrajte první tabuli a začne se vám tu psát série dnů, průměr a kolik odpovědí obvykle najdete.</p>
++                <button
++                  type="button"
++                  onClick={goToBoard}
++                  className="mt-6 inline-flex h-11 items-center bg-ink px-5 font-semibold text-paper transition-colors hover:bg-field"
++                >
++                  Na dnešní tabuli
++                </button>
++              </>
++            ) : stats ? (
+               <>
+                 <ul className="mt-5 grid gap-2">
+                   {rows.map(([label, value]) => (

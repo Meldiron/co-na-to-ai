@@ -1,0 +1,313 @@
+{
+ "solo": {
+  "admin-czech/translate": true,
+  "archive/calendar": true,
+  "archive/cards": true,
+  "archive/result-squares": true,
+  "bad-dates/not-found": true,
+  "bad-dates/redirect": true,
+  "game-over/auto-scroll": true,
+  "game-over/hero-summary": true,
+  "game-over/sticky-share": true,
+  "mobile-input/compact-board": true,
+  "mobile-input/input-first": true,
+  "mobile-input/sticky-bar": true,
+  "mobile-nav/bottom-tabs": true,
+  "mobile-nav/menu-sheet": true,
+  "mobile-nav/scroll-row": true,
+  "og-absolute/absolute": true,
+  "onboarding/board-demo": true,
+  "onboarding/dialog": true,
+  "onboarding/help-tile": true,
+  "onboarding/inline-strip": true,
+  "popover-focus/no-autofocus": true,
+  "popover-focus/soft-focus": true,
+  "share-boost/challenge": true,
+  "share-boost/og-image": true,
+  "share-boost/streak-line": true,
+  "share-link/dated-link": true,
+  "stats-empty/empty-note": true,
+  "stats-empty/ghost-histogram": true,
+  "stats-empty/invite-slip": true,
+  "tap-targets/buttons": true,
+  "tap-targets/padding": true,
+  "tap-targets/restructure": true,
+  "tried-words/board-row": true,
+  "tried-words/chips": true,
+  "tried-words/strike-labels": true,
+  "who-said/breakdown": true,
+  "who-said/collapsed": true,
+  "who-said/faces": true
+ },
+ "conflicts": {
+  "admin-czech/translate": [],
+  "archive/calendar": [
+   "archive/cards",
+   "archive/result-squares",
+   "og-absolute/absolute"
+  ],
+  "archive/cards": [
+   "archive/calendar",
+   "archive/result-squares",
+   "og-absolute/absolute"
+  ],
+  "archive/result-squares": [
+   "archive/calendar",
+   "archive/cards",
+   "og-absolute/absolute"
+  ],
+  "bad-dates/not-found": [
+   "bad-dates/redirect",
+   "og-absolute/absolute"
+  ],
+  "bad-dates/redirect": [
+   "bad-dates/not-found",
+   "og-absolute/absolute"
+  ],
+  "game-over/auto-scroll": [
+   "game-over/hero-summary",
+   "onboarding/board-demo",
+   "onboarding/help-tile",
+   "onboarding/inline-strip",
+   "tap-targets/restructure",
+   "tried-words/board-row",
+   "tried-words/chips",
+   "tried-words/strike-labels"
+  ],
+  "game-over/hero-summary": [
+   "game-over/auto-scroll",
+   "game-over/sticky-share",
+   "mobile-input/input-first",
+   "mobile-input/sticky-bar",
+   "onboarding/board-demo",
+   "onboarding/inline-strip",
+   "share-boost/challenge",
+   "share-boost/og-image",
+   "share-boost/streak-line",
+   "share-link/dated-link",
+   "tried-words/board-row",
+   "tried-words/chips",
+   "tried-words/strike-labels"
+  ],
+  "game-over/sticky-share": [
+   "game-over/hero-summary",
+   "share-boost/challenge",
+   "share-boost/og-image",
+   "share-boost/streak-line",
+   "share-link/dated-link"
+  ],
+  "mobile-input/compact-board": [
+   "mobile-input/input-first",
+   "mobile-input/sticky-bar",
+   "mobile-nav/bottom-tabs",
+   "onboarding/board-demo",
+   "onboarding/inline-strip"
+  ],
+  "mobile-input/input-first": [
+   "game-over/hero-summary",
+   "mobile-input/compact-board",
+   "mobile-input/sticky-bar",
+   "onboarding/inline-strip",
+   "tried-words/chips"
+  ],
+  "mobile-input/sticky-bar": [
+   "game-over/hero-summary",
+   "mobile-input/compact-board",
+   "mobile-input/input-first",
+   "mobile-nav/bottom-tabs",
+   "tap-targets/buttons",
+   "tap-targets/padding",
+   "tap-targets/restructure",
+   "tried-words/chips",
+   "tried-words/strike-labels"
+  ],
+  "mobile-nav/bottom-tabs": [
+   "mobile-input/compact-board",
+   "mobile-input/sticky-bar",
+   "mobile-nav/menu-sheet",
+   "mobile-nav/scroll-row",
+   "og-absolute/absolute",
+   "onboarding/dialog",
+   "tap-targets/buttons",
+   "tap-targets/padding",
+   "tap-targets/restructure"
+  ],
+  "mobile-nav/menu-sheet": [
+   "mobile-nav/bottom-tabs",
+   "mobile-nav/scroll-row",
+   "onboarding/dialog",
+   "tap-targets/buttons",
+   "tap-targets/padding",
+   "tap-targets/restructure"
+  ],
+  "mobile-nav/scroll-row": [
+   "mobile-nav/bottom-tabs",
+   "mobile-nav/menu-sheet",
+   "onboarding/dialog",
+   "tap-targets/buttons",
+   "tap-targets/padding",
+   "tap-targets/restructure"
+  ],
+  "og-absolute/absolute": [
+   "archive/calendar",
+   "archive/cards",
+   "archive/result-squares",
+   "bad-dates/not-found",
+   "bad-dates/redirect",
+   "mobile-nav/bottom-tabs",
+   "share-boost/og-image"
+  ],
+  "onboarding/board-demo": [
+   "game-over/auto-scroll",
+   "game-over/hero-summary",
+   "mobile-input/compact-board",
+   "onboarding/dialog",
+   "onboarding/help-tile",
+   "onboarding/inline-strip",
+   "tap-targets/restructure",
+   "tried-words/board-row",
+   "tried-words/chips",
+   "tried-words/strike-labels"
+  ],
+  "onboarding/dialog": [
+   "mobile-nav/bottom-tabs",
+   "mobile-nav/menu-sheet",
+   "mobile-nav/scroll-row",
+   "onboarding/board-demo",
+   "onboarding/help-tile",
+   "onboarding/inline-strip"
+  ],
+  "onboarding/help-tile": [
+   "game-over/auto-scroll",
+   "onboarding/board-demo",
+   "onboarding/dialog",
+   "onboarding/inline-strip",
+   "tap-targets/restructure"
+  ],
+  "onboarding/inline-strip": [
+   "game-over/auto-scroll",
+   "game-over/hero-summary",
+   "mobile-input/compact-board",
+   "mobile-input/input-first",
+   "onboarding/board-demo",
+   "onboarding/dialog",
+   "onboarding/help-tile",
+   "tap-targets/restructure",
+   "tried-words/board-row",
+   "tried-words/chips",
+   "tried-words/strike-labels"
+  ],
+  "popover-focus/no-autofocus": [
+   "onboarding/board-demo",
+   "popover-focus/soft-focus"
+  ],
+  "popover-focus/soft-focus": [
+   "popover-focus/no-autofocus"
+  ],
+  "share-boost/challenge": [
+   "game-over/hero-summary",
+   "game-over/sticky-share",
+   "share-boost/og-image",
+   "share-boost/streak-line",
+   "share-link/dated-link"
+  ],
+  "share-boost/og-image": [
+   "game-over/hero-summary",
+   "game-over/sticky-share",
+   "og-absolute/absolute",
+   "share-boost/challenge",
+   "share-boost/streak-line",
+   "share-link/dated-link"
+  ],
+  "share-boost/streak-line": [
+   "game-over/hero-summary",
+   "game-over/sticky-share",
+   "share-boost/challenge",
+   "share-boost/og-image",
+   "share-link/dated-link"
+  ],
+  "share-link/dated-link": [
+   "game-over/hero-summary",
+   "game-over/sticky-share",
+   "share-boost/challenge",
+   "share-boost/og-image",
+   "share-boost/streak-line"
+  ],
+  "stats-empty/empty-note": [
+   "stats-empty/invite-slip"
+  ],
+  "stats-empty/ghost-histogram": [],
+  "stats-empty/invite-slip": [
+   "stats-empty/empty-note"
+  ],
+  "tap-targets/buttons": [
+   "mobile-input/sticky-bar",
+   "mobile-nav/bottom-tabs",
+   "mobile-nav/menu-sheet",
+   "mobile-nav/scroll-row",
+   "tap-targets/padding",
+   "tap-targets/restructure"
+  ],
+  "tap-targets/padding": [
+   "mobile-input/sticky-bar",
+   "mobile-nav/bottom-tabs",
+   "mobile-nav/menu-sheet",
+   "mobile-nav/scroll-row",
+   "tap-targets/buttons",
+   "tap-targets/restructure"
+  ],
+  "tap-targets/restructure": [
+   "game-over/auto-scroll",
+   "mobile-input/sticky-bar",
+   "mobile-nav/bottom-tabs",
+   "mobile-nav/menu-sheet",
+   "mobile-nav/scroll-row",
+   "onboarding/board-demo",
+   "onboarding/help-tile",
+   "onboarding/inline-strip",
+   "tap-targets/buttons",
+   "tap-targets/padding",
+   "tried-words/strike-labels"
+  ],
+  "tried-words/board-row": [
+   "game-over/auto-scroll",
+   "game-over/hero-summary",
+   "onboarding/board-demo",
+   "onboarding/inline-strip",
+   "tried-words/chips",
+   "tried-words/strike-labels"
+  ],
+  "tried-words/chips": [
+   "game-over/auto-scroll",
+   "game-over/hero-summary",
+   "mobile-input/input-first",
+   "mobile-input/sticky-bar",
+   "onboarding/board-demo",
+   "onboarding/inline-strip",
+   "tried-words/board-row",
+   "tried-words/strike-labels"
+  ],
+  "tried-words/strike-labels": [
+   "game-over/auto-scroll",
+   "game-over/hero-summary",
+   "mobile-input/sticky-bar",
+   "onboarding/board-demo",
+   "onboarding/inline-strip",
+   "tap-targets/restructure",
+   "tried-words/board-row",
+   "tried-words/chips"
+  ],
+  "who-said/breakdown": [
+   "who-said/collapsed",
+   "who-said/faces"
+  ],
+  "who-said/collapsed": [
+   "who-said/breakdown",
+   "who-said/faces"
+  ],
+  "who-said/faces": [
+   "who-said/breakdown",
+   "who-said/collapsed"
+  ]
+ }
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Sticky bottom bar on phones",
+  "summary": "While a game is running on a phone, the input, \"Tipnout\", the five strike tiles, the score and the feedback line live in a fixed navy bar at the bottom of the screen (safe-area aware), so the board stays visible above it and the controls follow you down the page. The page gets bottom padding so nothing is covered. Desktop is unchanged; after the game the bar disappears.",
+  "tradeoffs": "Takes about 140px of the phone screen for the whole session, including while reading the stats and rules sections below; on iOS the fixed bar rides above the keyboard, which is usually what you want but can feel heavy on small phones."
+}

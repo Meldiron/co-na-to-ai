@@ -1,0 +1,75 @@
+diff --git a/src/components/departure.tsx b/src/components/departure.tsx
+index 0c8d091..e24f922 100644
+--- a/src/components/departure.tsx
++++ b/src/components/departure.tsx
+@@ -6,6 +6,8 @@ import type { PuzzleSummary } from "@/lib/types"
+ import { RESULTS_EVENT, computeStats, loadResults, type Result, type Stats } from "@/lib/storage"
+ import { Flap } from "./flap"
+ 
++const GHOST = [6, 14, 30, 52, 70, 58, 34, 16, 8]
++
+ function useCountdown(): [string, string, string] {
+   const [ms, setMs] = useState<number | null>(null)
+ 
+@@ -133,27 +135,41 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
+                 </ul>
+ 
+                 <p className="mt-7 font-semibold">Kolik odpovědí jste našli</p>
+-                <ol className="mt-3 grid gap-1.5" aria-label="Rozložení nalezených odpovědí">
+-                  {stats.distribution
+-                    .map((count, found) => ({ count, found }))
+-                    .reverse()
+-                    .map(({ count, found }) => {
+-                      const isToday = data.todayResult?.found === found
+-                      return (
+-                        <li key={found} className="grid grid-cols-[1.25rem_1fr] items-center gap-2">
+-                          <span className="tabular-nums">{found}</span>
+-                          <span className="flex items-center">
+-                            <span
+-                              className={`flex h-6 min-w-7 items-center justify-end px-2 text-sm font-semibold tabular-nums ${isToday ? "bg-red text-red-ink" : count ? "bg-field text-field-ink" : "bg-paper-step text-ink-soft"}`}
+-                              style={{ width: `${(count / peak) * 100}%` }}
+-                            >
+-                              {count}
+-                            </span>
+-                          </span>
++                {stats.played === 0 ? (
++                  <>
++                    <p className="mt-2 text-ink-soft">Po první hře tu uvidíte, kolik odpovědí z osmi obvykle najdete.</p>
++                    <ol className="mt-3 grid gap-1.5" aria-hidden>
++                      {GHOST.map((width, i) => (
++                        <li key={i} className="grid grid-cols-[1.25rem_1fr] items-center gap-2 text-ink-soft/60">
++                          <span className="tabular-nums">{8 - i}</span>
++                          <span className="h-6 bg-paper-step/70" style={{ width: `${width}%` }} />
+                         </li>
+-                      )
+-                    })}
+-                </ol>
++                      ))}
++                    </ol>
++                  </>
++                ) : (
++                  <ol className="mt-3 grid gap-1.5" aria-label="Rozložení nalezených odpovědí">
++                    {stats.distribution
++                      .map((count, found) => ({ count, found }))
++                      .reverse()
++                      .map(({ count, found }) => {
++                        const isToday = data.todayResult?.found === found
++                        return (
++                          <li key={found} className="grid grid-cols-[1.25rem_1fr] items-center gap-2">
++                            <span className="tabular-nums">{found}</span>
++                            <span className="flex items-center">
++                              <span
++                                className={`flex h-6 min-w-7 items-center justify-end px-2 text-sm font-semibold tabular-nums ${isToday ? "bg-red text-red-ink" : count ? "bg-field text-field-ink" : "bg-paper-step text-ink-soft"}`}
++                                style={{ width: `${(count / peak) * 100}%` }}
++                              >
++                                {count}
++                              </span>
++                            </span>
++                          </li>
++                        )
++                      })}
++                  </ol>
++                )}
+ 
+                 <p className="inverted-row -mx-6 mt-7 px-6 md:-mx-8 md:px-8">
+                   <span>Dnešní hra</span>

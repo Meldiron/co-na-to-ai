@@ -1,0 +1,5 @@
+{
+  "title": "Real 44px controls",
+  "summary": "The small text links become real controls: \"Vzdát se a ukázat odpovědi\" is a dark-blue tone button, the footer links are full 44px rows, the Mimo tabuli names become grey chips like the ones above them, the wordmark gets a 44px box and \"Odhlásit se\" becomes a grey button.",
+  "tradeoffs": "Clearly tappable and passes the 44px guideline by measurement, but \"Vzdát se\" becomes more prominent (tempting to quit early) and the footer list gets taller."
+}

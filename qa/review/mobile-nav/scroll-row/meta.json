@@ -1,0 +1,5 @@
+{
+  "title": "Second header row with all links",
+  "summary": "On phones the header becomes two rows: the wordmark, then all four links (Dnešní hra, Archiv, Obsazení, Pravidla) in a row that starts on the page margin and scrolls sideways only on very narrow screens; the active page is underlined. At 390px all four fit. Desktop keeps one row.",
+  "tradeoffs": "Every destination is one tap away with no extra UI, but the header grows by ~48px on every phone page, pushing the question and the board down."
+}

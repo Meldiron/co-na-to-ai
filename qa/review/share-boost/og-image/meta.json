@@ -1,0 +1,8 @@
+{
+  "title": "Per-question preview image",
+  "summary": "A server route /og/<date> renders a 1200×630 preview with the day's question, date tiles and a strip of the board's blue ? keys; every puzzle page sets absolute og:image, og:url and twitter:image to it, and the shared link becomes /hra/<date>. See og.png for the rendered image.",
+  "tradeoffs": "Adds satori, @resvg/resvg-js (a native module with per-platform binaries) and @fontsource/bricolage-grotesque; the image uses the normal-width Bricolage because satori cannot use the variable width axis. Future dates return 404 so questions never leak early.",
+  "shareText": "Ptali jsme se 100 AI \u00b7 24. 10. 2026\nCo si berete s sebou na chatu?\n\ud83d\udfe9\ud83d\udfe9\u2b1c\ud83d\udfe8\u2b1c\ud83d\udfe9\u2b1c\u2b1c 4/8\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\n483 bod\u016f\nhttp://localhost:3104/hra/2026-10-24",
+  "head": ["<meta property=\"og:url\" content=\"https://ai100.appwrite.network/hra/2026-10-24\"/>", "<meta property=\"og:image\" content=\"https://ai100.appwrite.network/og/2026-10-24\"/>", "<meta name=\"twitter:image\" content=\"https://ai100.appwrite.network/og/2026-10-24\"/>"],
+  "extraImages": ["og.png"]
+}

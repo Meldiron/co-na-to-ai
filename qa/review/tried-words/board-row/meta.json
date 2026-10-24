@@ -1,0 +1,5 @@
+{
+  "title": "Missed row on the board",
+  "summary": "The board gains a ninth, full-width row like a departure board: a red X flap and the missed words in flap letters ('MIMO TABULI · AUTO · MOBIL'), flipping as misses arrive; it stays visible after the game.",
+  "tradeoffs": "Makes the board one row taller on every screen; on a phone the words are set smaller and five long misses could be clipped at the edge."
+}

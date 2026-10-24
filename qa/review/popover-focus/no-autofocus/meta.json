@@ -1,0 +1,5 @@
+{
+  "title": "Open without pre-selecting",
+  "summary": "The hint menu opens with focus on the menu itself instead of on \"Odkrýt písmeno\", so no option looks pre-selected. Keyboard users press Tab to reach the options and Escape still returns them to the ? key.",
+  "tradeoffs": "Keyboard users need one extra Tab press to reach the first option."
+}

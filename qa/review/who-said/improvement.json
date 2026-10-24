@@ -1,0 +1,5 @@
+{
+  "title": "The \"Kdo co řekl\" wall",
+  "problem": "After the game, \"Kdo co řekl\" renders one chip for every answerer, so the top answer alone is 29 chips; on a phone the section runs several screens of chips before the next answer and it is hard to see the story (who tends to say what).",
+  "category": "design"
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Fixed bottom tab bar on phones",
+  "summary": "On phones a navy tab bar is fixed to the bottom of every page with four text tabs (Hra, Archiv, Obsazení, Pravidla); the active tab turns white with a red marker on top, and pages get bottom padding so the footer stays reachable. The phone header shows just the wordmark; desktop keeps its inline links.",
+  "tradeoffs": "Most app-like and always one tap away, but it permanently takes 64px of phone height and on the first screen of today's game it hides the strike row until you scroll; it would clash with the sticky input bar variant of mobile-input."
+}

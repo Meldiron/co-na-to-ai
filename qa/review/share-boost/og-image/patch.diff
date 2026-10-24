@@ -1,0 +1,931 @@
+diff --git a/package-lock.json b/package-lock.json
+index 51db503..9c73923 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -8,8 +8,10 @@
+       "dependencies": {
+         "@blobatar/react": "^2.7.0",
+         "@fontsource-variable/bricolage-grotesque": "^5.3.0",
++        "@fontsource/bricolage-grotesque": "^5.3.0",
+         "@openrouter/sdk": "^1.5.7",
+         "@phosphor-icons/react": "^2.1.10",
++        "@resvg/resvg-js": "^2.6.2",
+         "@tailwindcss/vite": "^4",
+         "@tanstack/react-router": "latest",
+         "@tanstack/react-start": "latest",
+@@ -23,6 +25,7 @@
+         "radix-ui": "^1.8.1",
+         "react": "^19.3.1",
+         "react-dom": "^19.3.1",
++        "satori": "^0.63.2",
+         "shadcn": "^4.22.1",
+         "tailwindcss": "^4",
+         "tw-animate-css": "^1.4.0",
+@@ -897,6 +900,15 @@
+         "url": "https://github.com/sponsors/ayuhito"
+       }
+     },
++    "node_modules/@fontsource/bricolage-grotesque": {
++      "version": "5.3.0",
++      "resolved": "https://registry.npmjs.org/@fontsource/bricolage-grotesque/-/bricolage-grotesque-5.3.0.tgz",
++      "integrity": "sha512-MdOVb/5in11IfN/IQJOExMuu6AroCIQbirl0yX7NUvKk+h0HYIKfGaVAXRS/gCPil4aFxWhjZnOw28tUwv7tFw==",
++      "license": "OFL-1.1",
++      "funding": {
++        "url": "https://github.com/sponsors/ayuhito"
++      }
++    },
+     "node_modules/@hono/node-server": {
+       "version": "2.1.5",
+       "resolved": "https://registry.npmjs.org/@hono/node-server/-/node-server-2.1.5.tgz",
+@@ -2736,6 +2748,221 @@
+       "integrity": "sha512-JtyZR+mqgBibTo8xea3B6ZRmzZiM/YeVBtUkas6zMuXjAlfIFIW2FgqeM9eLyvEaYX66vr6DJMK+4U6LV0KhNw==",
+       "license": "MIT"
+     },
++    "node_modules/@resvg/resvg-js": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js/-/resvg-js-2.6.2.tgz",
++      "integrity": "sha512-xBaJish5OeGmniDj9cW5PRa/PtmuVU3ziqrbr5xJj901ZDN4TosrVaNZpEiLZAxdfnhAe7uQ7QFWfjPe9d9K2Q==",
++      "license": "MPL-2.0",
++      "engines": {
++        "node": ">= 10"
++      },
++      "optionalDependencies": {
++        "@resvg/resvg-js-android-arm-eabi": "2.6.2",
++        "@resvg/resvg-js-android-arm64": "2.6.2",
++        "@resvg/resvg-js-darwin-arm64": "2.6.2",
++        "@resvg/resvg-js-darwin-x64": "2.6.2",
++        "@resvg/resvg-js-linux-arm-gnueabihf": "2.6.2",
++        "@resvg/resvg-js-linux-arm64-gnu": "2.6.2",
++        "@resvg/resvg-js-linux-arm64-musl": "2.6.2",
++        "@resvg/resvg-js-linux-x64-gnu": "2.6.2",
++        "@resvg/resvg-js-linux-x64-musl": "2.6.2",
++        "@resvg/resvg-js-win32-arm64-msvc": "2.6.2",
++        "@resvg/resvg-js-win32-ia32-msvc": "2.6.2",
++        "@resvg/resvg-js-win32-x64-msvc": "2.6.2"
++      }
++    },
++    "node_modules/@resvg/resvg-js-android-arm-eabi": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-android-arm-eabi/-/resvg-js-android-arm-eabi-2.6.2.tgz",
++      "integrity": "sha512-FrJibrAk6v29eabIPgcTUMPXiEz8ssrAk7TXxsiZzww9UTQ1Z5KAbFJs+Z0Ez+VZTYgnE5IQJqBcoSiMebtPHA==",
++      "cpu": [
++        "arm"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "android"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-android-arm64": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-android-arm64/-/resvg-js-android-arm64-2.6.2.tgz",
++      "integrity": "sha512-VcOKezEhm2VqzXpcIJoITuvUS/fcjIw5NA/w3tjzWyzmvoCdd+QXIqy3FBGulWdClvp4g+IfUemigrkLThSjAQ==",
++      "cpu": [
++        "arm64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "android"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-darwin-arm64": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-darwin-arm64/-/resvg-js-darwin-arm64-2.6.2.tgz",
++      "integrity": "sha512-nmok2LnAd6nLUKI16aEB9ydMC6Lidiiq2m1nEBDR1LaaP7FGs4AJ90qDraxX+CWlVuRlvNjyYJTNv8qFjtL9+A==",
++      "cpu": [
++        "arm64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-darwin-x64": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-darwin-x64/-/resvg-js-darwin-x64-2.6.2.tgz",
++      "integrity": "sha512-GInyZLjgWDfsVT6+SHxQVRwNzV0AuA1uqGsOAW+0th56J7Nh6bHHKXHBWzUrihxMetcFDmQMAX1tZ1fZDYSRsw==",
++      "cpu": [
++        "x64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-linux-arm-gnueabihf": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-linux-arm-gnueabihf/-/resvg-js-linux-arm-gnueabihf-2.6.2.tgz",
++      "integrity": "sha512-YIV3u/R9zJbpqTTNwTZM5/ocWetDKGsro0SWp70eGEM9eV2MerWyBRZnQIgzU3YBnSBQ1RcxRZvY/UxwESfZIw==",
++      "cpu": [
++        "arm"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-linux-arm64-gnu": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-linux-arm64-gnu/-/resvg-js-linux-arm64-gnu-2.6.2.tgz",
++      "integrity": "sha512-zc2BlJSim7YR4FZDQ8OUoJg5holYzdiYMeobb9pJuGDidGL9KZUv7SbiD4E8oZogtYY42UZEap7dqkkYuA91pg==",
++      "cpu": [
++        "arm64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-linux-arm64-musl": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-linux-arm64-musl/-/resvg-js-linux-arm64-musl-2.6.2.tgz",
++      "integrity": "sha512-3h3dLPWNgSsD4lQBJPb4f+kvdOSJHa5PjTYVsWHxLUzH4IFTJUAnmuWpw4KqyQ3NA5QCyhw4TWgxk3jRkQxEKg==",
++      "cpu": [
++        "arm64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-linux-x64-gnu": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-linux-x64-gnu/-/resvg-js-linux-x64-gnu-2.6.2.tgz",
++      "integrity": "sha512-IVUe+ckIerA7xMZ50duAZzwf1U7khQe2E0QpUxu5MBJNao5RqC0zwV/Zm965vw6D3gGFUl7j4m+oJjubBVoftw==",
++      "cpu": [
++        "x64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-linux-x64-musl": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-linux-x64-musl/-/resvg-js-linux-x64-musl-2.6.2.tgz",
++      "integrity": "sha512-UOf83vqTzoYQO9SZ0fPl2ZIFtNIz/Rr/y+7X8XRX1ZnBYsQ/tTb+cj9TE+KHOdmlTFBxhYzVkP2lRByCzqi4jQ==",
++      "cpu": [
++        "x64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-win32-arm64-msvc": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-win32-arm64-msvc/-/resvg-js-win32-arm64-msvc-2.6.2.tgz",
++      "integrity": "sha512-7C/RSgCa+7vqZ7qAbItfiaAWhyRSoD4l4BQAbVDqRRsRgY+S+hgS3in0Rxr7IorKUpGE69X48q6/nOAuTJQxeQ==",
++      "cpu": [
++        "arm64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-win32-ia32-msvc": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-win32-ia32-msvc/-/resvg-js-win32-ia32-msvc-2.6.2.tgz",
++      "integrity": "sha512-har4aPAlvjnLcil40AC77YDIk6loMawuJwFINEM7n0pZviwMkMvjb2W5ZirsNOZY4aDbo5tLx0wNMREp5Brk+w==",
++      "cpu": [
++        "ia32"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
++    "node_modules/@resvg/resvg-js-win32-x64-msvc": {
++      "version": "2.6.2",
++      "resolved": "https://registry.npmjs.org/@resvg/resvg-js-win32-x64-msvc/-/resvg-js-win32-x64-msvc-2.6.2.tgz",
++      "integrity": "sha512-ZXtYhtUr5SSaBrUDq7DiyjOFJqBVL/dOBN7N/qmi/pO0IgiWW/f/ue3nbvu9joWE5aAKDoIzy/CxsY0suwGosQ==",
++      "cpu": [
++        "x64"
++      ],
++      "license": "MPL-2.0",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">= 10"
++      }
++    },
+     "node_modules/@rolldown/binding-android-arm-eabi": {
+       "version": "1.2.15",
+       "resolved": "https://registry.npmjs.org/@rolldown/binding-android-arm-eabi/-/binding-android-arm-eabi-1.2.15.tgz",
+@@ -3050,6 +3277,22 @@
+         "node": ">=20"
+       }
+     },
++    "node_modules/@shuding/opentype.js": {
++      "version": "1.4.0-beta.0",
++      "resolved": "https://registry.npmjs.org/@shuding/opentype.js/-/opentype.js-1.4.0-beta.0.tgz",
++      "integrity": "sha512-3NgmNyH3l/Hv6EvsWJbsvpcpUba6R8IREQ83nH83cyakCw7uM1arZKNfHwv1Wz6jgqrF/j4x5ELvR6PnK9nTcA==",
++      "license": "MIT",
++      "dependencies": {
++        "fflate": "^0.7.3",
++        "string.prototype.codepointat": "^0.2.1"
++      },
++      "bin": {
++        "ot": "bin/ot"
++      },
++      "engines": {
++        "node": ">= 8.0.0"
++      }
++    },
+     "node_modules/@sindresorhus/merge-streams": {
+       "version": "4.0.0",
+       "resolved": "https://registry.npmjs.org/@sindresorhus/merge-streams/-/merge-streams-4.0.0.tgz",
+@@ -5010,6 +5253,15 @@
+         "node": "18 || 20 || >=22"
+       }
+     },
++    "node_modules/base64-js": {
++      "version": "0.0.8",
++      "resolved": "https://registry.npmjs.org/base64-js/-/base64-js-0.0.8.tgz",
++      "integrity": "sha512-3XSA2cR/h/73EzlXXdU6YNycmYI7+kicTxks4eJg2g39biHR84slg2+des+p7iHYhbRg/udIS4TD53WabcOUkw==",
++      "license": "MIT",
++      "engines": {
++        "node": ">= 0.4"
++      }
++    },
+     "node_modules/baseline-browser-mapping": {
+       "version": "2.11.32",
+       "resolved": "https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.11.32.tgz",
+@@ -5220,6 +5472,15 @@
+         "url": "https://github.com/sponsors/ljharb"
+       }
+     },
++    "node_modules/camelize": {
++      "version": "1.0.1",
++      "resolved": "https://registry.npmjs.org/camelize/-/camelize-1.0.1.tgz",
++      "integrity": "sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==",
++      "license": "MIT",
++      "funding": {
++        "url": "https://github.com/sponsors/ljharb"
++      }
++    },
+     "node_modules/caniuse-lite": {
+       "version": "1.0.30001819",
+       "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001819.tgz",
+@@ -5343,6 +5604,12 @@
+       "integrity": "sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==",
+       "license": "MIT"
+     },
++    "node_modules/color-name": {
++      "version": "1.1.4",
++      "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz",
++      "integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==",
++      "license": "MIT"
++    },
+     "node_modules/commander": {
+       "version": "14.0.3",
+       "resolved": "https://registry.npmjs.org/commander/-/commander-14.0.3.tgz",
+@@ -5526,6 +5793,47 @@
+         "node": ">= 8"
+       }
+     },
++    "node_modules/css-background-parser": {
++      "version": "0.1.0",
++      "resolved": "https://registry.npmjs.org/css-background-parser/-/css-background-parser-0.1.0.tgz",
++      "integrity": "sha512-2EZLisiZQ+7m4wwur/qiYJRniHX4K5Tc9w93MT3AS0WS1u5kaZ4FKXlOTBhOjc+CgEgPiGY+fX1yWD8UwpEqUA==",
++      "license": "MIT"
++    },
++    "node_modules/css-box-shadow": {
++      "version": "1.0.0-3",
++      "resolved": "https://registry.npmjs.org/css-box-shadow/-/css-box-shadow-1.0.0-3.tgz",
++      "integrity": "sha512-9jaqR6e7Ohds+aWwmhe6wILJ99xYQbfmK9QQB9CcMjDbTxPZjwEmUQpU91OG05Xgm8BahT5fW+svbsQGjS/zPg==",
++      "license": "MIT"
++    },
++    "node_modules/css-color-keywords": {
++      "version": "1.0.0",
++      "resolved": "https://registry.npmjs.org/css-color-keywords/-/css-color-keywords-1.0.0.tgz",
++      "integrity": "sha512-FyyrDHZKEjXDpNJYvVsV960FiqQyXc/LlYmsxl2BcdMb2WPx0OGRVgTg55rPSyLSNMqP52R9r8geSp7apN3Ofg==",
++      "license": "ISC",
++      "engines": {
++        "node": ">=4"
++      }
++    },
++    "node_modules/css-gradient-parser": {
++      "version": "0.0.17",
++      "resolved": "https://registry.npmjs.org/css-gradient-parser/-/css-gradient-parser-0.0.17.tgz",
++      "integrity": "sha512-w2Xy9UMMwlKtou0vlRnXvWglPAceXCTtcmVSo8ZBUvqCV5aXEFP/PC6d+I464810I9FT++UACwTD5511bmGPUg==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=16"
++      }
++    },
++    "node_modules/css-to-react-native": {
++      "version": "3.2.0",
++      "resolved": "https://registry.npmjs.org/css-to-react-native/-/css-to-react-native-3.2.0.tgz",
++      "integrity": "sha512-e8RKaLXMOFii+02mOlqwjbD00KSEKqblnpO9e++1aXS1fPQOpS1YoqdVHBqPjHNoxeF2mimzVqawm2KCbEdtHQ==",
++      "license": "MIT",
++      "dependencies": {
++        "camelize": "^1.0.0",
++        "css-color-keywords": "^1.0.0",
++        "postcss-value-parser": "^4.0.2"
++      }
++    },
+     "node_modules/cssesc": {
+       "version": "3.0.0",
+       "resolved": "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz",
+@@ -5745,6 +6053,15 @@
+       "integrity": "sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==",
+       "license": "MIT"
+     },
++    "node_modules/emoji-regex-xs": {
++      "version": "2.0.1",
++      "resolved": "https://registry.npmjs.org/emoji-regex-xs/-/emoji-regex-xs-2.0.1.tgz",
++      "integrity": "sha512-1QFuh8l7LqUcKe24LsPUNzjrzJQ7pgRwp1QMcZ5MX6mFplk2zQ08NVCM84++1cveaUUYtcCYHmeFEuNg16sU4g==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=10.0.0"
++      }
++    },
+     "node_modules/encodeurl": {
+       "version": "2.0.0",
+       "resolved": "https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz",
+@@ -6485,6 +6802,12 @@
+       "integrity": "sha512-PJb4ZTGT2/wK78RmVrxZITStWabhZlKBsL52VOgq+c7clEkdHdEB+0rtzrXCbZJqeYJj+IwNWYqB5/G6vouA6A==",
+       "license": "MIT"
+     },
++    "node_modules/fflate": {
++      "version": "0.7.3",
++      "resolved": "https://registry.npmjs.org/fflate/-/fflate-0.7.3.tgz",
++      "integrity": "sha512-0Zz1jOzJWERhyhsimS54VTqOteCNwRtIlh8isdL0AXLo0g7xNTfTL7oWrkmCnPhZGocKIkWHBistBrrpoNH3aw==",
++      "license": "MIT"
++    },
+     "node_modules/figures": {
+       "version": "6.1.0",
+       "resolved": "https://registry.npmjs.org/figures/-/figures-6.1.0.tgz",
+@@ -6800,6 +7123,12 @@
+       "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
+       "license": "ISC"
+     },
++    "node_modules/harfbuzzjs": {
++      "version": "0.10.0",
++      "resolved": "https://registry.npmjs.org/harfbuzzjs/-/harfbuzzjs-0.10.0.tgz",
++      "integrity": "sha512-SN8LVwCOzvTq3OPNd0+EAghgXugItz56wst567D1vs7LnnKGWprhi3EG58aVOBwhN8HEbQxL4I9NDWkcXUutRw==",
++      "license": "MIT"
++    },
+     "node_modules/has-symbols": {
+       "version": "1.1.0",
+       "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz",
+@@ -6837,6 +7166,18 @@
+         "node": ">= 0.4"
+       }
+     },
++    "node_modules/hex-rgb": {
++      "version": "4.3.0",
++      "resolved": "https://registry.npmjs.org/hex-rgb/-/hex-rgb-4.3.0.tgz",
++      "integrity": "sha512-Ox1pJVrDCyGHMG9CFg1tmrRUMRPRsAWYc/PinY0XzJU4K7y7vjNoLKIQ7BR5UJMCxNN8EM1MNDmHWA/B3aZUuw==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=6"
++      },
++      "funding": {
++        "url": "https://github.com/sponsors/sindresorhus"
++      }
++    },
+     "node_modules/hono": {
+       "version": "4.13.13",
+       "resolved": "https://registry.npmjs.org/hono/-/hono-4.13.13.tgz",
+@@ -7514,6 +7855,16 @@
+         "url": "https://opencollective.com/parcel"
+       }
+     },
++    "node_modules/linebreak": {
++      "version": "1.1.0",
++      "resolved": "https://registry.npmjs.org/linebreak/-/linebreak-1.1.0.tgz",
++      "integrity": "sha512-MHp03UImeVhB7XZtjd0E4n6+3xr5Dq/9xI/5FptGk5FrbDR3zagPa2DS6U8ks/3HjbKWG9Q1M2ufOzxV2qLYSQ==",
++      "license": "MIT",
++      "dependencies": {
++        "base64-js": "0.0.8",
++        "unicode-trie": "^2.0.0"
++      }
++    },
+     "node_modules/locate-path": {
+       "version": "6.0.0",
+       "resolved": "https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz",
+@@ -8112,6 +8463,22 @@
+         "node": ">=6"
+       }
+     },
++    "node_modules/pako": {
++      "version": "0.2.9",
++      "resolved": "https://registry.npmjs.org/pako/-/pako-0.2.9.tgz",
++      "integrity": "sha512-NUcwaKxUxWrZLpDG+z/xZaCgQITkA/Dv4V/T6bw7VON6l1Xz/VnrBqrYjZQ12TamKHzITTfOEIYUj48y2KXImA==",
++      "license": "MIT"
++    },
++    "node_modules/parse-css-color": {
++      "version": "0.2.1",
++      "resolved": "https://registry.npmjs.org/parse-css-color/-/parse-css-color-0.2.1.tgz",
++      "integrity": "sha512-bwS/GGIFV3b6KS4uwpzCFj4w297Yl3uqnSgIPsoQkx7GMLROXfMnWvxfNkL0oh8HVhZA4hvJoEoEIqonfJ3BWg==",
++      "license": "MIT",
++      "dependencies": {
++        "color-name": "^1.1.4",
++        "hex-rgb": "^4.1.0"
++      }
++    },
+     "node_modules/parse-ms": {
+       "version": "4.0.0",
+       "resolved": "https://registry.npmjs.org/parse-ms/-/parse-ms-4.0.0.tgz",
+@@ -8315,6 +8682,12 @@
+         "node": ">=4"
+       }
+     },
++    "node_modules/postcss-value-parser": {
++      "version": "4.2.0",
++      "resolved": "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz",
++      "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==",
++      "license": "MIT"
++    },
+     "node_modules/powershell-utils": {
+       "version": "0.2.1",
+       "resolved": "https://registry.npmjs.org/powershell-utils/-/powershell-utils-0.2.1.tgz",
+@@ -8945,6 +9318,29 @@
+       "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==",
+       "license": "MIT"
+     },
++    "node_modules/satori": {
++      "version": "0.63.2",
++      "resolved": "https://registry.npmjs.org/satori/-/satori-0.63.2.tgz",
++      "integrity": "sha512-h7dm4BRMo8F53l9vOXOIfJoqeVXuZvyz13VsvVuwJb72sLfq+8uddJIJcjLKLv2BqWzDvYIpzi3rvBBS+ETuvw==",
++      "license": "MPL-2.0",
++      "dependencies": {
++        "@shuding/opentype.js": "1.4.0-beta.0",
++        "css-background-parser": "^0.1.0",
++        "css-box-shadow": "1.0.0-3",
++        "css-gradient-parser": "^0.0.17",
++        "css-to-react-native": "^3.0.0",
++        "emoji-regex-xs": "^2.0.1",
++        "escape-html": "^1.0.3",
++        "fflate": "0.7.3",
++        "harfbuzzjs": "0.10.0",
++        "linebreak": "^1.1.0",
++        "parse-css-color": "^0.2.1",
++        "postcss-value-parser": "^4.2.0"
++      },
++      "engines": {
++        "node": ">=16"
++      }
++    },
+     "node_modules/scheduler": {
+       "version": "0.28.0",
+       "resolved": "https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz",
+@@ -9346,6 +9742,12 @@
+         "url": "https://github.com/chalk/strip-ansi?sponsor=1"
+       }
+     },
++    "node_modules/string.prototype.codepointat": {
++      "version": "0.2.1",
++      "resolved": "https://registry.npmjs.org/string.prototype.codepointat/-/string.prototype.codepointat-0.2.1.tgz",
++      "integrity": "sha512-2cBVCj6I4IOvEnjgO/hWqXjqBGsY+zwPmHl12Srk9IXSZ56Jwwmy+66XO5Iut/oQVR7t5ihYdLB0GMa4alEUcg==",
++      "license": "MIT"
++    },
+     "node_modules/stringify-object": {
+       "version": "5.0.0",
+       "resolved": "https://registry.npmjs.org/stringify-object/-/stringify-object-5.0.0.tgz",
+@@ -9453,6 +9855,12 @@
+         "url": "https://opencollective.com/webpack"
+       }
+     },
++    "node_modules/tiny-inflate": {
++      "version": "1.0.3",
++      "resolved": "https://registry.npmjs.org/tiny-inflate/-/tiny-inflate-1.0.3.tgz",
++      "integrity": "sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==",
++      "license": "MIT"
++    },
+     "node_modules/tiny-invariant": {
+       "version": "1.3.3",
+       "resolved": "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.3.3.tgz",
+@@ -9707,6 +10115,16 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/unicode-trie": {
++      "version": "2.0.0",
++      "resolved": "https://registry.npmjs.org/unicode-trie/-/unicode-trie-2.0.0.tgz",
++      "integrity": "sha512-x7bc76x0bm4prf1VLg79uhAzKw8DVboClSN5VxJuQ+LKDOVEW9CdH+VY7SP+vX7xCYQqzzgQpFqz15zeLvAtZQ==",
++      "license": "MIT",
++      "dependencies": {
++        "pako": "^0.2.5",
++        "tiny-inflate": "^1.0.0"
++      }
++    },
+     "node_modules/unicorn-magic": {
+       "version": "0.3.0",
+       "resolved": "https://registry.npmjs.org/unicorn-magic/-/unicorn-magic-0.3.0.tgz",
+diff --git a/package.json b/package.json
+index 588a9c0..efcb0d0 100644
+--- a/package.json
++++ b/package.json
+@@ -19,8 +19,10 @@
+   "dependencies": {
+     "@blobatar/react": "^2.7.0",
+     "@fontsource-variable/bricolage-grotesque": "^5.3.0",
++    "@fontsource/bricolage-grotesque": "^5.3.0",
+     "@openrouter/sdk": "^1.5.7",
+     "@phosphor-icons/react": "^2.1.10",
++    "@resvg/resvg-js": "^2.6.2",
+     "@tailwindcss/vite": "^4",
+     "@tanstack/react-router": "latest",
+     "@tanstack/react-start": "latest",
+@@ -34,6 +36,7 @@
+     "radix-ui": "^1.8.1",
+     "react": "^19.3.1",
+     "react-dom": "^19.3.1",
++    "satori": "^0.63.2",
+     "shadcn": "^4.22.1",
+     "tailwindcss": "^4",
+     "tw-animate-css": "^1.4.0",
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..a09f780 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -200,7 +200,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+ 
+       {over && ready && (
+         <>
+-          <Results payload={payload} state={state} answers={secret.answers} daily={daily} />
++          <Results payload={payload} state={state} answers={secret.answers} />
+           <WhoSaid secret={secret} />
+         </>
+       )}
+diff --git a/src/components/results.tsx b/src/components/results.tsx
+index 88f624c..a10acab 100644
+--- a/src/components/results.tsx
++++ b/src/components/results.tsx
+@@ -10,7 +10,6 @@ type ResultsProps = {
+   payload: PuzzlePayload
+   state: GameState
+   answers: Array<BoardAnswer>
+-  daily: boolean
+ }
+ 
+ const plural = new Intl.PluralRules("cs-CZ")
+@@ -20,7 +19,7 @@ const pick = (n: number, one: string, few: string, many: string) => {
+   return category === "one" ? one : category === "few" ? few : many
+ }
+ 
+-export function Results({ payload, state, answers, daily }: ResultsProps) {
++export function Results({ payload, state, answers }: ResultsProps) {
+   const { bonus, total } = scoreLines(state, answers)
+ 
+   return (
+@@ -73,7 +72,7 @@ export function Results({ payload, state, answers, daily }: ResultsProps) {
+         </div>
+       </div>
+ 
+-      <Share payload={payload} state={state} answers={answers} total={total} daily={daily} />
++      <Share payload={payload} state={state} answers={answers} total={total} />
+     </section>
+   )
+ }
+@@ -83,13 +82,11 @@ function Share({
+   state,
+   answers,
+   total,
+-  daily,
+ }: {
+   payload: PuzzlePayload
+   state: GameState
+   answers: Array<BoardAnswer>
+   total: number
+-  daily: boolean
+ }) {
+   const ticketRef = useRef<HTMLDivElement>(null)
+   const [status, setStatus] = useState("")
+@@ -97,7 +94,7 @@ function Share({
+ 
+   useEffect(() => setOrigin(window.location.origin), [])
+ 
+-  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
++  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : `/hra/${payload.date}`
+   const url = `${origin}${path}`
+   const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url })
+   const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
+diff --git a/src/routeTree.gen.ts b/src/routeTree.gen.ts
+index 5c21655..99d6246 100644
+--- a/src/routeTree.gen.ts
++++ b/src/routeTree.gen.ts
+@@ -14,6 +14,7 @@ import { Route as AdminRouteImport } from './routes/admin'
+ import { Route as ArchivRouteImport } from './routes/archiv'
+ import { Route as ObsazeniRouteImport } from './routes/obsazeni'
+ import { Route as HraDatumRouteImport } from './routes/hra.$datum'
++import { Route as OgDatumRouteImport } from './routes/og.$datum'
+ import { Route as VlastniIdRouteImport } from './routes/vlastni.$id'
+ 
+ const IndexRoute = IndexRouteImport.update({
+@@ -41,6 +42,11 @@ const HraDatumRoute = HraDatumRouteImport.update({
+   path: '/hra/$datum',
+   getParentRoute: () => rootRouteImport,
+ } as any)
++const OgDatumRoute = OgDatumRouteImport.update({
++  id: '/og/$datum',
++  path: '/og/$datum',
++  getParentRoute: () => rootRouteImport,
++} as any)
+ const VlastniIdRoute = VlastniIdRouteImport.update({
+   id: '/vlastni/$id',
+   path: '/vlastni/$id',
+@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
+   '/archiv': typeof ArchivRoute
+   '/obsazeni': typeof ObsazeniRoute
+   '/hra/$datum': typeof HraDatumRoute
++  '/og/$datum': typeof OgDatumRoute
+   '/vlastni/$id': typeof VlastniIdRoute
+ }
+ export interface FileRoutesByTo {
+@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
+   '/archiv': typeof ArchivRoute
+   '/obsazeni': typeof ObsazeniRoute
+   '/hra/$datum': typeof HraDatumRoute
++  '/og/$datum': typeof OgDatumRoute
+   '/vlastni/$id': typeof VlastniIdRoute
+ }
+ export interface FileRoutesById {
+@@ -70,14 +78,28 @@ export interface FileRoutesById {
+   '/archiv': typeof ArchivRoute
+   '/obsazeni': typeof ObsazeniRoute
+   '/hra/$datum': typeof HraDatumRoute
++  '/og/$datum': typeof OgDatumRoute
+   '/vlastni/$id': typeof VlastniIdRoute
+ }
+ export interface FileRouteTypes {
+   fileRoutesByFullPath: FileRoutesByFullPath
+   fullPaths:
+-    '/' | '/admin' | '/archiv' | '/obsazeni' | '/hra/$datum' | '/vlastni/$id'
++    | '/'
++    | '/admin'
++    | '/archiv'
++    | '/obsazeni'
++    | '/hra/$datum'
++    | '/og/$datum'
++    | '/vlastni/$id'
+   fileRoutesByTo: FileRoutesByTo
+-  to: '/' | '/admin' | '/archiv' | '/obsazeni' | '/hra/$datum' | '/vlastni/$id'
++  to:
++    | '/'
++    | '/admin'
++    | '/archiv'
++    | '/obsazeni'
++    | '/hra/$datum'
++    | '/og/$datum'
++    | '/vlastni/$id'
+   id:
+     | '__root__'
+     | '/'
+@@ -85,6 +107,7 @@ export interface FileRouteTypes {
+     | '/archiv'
+     | '/obsazeni'
+     | '/hra/$datum'
++    | '/og/$datum'
+     | '/vlastni/$id'
+   fileRoutesById: FileRoutesById
+ }
+@@ -94,6 +117,7 @@ export interface RootRouteChildren {
+   ArchivRoute: typeof ArchivRoute
+   ObsazeniRoute: typeof ObsazeniRoute
+   HraDatumRoute: typeof HraDatumRoute
++  OgDatumRoute: typeof OgDatumRoute
+   VlastniIdRoute: typeof VlastniIdRoute
+ }
+ 
+@@ -134,6 +158,13 @@ declare module '@tanstack/react-router' {
+       preLoaderRoute: typeof HraDatumRouteImport
+       parentRoute: typeof rootRouteImport
+     }
++    '/og/$datum': {
++      id: '/og/$datum'
++      path: '/og/$datum'
++      fullPath: '/og/$datum'
++      preLoaderRoute: typeof OgDatumRouteImport
++      parentRoute: typeof rootRouteImport
++    }
+     '/vlastni/$id': {
+       id: '/vlastni/$id'
+       path: '/vlastni/$id'
+@@ -150,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
+   ArchivRoute: ArchivRoute,
+   ObsazeniRoute: ObsazeniRoute,
+   HraDatumRoute: HraDatumRoute,
++  OgDatumRoute: OgDatumRoute,
+   VlastniIdRoute: VlastniIdRoute,
+ }
+ export const routeTree = rootRouteImport
+diff --git a/src/routes/hra.$datum.tsx b/src/routes/hra.$datum.tsx
+index 86d5caf..b22bc47 100644
+--- a/src/routes/hra.$datum.tsx
++++ b/src/routes/hra.$datum.tsx
+@@ -10,6 +10,9 @@ export const Route = createFileRoute("/hra/$datum")({
+       ? [
+           { title: `${loaderData.puzzle.question} · ${formatShort(loaderData.puzzle.date)} · Ptali jsme se 100 AI` },
+           { property: "og:title", content: `${formatShort(loaderData.puzzle.date)}: ${loaderData.puzzle.question}` },
++          { property: "og:url", content: `${loaderData.siteUrl}/hra/${loaderData.puzzle.date}` },
++          { property: "og:image", content: `${loaderData.siteUrl}/og/${loaderData.puzzle.date}` },
++          { name: "twitter:image", content: `${loaderData.siteUrl}/og/${loaderData.puzzle.date}` },
+         ]
+       : [{ title: "Hra nenalezena · Ptali jsme se 100 AI" }],
+   }),
+diff --git a/src/routes/index.tsx b/src/routes/index.tsx
+index e8c5748..e6fb7b3 100644
+--- a/src/routes/index.tsx
++++ b/src/routes/index.tsx
+@@ -10,6 +10,9 @@ export const Route = createFileRoute("/")({
+       ? [
+           { title: `${loaderData.puzzle.question} · Ptali jsme se 100 AI` },
+           { property: "og:title", content: `Dnešní otázka: ${loaderData.puzzle.question}` },
++          { property: "og:url", content: `${loaderData.siteUrl}/hra/${loaderData.puzzle.date}` },
++          { property: "og:image", content: `${loaderData.siteUrl}/og/${loaderData.puzzle.date}` },
++          { name: "twitter:image", content: `${loaderData.siteUrl}/og/${loaderData.puzzle.date}` },
+         ]
+       : [],
+   }),
+diff --git a/src/routes/og.$datum.ts b/src/routes/og.$datum.ts
+new file mode 100644
+index 0000000..d01bc14
+--- /dev/null
++++ b/src/routes/og.$datum.ts
+@@ -0,0 +1,19 @@
++import { createFileRoute } from "@tanstack/react-router"
++import { LAUNCH_DATE, isValidDate, pragueDate } from "@/lib/day"
++import { renderOgImage } from "@/server/og"
++import { loadPuzzle } from "@/server/puzzles"
++
++export const Route = createFileRoute("/og/$datum")({
++  server: {
++    handlers: {
++      GET: async ({ params }) => {
++        const date = params.datum
++        if (!isValidDate(date) || date < LAUNCH_DATE || date > pragueDate()) return new Response("Not found", { status: 404 })
++        const puzzle = await loadPuzzle(date)
++        if (!puzzle) return new Response("Not found", { status: 404 })
++        const png = await renderOgImage(puzzle)
++        return new Response(png, { headers: { "Content-Type": "image/png", "Cache-Control": "public, max-age=86400" } })
++      },
++    },
++  },
++})
+diff --git a/src/server/api.ts b/src/server/api.ts
+index c9ec5ba..70c43e6 100644
+--- a/src/server/api.ts
++++ b/src/server/api.ts
+@@ -3,15 +3,17 @@ import { z } from "zod"
+ import { isValidDate, pragueDate } from "@/lib/day"
+ import { loadPuzzle, recentSummaries, summaries, toPayload } from "./puzzles"
+ 
++const SITE_URL = (process.env.SITE_URL ?? "https://ai100.appwrite.network").replace(/\/+$/, "")
++
+ export const getPuzzle = createServerFn({ method: "GET" })
+   .validator(z.object({ date: z.string().optional() }))
+   .handler(async ({ data }) => {
+     const today = pragueDate()
+     const date = data.date ?? today
+     const recent = await recentSummaries(today, date)
+-    if (!isValidDate(date) || date > today) return { today, date, puzzle: null, recent }
++    if (!isValidDate(date) || date > today) return { today, date, puzzle: null, recent, siteUrl: SITE_URL }
+     const puzzle = await loadPuzzle(date)
+-    return { today, date, puzzle: puzzle ? toPayload(puzzle) : null, recent }
++    return { today, date, puzzle: puzzle ? toPayload(puzzle) : null, recent, siteUrl: SITE_URL }
+   })
+ 
+ export const getArchive = createServerFn({ method: "GET" }).handler(async () => {
+diff --git a/src/server/og.tsx b/src/server/og.tsx
+new file mode 100644
+index 0000000..c790788
+--- /dev/null
++++ b/src/server/og.tsx
+@@ -0,0 +1,86 @@
++import "@tanstack/react-start/server-only"
++import { readFile } from "node:fs/promises"
++import { createRequire } from "node:module"
++import { Resvg } from "@resvg/resvg-js"
++import satori from "satori"
++import { formatShort } from "@/lib/day"
++
++const require = createRequire(import.meta.url)
++const weekday = new Intl.DateTimeFormat("cs-CZ", { weekday: "long", timeZone: "UTC" })
++
++const C = { field: "#11457e", board: "#091429", flap: "#1a2743", flapLow: "#141f37", key: "#11457e", keyLow: "#0d3a6c", red: "#d7141a", ink: "#ffffff" }
++
++type Font = { name: string; data: Buffer; weight: 700 | 800; style: "normal" }
++let fonts: Promise<Array<Font>> | null = null
++
++function loadFonts() {
++  fonts ??= Promise.all(
++    (["latin", "latin-ext"] as const).flatMap((subset) =>
++      ([700, 800] as const).map(async (weight) => ({
++        name: "Bricolage",
++        weight,
++        style: "normal" as const,
++        data: await readFile(require.resolve(`@fontsource/bricolage-grotesque/files/bricolage-grotesque-${subset}-${weight}-normal.woff`)),
++      })),
++    ),
++  )
++  return fonts
++}
++
++function Tile({ children, background, low, grow = false }: { children: string; background: string; low: string; grow?: boolean }) {
++  return (
++    <div
++      style={{
++        display: "flex",
++        position: "relative",
++        alignItems: "center",
++        justifyContent: grow ? "center" : "flex-start",
++        flexGrow: grow ? 1 : 0,
++        height: 60,
++        padding: "0 18px",
++        background: low,
++        fontSize: 28,
++        fontWeight: 800,
++        textTransform: "uppercase",
++      }}
++    >
++      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 30, background }} />
++      <div style={{ display: "flex", position: "relative" }}>{children}</div>
++    </div>
++  )
++}
++
++export async function renderOgImage(puzzle: { date: string; question: string }): Promise<Uint8Array<ArrayBuffer>> {
++  const svg = await satori(
++    <div style={{ width: 1200, height: 630, display: "flex", position: "relative", background: C.field, color: C.ink, fontFamily: "Bricolage" }}>
++      <div style={{ position: "absolute", top: 52, right: 64, bottom: 52, left: 64, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
++        <div style={{ display: "flex", alignItems: "center", fontSize: 34, fontWeight: 800, letterSpacing: "-0.01em" }}>
++          Ptali jsme se
++          <div style={{ display: "flex", margin: "0 12px", padding: "0 10px", background: C.red }}>100</div>
++          AI
++        </div>
++        <div style={{ display: "flex", flexDirection: "column" }}>
++          <div style={{ display: "flex", gap: 8 }}>
++            <Tile background={C.flap} low={C.flapLow}>{weekday.format(new Date(`${puzzle.date}T12:00:00Z`))}</Tile>
++            <Tile background={C.flap} low={C.flapLow}>{formatShort(puzzle.date)}</Tile>
++          </div>
++          <div style={{ display: "flex", marginTop: 26, fontSize: puzzle.question.length > 42 ? 64 : 78, fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.03em" }}>{puzzle.question}</div>
++        </div>
++        <div style={{ display: "flex", gap: 10, padding: 14, background: C.board }}>
++          {Array.from({ length: 8 }, (_, i) => (
++            <div key={i} style={{ display: "flex", flexGrow: 1, gap: 4 }}>
++              <Tile background={C.flap} low={C.flapLow}>
++                {String(i + 1)}
++              </Tile>
++              <Tile background={C.key} low={C.keyLow} grow>
++                ?
++              </Tile>
++            </div>
++          ))}
++        </div>
++      </div>
++    </div>,
++    { width: 1200, height: 630, fonts: await loadFonts() },
++  )
++  return new Uint8Array(new Resvg(svg, { fitTo: { mode: "width", value: 1200 } }).render().asPng())
++}

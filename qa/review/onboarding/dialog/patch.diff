@@ -1,0 +1,138 @@
+diff --git a/src/components/how-to-play.tsx b/src/components/how-to-play.tsx
+new file mode 100644
+index 0000000..f3d665e
+--- /dev/null
++++ b/src/components/how-to-play.tsx
+@@ -0,0 +1,57 @@
++import { useEffect, useState } from "react"
++import { Button } from "@/components/ui/button"
++import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
++import { CLEAR_BONUS, MAX_STRIKES } from "@/lib/game"
++import { guideSeen, markGuideSeen } from "@/lib/storage"
++
++export function HowToPlay() {
++  const [open, setOpen] = useState(false)
++
++  useEffect(() => {
++    if (!guideSeen()) setOpen(true)
++  }, [])
++
++  function change(next: boolean) {
++    setOpen(next)
++    if (!next) markGuideSeen()
++  }
++
++  return (
++    <>
++      <button type="button" onClick={() => setOpen(true)} className="inline-flex h-11 items-center px-3 underline-offset-[6px] hover:underline">
++        Jak hrát
++      </button>
++      <Dialog open={open} onOpenChange={change}>
++        <DialogContent className="gap-6 sm:max-w-lg">
++          <div>
++            <DialogTitle className="head">Jak hrát</DialogTitle>
++            <DialogDescription className="mt-2 text-base text-ink-soft">Tři věci, které potřebujete vědět.</DialogDescription>
++          </div>
++          <ul className="grid gap-5">
++            <li className="grid grid-cols-[4.5rem_1fr] items-start gap-4">
++              <span className="tile w-full justify-center">Pivo</span>
++              <p>Napište jedním slovem, co podle vás odpověděla stovka umělých inteligencí. Hledáte osm nejčastějších odpovědí.</p>
++            </li>
++            <li className="grid grid-cols-[4.5rem_1fr] items-start gap-4">
++              <span className="tile tile-key w-full justify-center">?</span>
++              <p>Modrý otazník u skryté odpovědi nabízí nápovědu. Odkryté písmeno ubere čtvrtinu bodů za tu odpověď, prozradit, kdo ji řekl, je zdarma.</p>
++            </li>
++            <li className="grid grid-cols-[4.5rem_1fr] items-start gap-4">
++              <span className="grid h-11 w-full place-items-center bg-red text-red-ink" aria-hidden>
++                <svg viewBox="0 0 24 24" className="size-6">
++                  <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" strokeWidth="3.5" strokeLinecap="square" fill="none" />
++                </svg>
++              </span>
++              <p>
++                Máte {MAX_STRIKES} životů. Odpověď má 10 bodů za každou AI, která ji řekla, za celou tabuli je {CLEAR_BONUS} bodů navíc.
++              </p>
++            </li>
++          </ul>
++          <Button onClick={() => change(false)} className="h-12 justify-self-start px-8 font-semibold">
++            Hrát
++          </Button>
++        </DialogContent>
++      </Dialog>
++    </>
++  )
++}
+diff --git a/src/components/puzzle-page.tsx b/src/components/puzzle-page.tsx
+index fa618d0..0ad3fc2 100644
+--- a/src/components/puzzle-page.tsx
++++ b/src/components/puzzle-page.tsx
+@@ -12,7 +12,7 @@ type Props = { today: string; date: string; puzzle: PuzzlePayload | null; recent
+ export function PuzzlePage({ today, date, puzzle, recent, custom = false }: Props) {
+   return (
+     <>
+-      <SiteHeader />
++      <SiteHeader guide />
+       {!custom && <NewDayNotice today={today} />}
+       {puzzle ? <Game key={puzzle.id} payload={puzzle} today={today} /> : <Missing date={date} today={today} custom={custom} />}
+       <Departure today={today} recent={recent} />
+diff --git a/src/components/site-header.tsx b/src/components/site-header.tsx
+index 951d0f3..7d4e649 100644
+--- a/src/components/site-header.tsx
++++ b/src/components/site-header.tsx
+@@ -1,4 +1,5 @@
+ import { Link } from "@tanstack/react-router"
++import { HowToPlay } from "./how-to-play"
+ 
+ export function Wordmark({ className = "" }: { className?: string }) {
+   return (
+@@ -19,7 +20,7 @@ const links = [
+   { to: "/obsazeni", label: "Obsazení", phone: false },
+ ] as const
+ 
+-export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
++export function SiteHeader({ tone = "field", guide = false }: { tone?: "field" | "ground"; guide?: boolean }) {
+   return (
+     <header className={tone === "field" ? "bg-field text-field-ink" : "bg-ground text-foreground"}>
+       <div className="page flex h-16 items-center justify-between gap-4 md:h-20">
+@@ -40,6 +41,7 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
+           <a href="/#pravidla" className="hidden h-11 items-center px-3 underline-offset-[6px] hover:underline md:inline-flex">
+             Pravidla
+           </a>
++          {guide && <HowToPlay />}
+         </nav>
+       </div>
+     </header>
+diff --git a/src/lib/storage.ts b/src/lib/storage.ts
+index 2d988e0..d1a1cd2 100644
+--- a/src/lib/storage.ts
++++ b/src/lib/storage.ts
+@@ -59,6 +59,14 @@ function clearResult(date: string): void {
+   write("vysledky", results)
+ }
+ 
++export function guideSeen(): boolean {
++  return read<boolean>("navod") === true
++}
++
++export function markGuideSeen(): void {
++  write("navod", true)
++}
++
+ export function loadResults(): Record<string, Result> {
+   return read<Record<string, Result>>("vysledky") ?? {}
+ }
+diff --git a/src/styles.css b/src/styles.css
+index 17b84ee..ae65438 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -286,6 +286,11 @@
+     z-index: -1;
+     background: var(--tile-low);
+   }
++  .tile-key {
++    --tile: var(--field);
++    --tile-low: var(--field-step);
++    color: var(--field-ink);
++  }
+   .tile-red {
+     --tile: var(--red);
+     --tile-low: #b90f15;

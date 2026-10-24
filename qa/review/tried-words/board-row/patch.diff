@@ -1,0 +1,94 @@
+diff --git a/src/components/board.tsx b/src/components/board.tsx
+index d74695d..a46ebdf 100644
+--- a/src/components/board.tsx
++++ b/src/components/board.tsx
+@@ -11,13 +11,14 @@ type BoardProps = {
+   title: string
+   missKey: number
+   hints: ReadonlyArray<number>
++  misses: ReadonlyArray<string>
+   interactive: boolean
+   clueFor: (index: number) => string | null
+   onLetter: (index: number) => void
+   onClue: (index: number) => void
+ }
+ 
+-export function Board({ answers, found, revealAll, title, missKey, hints, interactive, clueFor, onLetter, onClue }: BoardProps) {
++export function Board({ answers, found, revealAll, title, missKey, hints, misses, interactive, clueFor, onLetter, onClue }: BoardProps) {
+   const slots: Array<Partial<BoardAnswer> & { rank: number }> = answers ?? Array.from({ length: 8 }, (_, i) => ({ rank: i + 1 }))
+   const [booted, setBooted] = useState(false)
+   useEffect(() => setBooted(true), [])
+@@ -66,6 +67,19 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
+           )
+         })}
+       </ol>
++      <div className="mt-[5px] grid h-[44px] grid-cols-[2.75rem_1fr] gap-[3px] sm:h-[52px] md:mt-2 md:h-[64px] md:grid-cols-[4rem_1fr]">
++        <Flap text="X" tone="miss" align="center" className="h-full" />
++        <Flap
++          text={misses.length ? `Mimo tabuli · ${misses.join(" · ")}` : "Mimo tabuli"}
++          tone={misses.length ? undefined : "dim"}
++          className="hidden h-full sm:block"
++        />
++        <Flap
++          text={misses.length ? misses.join(" · ") : "Mimo tabuli"}
++          tone={misses.length ? undefined : "dim"}
++          className="h-full text-[length:var(--step-body)] sm:hidden"
++        />
++      </div>
+       <p className="hidden px-1 pt-3 pb-1 text-sm text-field-soft sm:block md:px-2">{title}</p>
+       {missKey > 0 && (
+         <div key={missKey} aria-hidden className="pointer-events-none absolute inset-0 grid place-items-center motion-reduce:hidden">
+diff --git a/src/components/flap.tsx b/src/components/flap.tsx
+index 2dc43ae..8808f4c 100644
+--- a/src/components/flap.tsx
++++ b/src/components/flap.tsx
+@@ -5,7 +5,7 @@ const FLIP_MS = 130
+ 
+ type FlapProps = {
+   text: string
+-  tone?: "dim" | "key"
++  tone?: "dim" | "key" | "miss"
+   align?: "center" | "end"
+   delay?: number
+   className?: string
+diff --git a/src/components/game.tsx b/src/components/game.tsx
+index c72a127..79e95c2 100644
+--- a/src/components/game.tsx
++++ b/src/components/game.tsx
+@@ -50,6 +50,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+     return secret.answers.map((a) => personaClue(a.answerers.map((id) => personaByAnswerer.get(id)).filter((p): p is Persona => !!p)))
+   }, [secret])
+   const openClues = [...(state.clues ?? [])].sort((a, b) => a - b)
++  const misses = state.guesses.filter((g) => g.result === "miss").map((g) => g.text)
+ 
+   function submit(event: FormEvent) {
+     event.preventDefault()
+@@ -109,6 +110,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
+               title={`Odpovědělo ${payload.answered} ze ${payload.asked} AI. Otazník u skryté odpovědi nabízí nápovědu: písmeno, nebo kdo ji řekl.`}
+               missKey={missKey}
+               hints={state.hints ?? []}
++              misses={misses}
+               interactive={ready && !over}
+               clueFor={(index) => ((state.clues ?? []).includes(index) ? clues[index] : null)}
+               onLetter={(index) => {
+diff --git a/src/styles.css b/src/styles.css
+index 17b84ee..db1c10b 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -222,6 +222,16 @@
+     color: var(--field-ink);
+     font-weight: 700;
+   }
++  .flap[data-tone="miss"] {
++    color: var(--red-ink);
++    font-weight: 700;
++  }
++  .flap[data-tone="miss"] .flap-top {
++    background: var(--red);
++  }
++  .flap[data-tone="miss"] .flap-bottom {
++    background: var(--red-low);
++  }
+   .flap[data-tone="key"] .flap-top {
+     background: var(--field);
+   }

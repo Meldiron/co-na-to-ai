@@ -1,0 +1,5 @@
+{
+  "title": "Table with result squares",
+  "summary": "Keeps the table but adds a \"Tabule\" column with eight mini squares showing which answers you found (lighter blue when you used a letter clue), a small \"8 z 8\" or \"celá tabule\" line under the score, and a blue \"Hrát\" button on days you have not played. On phones the squares sit under the question.",
+  "tradeoffs": "Smallest change and keeps the scannable table, but it is still a table; squares come from the browser's saved games, so days played on another device show only the score."
+}

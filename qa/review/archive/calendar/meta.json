@@ -1,0 +1,5 @@
+{
+  "title": "Month calendar",
+  "summary": "The archive becomes a month calendar (Po–Ne): every day with a board is a square cell tinted by your result (dark blue = whole board, light blue = played, white = not played, red = today) and shows the score or \"hrát\". Hovering or tapping a day shows its question, your result and a red \"Hrát\" / \"Zobrazit výsledek\" button in a panel beside the grid (below it on phones).",
+  "tradeoffs": "Strongest habit cue (gaps in a streak are obvious), but the questions are no longer scannable as a list; you see one question at a time."
+}

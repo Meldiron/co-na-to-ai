@@ -1,0 +1,47 @@
+diff --git a/src/components/who-said.tsx b/src/components/who-said.tsx
+index 7b056f7..d3bf5ab 100644
+--- a/src/components/who-said.tsx
++++ b/src/components/who-said.tsx
+@@ -10,8 +10,12 @@ const votesWord = (n: number) => {
+   return c === "one" ? "hlas" : c === "few" ? "hlasy" : "hlasů"
+ }
+ 
++const VISIBLE = 8
++const MIN_HIDDEN = 4
++
+ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+   const [open, setOpen] = useState<Response | null>(null)
++  const [expanded, setExpanded] = useState<ReadonlySet<number>>(new Set())
+   const byAnswerer = useMemo(() => new Map(secret.responses.map((r) => [r.answerer, r])), [secret.responses])
+   const silent = secret.responses.filter((r) => !r.raw)
+   const invalid = secret.responses.filter((r) => r.raw && !r.answer)
+@@ -60,7 +64,28 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
+                   {answer.votes} {votesWord(answer.votes)}
+                 </p>
+               </div>
+-              <ul className="flex flex-wrap gap-2 md:col-span-8 md:col-start-5">{answer.answerers.map(chip)}</ul>
++              <ul className="flex flex-wrap gap-2 md:col-span-8 md:col-start-5">
++                {(expanded.has(answer.rank) || answer.answerers.length < VISIBLE + MIN_HIDDEN ? answer.answerers : answer.answerers.slice(0, VISIBLE)).map(chip)}
++                {answer.answerers.length >= VISIBLE + MIN_HIDDEN && (
++                  <li>
++                    <button
++                      type="button"
++                      aria-expanded={expanded.has(answer.rank)}
++                      onClick={() =>
++                        setExpanded((current) => {
++                          const next = new Set(current)
++                          if (next.has(answer.rank)) next.delete(answer.rank)
++                          else next.add(answer.rank)
++                          return next
++                        })
++                      }
++                      className="flex h-full min-h-[3.25rem] items-center bg-field px-4 font-semibold text-field-ink transition-colors hover:bg-red"
++                    >
++                      {expanded.has(answer.rank) ? "Méně" : `a dalších ${answer.answerers.length - VISIBLE}`}
++                    </button>
++                  </li>
++                )}
++              </ul>
+             </li>
+           ))}
+         </ol>
