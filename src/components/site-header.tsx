@@ -24,6 +24,7 @@ function useAccountLabel(): string | null {
 
 const links = [
   { to: "/", label: "Dnešní hra" },
+  { to: "/finale", label: "Finále" },
   { to: "/archiv", label: "Archiv" },
   { to: "/dotazani", label: "Dotázaní" },
 ] as const

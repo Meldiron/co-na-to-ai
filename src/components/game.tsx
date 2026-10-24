@@ -15,6 +15,7 @@ import { Board, Strikes } from "./board"
 import { openGuide, openGuideOnFirstVisit } from "./how-to-play"
 import { Flap } from "./flap"
 import { Others } from "./others"
+import { People } from "./people"
 import { Results } from "./results"
 import { WhoSaid } from "./who-said"
 
@@ -234,7 +235,8 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
       {over && ready && (
         <>
           <Results payload={payload} state={state} answers={secret.answers} rank={rankLine(stats, payload.kind === "daily")} />
-          <Others answers={secret.answers} stats={stats} />
+          <Others stats={stats} />
+          <People answers={secret.answers} stats={stats} />
           <WhoSaid secret={secret} />
         </>
       )}

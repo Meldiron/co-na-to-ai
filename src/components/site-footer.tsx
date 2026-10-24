@@ -14,6 +14,11 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link to="/finale" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
+                  Finále
+                </Link>
+              </li>
+              <li>
                 <Link to="/archiv" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
                   Archiv
                 </Link>

@@ -162,18 +162,18 @@ export const getMyResults = createServerFn({ method: "GET" }).handler(async () =
   return session ? listResults(session.user.$id) : null
 })
 
-async function answerCount(data: z.infer<typeof ref>): Promise<number | null> {
+async function answersOf(data: z.infer<typeof ref>) {
   const puzzle = data.kind === "custom" ? await loadCustom(data.id) : await loadPuzzle(data.id)
-  return puzzle ? puzzle.answers.length : null
+  return puzzle?.answers ?? null
 }
 
 export const getDayStats = createServerFn({ method: "GET" })
   .validator(ref)
   .handler(async ({ data }) => {
-    const count = await answerCount(data)
-    if (count === null || !appwrite()) return null
+    const answers = await answersOf(data)
+    if (!answers || !appwrite()) return null
     const session = await currentSession()
-    return dayStats(data, count, session?.user.$id ?? null)
+    return dayStats(data, answers, session?.user.$id ?? null)
   })
 
 export const getMissedGuesses = createServerFn({ method: "GET" })

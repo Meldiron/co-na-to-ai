@@ -11,6 +11,7 @@ export const PROBE_SIZE = 15
 export const PROBE_MAX_SHARE = 0.5
 export const PROBE_MIN_ANSWERED = 10
 export const PROBE_MAX_SPREAD = 0.85
+export const FINALE_MAX_SHARE = 0.6
 
 export type Tally = { answered: number; top: string; share: number; distinct: number; answers: Array<[string, number]> }
 export type Probe = Tally & { costUsd: number }
@@ -50,6 +51,12 @@ export function scattered(result: Pick<Tally, "answered" | "distinct">): boolean
 
 export function verdict(result: Tally): string | null {
   if (dominated(result)) return `${result.top} má ${Math.round(result.share * 100)} %`
+  if (scattered(result)) return `${result.distinct} různých odpovědí z ${result.answered}`
+  return null
+}
+
+export function finaleVerdict(result: Tally): string | null {
+  if (result.answered >= PROBE_MIN_ANSWERED && result.share > FINALE_MAX_SHARE) return `${result.top} má ${Math.round(result.share * 100)} %`
   if (scattered(result)) return `${result.distinct} různých odpovědí z ${result.answered}`
   return null
 }

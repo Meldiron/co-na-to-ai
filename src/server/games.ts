@@ -4,6 +4,7 @@ import { LAUNCH_DATE, isValidDate, pragueDate } from "@/lib/day"
 import { progress, replay, scoreLines, type GameState } from "@/lib/game"
 import { refKey, type GameRef } from "@/lib/game-ref"
 import { normalize } from "@/lib/match"
+import { peopleBoard, type PeopleAnswer } from "@/lib/people"
 import { guestName } from "@/lib/players"
 import type { Result } from "@/lib/storage"
 import type { BoardAnswer } from "@/lib/types"
@@ -130,13 +131,13 @@ export async function setPlayerName(userId: string, name: string): Promise<void>
   await db().upsertRow({ databaseId: DATABASE, tableId: PLAYERS, rowId: userId, data: { name } })
 }
 
-async function namesOf(userIds: Array<string>): Promise<Map<string, string>> {
+export async function namesOf(userIds: Array<string>): Promise<Map<string, string>> {
   if (userIds.length === 0) return new Map()
   const { rows } = await db().listRows<PlayerRow>({ databaseId: DATABASE, tableId: PLAYERS, queries: [Query.equal("$id", userIds), Query.limit(userIds.length)] })
   return new Map(rows.map((r) => [r.$id, r.name]))
 }
 
-type Finished = Pick<GameRow, "userId" | "score" | "found" | "status" | "finishedAt">
+type Finished = Pick<GameRow, "userId" | "score" | "found" | "misses" | "status" | "finishedAt">
 const finishedCache = new Map<string, { at: number; rows: Array<Finished> }>()
 
 async function finishedGames(key: string, include: string | null): Promise<Array<Finished>> {
@@ -146,7 +147,7 @@ async function finishedGames(key: string, include: string | null): Promise<Array
   const { rows } = await db().listRows<GameRow>({
     databaseId: DATABASE,
     tableId: GAMES,
-    queries: [Query.equal("key", key), Query.notEqual("status", "playing"), Query.select(["userId", "score", "found", "status", "finishedAt"]), Query.limit(5000)],
+    queries: [Query.equal("key", key), Query.notEqual("status", "playing"), Query.select(["userId", "score", "found", "misses", "status", "finishedAt"]), Query.limit(5000)],
   })
   finishedCache.set(key, { at: Date.now(), rows })
   return rows
@@ -156,12 +157,12 @@ export type DayStats = {
   players: number
   average: number
   cleared: number
-  foundShare: Array<number>
+  people: Array<PeopleAnswer>
   leaders: Array<{ rank: number; name: string; score: number; me: boolean }>
   me: { rank: number; score: number; betterThan: number; tied: number } | null
 }
 
-export async function dayStats(ref: GameRef, answerCount: number, userId: string | null): Promise<DayStats> {
+export async function dayStats(ref: GameRef, answers: Array<BoardAnswer>, userId: string | null): Promise<DayStats> {
   const rows = [...(await finishedGames(refKey(ref), userId))].sort((a, b) => b.score - a.score || (a.finishedAt ?? "").localeCompare(b.finishedAt ?? ""))
   const players = rows.length
   const rankOf = (score: number) => 1 + rows.filter((r) => r.score > score).length
@@ -173,7 +174,7 @@ export async function dayStats(ref: GameRef, answerCount: number, userId: string
     players,
     average: players ? Math.round(rows.reduce((sum, r) => sum + r.score, 0) / players) : 0,
     cleared: players ? rows.filter((r) => r.status === "won").length / players : 0,
-    foundShare: Array.from({ length: answerCount }, (_, i) => (players ? rows.filter((r) => r.found.includes(i)).length / players : 0)),
+    people: peopleBoard(rows, answers),
     leaders: top.map((r) => ({ rank: rankOf(r.score), name: names.get(r.userId) ?? guestName(r.userId), score: r.score, me: r.userId === userId })),
     me: mine
       ? {

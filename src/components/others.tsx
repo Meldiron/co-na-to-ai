@@ -1,5 +1,4 @@
 import { pointsWord } from "@/lib/game"
-import type { BoardAnswer } from "@/lib/types"
 import type { DayStats } from "@/server/games"
 import { openAccount, useAccount } from "./account"
 
@@ -18,7 +17,7 @@ function finishedBy(n: number): string {
   return `Tuhle tabuli zatím dohrálo ${n} hráčů`
 }
 
-export function Others({ answers, stats }: { answers: Array<BoardAnswer>; stats: DayStats | null }) {
+export function Others({ stats }: { stats: DayStats | null }) {
   const { user } = useAccount()
 
   if (!stats || stats.players === 0) return null
@@ -46,20 +45,6 @@ export function Others({ answers, stats }: { answers: Array<BoardAnswer>; stats:
             </div>
           )}
 
-          <h3 className="reveal mt-14 text-[1.25rem] font-bold">Co našli ostatní</h3>
-          <ol className="mt-4 grid gap-1.5" aria-label="Kolik hráčů našlo kterou odpověď">
-            {answers.map((answer, i) => (
-              <li key={answer.rank} className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3">
-                <span className="truncate font-semibold">
-                  {answer.rank}. {answer.text}
-                </span>
-                <span className="h-6 bg-board">
-                  <span className="block h-full bg-paper" style={{ width: `${Math.round(stats.foundShare[i] * 100)}%` }} />
-                </span>
-                <span className="min-w-[3.25rem] text-right whitespace-nowrap tabular-nums">{percent(stats.foundShare[i])}</span>
-              </li>
-            ))}
-          </ol>
         </div>
 
         <div className="md:col-span-5 md:col-start-8">

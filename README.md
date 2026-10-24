@@ -15,7 +15,7 @@ npm test           # matching, scoring, Prague day switch, stats, pipeline shape
 npm run build      # production build in dist/
 ```
 
-Routes: `/` today's game, `/hra/YYYY-MM-DD` a past day, `/archiv` the archive, `/dotazani` the 100 respondents (`/obsazeni` redirects there), `/vlastni/<id>` a custom game, `/admin` the admin for accounts with the `admin` label.
+Routes: `/` today's game, `/hra/YYYY-MM-DD` a past day, `/finale` this week's Finále (`/finale/<Monday>` for earlier weeks), `/archiv` the archive, `/dotazani` the 100 respondents (`/obsazeni` redirects there), `/vlastni/<id>` a custom game, `/admin` the admin for accounts with the `admin` label. `/sitemap.xml` lists the main pages and every published day, and `robots.txt` points to it.
 
 A new puzzle starts at 00:00 Europe/Prague. Puzzle #1 is 2026-10-01 (`LAUNCH_DATE` in `src/lib/day.ts`). The server only returns puzzles whose date is on or before today in Prague, so the client never receives future boards. The answers in a payload are XOR'd with a per-day key and base64-encoded, so they aren't readable at a glance. That is obfuscation, not security.
 
@@ -76,7 +76,13 @@ Every move is saved to the `games` table. The server replays the guesses against
 
 A forgotten password is reset by email: "Zapomněli jste heslo?" in the account dialog asks Appwrite to send a recovery link (in Czech) to `/obnova-hesla`, where the new password is set. The form never reveals whether an email has an account. Recovery links only go to hostnames registered as web platforms in the project (`ai100.appwrite.network` and `localhost`).
 
-Players pick the name shown on the leaderboard (`players` table, also set as the Appwrite user name). After a game, "Jak hráli ostatní" shows how many players finished the board, the average, the share that found each answer, your rank and the top 10. The share ticket and text carry the rank too ("Lepší než 82 % hráčů", or "Nejlepší výsledek dne").
+Players pick the name shown on the leaderboard (`players` table, also set as the Appwrite user name). After a game, "Jak hráli ostatní" shows how many players finished the board, the average, your rank and the top 10. The share ticket and text carry the rank too ("Lepší než 82 % hráčů", or "Nejlepší výsledek dne"). Once 3 players have finished, "Co na to lidé" puts the players' own top 8 next to the AI board: every board answer counts the players who found it, and a wrong guess counts once per player and shows only when at least 2 players typed it (`src/lib/people.ts`).
+
+## Finále
+
+Once a week there is a Finále, like the last round of the show: 5 questions, 20 seconds each, one answer per question. An answer scores the votes of the board answer it matches, and 100 points wins. A week runs Monday to Sunday (Prague time), and its id is the Monday's date. The server keeps the boards. It hands out one question at a time, records when it was shown, scores each answer as it arrives, and gives nothing for an answer that comes more than 3 s after the timer ran out. Reloading doesn't reset the clock. The leaderboard counts games finished within their week. Earlier weeks stay playable for practice.
+
+The hourly `daily-puzzles` function keeps this week's and next week's Finále ready, after it has covered the days. It takes approved questions from the bank first, then newer candidates, then bundled reserves from the end of the list, so it doesn't compete with the daily boards for the same reserve. Each question is probed first: it is skipped when one answer has over 60 % or the answers are all over the place. Then it runs through the full pipeline, and the board is kept if at least 70 answered and it has at least 5 answers. At most 8 failed questions are tried per week.
 
 The streak counts days when the board was finished on the day it came out. Two streak freezes are always ready: up to two missed days in a row keep the streak alive (they don't add to it), and both refill after the next played day. The third missed day in a row ends the streak (`src/lib/streak.ts`).
 
@@ -112,11 +118,13 @@ Live at https://ai100.appwrite.network. It runs in the Appwrite project *Playgro
 | --- | --- | --- |
 | Site | `ai100` | TanStack Start, SSR, `npm ci` and `npm run build`, output `./dist`. The per-request key is scoped to `sessions.write`, `rows.*`, `files.*` and `execution.*`. |
 | Function | `custom-game` | Node 22, 900 s timeout, scopes `files.read` and `files.write`, no public execute. Secret variable `OPENROUTER_API_KEY`. Runs one custom game (the 100 calls plus the judge) and saves it to the bucket. |
-| Function | `daily-puzzles` | Node 22, 900 s timeout, runs every hour (`0 * * * *`), scopes `rows.read` and `rows.write`. Secret variable `OPENROUTER_API_KEY`. Makes sure today and the next 3 days have a board. |
+| Function | `daily-puzzles` | Node 22, 900 s timeout, runs every hour (`0 * * * *`), scopes `rows.read` and `rows.write`. Secret variable `OPENROUTER_API_KEY`. Makes sure today and the next 3 days have a board, and that this week and next week have a Finále. |
 | Bucket | `custom-games` | One JSON file per custom game, server access only. |
 | Function | `maintenance` | Node 22, 900 s timeout, runs every night (`30 3 * * *`), scopes `users.*` and `rows.*`. Secret variable `OPENROUTER_API_KEY`. Refills the question bank and deletes guest users with no games after 30 days. Body `{ "task": "all" \| "questions" \| "cleanup", "force": bool, "dryRun": bool, "olderThanDays": n }`. |
 | Table | `ai100` / `questions` | Drafted questions: `text`, `status` (candidate, approved, used, rejected), `source`, the `probe` result as JSON, `note`, `usedOn`. Server access only. |
 | Table | `ai100` / `games` | One row per player and game: the replayed state, score, found answers, strikes, missed guesses, whether it was finished on the day. Unique on `userId` + `key`. Server access only. |
+| Table | `ai100` / `finales` | Finále questions: `week`, `slot` (0–4), `questionId`, `question`, `passed`, `board` (answers with votes and aliases, as JSON), `answered`, `costUsd`, `note`. A passed row's ID is `<week>-<slot>`. Server access only. |
+| Table | `ai100` / `finale_games` | One row per player and week: current `slot`, `shownAt`, the scored `answers` as JSON, `score`, `status`, `onTime`, `finishedAt`. Unique on `userId` + `week`. Server access only. |
 | Table | `ai100` / `players` | Leaderboard names, row ID = user ID. Server access only. |
 | Table | `ai100` / `puzzles` | One row per generation attempt: `date`, `questionId`, `question`, `number`, `passed`, `gate` (JSON), `costUsd`, `puzzle` (the board as JSON when it passed). A passed row's ID is its date. Server access only. |
 

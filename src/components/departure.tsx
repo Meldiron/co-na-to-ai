@@ -71,6 +71,17 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
             <Flap text={seconds} align="center" className="h-20 w-[4.6rem] text-[length:var(--step-display)] md:h-28 md:w-28" />
           </div>
 
+          <Link
+            to="/finale"
+            className="reveal mt-12 grid grid-cols-[1fr_auto] items-center gap-4 bg-red px-5 py-4 text-red-ink transition-colors hover:bg-red/90"
+          >
+            <span>
+              <span className="block font-semibold">Týdenní finále</span>
+              <span className="block text-sm">Pět otázek, dvacet sekund na každou.</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 font-semibold">Hrát</span>
+          </Link>
+
           {recent.length > 0 && (
             <>
               <h3 className="reveal mt-14 text-[1.25rem] font-bold">Mezitím si zahrajte</h3>
