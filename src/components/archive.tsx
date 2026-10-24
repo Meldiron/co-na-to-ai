@@ -1,13 +1,183 @@
 import { Link } from "@tanstack/react-router"
 import { useRef, useState, type KeyboardEvent } from "react"
-import { dayTone, weekTone } from "@/lib/archive"
+import { dayTone, finished, weekTone, type Archive as ArchiveData, type ArchiveDay, type ArchiveWeek, type Tone } from "@/lib/archive"
 import { addDays, formatLong } from "@/lib/day"
-import { weekLabel } from "@/lib/finale"
-import { Legend, MonthNav, ResultCell, TONES, WEEKDAYS, dayLabel, dayLink, dayResult, titleOf, weekLink, weekResult, weeksOf, type DesignProps } from "./shared"
+import { FINALE_GOAL, weekLabel } from "@/lib/finale"
+import { pointsWord } from "@/lib/game"
+import type { Result } from "@/lib/storage"
+
+const TONES: Record<Tone, string> = {
+  cleared: "bg-field text-field-ink",
+  played: "bg-field-soft text-ink",
+  open: "bg-paper text-ink",
+  today: "bg-red text-red-ink",
+}
+
+const LEGEND: Array<[Tone, string]> = [
+  ["cleared", "Celá tabule nebo vyhrané finále"],
+  ["played", "Odehráno"],
+  ["open", "Nehráno"],
+  ["today", "Dnes a tento týden"],
+]
+
+const WEEKDAYS = [
+  ["Po", "pondělí"],
+  ["Út", "úterý"],
+  ["St", "středa"],
+  ["Čt", "čtvrtek"],
+  ["Pá", "pátek"],
+  ["So", "sobota"],
+  ["Ne", "neděle"],
+] as const
 
 const STEPS: Partial<Record<string, number>> = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }
 
-export function Original({ archive, month, months, go }: DesignProps) {
+const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1)
+const monthTitle = new Intl.DateTimeFormat("cs-CZ", { month: "long", year: "numeric", timeZone: "UTC" })
+const monthName = new Intl.DateTimeFormat("cs-CZ", { month: "long", timeZone: "UTC" })
+const MONTHS = Array.from({ length: 12 }, (_, i) => capitalize(monthName.format(new Date(Date.UTC(2026, i, 15)))))
+const titleOf = (month: string) => capitalize(monthTitle.format(new Date(`${month}-01T12:00:00Z`)))
+
+function weeksOf(month: string): Array<Array<string | null>> {
+  const first = `${month}-01`
+  const cells: Array<string | null> = Array.from({ length: (new Date(`${first}T12:00:00Z`).getUTCDay() + 6) % 7 }, () => null)
+  for (let day = first; day.startsWith(month); day = addDays(day, 1)) cells.push(day)
+  while (cells.length % 7) cells.push(null)
+  return Array.from({ length: cells.length / 7 }, (_, i) => cells.slice(i * 7, i * 7 + 7))
+}
+
+function outcome(result: Result): string {
+  return `${result.score} ${pointsWord(result.score)}, ${result.cleared ? "celá tabule" : `${result.found} z 8 odpovědí`}`
+}
+
+function dayLabel(day: ArchiveDay, today: string): string {
+  return `${formatLong(day.date)}${day.date === today ? ", dnes" : ""}: ${day.question} ${day.result ? outcome(day.result) : "Nehráno"}`
+}
+
+function dayLink(date: string, today: string) {
+  return date === today ? ({ to: "/" } as const) : ({ to: "/hra/$datum", params: { datum: date } } as const)
+}
+
+function weekLink(week: string, current: string) {
+  return week === current ? ({ to: "/finale" } as const) : ({ to: "/finale/$tyden", params: { tyden: week } } as const)
+}
+
+const dayResult = (day: ArchiveDay) => (day.result ? { score: day.result.score, note: day.result.cleared ? "celá tabule" : `${day.result.found} z 8` } : null)
+const weekResult = (week: ArchiveWeek) =>
+  week.result && finished(week) ? { score: week.result.score, note: week.result.score >= FINALE_GOAL ? "vyhráno" : "nevyhráno" } : null
+
+function Arrow({ flip = false, className = "size-5" }: { flip?: boolean; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={`${className} ${flip ? "rotate-180" : ""}`} aria-hidden>
+      <path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="square" />
+    </svg>
+  )
+}
+
+function ResultCell({ result, play = "Hrát" }: { result: { score: number; note: string } | null; play?: string }) {
+  if (!result) {
+    return (
+      <span className="inline-flex items-center gap-1 font-semibold whitespace-nowrap text-red">
+        {play}
+        <Arrow className="size-4" />
+      </span>
+    )
+  }
+  return (
+    <span className="grid justify-items-end text-right">
+      <span className="font-bold whitespace-nowrap tabular-nums">
+        {result.score} <span className="font-normal">{pointsWord(result.score)}</span>
+      </span>
+      <span className="text-sm whitespace-nowrap text-ink-soft">{result.note}</span>
+    </span>
+  )
+}
+
+function StepLink({ to, label, flip = false, onGo }: { to: string | undefined; label: string; flip?: boolean; onGo: (month: string) => void }) {
+  const box = "grid size-12 shrink-0 place-items-center bg-paper"
+  if (!to) {
+    return (
+      <span aria-hidden className={`${box} text-ink-soft/35`}>
+        <Arrow flip={flip} />
+      </span>
+    )
+  }
+  return (
+    <button type="button" onClick={() => onGo(to)} aria-label={`${label}: ${titleOf(to)}`} className={`${box} transition-colors hover:bg-ground-step`}>
+      <Arrow flip={flip} />
+    </button>
+  )
+}
+
+type PickerProps = {
+  id: string
+  label: string
+  value: string
+  options: Array<{ value: string; label: string; disabled?: boolean }>
+  onChange: (value: string) => void
+  className?: string
+}
+
+function Picker({ id, label, value, options, onChange, className = "" }: PickerProps) {
+  return (
+    <div className={`relative ${className}`}>
+      <label htmlFor={id} className="sr-only">
+        {label}
+      </label>
+      <select
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="h-12 w-full cursor-pointer appearance-none bg-paper pr-10 pl-4 text-[1.125rem] font-bold text-ink transition-colors hover:bg-ground-step"
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value} disabled={option.disabled}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      <svg viewBox="0 0 24 24" aria-hidden className="pointer-events-none absolute top-1/2 right-3 size-5 -translate-y-1/2">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="square" />
+      </svg>
+    </div>
+  )
+}
+
+function MonthNav({ month, months, go }: { month: string; months: Array<string>; go: (month: string) => void }) {
+  const index = months.indexOf(month)
+  const year = month.slice(0, 4)
+  const years = [...new Set(months.map((m) => m.slice(0, 4)))].sort()
+  return (
+    <nav aria-label="Výběr měsíce" className="flex gap-[3px]">
+      <StepLink to={months[index + 1]} label="Předchozí měsíc" flip onGo={go} />
+      <Picker
+        id="archiv-mesic-vyber"
+        label="Měsíc"
+        value={month.slice(5)}
+        onChange={(value) => go(`${year}-${value}`)}
+        options={MONTHS.map((name, i) => {
+          const value = String(i + 1).padStart(2, "0")
+          return { value, label: name, disabled: !months.includes(`${year}-${value}`) }
+        })}
+        className="min-w-0 flex-1"
+      />
+      <Picker
+        id="archiv-rok"
+        label="Rok"
+        value={year}
+        onChange={(value) => {
+          const inYear = months.filter((m) => m.startsWith(value))
+          go(inYear.find((m) => m.endsWith(month.slice(4))) ?? inYear[0])
+        }}
+        options={years.map((y) => ({ value: y, label: y }))}
+        className="w-[6.5rem] shrink-0"
+      />
+      <StepLink to={months[index - 1]} label="Další měsíc" onGo={go} />
+    </nav>
+  )
+}
+
+export function Archive({ archive, month, months, go }: { archive: ArchiveData; month: string; months: Array<string>; go: (month: string) => void }) {
   const { today } = archive
   const [active, setActive] = useState<string | null>(null)
   const [cursor, setCursor] = useState<string | null>(null)
@@ -63,7 +233,7 @@ export function Original({ archive, month, months, go }: DesignProps) {
             <h2 id="archiv-mesic" className="sr-only">
               {titleOf(month)}
             </h2>
-            <MonthNav month={month} months={months} go={go} idPrefix="archiv" />
+            <MonthNav month={month} months={months} go={go} />
             <p className="mt-3 min-h-[1.5em] text-ink-soft">{archive.loaded && `Odehráno ${played} z ${days.length} · celá tabule ${cleared}×`}</p>
 
             <div className="mt-4 [container-type:inline-size]">
@@ -116,7 +286,15 @@ export function Original({ archive, month, months, go }: DesignProps) {
                 </tbody>
               </table>
             </div>
-            <Legend className="mt-5" />
+
+            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+              {LEGEND.map(([tone, label]) => (
+                <li key={tone} className="flex items-center gap-2">
+                  <span aria-hidden className={`size-4 shrink-0 ${TONES[tone]} ${tone === "open" ? "shadow-[inset_0_0_0_1px_var(--ink-soft)]" : ""}`} />
+                  {label}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
