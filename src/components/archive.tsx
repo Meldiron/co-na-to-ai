@@ -7,7 +7,7 @@ import { pointsWord } from "@/lib/game"
 import type { Result } from "@/lib/storage"
 
 function tile(mark: Mark, open: string): string {
-  return `relative ${mark.played ? "bg-field text-field-ink" : open} ${mark.live ? "shadow-[inset_0_0_0_3px_var(--red)]" : ""}`
+  return `relative ${mark.played ? "bg-field text-field-ink" : open}`
 }
 
 function Star({ className = "top-1 right-1 size-3" }: { className?: string }) {
@@ -16,6 +16,10 @@ function Star({ className = "top-1 right-1 size-3" }: { className?: string }) {
       <path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" fill="currentColor" />
     </svg>
   )
+}
+
+function Dot({ className = "top-1.5 left-1.5 size-2" }: { className?: string }) {
+  return <span aria-hidden className={`absolute rounded-full bg-red shadow-[0_0_0_2px_var(--paper)] ${className}`} />
 }
 
 const LEGEND: Array<[Mark, string]> = [
@@ -278,6 +282,7 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
                               {...highlight(date, () => setCursor(date))}
                               className={`grid aspect-square content-center justify-items-center gap-[0.2em] ${tile(dayMark(day, today), "bg-paper text-ink")} ${active === date ? "outline-3 outline-offset-2 outline-ink" : ""}`}
                             >
+                              {date === today && <Dot className="top-[8%] left-[8%] size-[clamp(0.4375rem,1.6cqw,0.5625rem)]" />}
                               {day.result?.cleared && <Star className="top-[6%] right-[6%] size-[clamp(0.625rem,2.4cqw,0.875rem)]" />}
                               <span className="text-[clamp(1.05rem,4.6cqw,1.6rem)] leading-none font-bold [font-stretch:75%]">{Number(date.slice(8))}</span>
                               <span className="min-h-[1em] text-[clamp(0.6875rem,2.4cqw,0.875rem)] leading-none tabular-nums">
@@ -298,8 +303,9 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
                 <li key={label} className="flex items-center gap-2">
                   <span
                     aria-hidden
-                    className={`relative size-5 shrink-0 ${mark.played ? "bg-field text-field-ink" : "bg-paper"} ${mark.live ? "shadow-[inset_0_0_0_2px_var(--red)]" : mark.played ? "" : "shadow-[inset_0_0_0_1px_var(--ink-soft)]"}`}
+                    className={`relative size-5 shrink-0 ${mark.played ? "bg-field text-field-ink" : "bg-paper shadow-[inset_0_0_0_1px_var(--ink-soft)]"}`}
                   >
+                    {mark.live && <Dot className="top-1 left-1 size-1.5" />}
                     {mark.perfect && <Star className="top-0.5 right-0.5 size-2.5" />}
                   </span>
                   {label}
@@ -327,6 +333,7 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
                         className="grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-x-4 bg-paper p-3 transition-colors hover:bg-paper-step md:grid-cols-[3.5rem_minmax(0,1fr)_auto] md:gap-x-5 md:py-4 md:pr-5"
                       >
                         <span aria-hidden className={`grid aspect-square place-items-center text-[1.2rem] leading-none font-bold [font-stretch:75%] md:text-[1.4rem] ${tile(mark, "bg-ground text-ink")}`}>
+                          {mark.live && <Dot />}
                           {mark.perfect && <Star />}
                           F{week.number}
                         </span>
@@ -362,6 +369,7 @@ export function Archive({ archive, month, months, go }: { archive: ArchiveData; 
                       className={`grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-x-4 bg-paper p-3 transition-colors hover:bg-paper-step md:grid-cols-[3.5rem_minmax(0,1fr)_auto] md:gap-x-5 md:py-4 md:pr-5 ${active === day.date ? "bg-paper-step" : ""}`}
                     >
                       <span aria-hidden className={`grid aspect-square place-items-center text-[1.35rem] leading-none font-bold [font-stretch:75%] md:text-[1.6rem] ${tile(mark, "bg-ground text-ink")}`}>
+                        {mark.live && <Dot />}
                         {mark.perfect && <Star />}
                         {Number(day.date.slice(8))}
                       </span>
