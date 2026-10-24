@@ -3,7 +3,7 @@ import { randomBytes } from "node:crypto"
 import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises"
 import { join } from "node:path"
 import { getRequestHeader } from "@tanstack/react-start/server"
-import { Client, Functions, Query, Storage } from "node-appwrite"
+import { AppwriteException, Client, Functions, Query, Storage } from "node-appwrite"
 import { CUSTOM_ID, generateCustomGame, type CustomGame } from "../../pipeline/custom-game"
 import { answerers } from "@/lib/cast"
 
@@ -80,11 +80,14 @@ export async function loadCustom(id: string): Promise<CustomGame | null> {
   const remote = appwrite()
   try {
     if (remote) {
-      const data = await remote.storage.getFileDownload({ bucketId: BUCKET, fileId: id })
-      return JSON.parse(new TextDecoder().decode(data)) as CustomGame
+      const data: unknown = await remote.storage.getFileDownload({ bucketId: BUCKET, fileId: id })
+      return (data instanceof ArrayBuffer ? JSON.parse(new TextDecoder().decode(data)) : data) as CustomGame
     }
     return JSON.parse(await readFile(join(DIR, `${id}.json`), "utf8")) as CustomGame
-  } catch {
+  } catch (error) {
+    if (!(error instanceof AppwriteException && error.code === 404) && !(error instanceof Error && "code" in error && error.code === "ENOENT")) {
+      console.error(`Could not load custom game ${id}:`, error)
+    }
     return null
   }
 }
