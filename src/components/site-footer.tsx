@@ -28,6 +28,11 @@ export function SiteFooter() {
                   Pravidla
                 </a>
               </li>
+              <li>
+                <Link to="/admin" className="hover:text-flap-ink">
+                  Administrace
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="md:col-span-3">
@@ -40,7 +45,7 @@ export function SiteFooter() {
           </div>
           <div className="md:col-span-3">
             <p className="font-semibold">Pravidla ve zkratce</p>
-            <p className="mt-2 text-flap-dim">Osm odpovědí na tabuli, pět životů. Každá odpověď má tolik bodů, kolik AI ji řeklo.</p>
+            <p className="mt-2 text-flap-dim">Osm odpovědí na tabuli, pět životů, 10 bodů za každou AI. Odkryté písmeno ubere čtvrtinu.</p>
           </div>
         </div>
         <div />

@@ -1,10 +1,12 @@
-import { useRef, useState, type FormEvent } from "react"
+import { useMemo, useRef, useState, type FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useGame } from "@/hooks/use-game"
 import { formatShort } from "@/lib/day"
-import { CLEAR_BONUS, MAX_STRIKES, pointsWord, scoreLines } from "@/lib/game"
-import type { PuzzlePayload } from "@/lib/types"
+import { personaOf } from "@/lib/cast"
+import { personaClue } from "@/lib/clue"
+import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, pointsFor, pointsWord, scoreLines } from "@/lib/game"
+import type { Persona, PuzzlePayload } from "@/lib/types"
 import { Board, Strikes } from "./board"
 import { Flap } from "./flap"
 import { Results } from "./results"
@@ -15,8 +17,8 @@ type Message = { text: string; tone: "hit" | "miss" | "info" }
 const triesLeft = new Intl.PluralRules("cs-CZ")
 const weekday = new Intl.DateTimeFormat("cs-CZ", { weekday: "long", timeZone: "UTC" })
 
-export function gameTitle(payload: PuzzlePayload): string {
-  return payload.kind === "custom" ? "Vlastní hra" : `Hra č. ${payload.number}`
+export function gameLabel(payload: PuzzlePayload): string {
+  return payload.kind === "custom" ? "vlastní hra" : formatShort(payload.date)
 }
 
 function DateStrip({ payload, daily }: { payload: PuzzlePayload; daily: boolean }) {
@@ -26,7 +28,6 @@ function DateStrip({ payload, daily }: { payload: PuzzlePayload; daily: boolean 
       <span className={`tile ${daily ? "tile-red" : ""}`}>{tag}</span>
       <span className="tile">{weekday.format(new Date(`${payload.date}T12:00:00Z`))}</span>
       <span className="tile">{formatShort(payload.date)}</span>
-      {payload.kind === "daily" && <span className="ml-2">hra č. {payload.number}</span>}
     </p>
   )
 }
@@ -37,13 +38,18 @@ function remaining(n: number): string {
 
 export function Game({ payload, today }: { payload: PuzzlePayload; today: string }) {
   const daily = payload.date === today
-  const { secret, state, ready, guess, surrender } = useGame(payload, daily)
+  const { secret, state, ready, guess, surrender, letter, clue } = useGame(payload, daily)
   const [value, setValue] = useState("")
   const [message, setMessage] = useState<Message | null>(null)
   const [missKey, setMissKey] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
   const over = state.status !== "playing"
   const { total } = scoreLines(state, secret.answers)
+  const clues = useMemo(() => {
+    const personaByAnswerer = new Map(secret.responses.map((r) => [r.answerer, personaOf(r.persona)]))
+    return secret.answers.map((a) => personaClue(a.answerers.map((id) => personaByAnswerer.get(id)).filter((p): p is Persona => !!p)))
+  }, [secret])
+  const openClues = [...(state.clues ?? [])].sort((a, b) => a - b)
 
   function submit(event: FormEvent) {
     event.preventDefault()
@@ -51,8 +57,9 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
     switch (outcome.kind) {
       case "hit": {
         const answer = secret.answers[outcome.index]
+        const points = pointsFor(answer.votes, hintsUsed(next, outcome.index))
         const bonus = next.status === "won" ? ` Celá tabule, k tomu ${CLEAR_BONUS} bodů navíc.` : ""
-        setMessage({ tone: "hit", text: `${answer.text} je na tabuli, +${answer.votes} ${pointsWord(answer.votes)}.${bonus}` })
+        setMessage({ tone: "hit", text: `${answer.text} je na tabuli, +${points} ${pointsWord(points)}.${bonus}` })
         setValue("")
         break
       }
@@ -96,9 +103,26 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
               answers={ready ? secret.answers : null}
               found={state.found}
               revealAll={over}
-              title={`Odpovědělo ${payload.answered} ze ${payload.asked} AI. Body za odpověď = kolik AI ji řeklo.`}
+              title={`Odpovědělo ${payload.answered} ze ${payload.asked} AI. Klepněte na skrytou odpověď a dostanete nápovědu.`}
               missKey={missKey}
+              hints={state.hints ?? []}
+              interactive={ready && !over}
+              clueFor={(index) => ((state.clues ?? []).includes(index) ? clues[index] : null)}
+              onLetter={(index) => {
+                letter(index)
+                setMessage({ tone: "info", text: `Odpověď č. ${index + 1}: odkryli jste další písmeno. Dá teď o čtvrtinu bodů méně.` })
+              }}
+              onClue={clue}
             />
+            {openClues.length > 0 && (
+              <ul className="mt-3 grid gap-1.5 text-field-soft md:mt-4" aria-label="Nápovědy, kdo co řekl">
+                {openClues.map((index) => (
+                  <li key={index}>
+                    <span className="font-semibold text-field-ink">Odpověď č. {index + 1}:</span> {clues[index]}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div className="mt-4 grid gap-4 md:grid-cols-[minmax(0,1fr)_auto_auto] md:items-center md:gap-6">

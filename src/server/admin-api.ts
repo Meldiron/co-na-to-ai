@@ -46,16 +46,16 @@ export const logout = createServerFn({ method: "POST" }).handler(() => {
 
 export const createCustomGame = createServerFn({ method: "POST" })
   .validator(z.object({ question: z.string().trim().min(8).max(90) }))
-  .handler(({ data }) => {
+  .handler(async ({ data }) => {
     requireAdmin()
     return startJob(data.question)
   })
 
 export const getCustomJob = createServerFn({ method: "GET" })
-  .validator(z.object({ id: z.string() }))
-  .handler(({ data }) => {
+  .validator(z.object({ id: z.string(), executionId: z.string().optional() }))
+  .handler(async ({ data }) => {
     requireAdmin()
-    return getJob(data.id)
+    return getJob(data.id, data.executionId)
   })
 
 export const removeCustomGame = createServerFn({ method: "POST" })

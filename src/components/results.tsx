@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react"
-import { gameTitle } from "./game"
 import { domToBlob } from "modern-screenshot"
 import { Button } from "@/components/ui/button"
-import { formatShort } from "@/lib/day"
-import { CLEAR_BONUS, MAX_STRIKES, maxScore, pointsWord, scoreLines, shareText, type GameState } from "@/lib/game"
+import { formatDayMonth } from "@/lib/day"
+import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, maxScore, pointsFor, pointsWord, scoreLines, shareText, type GameState } from "@/lib/game"
 import type { BoardAnswer, PuzzlePayload } from "@/lib/types"
+import { gameLabel } from "./game"
 
 type ResultsProps = {
   payload: PuzzlePayload
@@ -14,6 +14,7 @@ type ResultsProps = {
 }
 
 const plural = new Intl.PluralRules("cs-CZ")
+const weekday = new Intl.DateTimeFormat("cs-CZ", { weekday: "long", timeZone: "UTC" })
 const pick = (n: number, one: string, few: string, many: string) => {
   const category = plural.select(n)
   return category === "one" ? one : category === "few" ? few : many
@@ -28,7 +29,7 @@ export function Results({ payload, state, answers, daily }: ResultsProps) {
         <div className="flex flex-col md:col-span-6">
           <h2 className="head reveal">Váš výsledek</h2>
           <p className="reveal mt-4 max-w-[44ch]">
-            Každá odpověď má tolik bodů, kolik AI ji řeklo. Za celou tabuli je {CLEAR_BONUS} bodů navíc.
+            Odpověď má 10 bodů za každou AI, která ji řekla. Každé odkryté písmeno ubere čtvrtinu. Za celou tabuli je {CLEAR_BONUS} bodů navíc.
           </p>
           <div className="reveal mt-12 md:mt-auto md:pt-16">
             <p className="giant">{total}</p>
@@ -41,17 +42,19 @@ export function Results({ payload, state, answers, daily }: ResultsProps) {
 
         <div className="md:col-span-5 md:col-start-8">
           <div className="zigzag-bottom bg-paper px-6 pt-7 pb-14 text-ink md:px-8">
-            <p className="font-semibold">Účtenka, {gameTitle(payload).toLowerCase()}</p>
+            <p className="font-semibold">Účtenka, {gameLabel(payload)}</p>
             <ul className="mt-5 grid gap-2.5">
               {answers.map((answer, index) => {
                 const found = state.found.includes(index)
+                const hints = hintsUsed(state, index)
                 return (
                   <li key={answer.rank} className={`flex items-baseline gap-2 ${found ? "" : "text-ink-soft"}`}>
                     <span className="truncate">
                       {answer.rank}. {answer.text}
+                      {found && hints > 0 && <span className="text-ink-soft"> · {hints} {hints === 1 ? "písmeno" : "písmena"}</span>}
                     </span>
                     <span className="leader" aria-hidden />
-                    <span className="tabular-nums">{found ? answer.votes : 0}</span>
+                    <span className="tabular-nums">{found ? pointsFor(answer.votes, hints) : 0}</span>
                   </li>
                 )
               })}
@@ -96,8 +99,8 @@ function Share({
 
   const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
   const url = `${origin}${path}`
-  const text = shareText({ label: payload.kind === "custom" ? "vlastní hra" : `č. ${payload.number}`, state, answers, total, url })
-  const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.number}.png`
+  const text = shareText({ label: gameLabel(payload), state, answers, total, url })
+  const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
 
   async function image(): Promise<Blob | null> {
     const node = ticketRef.current
@@ -219,12 +222,12 @@ function Ticket({
         </div>
       </div>
       <div className="absolute inset-y-0 right-0 flex w-[24.6%] flex-col justify-between py-[5.5%] pr-[3cqw] pl-[2cqw]">
-        <p className="text-[3.2cqw] leading-tight">{payload.kind === "custom" ? "Vlastní" : "Hra č."}</p>
-        <p className="text-[11cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">{payload.kind === "custom" ? "hra" : payload.number}</p>
+        <p className="text-[3.2cqw] leading-tight">{payload.kind === "custom" ? "Vlastní hra" : weekday.format(new Date(`${payload.date}T12:00:00Z`))}</p>
+        <p className="text-[9cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">{formatDayMonth(payload.date)}</p>
         <p className="text-[3.2cqw] leading-tight">
-          {formatShort(payload.date)}
+          {payload.date.slice(0, 4)}
           <br />
-          {state.found.length} z {answers.length}
+          {state.found.length} z {answers.length} odpovědí
         </p>
       </div>
     </div>

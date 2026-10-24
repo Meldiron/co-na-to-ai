@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
-import { applyGuess, giveUp, initialState, scoreLines, type GameState } from "@/lib/game"
+import { applyGuess, giveUp, initialState, revealClue, revealLetter, scoreLines, type GameState } from "@/lib/game"
 import { decodeSecret } from "@/lib/secret"
 import { loadGame, saveGame, saveResult } from "@/lib/storage"
 import type { PuzzlePayload } from "@/lib/types"
@@ -16,7 +16,7 @@ export function useGame(payload: PuzzlePayload, daily: boolean) {
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    setState(loadGame(key, board) ?? initialState)
+    setState({ ...initialState, ...loadGame(key, board) })
     setReady(true)
   }, [key, board])
 
@@ -48,6 +48,8 @@ export function useGame(payload: PuzzlePayload, daily: boolean) {
   )
 
   const surrender = useCallback(() => commit(giveUp(state)), [state, commit])
+  const letter = useCallback((index: number) => commit(revealLetter(state, secret.answers, index)), [state, secret.answers, commit])
+  const clue = useCallback((index: number) => commit(revealClue(state, index)), [state, commit])
 
-  return { secret, state, ready, guess, surrender }
+  return { secret, state, ready, guess, surrender, letter, clue }
 }

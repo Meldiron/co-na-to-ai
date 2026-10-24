@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
     meta: loaderData?.puzzle
       ? [
           { title: `${loaderData.puzzle.question} · Ptali jsme se 100 AI` },
-          { property: "og:title", content: `Hra č. ${loaderData.puzzle.number}: ${loaderData.puzzle.question}` },
+          { property: "og:title", content: `Dnešní otázka: ${loaderData.puzzle.question}` },
         ]
       : [],
   }),

@@ -16,3 +16,5 @@ todos.json
 *.tsbuildinfo
 
 .taste-skill/
+
+functions/*/dist

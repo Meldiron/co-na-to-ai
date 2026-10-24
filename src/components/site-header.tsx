@@ -40,9 +40,6 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
           <a href="/#pravidla" className="hidden h-11 items-center px-3 underline-offset-[6px] hover:underline md:inline-flex">
             Pravidla
           </a>
-          <Link to="/admin" className="inline-flex h-11 items-center px-3 underline-offset-[6px] hover:underline data-[status=active]:underline">
-            Admin
-          </Link>
         </nav>
       </div>
     </header>

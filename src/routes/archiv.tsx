@@ -37,10 +37,7 @@ function Archive() {
               <caption className="sr-only">Seznam vydaných otázek od nejnovější</caption>
               <thead>
                 <tr className="text-sm text-muted-foreground">
-                  <th scope="col" className="w-16 py-3 pr-4 font-normal">
-                    Hra
-                  </th>
-                  <th scope="col" className="hidden w-32 py-3 pr-4 font-normal sm:table-cell">
+                  <th scope="col" className="w-28 py-3 pr-4 font-normal sm:w-32">
                     Datum
                   </th>
                   <th scope="col" className="py-3 pr-4 font-normal">
@@ -56,8 +53,7 @@ function Archive() {
                   const result = puzzle.date in results ? results[puzzle.date] : null
                   return (
                     <tr key={puzzle.date} className="group border-t border-ground-step">
-                      <td className="py-4 pr-4 align-top tabular-nums">{puzzle.number}</td>
-                      <td className="hidden py-4 pr-4 align-top tabular-nums sm:table-cell">{formatShort(puzzle.date)}</td>
+                      <td className="py-4 pr-4 align-top tabular-nums">{formatShort(puzzle.date)}</td>
                       <td className="py-4 pr-4 align-top">
                         <Link
                           to={puzzle.date === today ? "/" : "/hra/$datum"}

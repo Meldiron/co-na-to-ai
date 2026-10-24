@@ -2,20 +2,12 @@ import "@tanstack/react-start/server-only"
 import { randomBytes } from "node:crypto"
 import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises"
 import { join } from "node:path"
-import { askAll } from "../../pipeline/ask"
-import { buildPuzzle, type GateResult } from "../../pipeline/build"
-import { JUDGE_MODEL } from "../../pipeline/cluster"
-import { finalize } from "../../pipeline/finalize"
-import { catalogue, client } from "../../pipeline/lib/openrouter"
-import { SPARES } from "../../pipeline/lib/roster"
-import { answerers, personas } from "@/lib/cast"
-import { pragueDate } from "@/lib/day"
-import type { Puzzle } from "@/lib/types"
+import { getRequestHeader } from "@tanstack/react-start/server"
+import { Client, Functions, Query, Storage } from "node-appwrite"
+import { CUSTOM_ID, generateCustomGame, type CustomGame } from "../../pipeline/custom-game"
+import { answerers } from "@/lib/cast"
 
-const DIR = process.env.CUSTOM_GAMES_DIR ?? join(process.cwd(), "custom")
-const ID = /^[a-f0-9]{10}$/
-
-export type CustomGame = Puzzle & { id: string; createdAt: string; gate: GateResult }
+export type { CustomGame }
 
 export type Job = {
   id: string
@@ -23,64 +15,74 @@ export type Job = {
   state: "asking" | "judging" | "done" | "failed"
   done: number
   total: number
+  executionId?: string
   error?: string
 }
 
+const BUCKET = process.env.CUSTOM_GAMES_BUCKET ?? "custom-games"
+const FUNCTION = process.env.CUSTOM_GAME_FUNCTION ?? "custom-game"
+const DIR = process.env.CUSTOM_GAMES_DIR ?? join(process.cwd(), "custom")
 const jobs = new Map<string, Job>()
 
-export function startJob(question: string): Job {
+function appwrite() {
+  const endpoint = process.env.APPWRITE_SITE_API_ENDPOINT
+  const project = process.env.APPWRITE_SITE_PROJECT_ID
+  const key = getRequestHeader("x-appwrite-key")
+  if (!endpoint || !project || !key) return null
+  const sdk = new Client().setEndpoint(endpoint).setProject(project).setKey(key)
+  return { storage: new Storage(sdk), functions: new Functions(sdk) }
+}
+
+export async function startJob(question: string): Promise<Job> {
   const id = randomBytes(5).toString("hex")
-  const job: Job = { id, question, state: "asking", done: 0, total: answerers.length }
+  const job: Job = { id, question, state: "asking", done: -1, total: answerers.length }
+  const remote = appwrite()
+  if (remote) {
+    const execution = await remote.functions.createExecution({ functionId: FUNCTION, body: JSON.stringify({ id, question }), async: true })
+    return { ...job, executionId: execution.$id }
+  }
+
+  job.done = 0
   jobs.set(id, job)
-  run(job).catch((error: unknown) => {
-    job.state = "failed"
-    job.error = error instanceof Error ? error.message : String(error)
-  })
-  return job
-}
-
-export function getJob(id: string): Job | null {
-  return jobs.get(id) ?? null
-}
-
-async function run(job: Job) {
-  const sdk = client()
-  const models = await catalogue()
-  const started = Date.now()
-  const responses = await askAll({
-    sdk,
-    catalogue: models,
-    answerers,
-    personas: new Map(personas.map((p) => [p.id, p])),
-    spares: SPARES,
-    question: job.question,
+  generateCustomGame(id, question, {
     onProgress: (done) => {
       job.done = done
     },
+    onJudging: () => {
+      job.state = "judging"
+    },
   })
-  job.state = "judging"
-  const askCost = responses.flatMap((r) => r.attempts).reduce((sum, a) => sum + a.costUsd, 0)
-  const { grouped, gate: verdict, costUsd } = await finalize(sdk, job.question, responses, { aliasesOnFail: true })
-  const puzzle = buildPuzzle({
-    date: pragueDate(),
-    number: 0,
-    questionId: job.id,
-    question: job.question,
-    responses,
-    grouped,
-    judgeModel: JUDGE_MODEL,
-    costUsd: askCost + costUsd,
-    durationMs: Date.now() - started,
-  })
-  const game: CustomGame = { ...puzzle, id: job.id, createdAt: new Date().toISOString(), gate: verdict }
-  await mkdir(DIR, { recursive: true })
-  await writeFile(join(DIR, `${job.id}.json`), `${JSON.stringify(game, null, 2)}\n`)
-  job.state = "done"
+    .then(async (game) => {
+      await mkdir(DIR, { recursive: true })
+      await writeFile(join(DIR, `${id}.json`), `${JSON.stringify(game, null, 2)}\n`)
+      job.state = "done"
+    })
+    .catch((error: unknown) => {
+      job.state = "failed"
+      job.error = error instanceof Error ? error.message : String(error)
+    })
+  return job
+}
+
+export async function getJob(id: string, executionId?: string): Promise<Job | null> {
+  const remote = appwrite()
+  if (!remote || !executionId) return jobs.get(id) ?? null
+
+  const execution = await remote.functions.getExecution({ functionId: FUNCTION, executionId })
+  const base: Job = { id, question: "", state: "asking", done: -1, total: answerers.length, executionId }
+  if (execution.status === "failed") return { ...base, state: "failed", error: "Funkce, která se ptá AI, selhala. Podrobnosti jsou v logu funkce v Appwrite." }
+  if (execution.status !== "completed") return base
+  return (await loadCustom(id)) ? { ...base, state: "done" } : { ...base, state: "failed", error: "Funkce doběhla, ale hra se neuložila." }
 }
 
 export async function loadCustom(id: string): Promise<CustomGame | null> {
-  if (!ID.test(id)) return null
+  if (!CUSTOM_ID.test(id)) return null
+  const remote = appwrite()
   try {
+    if (remote) {
+      const data = await remote.storage.getFileDownload({ bucketId: BUCKET, fileId: id })
+      return JSON.parse(new TextDecoder().decode(data)) as CustomGame
+    }
     return JSON.parse(await readFile(join(DIR, `${id}.json`), "utf8")) as CustomGame
   } catch {
     return null
@@ -88,17 +90,25 @@ export async function loadCustom(id: string): Promise<CustomGame | null> {
 }
 
 export async function listCustom(): Promise<Array<CustomGame>> {
-  let names: Array<string>
-  try {
-    names = (await readdir(DIR)).filter((n) => n.endsWith(".json"))
-  } catch {
-    return []
+  const remote = appwrite()
+  let ids: Array<string>
+  if (remote) {
+    const { files } = await remote.storage.listFiles({ bucketId: BUCKET, queries: [Query.orderDesc("$createdAt"), Query.limit(100)] })
+    ids = files.map((f) => f.$id)
+  } else {
+    try {
+      ids = (await readdir(DIR)).filter((n) => n.endsWith(".json")).map((n) => n.slice(0, -".json".length))
+    } catch {
+      return []
+    }
   }
-  const games = await Promise.all(names.map((n) => loadCustom(n.slice(0, -".json".length))))
+  const games = await Promise.all(ids.map(loadCustom))
   return games.filter((g): g is CustomGame => g !== null).sort((a, b) => b.createdAt.localeCompare(a.createdAt))
 }
 
 export async function deleteCustom(id: string): Promise<void> {
-  if (!ID.test(id)) return
-  await rm(join(DIR, `${id}.json`), { force: true })
+  if (!CUSTOM_ID.test(id)) return
+  const remote = appwrite()
+  if (remote) await remote.storage.deleteFile({ bucketId: BUCKET, fileId: id })
+  else await rm(join(DIR, `${id}.json`), { force: true })
 }

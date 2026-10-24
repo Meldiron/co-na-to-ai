@@ -87,18 +87,28 @@ function Dashboard({ state }: { state: State }) {
   const [question, setQuestion] = useState("")
   const [job, setJob] = useState<Job | null>(null)
   const [error, setError] = useState("")
+  const [elapsed, setElapsed] = useState(0)
   const running = job?.state === "asking" || job?.state === "judging"
 
   useEffect(() => {
     if (!job || !running) return
-    const timer = setInterval(async () => {
-      const next = await getCustomJob({ data: { id: job.id } })
-      if (!next) return
-      setJob(next)
-      if (next.state === "done") await router.invalidate()
-    }, 1500)
-    return () => clearInterval(timer)
-  }, [job, running, router])
+    const started = Date.now()
+    const tick = setInterval(() => setElapsed(Math.round((Date.now() - started) / 1000)), 1000)
+    const poll = setInterval(async () => {
+      try {
+        const next = await getCustomJob({ data: { id: job.id, executionId: job.executionId } })
+        if (!next) return
+        setJob({ ...next, question: job.question })
+        if (next.state === "done") await router.invalidate()
+      } catch {
+        // a missed poll is retried on the next tick
+      }
+    }, 2500)
+    return () => {
+      clearInterval(tick)
+      clearInterval(poll)
+    }
+  }, [job?.id, job?.executionId, running, router])
 
   async function create(event: FormEvent) {
     event.preventDefault()
@@ -155,11 +165,15 @@ function Dashboard({ state }: { state: State }) {
 
           {job && (
             <div className="mt-4 flex items-center gap-5 bg-board p-5 text-flap-ink" aria-live="polite">
-              <Flap text={job.state === "asking" ? String(job.done) : job.state === "judging" ? "100" : job.state === "done" ? "OK" : "!"} align="center" className="h-14 w-24 shrink-0" />
+              <Flap
+                text={job.state === "asking" ? (job.done >= 0 ? String(job.done) : `${elapsed}s`) : job.state === "judging" ? "100" : job.state === "done" ? "OK" : "!"}
+                align="center"
+                className="h-14 w-24 shrink-0"
+              />
               <div>
                 <p className="font-semibold">„{job.question}“</p>
                 <p className="mt-1 text-flap-dim">
-                  {job.state === "asking" && `Odpovídají AI: ${job.done} ze ${job.total}.`}
+                  {job.state === "asking" && (job.done >= 0 ? `Odpovídají AI: ${job.done} ze ${job.total}.` : "Ptáme se stovky AI a pak slučujeme odpovědi. Trvá to minutu až dvě.")}
                   {job.state === "judging" && "Všichni odpověděli, rozhodčí model slučuje odpovědi."}
                   {job.state === "done" && (
                     <>

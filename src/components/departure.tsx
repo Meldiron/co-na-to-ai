@@ -90,7 +90,7 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
                       >
                         <span className="tile">{formatDayMonth(game.date)}</span>
                         <span className="font-semibold">{game.question}</span>
-                        <span className="text-sm whitespace-nowrap text-flap-dim">{result ? `${result.score} ${pointsWord(result.score)}` : `hra č. ${game.number}`}</span>
+                        <span className="text-sm whitespace-nowrap text-flap-dim">{result ? `${result.score} ${pointsWord(result.score)}` : "nehráno"}</span>
                       </Link>
                     </li>
                   )

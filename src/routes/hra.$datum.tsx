@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { PuzzlePage } from "@/components/puzzle-page"
+import { formatShort } from "@/lib/day"
 import { getPuzzle } from "@/server/api"
 
 export const Route = createFileRoute("/hra/$datum")({
@@ -7,8 +8,8 @@ export const Route = createFileRoute("/hra/$datum")({
   head: ({ loaderData }) => ({
     meta: loaderData?.puzzle
       ? [
-          { title: `Hra č. ${loaderData.puzzle.number}: ${loaderData.puzzle.question} · Ptali jsme se 100 AI` },
-          { property: "og:title", content: `Hra č. ${loaderData.puzzle.number}: ${loaderData.puzzle.question}` },
+          { title: `${loaderData.puzzle.question} · ${formatShort(loaderData.puzzle.date)} · Ptali jsme se 100 AI` },
+          { property: "og:title", content: `${formatShort(loaderData.puzzle.date)}: ${loaderData.puzzle.question}` },
         ]
       : [{ title: "Hra nenalezena · Ptali jsme se 100 AI" }],
   }),

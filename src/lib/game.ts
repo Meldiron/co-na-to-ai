@@ -2,7 +2,10 @@ import { matchGuess, normalize } from "./match.ts"
 import type { BoardAnswer } from "./types.ts"
 
 export const MAX_STRIKES = 5
-export const CLEAR_BONUS = 20
+export const POINTS_PER_VOTE = 10
+export const HINT_PENALTY = 0.25
+export const MAX_LETTER_HINTS = 3
+export const CLEAR_BONUS = 200
 
 export type Guess = {
   text: string
@@ -15,6 +18,8 @@ export type GameState = {
   guesses: Array<Guess>
   strikes: number
   status: "playing" | "won" | "lost"
+  hints?: Array<number>
+  clues?: Array<number>
 }
 
 export type GuessOutcome =
@@ -30,6 +35,47 @@ export const initialState: GameState = {
   guesses: [],
   strikes: 0,
   status: "playing",
+  hints: [],
+  clues: [],
+}
+
+const LETTER = /\p{L}/u
+
+export function hintsUsed(state: GameState, index: number): number {
+  return state.hints?.[index] ?? 0
+}
+
+export function maxHints(answer: Pick<BoardAnswer, "text">): number {
+  const letters = [...answer.text].filter((ch) => LETTER.test(ch)).length
+  return Math.max(0, Math.min(MAX_LETTER_HINTS, letters - 1))
+}
+
+export function hintPattern(text: string, revealed: number): string {
+  let shown = 0
+  return [...text]
+    .map((ch) => {
+      if (!LETTER.test(ch)) return ch
+      return shown++ < revealed ? ch : "_"
+    })
+    .join(" ")
+}
+
+export function pointsFor(votes: number, hints: number): number {
+  return Math.round(votes * POINTS_PER_VOTE * (1 - HINT_PENALTY * hints))
+}
+
+export function revealLetter(state: GameState, answers: Array<BoardAnswer>, index: number): GameState {
+  if (state.status !== "playing" || state.found.includes(index)) return state
+  const used = hintsUsed(state, index)
+  if (used >= maxHints(answers[index])) return state
+  const hints = Array.from({ length: answers.length }, (_, i) => state.hints?.[i] ?? 0)
+  hints[index] = used + 1
+  return { ...state, hints }
+}
+
+export function revealClue(state: GameState, index: number): GameState {
+  if (state.clues?.includes(index)) return state
+  return { ...state, clues: [...(state.clues ?? []), index] }
 }
 
 export function applyGuess(
@@ -80,16 +126,16 @@ export function giveUp(state: GameState): GameState {
 
 export function scoreLines(state: GameState, answers: Array<BoardAnswer>) {
   const lines = state.found
-    .map((i) => answers[i])
-    .sort((a, b) => a.rank - b.rank)
-    .map((a) => ({ label: a.text, rank: a.rank, points: a.votes }))
+    .map((i) => ({ answer: answers[i], hints: hintsUsed(state, i) }))
+    .sort((a, b) => a.answer.rank - b.answer.rank)
+    .map(({ answer, hints }) => ({ label: answer.text, rank: answer.rank, hints, points: pointsFor(answer.votes, hints) }))
   const bonus = state.found.length === answers.length ? CLEAR_BONUS : 0
   const total = lines.reduce((sum, l) => sum + l.points, 0) + bonus
   return { lines, bonus, total }
 }
 
 export function maxScore(answers: Array<BoardAnswer>): number {
-  return answers.reduce((sum, a) => sum + a.votes, 0) + CLEAR_BONUS
+  return answers.reduce((sum, a) => sum + pointsFor(a.votes, 0), 0) + CLEAR_BONUS
 }
 
 export function shareText(opts: {
@@ -101,7 +147,7 @@ export function shareText(opts: {
 }): string {
   const { label, state, answers, total, url } = opts
   const board = answers
-    .map((_, i) => (state.found.includes(i) ? "🟩" : "⬜"))
+    .map((_, i) => (!state.found.includes(i) ? "⬜" : hintsUsed(state, i) ? "🟨" : "🟩"))
     .join("")
   const guesses = state.guesses.map((g) => (g.result === "hit" ? "🟩" : "🟥")).join("")
   return [
