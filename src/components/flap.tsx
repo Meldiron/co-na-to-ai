@@ -9,9 +9,10 @@ type FlapProps = {
   align?: "center" | "end"
   delay?: number
   className?: string
+  style?: CSSProperties
 }
 
-export function Flap({ text, tone, align, delay = 0, className }: FlapProps) {
+export function Flap({ text, tone, align, delay = 0, className, style: extra }: FlapProps) {
   const [shown, setShown] = useState(text)
   const [next, setNext] = useState<string | null>(null)
 
@@ -25,7 +26,7 @@ export function Flap({ text, tone, align, delay = 0, className }: FlapProps) {
     return () => clearTimeout(timer)
   }, [text, shown, delay])
 
-  const style = { "--flip": `${FLIP_MS}ms`, "--flap-delay": `${delay}ms` } as CSSProperties
+  const style = { "--flip": `${FLIP_MS}ms`, "--flap-delay": `${delay}ms`, ...extra } as CSSProperties
 
   return (
     <span className={cn("flap", className)} data-tone={tone} data-align={align} style={style}>

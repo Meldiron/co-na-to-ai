@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { focusContainer } from "@/lib/focus"
-import { hintPattern, maxHints } from "@/lib/game"
+import { MAX_STRIKES, hintPattern, maxHints } from "@/lib/game"
 import type { BoardAnswer } from "@/lib/types"
 import { Flap } from "./flap"
 
@@ -68,19 +68,26 @@ export function Board({ answers, found, revealAll, title, missKey, hints, misses
           )
         })}
       </ol>
-      <div className="mt-[5px] grid h-[44px] grid-cols-[2.75rem_1fr] gap-[3px] sm:h-[52px] md:mt-2 md:h-[64px] md:grid-cols-[4rem_1fr]">
+      <div aria-hidden className="mt-[5px] grid h-[44px] grid-cols-[2.75rem_1fr] gap-[3px] sm:h-[52px] md:mt-2 md:h-[64px] md:grid-cols-[4rem_1fr]">
         <Flap text="X" tone="miss" align="center" className="h-full" />
-        <Flap
-          text={misses.length ? `Chyby · ${misses.join(" · ")}` : "Chyby"}
-          tone={misses.length ? undefined : "dim"}
-          className="hidden h-full sm:block"
-        />
+        <div className="hidden grid-cols-5 gap-[3px] [container-type:inline-size] sm:grid">
+          {Array.from({ length: MAX_STRIKES }, (_, i) => (
+            <Flap
+              key={i}
+              text={misses[i] ?? ""}
+              tone={misses[i] ? undefined : "dim"}
+              className="h-full [--size:var(--step-body)] md:[--size:var(--step-head)]"
+              style={{ fontSize: `min(var(--size), calc((20cqw - 2.4px) / ${(0.55 * (misses[i]?.length ?? 0) + 0.9).toFixed(2)}))` }}
+            />
+          ))}
+        </div>
         <Flap
           text={misses.length ? misses.join(" · ") : "Chyby"}
           tone={misses.length ? undefined : "dim"}
           className="h-full text-[length:var(--step-body)] sm:hidden"
         />
       </div>
+      <p className="sr-only">{misses.length ? `Chybné tipy: ${misses.join(", ")}.` : "Zatím žádný chybný tip."}</p>
       <p className="hidden px-1 pt-3 pb-1 text-sm text-field-soft sm:block md:px-2">{title}</p>
       {missKey > 0 && (
         <div key={missKey} aria-hidden className="pointer-events-none absolute inset-0 grid place-items-center motion-reduce:hidden">
