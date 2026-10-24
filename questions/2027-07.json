@@ -1,0 +1,289 @@
+[
+  {
+    "id": "tesite-se-o-prazdninach",
+    "date": "2027-07-01",
+    "text": "Na co se o prázdninách těšíte nejvíc?",
+    "tags": [
+      "léto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cesta-autem-otravuje",
+    "date": "2027-07-02",
+    "text": "Co vás nejvíc otravuje na dlouhé cestě autem?",
+    "tags": [
+      "auto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "u-taboraku",
+    "date": "2027-07-03",
+    "text": "Co nesmí chybět u táboráku?",
+    "tags": [
+      "tábor"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pisnicka-u-ohne",
+    "date": "2027-07-04",
+    "text": "Jakou písničku zpíváte u ohně s kytarou?",
+    "tags": [
+      "hudba"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prodlouzeny-letni-vikend",
+    "date": "2027-07-05",
+    "text": "Kam vyrazíte na prodloužený letní víkend?",
+    "tags": [
+      "výlety"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "reka-na-kanoi",
+    "date": "2027-07-06",
+    "text": "Kterou českou řeku byste sjeli na kánoi?",
+    "tags": [
+      "voda",
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "tropicke-vedro",
+    "date": "2027-07-07",
+    "text": "Co vám pomáhá přežít tropické vedro?",
+    "tags": [
+      "počasí"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "letni-tabor-program",
+    "date": "2027-07-08",
+    "text": "Co se dělá na letním táboře?",
+    "tags": [
+      "tábor"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prichut-zmrzliny",
+    "date": "2027-07-09",
+    "text": "Jakou příchuť zmrzliny si dáte?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stanovani-s-sebou",
+    "date": "2027-07-10",
+    "text": "Co si vezmete na stanování?",
+    "tags": [
+      "kemp"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prazdniny-u-babicky",
+    "date": "2027-07-11",
+    "text": "Co jste dělali o prázdninách u babičky?",
+    "tags": [
+      "nostalgie",
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kdyz-zacne-bourka",
+    "date": "2027-07-12",
+    "text": "Co uděláte jako první, když začne bouřka?",
+    "tags": [
+      "počasí"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "taborove-jidlo",
+    "date": "2027-07-13",
+    "text": "Jaké jídlo se vaří na letním táboře?",
+    "tags": [
+      "tábor",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "suvenyr-z-dovolene",
+    "date": "2027-07-14",
+    "text": "Co si přivezete jako suvenýr z dovolené?",
+    "tags": [
+      "dovolená"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jidlo-v-horku",
+    "date": "2027-07-15",
+    "text": "Co jíte, když je venku velké horko?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vodak-na-lodi",
+    "date": "2027-07-16",
+    "text": "Co nesmí chybět vodákovi na lodi?",
+    "tags": [
+      "voda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cekani-na-letisti",
+    "date": "2027-07-17",
+    "text": "Co děláte na letišti, když čekáte na let?",
+    "tags": [
+      "cestování"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prehrada-nebo-jezero",
+    "date": "2027-07-18",
+    "text": "Jmenujte českou přehradu nebo jezero na koupání.",
+    "tags": [
+      "voda",
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stanovani-stve",
+    "date": "2027-07-19",
+    "text": "Co vás nejvíc vytočí při stanování?",
+    "tags": [
+      "kemp"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jidlo-na-koupalisti",
+    "date": "2027-07-20",
+    "text": "Co si dáte k jídlu na koupališti?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prirucni-zavazadlo",
+    "date": "2027-07-21",
+    "text": "Co si vezmete do letadla do příručního zavazadla?",
+    "tags": [
+      "cestování"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zvire-u-babicky",
+    "date": "2027-07-22",
+    "text": "Jaké zvíře jste viděli u babičky na vesnici?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "letni-koktejl",
+    "date": "2027-07-23",
+    "text": "Jaký letní koktejl si objednáte?",
+    "tags": [
+      "pití"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "atrakce-na-pouti",
+    "date": "2027-07-24",
+    "text": "Na jakou atrakci na pouti půjdete nejradši?",
+    "tags": [
+      "zábava"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hra-na-plazi",
+    "date": "2027-07-25",
+    "text": "Jaká hra se hraje na pláži nebo u vody?",
+    "tags": [
+      "hry",
+      "voda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "co-chybi-na-dovolene",
+    "date": "2027-07-26",
+    "text": "Co vám na dovolené nejvíc chybí z domova?",
+    "tags": [
+      "dovolená",
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jidlo-u-more",
+    "date": "2027-07-27",
+    "text": "Co jíte na dovolené u moře?",
+    "tags": [
+      "jídlo",
+      "moře"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nejhezci-priroda",
+    "date": "2027-07-28",
+    "text": "Kde je v Česku nejhezčí příroda?",
+    "tags": [
+      "příroda",
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "more-stve",
+    "date": "2027-07-29",
+    "text": "Co vás nejvíc štve na dovolené u moře?",
+    "tags": [
+      "moře"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ochrana-pred-sluncem",
+    "date": "2027-07-30",
+    "text": "Jak se chráníte před letním sluncem?",
+    "tags": [
+      "zdraví"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "neomezene-penize-cesta",
+    "date": "2027-07-31",
+    "text": "Kam byste jeli, kdybyste měli neomezené peníze?",
+    "tags": [
+      "cestování"
+    ],
+    "status": "approved"
+  }
+]

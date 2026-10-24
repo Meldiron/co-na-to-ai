@@ -1,0 +1,262 @@
+[
+  {
+    "id": "dobry-sef",
+    "date": "2027-02-01",
+    "text": "Jakou vlastnost by měl mít dobrý šéf?",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "lekarnicka",
+    "date": "2027-02-02",
+    "text": "Co nesmí chybět v domácí lékárničce?",
+    "tags": [
+      "zdraví"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "mhd-otravuje",
+    "date": "2027-02-03",
+    "text": "Co vás nejvíc otravuje v MHD?",
+    "tags": [
+      "doprava"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "povinna-cetba",
+    "date": "2027-02-04",
+    "text": "Jakou povinnou četbu si pamatujete ze školy?",
+    "tags": [
+      "knihy",
+      "škola"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zvedne-naladu",
+    "date": "2027-02-05",
+    "text": "Co vám vždycky zvedne náladu?",
+    "tags": [
+      "nálada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hory-zabalit",
+    "date": "2027-02-06",
+    "text": "Co nesmíte zapomenout zabalit na hory?",
+    "tags": [
+      "hory",
+      "balení"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "telocvik",
+    "date": "2027-02-07",
+    "text": "Jaký sport se nejčastěji hrál v tělocviku?",
+    "tags": [
+      "sport",
+      "škola"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "drby-v-praci",
+    "date": "2027-02-08",
+    "text": "Kde se v práci nejčastěji drbe?",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "masopust-jidlo",
+    "date": "2027-02-09",
+    "text": "Co se jí o masopustu?",
+    "tags": [
+      "masopust",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "postni-vzdani",
+    "date": "2027-02-10",
+    "text": "Čeho byste se dokázali vzdát na čtyřicet dní?",
+    "tags": [
+      "zvyky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nemoc-doma",
+    "date": "2027-02-11",
+    "text": "Co děláte, když jste doma nemocní?",
+    "tags": [
+      "zdraví"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prvni-rande",
+    "date": "2027-02-12",
+    "text": "Kam vezmete partnera na první rande?",
+    "tags": [
+      "rande"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kavarna-kava",
+    "date": "2027-02-13",
+    "text": "Jakou kávu si objednáte v kavárně?",
+    "tags": [
+      "kavárna"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "valentyn",
+    "date": "2027-02-14",
+    "text": "Co se dává k Valentýnu?",
+    "tags": [
+      "láska"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "seznameni",
+    "date": "2027-02-15",
+    "text": "Kde se páry nejčastěji seznámí?",
+    "tags": [
+      "vztahy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "navsteva-uklid",
+    "date": "2027-02-16",
+    "text": "Co uklízíte jako první, když čekáte návštěvu?",
+    "tags": [
+      "úklid"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pivovar",
+    "date": "2027-02-17",
+    "text": "Jaké pivo si v hospodě dáte nejradši?",
+    "tags": [
+      "pivo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kuchynsky-spotrebic",
+    "date": "2027-02-18",
+    "text": "Jaký kuchyňský spotřebič používáte nejvíc?",
+    "tags": [
+      "kuchyně"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "oslava-kam",
+    "date": "2027-02-19",
+    "text": "Kam jdete, když máte něco oslavit?",
+    "tags": [
+      "oslava"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hudebni-nastroj",
+    "date": "2027-02-20",
+    "text": "Na jaký nástroj se učí hrát české děti?",
+    "tags": [
+      "hudba",
+      "děti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "z-brambor",
+    "date": "2027-02-21",
+    "text": "Co se dá uvařit z brambor?",
+    "tags": [
+      "brambory",
+      "vaření"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vymluva-cviceni",
+    "date": "2027-02-22",
+    "text": "Jakou výmluvu máte, když se vám nechce cvičit?",
+    "tags": [
+      "výmluvy",
+      "sport"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "oprava-doma",
+    "date": "2027-02-23",
+    "text": "Co je v domácnosti potřeba opravovat nejčastěji?",
+    "tags": [
+      "opravy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "dopravni-prostredek",
+    "date": "2027-02-24",
+    "text": "Jakým dopravním prostředkem jezdíte nejradši?",
+    "tags": [
+      "doprava"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vune-z-kuchyne",
+    "date": "2027-02-25",
+    "text": "Jaké jídlo voní z kuchyně nejkrásněji?",
+    "tags": [
+      "vůně",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "praha-turiste",
+    "date": "2027-02-26",
+    "text": "Kde v Praze je vždycky plno turistů?",
+    "tags": [
+      "praha"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hracka-detstvi",
+    "date": "2027-02-27",
+    "text": "Jakou hračku z dětství jste měli nejradši?",
+    "tags": [
+      "hračky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "caj",
+    "date": "2027-02-28",
+    "text": "Jaký čaj pijete nejradši?",
+    "tags": [
+      "čaj"
+    ],
+    "status": "approved"
+  }
+]

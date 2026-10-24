@@ -1,0 +1,287 @@
+[
+  {
+    "id": "prani-deti-vanoce",
+    "date": "2026-12-01",
+    "text": "Co si děti nejčastěji přejí k Vánocům?",
+    "tags": [
+      "dárky",
+      "děti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zahrati",
+    "date": "2026-12-02",
+    "text": "Co si dáte na zahřátí, když přijdete zmrzlí?",
+    "tags": [
+      "zima",
+      "pití"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "firemni-vecirek",
+    "date": "2026-12-03",
+    "text": "Co nesmí chybět na firemním vánočním večírku?",
+    "tags": [
+      "práce",
+      "oslava"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "predvanocni-zvyk",
+    "date": "2026-12-04",
+    "text": "Jaký předvánoční zvyk u vás dodržujete?",
+    "tags": [
+      "zvyky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "mikulas-nadilka",
+    "date": "2026-12-05",
+    "text": "Co nosí Mikuláš hodným dětem?",
+    "tags": [
+      "mikuláš",
+      "sladkosti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vanocni-pohadka",
+    "date": "2026-12-06",
+    "text": "Jakou vánoční pohádku musíte každý rok vidět?",
+    "tags": [
+      "film",
+      "pohádky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vanocni-darek",
+    "date": "2026-12-07",
+    "text": "Co nejčastěji dáváte jako vánoční dárek?",
+    "tags": [
+      "dárky",
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "schovane-darky",
+    "date": "2026-12-08",
+    "text": "Kam doma schováváte vánoční dárky?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "predvanocni-stres",
+    "date": "2026-12-09",
+    "text": "Co vás nejvíc stresuje před Vánoci?",
+    "tags": [
+      "emoce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prvni-snih",
+    "date": "2026-12-10",
+    "text": "Co děláte, když poprvé napadne sníh?",
+    "tags": [
+      "zima"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stromecek-ozdoby",
+    "date": "2026-12-11",
+    "text": "Co věšíte na vánoční stromeček?",
+    "tags": [
+      "stromeček"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vanocni-cukrovi",
+    "date": "2026-12-12",
+    "text": "Jaké vánoční cukroví pečete nejraději?",
+    "tags": [
+      "cukroví"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "koleda",
+    "date": "2026-12-13",
+    "text": "Jakou koledu si zazpíváte nejraději?",
+    "tags": [
+      "hudba"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sporeni",
+    "date": "2026-12-14",
+    "text": "Na co si odkládáte peníze?",
+    "tags": [
+      "peníze"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vyzdoba-okna",
+    "date": "2026-12-15",
+    "text": "Co dáváte o Vánocích do oken?",
+    "tags": [
+      "výzdoba"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "posledni-darek",
+    "date": "2026-12-16",
+    "text": "Komu kupujete dárek až na poslední chvíli?",
+    "tags": [
+      "dárky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "predvanocni-prace",
+    "date": "2026-12-17",
+    "text": "Jaká předvánoční práce vás nejvíc otravuje?",
+    "tags": [
+      "úklid"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vanocni-piti",
+    "date": "2026-12-18",
+    "text": "Co se u vás o Vánocích pije?",
+    "tags": [
+      "pití"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stedry-vecer-obleceni",
+    "date": "2026-12-19",
+    "text": "Co si oblékáte na Štědrý večer?",
+    "tags": [
+      "oblečení"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vanoce-nejlepsi",
+    "date": "2026-12-20",
+    "text": "Co se vám na Vánocích líbí nejvíc?",
+    "tags": [
+      "nálada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stedrovecerni-stul",
+    "date": "2026-12-21",
+    "text": "Co nesmí chybět na štědrovečerním stole?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vanoce-pokazi",
+    "date": "2026-12-22",
+    "text": "Co se při přípravě Vánoc nejčastěji pokazí?",
+    "tags": [
+      "svátky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nakup-na-posledni-chvili",
+    "date": "2026-12-23",
+    "text": "Co se kupuje na poslední chvíli před Vánoci?",
+    "tags": [
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stedry-den-cekani",
+    "date": "2026-12-24",
+    "text": "Co děláte na Štědrý den, než se rozbalí dárky?",
+    "tags": [
+      "zvyky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "bozi-hod-obed",
+    "date": "2026-12-25",
+    "text": "Co se u vás jí na Boží hod?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stepan-vylet",
+    "date": "2026-12-26",
+    "text": "Kam vyrazíte na svatého Štěpána?",
+    "tags": [
+      "výlety"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zbyle-cukrovi",
+    "date": "2026-12-27",
+    "text": "Co děláte se zbylým vánočním cukrovím?",
+    "tags": [
+      "cukroví"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "darek-vymena",
+    "date": "2026-12-28",
+    "text": "Jaký dárek byste nejradši vyměnili?",
+    "tags": [
+      "dárky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "mezi-svatky",
+    "date": "2026-12-29",
+    "text": "Co si mezi svátky slíbíte, ale neuděláte?",
+    "tags": [
+      "lenost"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "silvestr-nakup",
+    "date": "2026-12-30",
+    "text": "Co kupujete na silvestrovskou oslavu?",
+    "tags": [
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "silvestr-pulnoc",
+    "date": "2026-12-31",
+    "text": "Co se u vás dělá o silvestrovské půlnoci?",
+    "tags": [
+      "silvestr"
+    ],
+    "status": "approved"
+  }
+]

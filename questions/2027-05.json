@@ -1,0 +1,285 @@
+[
+  {
+    "id": "romanticke-rande",
+    "date": "2027-05-01",
+    "text": "Jmenujte něco, co patří k romantickému rande.",
+    "tags": [
+      "láska"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nedelni-rodinny-vylet",
+    "date": "2027-05-02",
+    "text": "Kam vyrazíte na nedělní rodinný výlet?",
+    "tags": [
+      "výlety",
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pondeli-v-praci",
+    "date": "2027-05-03",
+    "text": "Co vás v pondělí ráno v práci nejvíc otráví?",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "co-pestujete-na-zahradce",
+    "date": "2027-05-04",
+    "text": "Co pěstujete na své zahrádce?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "co-nosite-po-kapsach",
+    "date": "2027-05-05",
+    "text": "Co nosíte pořád po kapsách?",
+    "tags": [
+      "zvyky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nocni-zvuk",
+    "date": "2027-05-06",
+    "text": "Jaký zvuk vás v noci nenechá spát?",
+    "tags": [
+      "spánek"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "patek-po-praci",
+    "date": "2027-05-07",
+    "text": "Co si dopřejete v pátek po práci?",
+    "tags": [
+      "odpočinek"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hrad-nebo-zamek-pro-navstevu",
+    "date": "2027-05-08",
+    "text": "Jaký hrad nebo zámek byste ukázali návštěvě z ciziny?",
+    "tags": [
+      "výlety",
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "co-vas-naucila-mama",
+    "date": "2027-05-09",
+    "text": "Co vás naučila vaše máma?",
+    "tags": [
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "co-stve-na-mobilu",
+    "date": "2027-05-10",
+    "text": "Co vás na mobilu nejvíc rozčiluje?",
+    "tags": [
+      "technika"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kytka-pred-dum",
+    "date": "2027-05-11",
+    "text": "Jakou kytku byste zasadili před dům?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "poledni-pauza",
+    "date": "2027-05-12",
+    "text": "Co děláte o polední pauze?",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "komu-zavolate-v-nouzi",
+    "date": "2027-05-13",
+    "text": "Komu zavoláte jako prvnímu, když máte problém?",
+    "tags": [
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nakup-na-spatnou-naladu",
+    "date": "2027-05-14",
+    "text": "Co si koupíte, když máte špatnou náladu?",
+    "tags": [
+      "peníze"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "festival-stanek-jidlo",
+    "date": "2027-05-15",
+    "text": "Jaké jídlo si koupíte ve stánku na festivalu?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ceska-hora-na-turu",
+    "date": "2027-05-16",
+    "text": "Na jakou českou horu se vydáte na túru?",
+    "tags": [
+      "výlety",
+      "příroda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "superschopnost",
+    "date": "2027-05-17",
+    "text": "Jakou superschopnost byste chtěli mít?",
+    "tags": [
+      "představivost"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nejhorsi-prace-na-zahrade",
+    "date": "2027-05-18",
+    "text": "Jakou práci na zahradě nesnášíte?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "detska-vymluva-skola",
+    "date": "2027-05-19",
+    "text": "Jakou výmluvu mají děti, když nechtějí do školy?",
+    "tags": [
+      "děti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pomazanka",
+    "date": "2027-05-20",
+    "text": "Jakou pomazánku máte nejradši?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "piknik",
+    "date": "2027-05-21",
+    "text": "Co si vezmete s sebou na piknik?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "svatebni-zvyk",
+    "date": "2027-05-22",
+    "text": "Jaký svatební zvyk znáte?",
+    "tags": [
+      "svatba"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "chata-kdyz-prsi",
+    "date": "2027-05-23",
+    "text": "Co děláte na chatě, když prší?",
+    "tags": [
+      "chata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cizi-rec",
+    "date": "2027-05-24",
+    "text": "Jakou cizí řeč byste se chtěli naučit?",
+    "tags": [
+      "cestování"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "strom-na-zahradu",
+    "date": "2027-05-25",
+    "text": "Jaký strom byste vysadili na zahradě?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "na-co-setrite",
+    "date": "2027-05-26",
+    "text": "Na co si šetříte peníze?",
+    "tags": [
+      "peníze"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hmyz-na-louce",
+    "date": "2027-05-27",
+    "text": "Jaký hmyz poznáte na louce?",
+    "tags": [
+      "příroda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "talent",
+    "date": "2027-05-28",
+    "text": "Jaký talent byste chtěli mít?",
+    "tags": [
+      "představivost"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "chlubi-pred-cizinci",
+    "date": "2027-05-29",
+    "text": "Čím se Češi chlubí před cizinci?",
+    "tags": [
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "svatebni-cesta",
+    "date": "2027-05-30",
+    "text": "Kam byste jeli na svatební cestu?",
+    "tags": [
+      "cestování",
+      "láska"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "oblibena-domaci-prace",
+    "date": "2027-05-31",
+    "text": "Jakou domácí práci děláte nejradši?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  }
+]

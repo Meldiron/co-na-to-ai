@@ -1,0 +1,80 @@
+[
+  {
+    "id": "chata-co-s-sebou",
+    "date": "2026-10-24",
+    "text": "Co si berete s sebou na chatu?",
+    "tags": [
+      "chata",
+      "víkend"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hodiny-zimni-cas",
+    "date": "2026-10-25",
+    "text": "Které hodiny doma zapomínáte přeřídit na zimní čas?",
+    "tags": [
+      "domov",
+      "čas"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "rano-zdrzeni",
+    "date": "2026-10-26",
+    "text": "Co vás ráno nejvíc zdrží před odchodem z domu?",
+    "tags": [
+      "ráno"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "v-kazde-kancelari",
+    "date": "2026-10-27",
+    "text": "Jmenujte něco, co najdete v každé kanceláři.",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cesky-vynalez",
+    "date": "2026-10-28",
+    "text": "Jmenujte český vynález nebo výrobek, který zná svět.",
+    "tags": [
+      "česko",
+      "svátky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hospoda-misto-piva",
+    "date": "2026-10-29",
+    "text": "Co si objednáte v hospodě, když nechcete pivo?",
+    "tags": [
+      "hospoda",
+      "pití"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "patek-vecer-doma",
+    "date": "2026-10-30",
+    "text": "Co děláte v pátek večer, když nikam nejdete?",
+    "tags": [
+      "večer",
+      "zábava"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "halloween-kostym",
+    "date": "2026-10-31",
+    "text": "Za co se děti převlékají na Halloween?",
+    "tags": [
+      "děti",
+      "svátky"
+    ],
+    "status": "approved"
+  }
+]

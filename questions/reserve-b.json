@@ -1,0 +1,205 @@
+[
+  {
+    "id": "zvuk-leta",
+    "text": "Jaký zvuk vám připomíná léto?",
+    "tags": [
+      "léto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nejhorsi-domaci-zvire",
+    "text": "Jaké zvíře by bylo nejhorší mít doma?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pohadkova-postava",
+    "text": "Jakou pohádkovou postavou byste chtěli být?",
+    "tags": [
+      "pohádky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cesky-sklep",
+    "text": "Co najdete v každém českém sklepě?",
+    "tags": [
+      "domov",
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "puda",
+    "text": "Co se dá najít na půdě?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sport-vyzkouset",
+    "text": "Jaký sport byste si chtěli vyzkoušet?",
+    "tags": [
+      "sport"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "babicka-pribali",
+    "text": "Co vám babička vždycky přibalí s sebou?",
+    "tags": [
+      "rodina",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ceska-kuchyne-predmet",
+    "text": "Jaký předmět najdete v každé české kuchyni?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kufr-auta",
+    "text": "Co vozíte v kufru auta?",
+    "tags": [
+      "auto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "foceni-na-dovolene",
+    "text": "Co nejradši fotíte na dovolené?",
+    "tags": [
+      "dovolená"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "balkon",
+    "text": "Co pěstujete na balkoně?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "snadna-zelenina",
+    "text": "Jaká zelenina se nejsnáz pěstuje?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "oblibena-vune",
+    "text": "Jakou vůni máte nejradši?",
+    "tags": [
+      "smysly"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nejhorsi-prace",
+    "text": "Jakou práci byste nikdy nechtěli dělat?",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "panelak-vune",
+    "text": "Jaké jídlo voní celým panelákem?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sladkost-z-detstvi",
+    "text": "Jakou sladkost z dětství byste si zase koupili?",
+    "tags": [
+      "nostalgie"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vysneny-dum",
+    "text": "Co musí mít váš vysněný dům?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "krojovane-hody",
+    "text": "Co patří ke krojovaným hodům?",
+    "tags": [
+      "tradice"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "bylinky",
+    "text": "Jaké bylinky si pěstujete?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "noc-v-lese",
+    "text": "Co vás nejvíc vyděsí v noci v lese?",
+    "tags": [
+      "příroda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "chleba-na-vylet",
+    "text": "Co si dáte do chleba na výlet?",
+    "tags": [
+      "jídlo",
+      "výlety"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "darek-babicka",
+    "text": "Jaký dárek potěší každou babičku?",
+    "tags": [
+      "dárky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "chalupa-chybi",
+    "text": "Co vám na chalupě nejvíc chybí z města?",
+    "tags": [
+      "chata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "plemeno-psa",
+    "text": "Jaké plemeno psa byste si pořídili?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sportovni-udalost",
+    "text": "Jakou sportovní událost byste chtěli zažít živě?",
+    "tags": [
+      "sport"
+    ],
+    "status": "approved"
+  }
+]

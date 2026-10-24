@@ -1,0 +1,287 @@
+[
+  {
+    "id": "nadrazni-bufet",
+    "date": "2027-10-01",
+    "text": "Co si dáte v bufetu na nádraží?",
+    "tags": [
+      "jídlo",
+      "cestování"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vyrabeni-s-detmi",
+    "date": "2027-10-02",
+    "text": "Co vyrábíte s dětmi na podzim?",
+    "tags": [
+      "děti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "posviceni",
+    "date": "2027-10-03",
+    "text": "Co nesmí chybět na posvícení?",
+    "tags": [
+      "jídlo",
+      "tradice"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ke-kafi-v-praci",
+    "date": "2027-10-04",
+    "text": "Co si dáte v práci ke kafi?",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzimni-zvire",
+    "date": "2027-10-05",
+    "text": "Jaké zvíře se vám vybaví s podzimem?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "z-dyne",
+    "date": "2027-10-06",
+    "text": "Co uděláte z dýně?",
+    "tags": [
+      "dýně"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzimni-vecery",
+    "date": "2027-10-07",
+    "text": "Čím si zpříjemníte dlouhé podzimní večery?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "fandit-na-stadionu",
+    "date": "2027-10-08",
+    "text": "Na jaký sport byste šli fandit na stadion?",
+    "tags": [
+      "sport"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nakup-obleceni",
+    "date": "2027-10-09",
+    "text": "Kde nakupujete oblečení?",
+    "tags": [
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "babiccina-buchta",
+    "date": "2027-10-10",
+    "text": "Jakou buchtu nebo koláč peče vaše babička?",
+    "tags": [
+      "jídlo",
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pusty-ostrov",
+    "date": "2027-10-11",
+    "text": "Co byste si vzali na pustý ostrov?",
+    "tags": [
+      "představivost"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "oblibeny-syr",
+    "date": "2027-10-12",
+    "text": "Jaký sýr máte nejradši?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "urad-nastve",
+    "date": "2027-10-13",
+    "text": "Co vás nejvíc naštve na úřadě?",
+    "tags": [
+      "úřady"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "napadane-listi",
+    "date": "2027-10-14",
+    "text": "Co uděláte s napadaným listím?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prazdna-lednice",
+    "date": "2027-10-15",
+    "text": "Co uvaříte, když máte skoro prázdnou lednici?",
+    "tags": [
+      "vaření"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pohadkova-bytost",
+    "date": "2027-10-16",
+    "text": "Jakou pohádkovou bytost byste chtěli potkat?",
+    "tags": [
+      "pohádky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "co-vas-naucil-tata",
+    "date": "2027-10-17",
+    "text": "Co vás naučil táta?",
+    "tags": [
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vyhozeno-z-lednice",
+    "date": "2027-10-18",
+    "text": "Co nejčastěji vyhodíte z lednice?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zelenina-deti-nesnasi",
+    "date": "2027-10-19",
+    "text": "Jakou zeleninu děti nejvíc nesnášejí?",
+    "tags": [
+      "děti",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "detske-sbirky",
+    "date": "2027-10-20",
+    "text": "Co jste jako děti sbírali?",
+    "tags": [
+      "nostalgie"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stvouci-vlastnost",
+    "date": "2027-10-21",
+    "text": "Jaká vlastnost vás na lidech nejvíc štve?",
+    "tags": [
+      "lidé"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vecer-u-filmu",
+    "date": "2027-10-22",
+    "text": "Co si nachystáte na večer u filmu?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzimni-prazdniny",
+    "date": "2027-10-23",
+    "text": "Kam pojedete na podzimní prázdniny?",
+    "tags": [
+      "výlety",
+      "děti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "navsteva-bez-ohlaseni",
+    "date": "2027-10-24",
+    "text": "Co uděláte, když přijde návštěva bez ohlášení?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stare-obleceni",
+    "date": "2027-10-25",
+    "text": "Co uděláte se starým oblečením?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "tradicni-remeslo",
+    "date": "2027-10-26",
+    "text": "Jaké tradiční řemeslo znáte?",
+    "tags": [
+      "česko",
+      "tradice"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sport-kdyz-prsi",
+    "date": "2027-10-27",
+    "text": "Jaký sport děláte, když venku prší?",
+    "tags": [
+      "sport"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cesky-vyrobek-darek",
+    "date": "2027-10-28",
+    "text": "Jaký český výrobek byste dali cizinci jako dárek?",
+    "tags": [
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "strasidlo-z-povesti",
+    "date": "2027-10-29",
+    "text": "Jaké strašidlo znáte z českých pohádek a pověstí?",
+    "tags": [
+      "pohádky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ceho-se-bojime",
+    "date": "2027-10-30",
+    "text": "Čeho se lidé bojí nejvíc?",
+    "tags": [
+      "strach"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "halloween-pamlsky",
+    "date": "2027-10-31",
+    "text": "Jaký pamlsek dáte dětem, které zazvoní na Halloween?",
+    "tags": [
+      "svátky"
+    ],
+    "status": "approved"
+  }
+]

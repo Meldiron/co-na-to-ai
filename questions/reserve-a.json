@@ -1,0 +1,203 @@
+[
+  {
+    "id": "vypadek-proudu",
+    "text": "Co uděláte, když vypadne proud?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kocovina",
+    "text": "Co vám nejlíp pomůže na kocovinu?",
+    "tags": [
+      "kocovina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podcenovane-povolani",
+    "text": "Jaké povolání je nejvíc podceňované?",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nedelni-obed-tema",
+    "text": "O čem se mluví u nedělního oběda?",
+    "tags": [
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ztraceny-cas",
+    "text": "Na čem nejvíc ztrácíte čas?",
+    "tags": [
+      "čas"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kdyz-je-smutno",
+    "text": "Co děláte, když je vám smutno?",
+    "tags": [
+      "emoce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "otravny-zvuk",
+    "text": "Jaký zvuk vás nejvíc otravuje?",
+    "tags": [
+      "zvuky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hospodsky-zvyk",
+    "text": "Jaký hospodský zvyk zná každý Čech?",
+    "tags": [
+      "hospoda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "svatebni-dar",
+    "text": "Co se dává jako svatební dar?",
+    "tags": [
+      "svatba"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ceska-svatba",
+    "text": "Co nesmí chybět na české svatbě?",
+    "tags": [
+      "svatba"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "rozesmeje",
+    "text": "Co vás vždycky rozesměje?",
+    "tags": [
+      "nálada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cekani-na-vlak",
+    "text": "Co děláte, když čekáte na vlak?",
+    "tags": [
+      "doprava"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "novy-byt",
+    "text": "Co si do nového bytu koupíte jako první?",
+    "tags": [
+      "bydlení"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "spiz",
+    "text": "Co nesmí chybět ve spíži?",
+    "tags": [
+      "kuchyně"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "mlete-maso",
+    "text": "Co se dá uvařit z mletého masa?",
+    "tags": [
+      "vaření"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "deti-jedi",
+    "text": "Jaké jídlo děti milují?",
+    "tags": [
+      "děti",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nakupy-unavuji",
+    "text": "Co vás nejvíc unaví na nákupech?",
+    "tags": [
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zapomenuty-destnik",
+    "text": "Kde nejčastěji zapomenete deštník?",
+    "tags": [
+      "věci"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "do-caje",
+    "text": "Co si dáváte do čaje?",
+    "tags": [
+      "čaj"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "drogerie",
+    "text": "Co nejčastěji kupujete v drogerii?",
+    "tags": [
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "bolest-hlavy",
+    "text": "Co děláte, když vás bolí hlava?",
+    "tags": [
+      "zdraví"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "v-aute-vzdy",
+    "text": "Co máte v autě pořád s sebou?",
+    "tags": [
+      "auto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vec-po-prarodicich",
+    "text": "Jakou věc máte po prarodičích?",
+    "tags": [
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zenska-jmena",
+    "text": "Jaké ženské jméno slyšíte v Česku nejčastěji?",
+    "tags": [
+      "jména"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "rodinna-oslava",
+    "text": "Co nesmí chybět na rodinné oslavě?",
+    "tags": [
+      "rodina"
+    ],
+    "status": "approved"
+  }
+]

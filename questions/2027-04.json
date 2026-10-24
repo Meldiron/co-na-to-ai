@@ -1,0 +1,277 @@
+[
+  {
+    "id": "aprilovy-zertik",
+    "date": "2027-04-01",
+    "text": "Jaký aprílový žertík jste někomu provedli?",
+    "tags": [
+      "apríl"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "k-pivu",
+    "date": "2027-04-02",
+    "text": "Co si dáte k pivu?",
+    "tags": [
+      "hospoda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jarni-sport",
+    "date": "2027-04-03",
+    "text": "Jaký sport děláte na jaře venku?",
+    "tags": [
+      "sport"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nedelni-prochazka",
+    "date": "2027-04-04",
+    "text": "Kam chodíte na nedělní procházku?",
+    "tags": [
+      "procházky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "napoj-k-obedu",
+    "date": "2027-04-05",
+    "text": "Co pijete k obědu?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vetsi-mistnost",
+    "date": "2027-04-06",
+    "text": "Kterou místnost v bytě byste nejradši zvětšili?",
+    "tags": [
+      "bydlení"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jidlo-pro-hosty",
+    "date": "2027-04-07",
+    "text": "Co vaříte, když přijdou hosté?",
+    "tags": [
+      "hosté",
+      "vaření"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "les-zvirata",
+    "date": "2027-04-08",
+    "text": "Jaké zvíře můžete potkat v českém lese?",
+    "tags": [
+      "les",
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cesi-stezuji",
+    "date": "2027-04-09",
+    "text": "Na co si Češi stěžují nejčastěji?",
+    "tags": [
+      "stížnosti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hobbymarket",
+    "date": "2027-04-10",
+    "text": "Co kupujete v hobbymarketu?",
+    "tags": [
+      "kutilství"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ptaci-na-jare",
+    "date": "2027-04-11",
+    "text": "Jakého ptáka slyšíte na jaře zpívat?",
+    "tags": [
+      "ptáci",
+      "jaro"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ridice-stve",
+    "date": "2027-04-12",
+    "text": "Co nejvíc štve řidiče?",
+    "tags": [
+      "auto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "odkladani",
+    "date": "2027-04-13",
+    "text": "Co odkládáte nejdéle?",
+    "tags": [
+      "povinnosti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "detske-krouzky",
+    "date": "2027-04-14",
+    "text": "Na jaký kroužek chodí děti?",
+    "tags": [
+      "děti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vyhra-v-loterii",
+    "date": "2027-04-15",
+    "text": "Co uděláte jako první, když vyhrajete v loterii?",
+    "tags": [
+      "peníze"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kde-s-prateli",
+    "date": "2027-04-16",
+    "text": "Kde se scházíte s přáteli?",
+    "tags": [
+      "přátelé"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "doma-zbytecne",
+    "date": "2027-04-17",
+    "text": "Čeho máte doma zbytečně moc?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "studentske-jidlo",
+    "date": "2027-04-18",
+    "text": "Jaké jídlo uvaří každý student?",
+    "tags": [
+      "studenti",
+      "vaření"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pozdrav",
+    "date": "2027-04-19",
+    "text": "Jak se zdravíte s kamarády?",
+    "tags": [
+      "pozdravy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "v-lednici",
+    "date": "2027-04-20",
+    "text": "Co máte vždycky v lednici?",
+    "tags": [
+      "lednička"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "havet-doma",
+    "date": "2027-04-21",
+    "text": "Jaký hmyz nebo havěť vás doma vyděsí?",
+    "tags": [
+      "havěť"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "trideni",
+    "date": "2027-04-22",
+    "text": "Co nejčastěji třídíte do barevných kontejnerů?",
+    "tags": [
+      "třídění"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kde-ctete",
+    "date": "2027-04-23",
+    "text": "Kde nejradši čtete?",
+    "tags": [
+      "čtení"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pout",
+    "date": "2027-04-24",
+    "text": "Co si dáte nebo koupíte na pouti?",
+    "tags": [
+      "pouť"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kvetiny-do-vazy",
+    "date": "2027-04-25",
+    "text": "Jaké květiny dáváte do vázy?",
+    "tags": [
+      "květiny"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "trafika",
+    "date": "2027-04-26",
+    "text": "Co se dá koupit v trafice?",
+    "tags": [
+      "trafika"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "home-office-rusi",
+    "date": "2027-04-27",
+    "text": "Co vás ruší, když pracujete z domu?",
+    "tags": [
+      "práce",
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "penezenka",
+    "date": "2027-04-28",
+    "text": "Co nosíte v peněžence kromě peněz?",
+    "tags": [
+      "peněženka"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "konecne-teplo",
+    "date": "2027-04-29",
+    "text": "Co uděláte jako první, když je konečně teplo?",
+    "tags": [
+      "jaro"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "carodejnice",
+    "date": "2027-04-30",
+    "text": "Co nesmí chybět při pálení čarodějnic?",
+    "tags": [
+      "čarodějnice"
+    ],
+    "status": "approved"
+  }
+]

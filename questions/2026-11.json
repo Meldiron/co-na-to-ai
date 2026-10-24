@@ -1,0 +1,294 @@
+[
+  {
+    "id": "nedelni-obed",
+    "date": "2026-11-01",
+    "text": "Co se u vás vaří k nedělnímu obědu?",
+    "tags": [
+      "jídlo",
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "dusicky-hrob",
+    "date": "2026-11-02",
+    "text": "Kromě svíčky, co nosíte na hrob na Dušičky?",
+    "tags": [
+      "svátky",
+      "zvyky"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kapsy-pred-pranim",
+    "date": "2026-11-03",
+    "text": "Co nejčastěji zapomenete v kapse před praním?",
+    "tags": [
+      "domov",
+      "prádlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cesta-mhd",
+    "date": "2026-11-04",
+    "text": "Co děláte v tramvaji nebo autobusu cestou do práce?",
+    "tags": [
+      "doprava",
+      "město"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "skolni-jidelna",
+    "date": "2026-11-05",
+    "text": "Jaké jídlo vám připomíná školní jídelnu?",
+    "tags": [
+      "jídlo",
+      "škola"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sport-v-televizi",
+    "date": "2026-11-06",
+    "text": "Jaký sport rádi sledujete v televizi?",
+    "tags": [
+      "sport",
+      "televize"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzim-deti-sbiraji",
+    "date": "2026-11-07",
+    "text": "Co děti sbírají na podzim venku?",
+    "tags": [
+      "děti",
+      "podzim"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "rodinna-hra",
+    "date": "2026-11-08",
+    "text": "Jakou deskovou nebo karetní hru hrajete s rodinou?",
+    "tags": [
+      "hry",
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "doma-hledam",
+    "date": "2026-11-09",
+    "text": "Co doma hledáte nejčastěji?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "detske-povolani",
+    "date": "2026-11-10",
+    "text": "Čím chtějí děti být, až vyrostou?",
+    "tags": [
+      "děti",
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "svaty-martin",
+    "date": "2026-11-11",
+    "text": "Kromě husy, co patří ke svatému Martinovi?",
+    "tags": [
+      "svátky",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prace-nastve",
+    "date": "2026-11-12",
+    "text": "Co vás v práci dokáže nejvíc naštvat?",
+    "tags": [
+      "práce",
+      "emoce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "povery",
+    "date": "2026-11-13",
+    "text": "Jakou pověru zná každý Čech?",
+    "tags": [
+      "zvyky",
+      "pověry"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "deti-kdyz-prsi",
+    "date": "2026-11-14",
+    "text": "Kam vyrazit s dětmi, když venku prší?",
+    "tags": [
+      "děti",
+      "víkend"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "oblibena-polevka",
+    "date": "2026-11-15",
+    "text": "Jakou polévku máte nejradši?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kabelka-batoh",
+    "date": "2026-11-16",
+    "text": "Co máte vždycky v kabelce nebo v batohu?",
+    "tags": [
+      "věci"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "volno-uprostred-tydne",
+    "date": "2026-11-17",
+    "text": "Co děláte, když máte volno uprostřed týdne?",
+    "tags": [
+      "volno"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "benzinka",
+    "date": "2026-11-18",
+    "text": "Co se dá koupit na každé benzince?",
+    "tags": [
+      "auto",
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "aplikace-v-mobilu",
+    "date": "2026-11-19",
+    "text": "Jakou aplikaci v mobilu otevíráte nejčastěji?",
+    "tags": [
+      "technika"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jidlo-dovoz",
+    "date": "2026-11-20",
+    "text": "Co si objednáte, když se vám nechce vařit?",
+    "tags": [
+      "jídlo",
+      "vaření"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cesky-vyhled",
+    "date": "2026-11-21",
+    "text": "Odkud je v Česku nejkrásnější výhled?",
+    "tags": [
+      "cestování",
+      "příroda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vecernicek",
+    "date": "2026-11-22",
+    "text": "Jakou večerníčkovou postavičku máte nejradši?",
+    "tags": [
+      "dětství",
+      "televize"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prvni-vec-doma",
+    "date": "2026-11-23",
+    "text": "Co uděláte jako první, když přijdete domů z práce?",
+    "tags": [
+      "domov",
+      "večer"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sousede-vadi",
+    "date": "2026-11-24",
+    "text": "Co vám nejvíc vadí na sousedech?",
+    "tags": [
+      "sousedé"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pripaleno",
+    "date": "2026-11-25",
+    "text": "Co se vám v kuchyni nejčastěji připálí?",
+    "tags": [
+      "vaření"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vymluva-pozde",
+    "date": "2026-11-26",
+    "text": "Jakou výmluvu použijete, když přijdete pozdě?",
+    "tags": [
+      "výmluvy",
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "slevy-black-friday",
+    "date": "2026-11-27",
+    "text": "Co lidé nejčastěji kupují ve slevách?",
+    "tags": [
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "adventni-venec",
+    "date": "2026-11-28",
+    "text": "Kromě svíček, co dáváte na adventní věnec?",
+    "tags": [
+      "advent",
+      "výzdoba"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vanocni-trhy",
+    "date": "2026-11-29",
+    "text": "Co si dáte na vánočních trzích?",
+    "tags": [
+      "trhy",
+      "město"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "babicka-nachlazeni",
+    "date": "2026-11-30",
+    "text": "Co pomáhá na nachlazení podle babičky?",
+    "tags": [
+      "zdraví",
+      "babička"
+    ],
+    "status": "approved"
+  }
+]

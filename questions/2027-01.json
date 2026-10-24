@@ -1,0 +1,286 @@
+[
+  {
+    "id": "predsevzeti",
+    "date": "2027-01-01",
+    "text": "Jaké novoroční předsevzetí si lidé dávají?",
+    "tags": [
+      "předsevzetí"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "stromek-po-svatcich",
+    "date": "2027-01-02",
+    "text": "Co uděláte s vánočním stromkem po svátcích?",
+    "tags": [
+      "stromeček"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zimni-sport",
+    "date": "2027-01-03",
+    "text": "Jaký zimní sport jste někdy zkoušeli?",
+    "tags": [
+      "sport"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prvni-den-v-praci",
+    "date": "2027-01-04",
+    "text": "Co je nejhorší na prvním pracovním dni po svátcích?",
+    "tags": [
+      "práce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "snidane-vsedni",
+    "date": "2027-01-05",
+    "text": "Co si dáte k snídani ve všední den?",
+    "tags": [
+      "snídaně"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zima-tesi",
+    "date": "2027-01-06",
+    "text": "Co vás na zimě těší nejvíc?",
+    "tags": [
+      "zima"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nespavost",
+    "date": "2027-01-07",
+    "text": "Co děláte, když nemůžete usnout?",
+    "tags": [
+      "spánek"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "kino-krome-popcornu",
+    "date": "2027-01-08",
+    "text": "Kromě popcornu, co si dáte v kině?",
+    "tags": [
+      "kino"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ceske-hory",
+    "date": "2027-01-09",
+    "text": "Kam v Česku jezdíte na hory?",
+    "tags": [
+      "hory",
+      "cestování"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "babicka-vari",
+    "date": "2027-01-10",
+    "text": "Jaké jídlo vařila babička nejlíp?",
+    "tags": [
+      "babička",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "rano-probudi",
+    "date": "2027-01-11",
+    "text": "Co vás ráno nejlíp probudí?",
+    "tags": [
+      "ráno"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "obed-v-krabicce",
+    "date": "2027-01-12",
+    "text": "Co si nosíte do práce na oběd v krabičce?",
+    "tags": [
+      "práce",
+      "oběd"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "neoblibeny-predmet",
+    "date": "2027-01-13",
+    "text": "Jaký předmět ve škole jste neměli rádi?",
+    "tags": [
+      "škola"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nejde-internet",
+    "date": "2027-01-14",
+    "text": "Co děláte, když doma nejde internet?",
+    "tags": [
+      "technika"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hospoda-jidlo",
+    "date": "2027-01-15",
+    "text": "Jaké jídlo si v hospodě dáte nejčastěji?",
+    "tags": [
+      "hospoda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ze-snehu",
+    "date": "2027-01-16",
+    "text": "Kromě sněhuláka, co se dá postavit ze sněhu?",
+    "tags": [
+      "sníh",
+      "děti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ceska-komedie",
+    "date": "2027-01-17",
+    "text": "Jakou českou komedii znáte skoro nazpaměť?",
+    "tags": [
+      "film"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zapomenuty-nakup",
+    "date": "2027-01-18",
+    "text": "Co nejčastěji zapomenete koupit v obchodě?",
+    "tags": [
+      "nákupy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "domaci-prace",
+    "date": "2027-01-19",
+    "text": "Kterou domácí práci nesnášíte?",
+    "tags": [
+      "úklid"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jmeno-psa",
+    "date": "2027-01-20",
+    "text": "Jak se v Česku nejčastěji jmenují psi?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "v-aute-poslech",
+    "date": "2027-01-21",
+    "text": "Co si pouštíte, když řídíte auto?",
+    "tags": [
+      "auto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hadky-partneru",
+    "date": "2027-01-22",
+    "text": "Kvůli čemu se partneři hádají nejčastěji?",
+    "tags": [
+      "vztahy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hory-bez-snehu",
+    "date": "2027-01-23",
+    "text": "Co se dá dělat na horách, když není sníh?",
+    "tags": [
+      "hory"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "serial-znovu",
+    "date": "2027-01-24",
+    "text": "Jaký seriál jste viděli víckrát?",
+    "tags": [
+      "seriály"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "darek-narozeniny",
+    "date": "2027-01-25",
+    "text": "Co nejčastěji dostáváte k narozeninám?",
+    "tags": [
+      "narozeniny"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vysnene-zvire",
+    "date": "2027-01-26",
+    "text": "Jaké zvíře byste chtěli mít doma?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "neumim-uvarit",
+    "date": "2027-01-27",
+    "text": "Jaké jídlo vám nikdy nejde uvařit?",
+    "tags": [
+      "vaření"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hry-venku-detstvi",
+    "date": "2027-01-28",
+    "text": "Jakou hru jste jako děti hráli venku?",
+    "tags": [
+      "dětství"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vysvedceni-odmena",
+    "date": "2027-01-29",
+    "text": "Co dostanou děti za hezké vysvědčení?",
+    "tags": [
+      "škola",
+      "děti"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pekarna",
+    "date": "2027-01-30",
+    "text": "Co si nejčastěji koupíte v pekárně?",
+    "tags": [
+      "pečivo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nedele-dopoledne",
+    "date": "2027-01-31",
+    "text": "Co děláte v neděli dopoledne?",
+    "tags": [
+      "víkend"
+    ],
+    "status": "approved"
+  }
+]

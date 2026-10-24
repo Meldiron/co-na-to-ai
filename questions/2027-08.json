@@ -1,0 +1,286 @@
+[
+  {
+    "id": "tura-do-hor",
+    "date": "2027-08-01",
+    "text": "Co si vezmete na celodenní túru do hor?",
+    "tags": [
+      "výlety"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "navrat-z-dovolene",
+    "date": "2027-08-02",
+    "text": "Co uděláte jako první po návratu z dovolené?",
+    "tags": [
+      "dovolená"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sber-v-lese",
+    "date": "2027-08-03",
+    "text": "Co sbíráte v lese kromě hub?",
+    "tags": [
+      "příroda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zahradni-kulna",
+    "date": "2027-08-04",
+    "text": "Co nesmí chybět v zahradní kůlně?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zeme-nejlepsi-jidlo",
+    "date": "2027-08-05",
+    "text": "Která země má podle vás nejlepší jídlo?",
+    "tags": [
+      "jídlo",
+      "cestování"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "gril-bez-masa",
+    "date": "2027-08-06",
+    "text": "Co dáte na gril kromě masa?",
+    "tags": [
+      "gril"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ceska-zahrada-stoji",
+    "date": "2027-08-07",
+    "text": "Co stojí skoro na každé české zahradě?",
+    "tags": [
+      "zahrada",
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ryba-v-rybniku",
+    "date": "2027-08-08",
+    "text": "Jakou rybu můžete chytit v českém rybníku?",
+    "tags": [
+      "zvířata",
+      "voda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vylet-na-kole",
+    "date": "2027-08-09",
+    "text": "Co si vezmete na výlet na kole?",
+    "tags": [
+      "sport"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zavarovani",
+    "date": "2027-08-10",
+    "text": "Co zavaříte na zimu?",
+    "tags": [
+      "sklizeň"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zvire-v-zoo",
+    "date": "2027-08-11",
+    "text": "Jaké zvíře v zoo vidíte nejradši?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "nocni-obloha",
+    "date": "2027-08-12",
+    "text": "Co poznáte na noční obloze?",
+    "tags": [
+      "příroda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "koupaliste-otravuje",
+    "date": "2027-08-13",
+    "text": "Co vás nejvíc otravuje na koupališti?",
+    "tags": [
+      "voda"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prebytek-cuket",
+    "date": "2027-08-14",
+    "text": "Co uděláte s přebytkem cuket ze zahrady?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "ztrata-na-dovolene",
+    "date": "2027-08-15",
+    "text": "Co se vám nejčastěji ztratí na dovolené?",
+    "tags": [
+      "dovolená"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prvni-vydelane-penize",
+    "date": "2027-08-16",
+    "text": "Za co utratíte první vydělané peníze?",
+    "tags": [
+      "peníze"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jmeno-pro-kocku",
+    "date": "2027-08-17",
+    "text": "Jaké jméno dáte kočce?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "slovo-prazdniny",
+    "date": "2027-08-18",
+    "text": "Co se vám vybaví pod slovem prázdniny?",
+    "tags": [
+      "léto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pamatka-unesco",
+    "date": "2027-08-19",
+    "text": "Kterou památku UNESCO v Česku byste chtěli vidět?",
+    "tags": [
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "sport-ve-sklepe",
+    "date": "2027-08-20",
+    "text": "Jakou sportovní věc máte schovanou ve sklepě?",
+    "tags": [
+      "sport",
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "narozeninovy-dort",
+    "date": "2027-08-21",
+    "text": "Jaký dort chcete k narozeninám?",
+    "tags": [
+      "oslavy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "prvni-po-probuzeni",
+    "date": "2027-08-22",
+    "text": "Co uděláte jako první, když se vzbudíte?",
+    "tags": [
+      "ráno"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vypnout-od-prace",
+    "date": "2027-08-23",
+    "text": "Kde nejlépe vypnete od práce?",
+    "tags": [
+      "odpočinek"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "svestky",
+    "date": "2027-08-24",
+    "text": "Co nejradši uděláte ze švestek?",
+    "tags": [
+      "sklizeň"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "skolni-penal",
+    "date": "2027-08-25",
+    "text": "Co patří do školního penálu?",
+    "tags": [
+      "škola"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vikend-s-partou",
+    "date": "2027-08-26",
+    "text": "Kam byste jeli na víkend s partou kamarádů?",
+    "tags": [
+      "výlety",
+      "přátelé"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "typ-dovolene",
+    "date": "2027-08-27",
+    "text": "Jaký typ dovolené máte nejradši?",
+    "tags": [
+      "dovolená"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "adrenalin",
+    "date": "2027-08-28",
+    "text": "Jaký adrenalinový zážitek byste chtěli zkusit?",
+    "tags": [
+      "zábava"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "chybet-z-leta",
+    "date": "2027-08-29",
+    "text": "Co vám bude z léta nejvíc chybět?",
+    "tags": [
+      "léto"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "konec-prazdnin-stres",
+    "date": "2027-08-30",
+    "text": "Co vás stresuje na konci prázdnin?",
+    "tags": [
+      "prázdniny"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vlastnost-kamarada",
+    "date": "2027-08-31",
+    "text": "Jakou vlastnost oceníte u kamaráda?",
+    "tags": [
+      "přátelé"
+    ],
+    "status": "approved"
+  }
+]

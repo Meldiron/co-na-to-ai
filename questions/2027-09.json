@@ -1,0 +1,273 @@
+[
+  {
+    "id": "prvni-skolni-den",
+    "date": "2027-09-01",
+    "text": "Co patří k prvnímu školnímu dni?",
+    "tags": [
+      "škola"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "houba-v-lese",
+    "date": "2027-09-02",
+    "text": "Jakou houbu najdete v lese nejčastěji?",
+    "tags": [
+      "houby"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vinobrani",
+    "date": "2027-09-03",
+    "text": "Co patří k vinobraní?",
+    "tags": [
+      "víno"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zvire-na-statku",
+    "date": "2027-09-04",
+    "text": "Jaké zvíře byste chovali na statku?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "babi-leto",
+    "date": "2027-09-05",
+    "text": "Co si představíte pod pojmem babí léto?",
+    "tags": [
+      "počasí"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "zapomenute-ve-skole",
+    "date": "2027-09-06",
+    "text": "Co děti nejčastěji zapomenou ve škole?",
+    "tags": [
+      "škola"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "jidlo-z-hub",
+    "date": "2027-09-07",
+    "text": "Co uvaříte z nasbíraných hub?",
+    "tags": [
+      "houby",
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vlak-dlouha-cesta",
+    "date": "2027-09-08",
+    "text": "Co si vezmete do vlaku na dlouhou cestu?",
+    "tags": [
+      "cestování"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "tesite-se-na-podzim",
+    "date": "2027-09-09",
+    "text": "Na co se na podzim nejvíc těšíte?",
+    "tags": [
+      "podzim"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "patek-vecer-s-kamarady",
+    "date": "2027-09-10",
+    "text": "Kam vyrazíte s kamarády v pátek večer?",
+    "tags": [
+      "přátelé"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "na-houby-s-sebou",
+    "date": "2027-09-11",
+    "text": "Co si vezmete s sebou na houby?",
+    "tags": [
+      "houby"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "odruda-vina",
+    "date": "2027-09-12",
+    "text": "Jakou odrůdu vína si dáte nejradši?",
+    "tags": [
+      "víno"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "filmovy-zanr",
+    "date": "2027-09-13",
+    "text": "Jaký filmový žánr máte nejradši?",
+    "tags": [
+      "filmy"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzimni-zahrada",
+    "date": "2027-09-14",
+    "text": "Co se na podzim dělá na zahradě?",
+    "tags": [
+      "zahrada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "babicka-doma-vec",
+    "date": "2027-09-15",
+    "text": "Jakou věc má doma skoro každá babička?",
+    "tags": [
+      "rodina"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vynalez",
+    "date": "2027-09-16",
+    "text": "Bez jakého vynálezu byste se neobešli?",
+    "tags": [
+      "technika"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "pokazeny-den",
+    "date": "2027-09-17",
+    "text": "Co vám dokáže pokazit celý den?",
+    "tags": [
+      "nálada"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "morava",
+    "date": "2027-09-18",
+    "text": "Co se vám vybaví, když se řekne Morava?",
+    "tags": [
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "lazne",
+    "date": "2027-09-19",
+    "text": "Do jakých lázní byste jeli na víkend?",
+    "tags": [
+      "cestování"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "opravite-sami",
+    "date": "2027-09-20",
+    "text": "Co doma opravíte sami bez řemeslníka?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzimni-prochazka-obleceni",
+    "date": "2027-09-21",
+    "text": "Co si oblečete na podzimní procházku?",
+    "tags": [
+      "oblečení"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "patri-k-podzimu",
+    "date": "2027-09-22",
+    "text": "Co pro vás patří k podzimu?",
+    "tags": [
+      "podzim"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "caj-kdyz-prsi",
+    "date": "2027-09-23",
+    "text": "Jaký čaj si uvaříte, když venku prší?",
+    "tags": [
+      "pití"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzimni-jidlo",
+    "date": "2027-09-24",
+    "text": "Jaké podzimní jídlo máte nejradši?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzimni-vylet",
+    "date": "2027-09-25",
+    "text": "Kam vyrazíte na podzimní výlet?",
+    "tags": [
+      "výlety"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "hra-v-hospode",
+    "date": "2027-09-26",
+    "text": "Co se hraje s kamarády v hospodě?",
+    "tags": [
+      "hry"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "padana-jablka",
+    "date": "2027-09-27",
+    "text": "Co uděláte s padanými jablky?",
+    "tags": [
+      "sklizeň"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "cesky-symbol",
+    "date": "2027-09-28",
+    "text": "Jaký český symbol zná každý?",
+    "tags": [
+      "česko"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "podzimni-pocasi-stve",
+    "date": "2027-09-29",
+    "text": "Co vás nejvíc štve na podzimním počasí?",
+    "tags": [
+      "počasí"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "vikendova-snidane",
+    "date": "2027-09-30",
+    "text": "Co si dáte k snídani o víkendu?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "approved"
+  }
+]

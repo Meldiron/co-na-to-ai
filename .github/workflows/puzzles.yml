@@ -1,0 +1,37 @@
+name: Puzzle queue
+
+on:
+  schedule:
+    - cron: "15 3 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Days to keep queued from today
+        default: "8"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: puzzle-queue
+  cancel-in-progress: false
+
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run pipeline -- --days ${{ inputs.days || '8' }}
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: top up puzzle queue"
+          file_pattern: "puzzles/*.json runs/*.json questions/*.json"

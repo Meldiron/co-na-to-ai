@@ -8,44 +8,95 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root"
-import { Route as IndexRouteImport } from "./routes/index"
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArchivRouteImport } from './routes/archiv'
+import { Route as ObsazeniRouteImport } from './routes/obsazeni'
+import { Route as HraDatumRouteImport } from './routes/hra.$datum'
 
 const IndexRoute = IndexRouteImport.update({
-  id: "/",
-  path: "/",
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchivRoute = ArchivRouteImport.update({
+  id: '/archiv',
+  path: '/archiv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObsazeniRoute = ObsazeniRouteImport.update({
+  id: '/obsazeni',
+  path: '/obsazeni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HraDatumRoute = HraDatumRouteImport.update({
+  id: '/hra/$datum',
+  path: '/hra/$datum',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/archiv': typeof ArchivRoute
+  '/obsazeni': typeof ObsazeniRoute
+  '/hra/$datum': typeof HraDatumRoute
 }
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/archiv': typeof ArchivRoute
+  '/obsazeni': typeof ObsazeniRoute
+  '/hra/$datum': typeof HraDatumRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/archiv': typeof ArchivRoute
+  '/obsazeni': typeof ObsazeniRoute
+  '/hra/$datum': typeof HraDatumRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: "/"
+  fullPaths: '/' | '/archiv' | '/obsazeni' | '/hra/$datum'
   fileRoutesByTo: FileRoutesByTo
-  to: "/"
-  id: "__root__" | "/"
+  to: '/' | '/archiv' | '/obsazeni' | '/hra/$datum'
+  id: '__root__' | '/' | '/archiv' | '/obsazeni' | '/hra/$datum'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArchivRoute: typeof ArchivRoute
+  ObsazeniRoute: typeof ObsazeniRoute
+  HraDatumRoute: typeof HraDatumRoute
 }
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/"
-      path: "/"
-      fullPath: "/"
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/archiv': {
+      id: '/archiv'
+      path: '/archiv'
+      fullPath: '/archiv'
+      preLoaderRoute: typeof ArchivRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/obsazeni': {
+      id: '/obsazeni'
+      path: '/obsazeni'
+      fullPath: '/obsazeni'
+      preLoaderRoute: typeof ObsazeniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hra/$datum': {
+      id: '/hra/$datum'
+      path: '/hra/$datum'
+      fullPath: '/hra/$datum'
+      preLoaderRoute: typeof HraDatumRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -53,14 +104,17 @@ declare module "@tanstack/react-router" {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArchivRoute: ArchivRoute,
+  ObsazeniRoute: ObsazeniRoute,
+  HraDatumRoute: HraDatumRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from "./router.tsx"
-import type { createStart } from "@tanstack/react-start"
-declare module "@tanstack/react-start" {
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>
