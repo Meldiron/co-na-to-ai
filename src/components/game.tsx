@@ -13,6 +13,7 @@ import type { Persona, PuzzlePayload } from "@/lib/types"
 import { Board, Strikes } from "./board"
 import { openGuide, openGuideOnFirstVisit } from "./how-to-play"
 import { Flap } from "./flap"
+import { Others } from "./others"
 import { Results } from "./results"
 import { WhoSaid } from "./who-said"
 
@@ -45,7 +46,7 @@ function remaining(n: number): string {
 
 export function Game({ payload, today }: { payload: PuzzlePayload; today: string }) {
   const daily = payload.date === today
-  const { secret, state, ready, guess, surrender, letter, clue } = useGame(payload, daily)
+  const { secret, state, ready, synced, guess, surrender, letter, clue } = useGame(payload, daily)
   const [value, setValue] = useState("")
   const [message, setMessage] = useState<Message | null>(null)
   const [missKey, setMissKey] = useState(0)
@@ -239,6 +240,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
       {over && ready && (
         <>
           <Results payload={payload} state={state} answers={secret.answers} />
+          <Others payload={payload} answers={secret.answers} synced={synced} />
           <WhoSaid secret={secret} />
         </>
       )}

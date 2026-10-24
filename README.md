@@ -15,7 +15,7 @@ npm test           # matching, scoring, Prague day switch, stats, pipeline shape
 npm run build      # production build in dist/
 ```
 
-Routes: `/` today's game, `/hra/YYYY-MM-DD` a past day, `/archiv` the archive, `/obsazeni` the cast of 100, `/vlastni/<id>` a custom game, `/admin` the password-protected admin.
+Routes: `/` today's game, `/hra/YYYY-MM-DD` a past day, `/archiv` the archive, `/obsazeni` the cast of 100, `/vlastni/<id>` a custom game, `/admin` the admin for accounts with the `admin` label.
 
 A new puzzle starts at 00:00 Europe/Prague. Puzzle #1 is 2026-10-01 (`LAUNCH_DATE` in `src/lib/day.ts`). The server only returns puzzles whose date is on or before today in Prague, so the client never receives future boards. The answers in a payload are XOR'd with a per-day key and base64-encoded, so they aren't readable at a glance. That is obfuscation, not security.
 
@@ -60,13 +60,35 @@ Questions live in `questions/YYYY-MM.json`:
 
 `data/personas.json` holds 100 Czech personas. `pipeline/lib/roster.ts` lists 100 distinct models plus spares. `npm run cast` pairs them, deterministically, into `data/answerers.json`. Keep persona ids stable, because old puzzles refer to them.
 
+## Accounts
+
+Everyone plays as a guest first. The first move creates an Appwrite anonymous session on the server and stores its secret in an httpOnly cookie (`pjs100_session`) on the site's own domain; the browser never talks to Appwrite directly. A guest becomes a permanent account by adding an email and a password (Appwrite converts the anonymous user in place, so nothing moves). Signing in on another device moves that browser's guest games into the account.
+
+Every move is saved to the `games` table. The server replays the guesses against the real board before saving, so found answers, strikes and the score can't be claimed without the guesses. A finished game is never overwritten, and an older state from another device never replaces a newer one. The browser keeps a copy in localStorage and uses it when the server can't be reached. Guest games that were played before accounts existed are uploaded once.
+
+Players pick the name shown on the leaderboard (`players` table, also set as the Appwrite user name). After a game, "Jak hráli ostatní" shows how many players finished the board, the average, the share that found each answer, your rank and the top 10.
+
+The streak counts days when the board was finished on the day it came out. Two streak freezes are always ready: up to two missed days in a row keep the streak alive (they don't add to it), and both refill after the next played day. The third missed day in a row ends the streak (`src/lib/streak.ts`).
+
+Without `APPWRITE_SITE_API_ENDPOINT`, `APPWRITE_SITE_PROJECT_ID` and a key, accounts are switched off and the game keeps everything in the browser. To run accounts locally, start the dev server with a short-lived key:
+
+```bash
+APPWRITE_SITE_API_ENDPOINT=https://fra.cloud.appwrite.io/v1 APPWRITE_SITE_PROJECT_ID=6adc843b0015374f957c \
+APPWRITE_API_KEY=$(appwrite project create-ephemeral-key --duration 3600 --show-secrets -j \
+  --scopes sessions.write --scopes rows.read --scopes rows.write --scopes files.read --scopes files.write \
+  --scopes execution.read --scopes execution.write | jq -r .secret) npm run dev
+```
+
+`node qa/accounts.mjs <url>` runs the whole account flow in a headless browser (it creates a real `qa-…@example.com` user).
+
 ## Admin and custom games
 
-`/admin` asks for the password in `ADMIN_PASSWORD`. A successful login sets a signed, httpOnly, SameSite=Strict cookie for 7 days. Every admin server function checks that cookie. In the admin you can:
+`/admin` is open to accounts with the Appwrite user label `admin` (`appwrite users update-labels --user-id <id> --labels admin`). Every admin server function checks the label. In the admin you can:
 
 - type a question and ask the 100 AIs (about $0.10–0.20, 1–2 minutes, with live progress);
 - get a playable `/vlastni/<id>` link, with the gate verdict and cost;
 - copy links to your custom games or delete them;
+- read the missed guesses of any day or custom game, grouped across spellings, to find synonyms the board should accept;
 - see today's run details and answers.
 
 Custom games are written to `custom/<id>.json` (or `CUSTOM_GAMES_DIR`) at runtime, so the server needs a writable disk. They don't count towards stats or streaks.
@@ -77,10 +99,12 @@ Live at https://ai100.appwrite.network. It runs in the Appwrite project *Playgro
 
 | Resource | ID | Notes |
 | --- | --- | --- |
-| Site | `ai100` | TanStack Start, SSR, `npm ci` and `npm run build`, output `./dist`. The per-request key is scoped to `files.*`, `execution.*` and `rows.read`. Secret variable `ADMIN_PASSWORD`. |
+| Site | `ai100` | TanStack Start, SSR, `npm ci` and `npm run build`, output `./dist`. The per-request key is scoped to `sessions.write`, `rows.*`, `files.*` and `execution.*`. |
 | Function | `custom-game` | Node 22, 900 s timeout, scopes `files.read` and `files.write`, no public execute. Secret variable `OPENROUTER_API_KEY`. Runs one custom game (the 100 calls plus the judge) and saves it to the bucket. |
 | Function | `daily-puzzles` | Node 22, 900 s timeout, runs every hour (`0 * * * *`), scopes `rows.read` and `rows.write`. Secret variable `OPENROUTER_API_KEY`. Makes sure today and the next 3 days have a board. |
 | Bucket | `custom-games` | One JSON file per custom game, server access only. |
+| Table | `ai100` / `games` | One row per player and game: the replayed state, score, found answers, strikes, missed guesses, whether it was finished on the day. Unique on `userId` + `key`. Server access only. |
+| Table | `ai100` / `players` | Leaderboard names, row ID = user ID. Server access only. |
 | Table | `ai100` / `puzzles` | One row per generation attempt: `date`, `questionId`, `question`, `number`, `passed`, `gate` (JSON), `costUsd`, `puzzle` (the board as JSON when it passed). A passed row's ID is its date. Server access only. |
 
 A Site request may run for at most 30 s, so the admin starts the Function asynchronously and polls the execution. Locally (no `x-appwrite-key` header) custom games run in-process and save to `custom/`.

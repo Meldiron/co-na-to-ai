@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { CLEAR_BONUS, applyGuess, hintPattern, initialState, maxHints, pointsFor, pointsWord, revealLetter, scoreLines, shareText, type GameState } from "./game"
+import { CLEAR_BONUS, applyGuess, hintPattern, initialState, maxHints, pointsFor, pointsWord, progress, replay, revealLetter, scoreLines, shareText, type GameState } from "./game"
 import type { BoardAnswer } from "./types"
 
 const answers: Array<BoardAnswer> = ["Pivo", "Repelent", "Kniha", "Karty", "Svetr", "Jídlo", "Deštník", "Kytara"].map((text, i) => ({
@@ -115,5 +115,37 @@ describe("challenge share text", () => {
 describe("pointsWord", () => {
   it("uses Czech plural forms", () => {
     expect([0, 1, 2, 4, 5, 22, 100].map(pointsWord)).toEqual(["bodů", "bod", "body", "body", "bodů", "bodů", "bodů"])
+  })
+})
+
+describe("replay", () => {
+  it("rebuilds found answers and strikes from the guesses alone", () => {
+    const claimed: GameState = {
+      found: [0, 1, 2, 3, 4, 5, 6, 7],
+      guesses: [
+        { text: "pivo", result: "hit", index: 0 },
+        { text: "lednice", result: "hit", index: 3 },
+      ],
+      strikes: 0,
+      status: "won",
+      hints: [0, 9, 0, 0, 0, 0, 0, 0],
+      clues: [2, 2, 40],
+    }
+    const state = replay(answers, claimed)
+    expect(state.found).toEqual([0])
+    expect(state.strikes).toBe(1)
+    expect(state.status).toBe("playing")
+    expect(state.hints?.[1]).toBe(maxHints(answers[1]))
+    expect(state.clues).toEqual([2])
+  })
+
+  it("keeps a surrender", () => {
+    expect(replay(answers, { ...initialState, status: "lost" }).status).toBe("lost")
+  })
+
+  it("ranks a finished game above any game in progress", () => {
+    const playing = applyGuess(initialState, answers, "pivo").state
+    expect(progress({ ...initialState, status: "lost" })).toBeGreaterThan(progress(playing))
+    expect(progress(playing)).toBeGreaterThan(progress(initialState))
   })
 })

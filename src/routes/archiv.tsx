@@ -1,9 +1,10 @@
 import { Link, createFileRoute } from "@tanstack/react-router"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { SiteHeader } from "@/components/site-header"
+import { useResults } from "@/hooks/use-results"
 import { addDays, formatLong } from "@/lib/day"
 import { pointsWord } from "@/lib/game"
-import { loadResults, type Result } from "@/lib/storage"
+import type { Result } from "@/lib/storage"
 import { SITE_URL } from "@/lib/site"
 import type { PuzzleSummary } from "@/lib/types"
 import { getArchive } from "@/server/api"
@@ -46,10 +47,8 @@ function cellTone(puzzle: PuzzleSummary | undefined, result: Result | null, isTo
 
 function Archive() {
   const { today, puzzles } = Route.useLoaderData()
-  const [results, setResults] = useState<Record<string, Result>>({})
+  const results = useResults() ?? {}
   const [selected, setSelected] = useState(puzzles[0]?.date ?? today)
-
-  useEffect(() => setResults(loadResults()), [])
 
   const byDate = new Map(puzzles.map((p) => [p.date, p]))
   const current = byDate.get(selected)

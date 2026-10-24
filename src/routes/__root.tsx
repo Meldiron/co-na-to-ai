@@ -1,4 +1,5 @@
 import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-router"
+import { AccountDialog, AccountProvider } from "@/components/account"
 import { HowToPlay } from "@/components/how-to-play"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -44,9 +45,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <main className="bg-ground">{children}</main>
-        <HowToPlay />
-        <SiteFooter />
+        <AccountProvider>
+          <main className="bg-ground">{children}</main>
+          <HowToPlay />
+          <AccountDialog />
+          <SiteFooter />
+        </AccountProvider>
         <Scripts />
       </body>
     </html>

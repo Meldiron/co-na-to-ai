@@ -126,6 +126,21 @@ export function giveUp(state: GameState): GameState {
   return state.status === "playing" ? { ...state, status: "lost" } : state
 }
 
+export function replay(answers: Array<BoardAnswer>, claimed: GameState): GameState {
+  let state = initialState
+  for (const guess of claimed.guesses) state = applyGuess(state, answers, guess.text).state
+  const hints = answers.map((answer, i) => Math.max(0, Math.min(maxHints(answer), Math.floor(claimed.hints?.[i] ?? 0))))
+  const clues = [...new Set(claimed.clues ?? [])].filter((i) => Number.isInteger(i) && i >= 0 && i < answers.length)
+  state = { ...state, hints, clues }
+  return claimed.status === "lost" ? giveUp(state) : state
+}
+
+export function progress(state: GameState | null | undefined): number {
+  if (!state) return 0
+  const hints = (state.hints ?? []).reduce((sum, n) => sum + n, 0)
+  return (state.status === "playing" ? 0 : 1000) + state.guesses.length * 10 + hints + (state.clues?.length ?? 0)
+}
+
 export function scoreLines(state: GameState, answers: Array<BoardAnswer>) {
   const lines = state.found
     .map((i) => ({ answer: answers[i], hints: hintsUsed(state, i) }))

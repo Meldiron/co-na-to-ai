@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router"
 import { CLEAR_BONUS, MAX_STRIKES } from "@/lib/game"
 import { providerCount } from "@/lib/cast"
+import { FREEZES } from "@/lib/streak"
 
 export function Rules() {
   const items: Array<[string, React.ReactNode]> = [
@@ -17,7 +18,14 @@ export function Rules() {
         Ano, v <Link to="/archiv" className="underline underline-offset-4">archivu</Link>. Do série dnů se ale počítá jen hra odehraná v den, kdy otázka vyšla.
       </>,
     ],
-    ["Ukládáte o mně něco?", "Výsledky a statistiky zůstávají jen ve vašem prohlížeči. Nemáme účty, nesbíráme tipy a nic neodesíláme."],
+    [
+      "Co je série a zmrazení?",
+      `Série počítá dny, kdy jste dohráli tabuli v den, kdy vyšla. Když jeden nebo dva dny po sobě vynecháte, série nepadne: hlídají ji ${FREEZES} zmrazení, která se po každé odehrané hře zase doplní. Až třetí vynechaný den po sobě sérii ukončí.`,
+    ],
+    [
+      "Ukládáte o mně něco?",
+      "Když začnete hrát, založíme vám hostovský účet. Ukládáme k němu vaše hry, tipy a výsledky, aby se nic neztratilo a abyste viděli, jak hráli ostatní. S e-mailem a heslem se z hosta stane trvalý účet, který máte na každém zařízení. Chybné tipy čteme jen proto, abychom hru naučili další synonyma.",
+    ],
     ["Proč umělá inteligence, a ne lidé?", "Protože je zajímavé vidět, co si stroje myslí o Češích. Někdy trefí hospodu a knedlíky přesně, jindy se spletou tak, že se tomu člověk zasměje."],
     ["Odkud je ten vzhled?", "Z klapkových tabulí Pragotron, které roky ukazovaly odjezdy a příjezdy na českých nádražích, a ze státní modré a červené."],
   ]

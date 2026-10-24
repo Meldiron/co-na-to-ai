@@ -2,9 +2,8 @@ import "@tanstack/react-start/server-only"
 import { AppwriteException, Query, type Models } from "node-appwrite"
 import { encodeSecret } from "@/lib/secret"
 import type { Puzzle, PuzzlePayload, PuzzleSummary } from "@/lib/types"
-import { appwrite } from "./appwrite"
+import { DATABASE, appwrite } from "./appwrite"
 
-const DATABASE = process.env.DAILY_DATABASE ?? "ai100"
 const TABLE = process.env.DAILY_TABLE ?? "puzzles"
 
 type DailyRow = Models.Row & { date: string; number: number; question: string; passed: boolean; puzzle: string | null }

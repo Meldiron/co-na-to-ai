@@ -1,9 +1,12 @@
 import { Link } from "@tanstack/react-router"
 import { useEffect, useState } from "react"
+import { useResults } from "@/hooks/use-results"
 import { formatDayMonth, msUntilNextPragueMidnight } from "@/lib/day"
 import { pointsWord } from "@/lib/game"
 import type { PuzzleSummary } from "@/lib/types"
-import { RESULTS_EVENT, computeStats, loadResults, type Result, type Stats } from "@/lib/storage"
+import { computeStats, type Result, type Stats } from "@/lib/storage"
+import { FREEZES } from "@/lib/streak"
+import { openAccount, useAccount } from "./account"
 import { Flap } from "./flap"
 
 const GHOST = [6, 14, 30, 52, 70, 58, 34, 16, 8]
@@ -25,23 +28,15 @@ function useCountdown(): [string, string, string] {
 }
 
 function useStats(today: string): { stats: Stats; todayResult: Result | null; results: Record<string, Result> } | null {
-  const [value, setValue] = useState<{ stats: Stats; todayResult: Result | null; results: Record<string, Result> } | null>(null)
+  const results = useResults()
+  return results ? { stats: computeStats(results, today), todayResult: today in results ? results[today] : null, results } : null
+}
 
-  useEffect(() => {
-    const read = () => {
-      const results = loadResults()
-      setValue({ stats: computeStats(results, today), todayResult: today in results ? results[today] : null, results })
-    }
-    read()
-    window.addEventListener(RESULTS_EVENT, read)
-    window.addEventListener("storage", read)
-    return () => {
-      window.removeEventListener(RESULTS_EVENT, read)
-      window.removeEventListener("storage", read)
-    }
-  }, [today])
-
-  return value
+function freezeNote(stats: Stats): string {
+  if (stats.streak === 0) return `Když jeden nebo dva dny vynecháte, série nepadne. Hlídají ji ${FREEZES} zmrazení, která se po každé hře doplní.`
+  if (stats.missed === 0) return "Obě zmrazení jsou připravená. Pohlídají sérii, až jeden nebo dva dny vynecháte."
+  if (stats.freezesLeft > 0) return "Včera jste nehráli, sérii drží zmrazení. Dnešní hra ho doplní."
+  return "Dva dny bez hry. Dnes je poslední šance sérii udržet."
 }
 
 export function Departure({ today, recent }: { today: string; recent: Array<PuzzleSummary> }) {
@@ -132,7 +127,17 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
                     <span className="leader" aria-hidden />
                     <span className="tabular-nums">{stats.bestStreak}</span>
                   </li>
+                  <li className="flex items-baseline gap-2">
+                    <span>Zmrazení</span>
+                    <span className="leader" aria-hidden />
+                    <span className="flex gap-[3px] self-center" role="img" aria-label={`${stats.freezesLeft} z ${FREEZES} zmrazení`}>
+                      {Array.from({ length: FREEZES }, (_, i) => (
+                        <span key={i} className={`size-4 ${i < stats.freezesLeft ? "bg-field" : "bg-paper-step"}`} />
+                      ))}
+                    </span>
+                  </li>
                 </ul>
+                <p className="mt-2 text-sm text-ink-soft">{freezeNote(stats)}</p>
 
                 <p className="mt-7 font-semibold">Kolik odpovědí jste našli</p>
                 {stats.played === 0 ? (
@@ -181,9 +186,25 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
               <p className="mt-5 text-ink-soft">Načítám statistiky z tohoto prohlížeče…</p>
             )}
           </div>
-          <p className="mt-6 text-sm text-flap-dim">Statistiky se ukládají jen v tomto prohlížeči. Do série se počítá hra dohraná v den, kdy otázka vyšla.</p>
+          <StatsNote />
         </div>
       </div>
     </section>
+  )
+}
+
+function StatsNote() {
+  const { enabled, user } = useAccount()
+  const member = user && !user.guest
+  return (
+    <p className="mt-6 text-sm text-flap-dim">
+      {member ? "Statistiky se ukládají k vašemu účtu." : enabled ? "Hrajete jako host, statistiky jsou jen v tomto prohlížeči. " : "Statistiky se ukládají jen v tomto prohlížeči. "}
+      {enabled && !member && (
+        <button type="button" onClick={openAccount} className="font-semibold text-flap-ink underline underline-offset-4">
+          Založit účet
+        </button>
+      )}
+      {" "}Do série se počítá hra dohraná v den, kdy otázka vyšla.
+    </p>
   )
 }

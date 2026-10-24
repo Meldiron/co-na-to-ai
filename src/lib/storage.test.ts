@@ -14,8 +14,14 @@ describe("computeStats", () => {
     expect(computeStats({ "2026-10-24": r(40), "2026-10-25": r(60) }, "2026-10-26").streak).toBe(2)
   })
 
-  it("breaks the streak after a missed day", () => {
+  it("bridges a missed day with a freeze", () => {
     const stats = computeStats({ "2026-10-24": r(40), "2026-10-25": r(60), "2026-10-27": r(50) }, "2026-10-28")
+    expect(stats.streak).toBe(3)
+    expect(stats.freezesLeft).toBe(2)
+  })
+
+  it("breaks the streak after three missed days", () => {
+    const stats = computeStats({ "2026-10-20": r(40), "2026-10-21": r(60), "2026-10-25": r(50) }, "2026-10-25")
     expect(stats.streak).toBe(1)
     expect(stats.bestStreak).toBe(2)
   })

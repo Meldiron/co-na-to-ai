@@ -2,17 +2,19 @@ import { createServerFn } from "@tanstack/react-start"
 import { z } from "zod"
 import { pragueDate } from "@/lib/day"
 import { gateReasons } from "@/lib/gate-text"
-import { checkPassword, endSession, isAdmin, requireAdmin, startSession } from "./auth"
 import { deleteCustom, getJob, listCustom, loadCustom, startJob } from "./custom"
-import { loadPuzzle, recentSummaries, toPayload } from "./puzzles"
+import { loadPuzzle, recentSummaries, summaries, toPayload } from "./puzzles"
+import { currentSession, isAdmin, requireAdmin } from "./session"
 
 export const getAdminState = createServerFn({ method: "GET" }).handler(async () => {
-  if (!isAdmin()) return { authed: false as const }
+  const session = await currentSession()
+  if (!isAdmin(session?.user)) return { authed: false as const, member: !!session?.user.email }
   const today = pragueDate()
   const puzzle = await loadPuzzle(today)
   const games = await listCustom()
   return {
     authed: true as const,
+    days: (await summaries(today)).slice(0, 30).map((s) => ({ date: s.date, question: s.question })),
     today: puzzle
       ? { date: puzzle.date, question: puzzle.question, asked: puzzle.asked, answered: puzzle.answered, meta: puzzle.meta, top: puzzle.answers.map((a) => [a.text, a.votes] as const) }
       : null,
@@ -29,40 +31,24 @@ export const getAdminState = createServerFn({ method: "GET" }).handler(async () 
   }
 })
 
-export const login = createServerFn({ method: "POST" })
-  .validator(z.object({ password: z.string().max(200) }))
-  .handler(async ({ data }) => {
-    if (!checkPassword(data.password)) {
-      await new Promise((resolve) => setTimeout(resolve, 800))
-      return { ok: false }
-    }
-    startSession()
-    return { ok: true }
-  })
-
-export const logout = createServerFn({ method: "POST" }).handler(() => {
-  endSession()
-  return { ok: true }
-})
-
 export const createCustomGame = createServerFn({ method: "POST" })
   .validator(z.object({ question: z.string().trim().min(8).max(90) }))
   .handler(async ({ data }) => {
-    requireAdmin()
+    await requireAdmin()
     return startJob(data.question)
   })
 
 export const getCustomJob = createServerFn({ method: "GET" })
   .validator(z.object({ id: z.string(), executionId: z.string().optional() }))
   .handler(async ({ data }) => {
-    requireAdmin()
+    await requireAdmin()
     return getJob(data.id, data.executionId)
   })
 
 export const removeCustomGame = createServerFn({ method: "POST" })
   .validator(z.object({ id: z.string() }))
   .handler(async ({ data }) => {
-    requireAdmin()
+    await requireAdmin()
     await deleteCustom(data.id)
     return { ok: true }
   })

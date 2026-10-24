@@ -1,5 +1,5 @@
-import { addDays } from "./day.ts"
 import type { GameState } from "./game.ts"
+import { streak } from "./streak.ts"
 
 const PREFIX = "pjs100"
 
@@ -15,6 +15,8 @@ export type Stats = {
   played: number
   streak: number
   bestStreak: number
+  freezesLeft: number
+  missed: number
   average: number
   best: number
   cleared: number
@@ -59,6 +61,43 @@ function clearResult(date: string): void {
   write("vysledky", results)
 }
 
+export type LocalGame = { key: string; board: string; state: GameState }
+
+export function localGames(): Array<LocalGame> {
+  const games: Array<LocalGame> = []
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const name = localStorage.key(i)
+      if (!name?.startsWith(`${PREFIX}:hra:`)) continue
+      const key = name.slice(`${PREFIX}:hra:`.length)
+      const saved = read<SavedGame>(`hra:${key}`)
+      if (saved?.board) games.push({ key, board: saved.board, state: saved })
+    }
+  } catch {
+    return games
+  }
+  return games
+}
+
+export function forgetLocalGames(): void {
+  try {
+    const names = Array.from({ length: localStorage.length }, (_, i) => localStorage.key(i)).filter(
+      (name): name is string => !!name && (name.startsWith(`${PREFIX}:hra:`) || name === `${PREFIX}:vysledky` || name === `${PREFIX}:sync`),
+    )
+    for (const name of names) localStorage.removeItem(name)
+  } catch {
+    // nothing stored, nothing to forget
+  }
+}
+
+export function syncedFor(): string | null {
+  return read<string>("sync")
+}
+
+export function markSynced(userId: string): void {
+  write("sync", userId)
+}
+
 export function guideSeen(): boolean {
   return read<boolean>("navod") === true
 }
@@ -81,32 +120,19 @@ export function saveResult(date: string, result: Result): void {
 }
 
 export function computeStats(results: Record<string, Result>, today: string): Stats {
-  const daily = Object.entries(results).filter(([, r]) => r.daily)
-  const days = new Set(daily.map(([date]) => date))
-
-  let streak = 0
-  let cursor = days.has(today) ? today : addDays(today, -1)
-  while (days.has(cursor)) {
-    streak++
-    cursor = addDays(cursor, -1)
-  }
-
-  let bestStreak = 0
-  let run = 0
-  let previous: string | null = null
-  for (const date of [...days].sort()) {
-    run = previous && addDays(previous, 1) === date ? run + 1 : 1
-    bestStreak = Math.max(bestStreak, run)
-    previous = date
-  }
-
+  const days = Object.entries(results)
+    .filter(([, r]) => r.daily)
+    .map(([date]) => date)
+  const run = streak(days, today)
   const all = Object.values(results)
   const scores = all.map((r) => r.score)
   const distribution = Array.from({ length: 9 }, (_, found) => all.filter((r) => r.found === found).length)
   return {
     played: all.length,
-    streak,
-    bestStreak,
+    streak: run.current,
+    bestStreak: run.best,
+    freezesLeft: run.freezesLeft,
+    missed: run.missed,
     average: scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0,
     best: scores.length ? Math.max(...scores) : 0,
     cleared: all.filter((r) => r.cleared).length,

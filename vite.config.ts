@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite"
 
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
+  optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   plugins: [tailwindcss(), tanstackStart(), viteReact()],
 })
 

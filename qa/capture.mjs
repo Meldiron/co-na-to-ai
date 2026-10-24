@@ -1,18 +1,11 @@
 // QA harness: screenshots every scenario at desktop and phone width with mocked browser state.
 // usage: node qa/capture.mjs <base-url> <out-dir> [scenario-filter]
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
+import { mkdirSync, writeFileSync } from "node:fs"
 import { join } from "node:path"
 import { Browser, sleep } from "/Users/matejbaco/.claude/skills/design-taste-frontend/scripts/lib/cdp.mjs"
 
 const [base = "http://localhost:3000", out = "qa/shots/before", only = ""] = process.argv.slice(2)
 mkdirSync(out, { recursive: true })
-
-const env = Object.fromEntries(
-  readFileSync(new URL("../.env", import.meta.url), "utf8")
-    .split("\n")
-    .filter((l) => l.includes("="))
-    .map((l) => [l.slice(0, l.indexOf("=")), l.slice(l.indexOf("=") + 1)]),
-)
 
 const TODAY = "2026-10-24"
 const BOARD = "Jídlo|Pivo|Oblečení|Spacák|Kniha|Nářadí|Deka|Telefon"
@@ -97,9 +90,8 @@ const scenarios = [
   { id: "invalid-date", url: "/hra/nesmysl", shots: [{ at: "top" }] },
   { id: "before-launch", url: "/hra/2026-10-01", shots: [{ at: "top" }] },
   { id: "not-found", url: "/tohle-neexistuje", shots: [{ at: "top" }] },
-  { id: "admin-login", url: "/admin", shots: [{ at: "top" }] },
-  { id: "admin-wrong", url: "/admin", act: "wrongPassword", shots: [{ at: "top" }] },
-  { id: "admin-dashboard", url: "/admin", act: "login", shots: [{ at: "top" }, { at: "section:nth-of-type(2)" }] },
+  { id: "admin-gate", url: "/admin", shots: [{ at: "top" }] },
+  { id: "account-dialog", url: "/", act: "openAccount", shots: [{ at: "viewport" }] },
 ]
 
 const widths = [
@@ -178,15 +170,14 @@ const actions = {
     await page.eval(() => document.querySelector("#kdo-co-rekl li button")?.click())
     await sleep(900)
   },
-  async wrongPassword(page) {
-    await type(page, "spatne-heslo", "#heslo")
-    await page.eval(() => document.querySelector("form button[type=submit]")?.click())
-    await sleep(1800)
-  },
-  async login(page) {
-    await type(page, env.ADMIN_PASSWORD, "#heslo")
-    await page.eval(() => document.querySelector("form button[type=submit]")?.click())
-    await sleep(2500)
+  async openAccount(page) {
+    await page.eval(() => {
+      const buttons = [...document.querySelectorAll("header button")]
+      ;(buttons.find((b) => b.textContent.trim() === "Účet") ?? buttons.find((b) => b.textContent.trim() === "Menu"))?.click()
+    })
+    await sleep(700)
+    await page.eval(() => [...document.querySelectorAll("[role=dialog] button")].find((b) => b.textContent.trim() === "Účet")?.click())
+    await sleep(700)
   },
 }
 

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router"
 import { useState } from "react"
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { focusContainer } from "@/lib/focus"
+import { openAccount, useAccount } from "./account"
 import { openGuide } from "./how-to-play"
 
 export function Wordmark({ className = "" }: { className?: string }) {
@@ -17,6 +18,12 @@ export function Wordmark({ className = "" }: { className?: string }) {
   )
 }
 
+function useAccountLabel(): string | null {
+  const { enabled, user } = useAccount()
+  if (!enabled) return null
+  return user?.named ? user.name : "Účet"
+}
+
 const links = [
   { to: "/", label: "Dnešní hra" },
   { to: "/archiv", label: "Archiv" },
@@ -26,6 +33,7 @@ const links = [
 function PhoneMenu() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
+  const account = useAccountLabel()
   return (
     <>
       <button type="button" onClick={() => setOpen(true)} className="inline-flex h-11 items-center px-3 font-semibold md:hidden">
@@ -68,6 +76,18 @@ function PhoneMenu() {
             >
               Jak hrát
             </button>
+            {account && (
+              <button
+                type="button"
+                onClick={() => {
+                  close()
+                  openAccount()
+                }}
+                className="head flex h-16 items-center truncate text-left"
+              >
+                {account}
+              </button>
+            )}
           </nav>
         </DialogContent>
       </Dialog>
@@ -76,6 +96,7 @@ function PhoneMenu() {
 }
 
 export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
+  const account = useAccountLabel()
   return (
     <header className={tone === "field" ? "bg-field text-field-ink" : "bg-ground text-foreground"}>
       <div className="page flex h-16 items-center justify-between gap-4 md:h-20">
@@ -99,6 +120,15 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
           <button type="button" onClick={openGuide} className="inline-flex h-11 items-center px-3 underline-offset-[6px] hover:underline">
             Jak hrát
           </button>
+          {account && (
+            <button
+              type="button"
+              onClick={openAccount}
+              className={`ml-2 inline-flex h-11 max-w-[14rem] items-center truncate px-4 font-semibold transition-colors ${tone === "field" ? "bg-field-step hover:bg-board" : "bg-ground-step hover:bg-paper-step"}`}
+            >
+              {account}
+            </button>
+          )}
         </nav>
         <PhoneMenu />
       </div>

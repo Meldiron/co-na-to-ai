@@ -1,12 +1,16 @@
 import { Link, createFileRoute, useRouter } from "@tanstack/react-router"
 import { useEffect, useState, type FormEvent } from "react"
+import { openAccount } from "@/components/account"
 import { Flap } from "@/components/flap"
 import { SiteHeader } from "@/components/site-header"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { modelOf } from "@/lib/cast"
 import { formatShort } from "@/lib/day"
-import { createCustomGame, getAdminState, getCustomJob, login, logout, removeCustomGame } from "@/server/admin-api"
+import type { GameRef } from "@/lib/game-ref"
+import { forgetLocalGames } from "@/lib/storage"
+import { getMissedGuesses, signOut as endSession } from "@/server/account-api"
+import { createCustomGame, getAdminState, getCustomJob, removeCustomGame } from "@/server/admin-api"
 import type { Job } from "@/server/custom"
 
 export const Route = createFileRoute("/admin")({
@@ -23,59 +27,25 @@ function Admin() {
   return (
     <>
       <SiteHeader tone="ground" />
-      {state.authed ? <Dashboard state={state} /> : <Login />}
+      {state.authed ? <Dashboard state={state} /> : <Gate member={state.member} />}
     </>
   )
 }
 
-function Login() {
-  const router = useRouter()
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
-  const [busy, setBusy] = useState(false)
-
-  async function submit(event: FormEvent) {
-    event.preventDefault()
-    setBusy(true)
-    const { ok } = await login({ data: { password } })
-    setBusy(false)
-    if (!ok) {
-      setError("Špatné heslo.")
-      setPassword("")
-      return
-    }
-    await router.invalidate()
-  }
-
+function Gate({ member }: { member: boolean }) {
   return (
     <section className="page grid gap-10 pt-8 pb-24 md:grid-cols-12 md:gap-6 md:pt-12 md:pb-40">
-      <div className="md:col-span-6">
+      <div className="md:col-span-7">
         <h1 className="display">Administrace</h1>
-        <p className="mt-5 max-w-[44ch]">Tady se zakládají vlastní hry: položíte stovce AI svou otázku a dostanete odkaz, který můžete poslat dál.</p>
-      </div>
-      <form onSubmit={submit} className="self-end md:col-span-5 md:col-start-8">
-        <label htmlFor="heslo" className="font-semibold">
-          Heslo
-        </label>
-        <div className="mt-2 flex">
-          <Input
-            id="heslo"
-            type="password"
-            autoComplete="current-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="h-14 flex-1 border-0 bg-paper px-4 text-ink"
-            aria-invalid={!!error}
-            aria-describedby="heslo-chyba"
-          />
-          <Button type="submit" disabled={busy || !password} className="h-14 px-6 font-semibold">
-            {busy ? "Ověřuji…" : "Přihlásit se"}
-          </Button>
-        </div>
-        <p id="heslo-chyba" aria-live="polite" className="mt-3 min-h-[1.5em] font-semibold text-red">
-          {error}
+        <p className="mt-5 max-w-[46ch]">
+          {member
+            ? "Tenhle účet nemá roli správce. Přihlaste se jiným účtem, nebo si roli nechte přidat."
+            : "Tady se zakládají vlastní hry a kontrolují chybné tipy. Přihlaste se účtem, který má roli správce."}
         </p>
-      </form>
+        <button type="button" onClick={openAccount} className="mt-8 inline-flex h-12 items-center bg-red px-6 font-semibold text-red-ink hover:bg-red/90">
+          {member ? "Přepnout účet" : "Přihlásit se"}
+        </button>
+      </div>
     </section>
   )
 }
@@ -122,8 +92,9 @@ function Dashboard({ state }: { state: State }) {
   }
 
   async function signOut() {
-    await logout()
-    await router.invalidate()
+    await endSession()
+    forgetLocalGames()
+    window.location.reload()
   }
 
   return (
@@ -208,6 +179,8 @@ function Dashboard({ state }: { state: State }) {
           )}
         </div>
       </section>
+
+      <Misses days={state.days} games={state.games} />
 
       {state.today && (
         <section className="bg-board text-flap-ink">
@@ -303,5 +276,82 @@ function CustomGameRow({ game, onDelete }: { game: State["games"][number]; onDel
         </Button>
       </div>
     </li>
+  )
+}
+
+function Misses({ days, games }: { days: State["days"]; games: State["games"] }) {
+  const options: Array<{ ref: GameRef; label: string }> = [
+    ...days.map((d) => ({ ref: { kind: "daily" as const, id: d.date }, label: `${formatShort(d.date)} · ${d.question}` })),
+    ...games.map((g) => ({ ref: { kind: "custom" as const, id: g.id }, label: `Vlastní · ${g.question}` })),
+  ]
+  const [selected, setSelected] = useState(0)
+  const [data, setData] = useState<Awaited<ReturnType<typeof getMissedGuesses>> | null>(null)
+  const target = selected < options.length ? options[selected].ref : null
+
+  useEffect(() => {
+    if (!target) return
+    let cancelled = false
+    setData(null)
+    getMissedGuesses({ data: target })
+      .then((next) => !cancelled && setData(next))
+      .catch(() => undefined)
+    return () => {
+      cancelled = true
+    }
+  }, [target?.kind, target?.id])
+
+  if (options.length === 0) return null
+  const peak = Math.max(1, ...(data?.misses.map((m) => m.count) ?? [1]))
+
+  return (
+    <section className="bg-ground">
+      <div className="page grid gap-10 py-20 md:grid-cols-12 md:gap-6 md:py-32">
+        <div className="md:col-span-4">
+          <h2 className="head">Chybné tipy</h2>
+          <p className="mt-4 max-w-[40ch]">
+            Slova, která hráči zkusili a na tabuli nebyla. Když se tu často opakuje něco, co měla hra uznat, patří to mezi synonyma té odpovědi.
+          </p>
+          <label htmlFor="hra-tipy" className="mt-8 block font-semibold">
+            Hra
+          </label>
+          <select
+            id="hra-tipy"
+            value={selected}
+            onChange={(e) => setSelected(Number(e.target.value))}
+            className="mt-2 h-12 w-full bg-paper px-3 text-ink outline-none focus-visible:ring-2 focus-visible:ring-field"
+          >
+            {options.map((option, i) => (
+              <option key={`${option.ref.kind}-${option.ref.id}`} value={i}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="md:col-span-7 md:col-start-6">
+          {!data ? (
+            <p className="bg-ground-step p-6">Načítám tipy…</p>
+          ) : data.misses.length === 0 ? (
+            <p className="bg-ground-step p-6">Zatím tu žádný chybný tip není{data.players ? "" : ", hru ještě nikdo nehrál"}.</p>
+          ) : (
+            <>
+              <p className="text-muted-foreground">
+                {data.misses.length} různých slov z {data.players} her.
+              </p>
+              <ol className="mt-4 grid gap-1.5">
+                {data.misses.slice(0, 60).map((miss) => (
+                  <li key={miss.text} className="grid grid-cols-[minmax(0,10rem)_1fr_3rem] items-center gap-3">
+                    <span className="truncate font-semibold">{miss.text}</span>
+                    <span className="h-6 bg-ground-step">
+                      <span className="block h-full bg-field" style={{ width: `${(miss.count / peak) * 100}%` }} />
+                    </span>
+                    <span className="text-right tabular-nums">{miss.count}×</span>
+                  </li>
+                ))}
+              </ol>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
   )
 }
