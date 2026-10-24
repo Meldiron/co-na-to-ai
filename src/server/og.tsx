@@ -1,28 +1,34 @@
 import "@tanstack/react-start/server-only"
-import { readFile } from "node:fs/promises"
-import { createRequire } from "node:module"
+import latin700 from "@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-700-normal.woff?inline"
+import latin800 from "@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-800-normal.woff?inline"
+import latinExt700 from "@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-ext-700-normal.woff?inline"
+import latinExt800 from "@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-ext-800-normal.woff?inline"
 import { Resvg } from "@resvg/resvg-js"
 import satori from "satori"
 import { formatShort } from "@/lib/day"
 
-const require = createRequire(import.meta.url)
+const FONT_FILES = [
+  { name: "Bricolage", weight: 700, url: latin700 },
+  { name: "Bricolage", weight: 800, url: latin800 },
+  { name: "Bricolage Ext", weight: 700, url: latinExt700 },
+  { name: "Bricolage Ext", weight: 800, url: latinExt800 },
+] as const
+
 const weekday = new Intl.DateTimeFormat("cs-CZ", { weekday: "long", timeZone: "UTC" })
 
 const C = { field: "#11457e", board: "#091429", flap: "#1a2743", flapLow: "#141f37", key: "#11457e", keyLow: "#0d3a6c", red: "#d7141a", ink: "#ffffff" }
 
-type Font = { name: string; data: Buffer; weight: 700 | 800; style: "normal" }
+type Font = { name: string; data: ArrayBuffer; weight: 700 | 800; style: "normal" }
 let fonts: Promise<Array<Font>> | null = null
 
 function loadFonts() {
   fonts ??= Promise.all(
-    (["latin", "latin-ext"] as const).flatMap((subset) =>
-      ([700, 800] as const).map(async (weight) => ({
-        name: "Bricolage",
-        weight,
-        style: "normal" as const,
-        data: await readFile(require.resolve(`@fontsource/bricolage-grotesque/files/bricolage-grotesque-${subset}-${weight}-normal.woff`)),
-      })),
-    ),
+    FONT_FILES.map(async ({ name, weight, url }) => ({
+      name,
+      weight,
+      style: "normal" as const,
+      data: await (await fetch(url)).arrayBuffer(),
+    })),
   )
   return fonts
 }
@@ -52,7 +58,7 @@ function Tile({ children, background, low, grow = false }: { children: string; b
 
 export async function renderOgImage(puzzle: { date: string; question: string }): Promise<Uint8Array<ArrayBuffer>> {
   const svg = await satori(
-    <div style={{ width: 1200, height: 630, display: "flex", position: "relative", background: C.field, color: C.ink, fontFamily: "Bricolage" }}>
+    <div style={{ width: 1200, height: 630, display: "flex", position: "relative", background: C.field, color: C.ink, fontFamily: "Bricolage, Bricolage Ext" }}>
       <div style={{ position: "absolute", top: 52, right: 64, bottom: 52, left: 64, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", fontSize: 34, fontWeight: 800, letterSpacing: "-0.01em" }}>
           Ptali jsme se
