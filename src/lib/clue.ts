@@ -2,9 +2,9 @@ import type { Persona } from "./types.ts"
 
 const MORAVIA = new Set(["Jihomoravský kraj", "Zlínský kraj", "Olomoucký kraj", "Moravskoslezský kraj", "Kraj Vysočina"])
 
-type Band = "young" | "adult" | "senior" | "retired"
+export type Band = "young" | "adult" | "senior" | "retired"
 
-function band(age: number): Band {
+export function band(age: number): Band {
   if (age <= 25) return "young"
   if (age <= 45) return "adult"
   if (age <= 64) return "senior"
@@ -25,7 +25,7 @@ function dominant<T>(items: Array<T>, share: number): T | null {
   return count / items.length >= share ? top : null
 }
 
-function area(persona: Persona): "Praha" | "Morava" | "Čechy" {
+export function area(persona: Persona): "Praha" | "Morava" | "Čechy" {
   if (persona.region === "Hlavní město Praha") return "Praha"
   return MORAVIA.has(persona.region) ? "Morava" : "Čechy"
 }

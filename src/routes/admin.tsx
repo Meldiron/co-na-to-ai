@@ -134,7 +134,7 @@ function Dashboard({ state }: { state: State }) {
           <p className="mt-5 max-w-[46ch]">
             Položte stovce AI vlastní otázku. Za minutu až dvě z ní bude hra s vlastním odkazem. Do statistik ani do archivu se nepočítá.
           </p>
-          <button type="button" onClick={signOut} className="mt-6 text-sm underline underline-offset-4 hover:text-red">
+          <button type="button" onClick={signOut} className="mt-6 inline-flex h-11 items-center bg-ground-step px-4 font-semibold transition-colors hover:bg-red hover:text-red-ink">
             Odhlásit se
           </button>
         </div>

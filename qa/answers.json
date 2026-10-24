@@ -1,0 +1,112 @@
+{
+  "updatedAt": "2026-10-24T12:35:44.542Z",
+  "answers": {
+    "onboarding": {
+      "decision": "change",
+      "variants": [
+        "dialog"
+      ],
+      "comment": "Make sure to include buttom in a good place to revisit the modal with onboarding tutorial."
+    },
+    "mobile-input": {
+      "decision": "change",
+      "variants": [
+        "sticky-bar"
+      ],
+      "comment": ""
+    },
+    "game-over": {
+      "decision": "change",
+      "variants": [
+        "auto-scroll"
+      ],
+      "comment": ""
+    },
+    "tried-words": {
+      "decision": "change",
+      "variants": [
+        "board-row"
+      ],
+      "comment": ""
+    },
+    "mobile-nav": {
+      "decision": "change",
+      "variants": [
+        "menu-sheet"
+      ],
+      "comment": ""
+    },
+    "who-said": {
+      "decision": "change",
+      "variants": [
+        "breakdown"
+      ],
+      "comment": ""
+    },
+    "stats-empty": {
+      "decision": "change",
+      "variants": [
+        "ghost-histogram"
+      ],
+      "comment": ""
+    },
+    "archive": {
+      "decision": "change",
+      "variants": [
+        "calendar"
+      ],
+      "comment": ""
+    },
+    "share-boost": {
+      "decision": "change",
+      "variants": [
+        "challenge",
+        "og-image"
+      ],
+      "comment": ""
+    },
+    "tap-targets": {
+      "decision": "change",
+      "variants": [
+        "buttons",
+        "restructure"
+      ],
+      "comment": ""
+    },
+    "bad-dates": {
+      "decision": "change",
+      "variants": [
+        "not-found"
+      ],
+      "comment": ""
+    },
+    "share-link": {
+      "decision": "change",
+      "variants": [
+        "dated-link"
+      ],
+      "comment": ""
+    },
+    "og-absolute": {
+      "decision": "change",
+      "variants": [
+        "absolute"
+      ],
+      "comment": ""
+    },
+    "admin-czech": {
+      "decision": "change",
+      "variants": [
+        "translate"
+      ],
+      "comment": ""
+    },
+    "popover-focus": {
+      "decision": "change",
+      "variants": [
+        "no-autofocus"
+      ],
+      "comment": ""
+    }
+  }
+}

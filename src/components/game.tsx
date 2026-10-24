@@ -1,13 +1,16 @@
-import { useMemo, useRef, useState, type FormEvent } from "react"
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { useGame } from "@/hooks/use-game"
 import { formatShort } from "@/lib/day"
 import { personaOf } from "@/lib/cast"
 import { personaClue } from "@/lib/clue"
+import { focusContainer } from "@/lib/focus"
 import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, pointsFor, pointsWord, scoreLines } from "@/lib/game"
 import type { Persona, PuzzlePayload } from "@/lib/types"
 import { Board, Strikes } from "./board"
+import { openGuide, openGuideOnFirstVisit } from "./how-to-play"
 import { Flap } from "./flap"
 import { Results } from "./results"
 import { WhoSaid } from "./who-said"
@@ -26,8 +29,11 @@ function DateStrip({ payload, daily }: { payload: PuzzlePayload; daily: boolean 
   return (
     <p className="mt-4 flex flex-wrap items-center gap-[6px] md:mt-5">
       <span className={`tile ${daily ? "tile-red" : ""}`}>{tag}</span>
-      <span className="tile">{weekday.format(new Date(`${payload.date}T12:00:00Z`))}</span>
+      <span className="tile max-sm:hidden">{weekday.format(new Date(`${payload.date}T12:00:00Z`))}</span>
       <span className="tile">{formatShort(payload.date)}</span>
+      <button type="button" onClick={openGuide} className="tile tile-paper tile-button">
+        Jak hrát?
+      </button>
     </p>
   )
 }
@@ -50,6 +56,22 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
     return secret.answers.map((a) => personaClue(a.answerers.map((id) => personaByAnswerer.get(id)).filter((p): p is Persona => !!p)))
   }, [secret])
   const openClues = [...(state.clues ?? [])].sort((a, b) => a - b)
+  const misses = state.guesses.filter((g) => g.result === "miss").map((g) => g.text)
+  useEffect(() => {
+    if (ready) openGuideOnFirstVisit()
+  }, [ready])
+
+  const wasPlaying = useRef<boolean | null>(null)
+
+  useEffect(() => {
+    if (!ready) return
+    const playing = state.status === "playing"
+    const ended = wasPlaying.current === true && !playing
+    wasPlaying.current = playing
+    if (!ended || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    const timer = setTimeout(() => document.getElementById("vysledek")?.scrollIntoView({ behavior: "smooth", block: "start" }), 1800)
+    return () => clearTimeout(timer)
+  }, [ready, state.status])
 
   function submit(event: FormEvent) {
     event.preventDefault()
@@ -109,6 +131,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
               title={`Odpovědělo ${payload.answered} ze ${payload.asked} AI. Otazník u skryté odpovědi nabízí nápovědu: písmeno, nebo kdo ji řekl.`}
               missKey={missKey}
               hints={state.hints ?? []}
+              misses={misses}
               interactive={ready && !over}
               clueFor={(index) => ((state.clues ?? []).includes(index) ? clues[index] : null)}
               onLetter={(index) => {
@@ -128,79 +151,92 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
             )}
           </div>
 
-          <div className="mt-4 grid gap-4 md:grid-cols-[minmax(0,1fr)_auto_auto] md:items-center md:gap-6">
-            {over ? (
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-                <p className="head">{state.status === "won" ? "Celá tabule!" : "Konec hry."}</p>
-                <a href="#vysledek" className="inline-flex h-12 items-center bg-red px-5 font-semibold text-red-ink transition-transform active:translate-y-px hover:bg-red/90">
-                  Výsledek a sdílení
-                </a>
-                <a href="#kdo-co-rekl" className="inline-flex h-12 items-center bg-field-step px-5 font-semibold transition-colors hover:bg-board">
-                  Kdo co řekl
-                </a>
-              </div>
-            ) : (
-              <form onSubmit={submit} className="flex min-w-0" autoComplete="off">
-                <label htmlFor="tip" className="sr-only">
-                  Vaše odpověď
-                </label>
-                <Input
-                  id="tip"
-                  ref={inputRef}
-                  value={value}
-                  onChange={(e) => {
-                    const next = e.target.value
-                    if (/\s/.test(next)) {
-                      setValue(next.replace(/\s+/g, ""))
-                      setMessage({ tone: "info", text: "Odpovědi jsou vždy jedno slovo, mezera tu není potřeba." })
-                      return
-                    }
-                    setValue(next)
-                  }}
-                  placeholder="Jedno slovo…"
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck={false}
-                  enterKeyHint="send"
-                  maxLength={40}
-                  className="h-14 min-w-0 flex-1 border-0 bg-paper px-4 text-base text-ink placeholder:text-ink-soft md:h-16 md:text-base"
-                />
-                <Button type="submit" className="h-14 px-5 text-base font-semibold md:h-16 md:px-8">
-                  Tipnout
-                </Button>
-              </form>
-            )}
-            <div className="flex items-center justify-between gap-4 md:contents">
-              <Strikes count={state.strikes} max={MAX_STRIKES} />
-              <div className="flex items-center gap-3">
-                <span className="text-sm text-field-soft">Body</span>
-                <Flap text={String(total)} align="center" className="h-12 w-[4.5rem] md:h-14 md:w-20" />
+          <div className={over ? "" : "input-bar"}>
+            <div className="input-bar-row mt-4 grid gap-4 md:grid-cols-[minmax(0,1fr)_auto_auto] md:items-center md:gap-6">
+              {over ? (
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <p className="head">{state.status === "won" ? "Celá tabule!" : "Konec hry."}</p>
+                  <a href="#vysledek" className="inline-flex h-12 items-center bg-red px-5 font-semibold text-red-ink transition-transform active:translate-y-px hover:bg-red/90">
+                    Výsledek a sdílení
+                  </a>
+                  <a href="#kdo-co-rekl" className="inline-flex h-12 items-center bg-field-step px-5 font-semibold transition-colors hover:bg-board">
+                    Kdo co řekl
+                  </a>
+                </div>
+              ) : (
+                <form onSubmit={submit} className="flex min-w-0" autoComplete="off">
+                  <label htmlFor="tip" className="sr-only">
+                    Vaše odpověď
+                  </label>
+                  <Input
+                    id="tip"
+                    ref={inputRef}
+                    value={value}
+                    onChange={(e) => {
+                      const next = e.target.value
+                      if (/\s/.test(next)) {
+                        setValue(next.replace(/\s+/g, ""))
+                        setMessage({ tone: "info", text: "Odpovědi jsou vždy jedno slovo, mezera tu není potřeba." })
+                        return
+                      }
+                      setValue(next)
+                    }}
+                    placeholder="Jedno slovo…"
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    spellCheck={false}
+                    enterKeyHint="send"
+                    maxLength={40}
+                    className="h-14 min-w-0 flex-1 border-0 bg-paper px-4 text-base text-ink placeholder:text-ink-soft md:h-16 md:text-base"
+                  />
+                  <Button type="submit" className="h-14 px-5 text-base font-semibold md:h-16 md:px-8">
+                    Tipnout
+                  </Button>
+                  {ready && (
+                    <Popover>
+                      <PopoverTrigger
+                        aria-label="Další možnosti"
+                        className="ml-[3px] grid h-14 w-12 shrink-0 place-items-center bg-field-step text-[1.5rem] leading-none font-bold text-field-ink transition-colors hover:bg-board md:h-16 md:w-14"
+                      >
+                        ⋯
+                      </PopoverTrigger>
+                      <PopoverContent align="end" sideOffset={6} onOpenAutoFocus={focusContainer} className="w-auto">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setMessage(null)
+                            surrender()
+                          }}
+                          className="flex h-12 items-center px-3 text-left font-semibold whitespace-nowrap transition-colors hover:bg-paper-step"
+                        >
+                          Vzdát se a ukázat odpovědi
+                        </button>
+                      </PopoverContent>
+                    </Popover>
+                  )}
+                </form>
+              )}
+              <div className="flex items-center justify-between gap-4 md:contents">
+                <Strikes count={state.strikes} max={MAX_STRIKES} />
+                <div className="flex items-center gap-3">
+                  <span className="text-sm text-field-soft">Body</span>
+                  <Flap text={String(total)} align="center" className="h-12 w-[4.5rem] md:h-14 md:w-20" />
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-            <p aria-live="polite" className={`min-h-[1.5em] ${message?.tone === "miss" ? "font-semibold" : ""}`}>
-              {message?.text ?? (over ? `${state.found.length} z 8 odpovědí, ${total} ${pointsWord(total)}.` : "Diakritika, velká písmena ani drobné překlepy nevadí.")}
-            </p>
-            {!over && ready && (
-              <button
-                type="button"
-                onClick={() => {
-                  setMessage(null)
-                  surrender()
-                }}
-                className="text-sm text-field-soft underline underline-offset-4 hover:text-field-ink">
-                Vzdát se a ukázat odpovědi
-              </button>
-            )}
+            <div className="input-bar-note mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+              <p aria-live="polite" className={`min-h-[1.5em] ${message?.tone === "miss" ? "font-semibold" : ""}`}>
+                {message?.text ?? (over ? `${state.found.length} z 8 odpovědí, ${total} ${pointsWord(total)}.` : "Diakritika, velká písmena ani drobné překlepy nevadí.")}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {over && ready && (
         <>
-          <Results payload={payload} state={state} answers={secret.answers} daily={daily} />
+          <Results payload={payload} state={state} answers={secret.answers} />
           <WhoSaid secret={secret} />
         </>
       )}

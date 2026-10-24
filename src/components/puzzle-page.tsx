@@ -36,15 +36,16 @@ function Missing({ date, today, custom }: { date: string; today: string; custom:
       </section>
     )
   }
+  const [title, text] = future
+    ? ["Tahle otázka ještě nevyšla", "Otázky vycházejí každý den o půlnoci českého času. Dopředu je neukazujeme, ať má každý stejnou šanci."]
+    : date < today
+      ? ["Pro tento den tabule není", "Ten den žádná otázka nevyšla. Zahrajte si některý jiný den z archivu."]
+      : ["Dnešní tabule ještě není hotová", "Stovka umělých inteligencí na dnešní otázku teprve odpovídá. Zkuste to za chvíli, nebo si zahrajte některý z předchozích dní."]
   return (
     <section className="bg-field text-field-ink">
       <div className="page pt-8 pb-24 md:pt-12 md:pb-40">
-        <h1 className="display">{future ? "Tahle otázka ještě nevyšla" : "Dnešní tabule ještě není hotová"}</h1>
-        <p className="mt-5 max-w-[56ch]">
-          {future
-            ? "Otázky vycházejí každý den o půlnoci českého času. Dopředu je neukazujeme, ať má každý stejnou šanci."
-            : "Stovka umělých inteligencí na dnešní otázku teprve odpovídá. Zkuste to za chvíli, nebo si zahrajte některý z předchozích dní."}
-        </p>
+        <h1 className="display">{title}</h1>
+        <p className="mt-5 max-w-[56ch]">{text}</p>
         <Link to="/archiv" className="mt-8 inline-flex h-12 items-center bg-red px-6 font-semibold text-red-ink hover:bg-red/90">
           Otevřít archiv
         </Link>

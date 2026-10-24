@@ -14,6 +14,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ArchivRouteImport } from './routes/archiv'
 import { Route as ObsazeniRouteImport } from './routes/obsazeni'
 import { Route as HraDatumRouteImport } from './routes/hra.$datum'
+import { Route as OgDatumRouteImport } from './routes/og.$datum'
 import { Route as VlastniIdRouteImport } from './routes/vlastni.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,11 @@ const HraDatumRoute = HraDatumRouteImport.update({
   path: '/hra/$datum',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OgDatumRoute = OgDatumRouteImport.update({
+  id: '/og/$datum',
+  path: '/og/$datum',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VlastniIdRoute = VlastniIdRouteImport.update({
   id: '/vlastni/$id',
   path: '/vlastni/$id',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/archiv': typeof ArchivRoute
   '/obsazeni': typeof ObsazeniRoute
   '/hra/$datum': typeof HraDatumRoute
+  '/og/$datum': typeof OgDatumRoute
   '/vlastni/$id': typeof VlastniIdRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/archiv': typeof ArchivRoute
   '/obsazeni': typeof ObsazeniRoute
   '/hra/$datum': typeof HraDatumRoute
+  '/og/$datum': typeof OgDatumRoute
   '/vlastni/$id': typeof VlastniIdRoute
 }
 export interface FileRoutesById {
@@ -70,14 +78,28 @@ export interface FileRoutesById {
   '/archiv': typeof ArchivRoute
   '/obsazeni': typeof ObsazeniRoute
   '/hra/$datum': typeof HraDatumRoute
+  '/og/$datum': typeof OgDatumRoute
   '/vlastni/$id': typeof VlastniIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/admin' | '/archiv' | '/obsazeni' | '/hra/$datum' | '/vlastni/$id'
+    | '/'
+    | '/admin'
+    | '/archiv'
+    | '/obsazeni'
+    | '/hra/$datum'
+    | '/og/$datum'
+    | '/vlastni/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/archiv' | '/obsazeni' | '/hra/$datum' | '/vlastni/$id'
+  to:
+    | '/'
+    | '/admin'
+    | '/archiv'
+    | '/obsazeni'
+    | '/hra/$datum'
+    | '/og/$datum'
+    | '/vlastni/$id'
   id:
     | '__root__'
     | '/'
@@ -85,6 +107,7 @@ export interface FileRouteTypes {
     | '/archiv'
     | '/obsazeni'
     | '/hra/$datum'
+    | '/og/$datum'
     | '/vlastni/$id'
   fileRoutesById: FileRoutesById
 }
@@ -94,6 +117,7 @@ export interface RootRouteChildren {
   ArchivRoute: typeof ArchivRoute
   ObsazeniRoute: typeof ObsazeniRoute
   HraDatumRoute: typeof HraDatumRoute
+  OgDatumRoute: typeof OgDatumRoute
   VlastniIdRoute: typeof VlastniIdRoute
 }
 
@@ -134,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HraDatumRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/og/$datum': {
+      id: '/og/$datum'
+      path: '/og/$datum'
+      fullPath: '/og/$datum'
+      preLoaderRoute: typeof OgDatumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vlastni/$id': {
       id: '/vlastni/$id'
       path: '/vlastni/$id'
@@ -150,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArchivRoute: ArchivRoute,
   ObsazeniRoute: ObsazeniRoute,
   HraDatumRoute: HraDatumRoute,
+  OgDatumRoute: OgDatumRoute,
   VlastniIdRoute: VlastniIdRoute,
 }
 export const routeTree = rootRouteImport

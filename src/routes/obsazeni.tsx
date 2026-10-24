@@ -2,10 +2,11 @@ import { createFileRoute } from "@tanstack/react-router"
 import { PersonaAvatar } from "@/components/persona-avatar"
 import { SiteHeader } from "@/components/site-header"
 import { answerers, modelOf, personaOf, providerCount } from "@/lib/cast"
+import { SITE_URL } from "@/lib/site"
 import type { ModelInfo, Persona } from "@/lib/types"
 
 export const Route = createFileRoute("/obsazeni")({
-  head: () => ({ meta: [{ title: "Obsazení: sto postav · Ptali jsme se 100 AI" }] }),
+  head: () => ({ meta: [{ title: "Obsazení: sto postav · Ptali jsme se 100 AI" }, { property: "og:url", content: `${SITE_URL}/obsazeni` }] }),
   component: Cast,
 })
 

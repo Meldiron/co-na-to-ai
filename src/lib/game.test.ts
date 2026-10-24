@@ -104,6 +104,14 @@ describe("shareText", () => {
   })
 })
 
+describe("challenge share text", () => {
+  it("leads with the score to beat and links the same question", () => {
+    const state = play(["pivo", "auto"])
+    const text = shareText({ label: "24. 10. 2026", question: "Q?", state, answers, total: 200, url: "https://example.cz/hra/2026-10-24", challenge: true })
+    expect(text.split("\n")).toEqual(["Dáte víc než 200 bodů?", "Ptali jsme se 100 AI · 24. 10. 2026", "Q?", "🟩⬜⬜⬜⬜⬜⬜⬜ 1/8", "🟩🟥", "https://example.cz/hra/2026-10-24"])
+  })
+})
+
 describe("pointsWord", () => {
   it("uses Czech plural forms", () => {
     expect([0, 1, 2, 4, 5, 22, 100].map(pointsWord)).toEqual(["bodů", "bod", "body", "body", "bodů", "bodů", "bodů"])

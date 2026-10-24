@@ -65,7 +65,12 @@ const won = game({
 })
 
 const scenarios = [
+  { id: "guide-first-visit", url: "/", storage: { navod: false }, shots: [{ at: "viewport" }] },
   { id: "home-fresh", url: "/", shots: [{ at: "top" }, { at: "#dalsi-otazka" }, { at: "#pravidla" }, { at: "footer" }] },
+  { id: "guide-tile", url: "/", act: "openGuide", shots: [{ at: "viewport" }] },
+  { id: "game-menu", url: "/", storage: { [`hra:${TODAY}`]: midGame }, act: "openGameMenu", shots: [{ at: "here" }] },
+  { id: "menu-sheet", url: "/", act: "openMenuSheet", shots: [{ at: "viewport" }] },
+  { id: "lose-live", url: "/", act: "loseGame", shots: [{ at: "here" }] },
   { id: "home-midgame", url: "/", storage: { [`hra:${TODAY}`]: midGame }, shots: [{ at: "top" }] },
   { id: "home-hint-menu", url: "/", storage: { [`hra:${TODAY}`]: midGame }, act: "openHint", shots: [{ at: "board" }] },
   { id: "home-hint-clue", url: "/", storage: { [`hra:${TODAY}`]: midGame }, act: "openClue", shots: [{ at: "board" }] },
@@ -108,6 +113,22 @@ const mocks = (shiftHours) => `
 `
 
 const actions = {
+  async openGuide(page) {
+    await page.eval(() => [...document.querySelectorAll("button")].find((b) => b.textContent.trim() === "Jak hrát?")?.click())
+    await sleep(600)
+  },
+  async openGameMenu(page) {
+    await page.eval(() => {
+      const el = document.querySelector('[aria-label="Další možnosti"]')
+      el?.scrollIntoView({ block: "center" })
+      el?.click()
+    })
+    await sleep(600)
+  },
+  async openMenuSheet(page) {
+    await page.eval(() => [...document.querySelectorAll("header button")].find((b) => b.textContent.trim() === "Menu")?.click())
+    await sleep(600)
+  },
   async openHint(page) {
     await page.eval(() => document.querySelector('[aria-label="Nápověda k odpovědi číslo 3"]')?.click())
     await sleep(600)
@@ -122,6 +143,13 @@ const actions = {
     await page.eval(() => document.querySelector('[aria-label="Nápověda k odpovědi číslo 1"]')?.focus({ focusVisible: true }))
     for (const type of ["keyDown", "keyUp"]) await page.send("Input.dispatchKeyEvent", { type, key: "Tab", code: "Tab", windowsVirtualKeyCode: 9 })
     await sleep(400)
+  },
+  async loseGame(page) {
+    for (const word of ["lednice", "klavír", "tramvaj", "sopka", "žirafa"]) {
+      await guess(page, word)
+      await sleep(400)
+    }
+    await sleep(3200)
   },
   async wrongGuess(page) {
     await guess(page, "lednice")
@@ -171,6 +199,7 @@ async function guess(page, text) {
 }
 
 async function scrollTo(page, at, height) {
+  if (at === "here") return
   if (at === "top" || at === "viewport") return page.eval(() => window.scrollTo(0, 0))
   if (at === "board") return page.eval(() => document.querySelector("section[aria-label='Tabule odpovědí']")?.scrollIntoView({ block: "start" }))
   if (at === "ticket") return page.eval(() => document.querySelector("svg[viewBox='0 0 1200 630']")?.parentElement?.scrollIntoView({ block: "center" }))
@@ -196,7 +225,7 @@ for (const w of widths) {
     await page.goto(`${base}/archiv`, { settleMs: 200 })
     await page.eval((storage) => {
       localStorage.clear()
-      for (const [k, v] of Object.entries(storage)) localStorage.setItem(`pjs100:${k}`, JSON.stringify(v))
+      for (const [k, v] of Object.entries({ navod: true, ...storage })) localStorage.setItem(`pjs100:${k}`, JSON.stringify(v))
     }, s.storage ?? {})
     await page.goto(`${base}${s.url}`, { settleMs: 2600 })
     if (s.act) await actions[s.act](page)

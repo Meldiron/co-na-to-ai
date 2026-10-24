@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { focusContainer } from "@/lib/focus"
 import { hintPattern, maxHints } from "@/lib/game"
 import type { BoardAnswer } from "@/lib/types"
 import { Flap } from "./flap"
@@ -11,13 +12,14 @@ type BoardProps = {
   title: string
   missKey: number
   hints: ReadonlyArray<number>
+  misses: ReadonlyArray<string>
   interactive: boolean
   clueFor: (index: number) => string | null
   onLetter: (index: number) => void
   onClue: (index: number) => void
 }
 
-export function Board({ answers, found, revealAll, title, missKey, hints, interactive, clueFor, onLetter, onClue }: BoardProps) {
+export function Board({ answers, found, revealAll, title, missKey, hints, misses, interactive, clueFor, onLetter, onClue }: BoardProps) {
   const slots: Array<Partial<BoardAnswer> & { rank: number }> = answers ?? Array.from({ length: 8 }, (_, i) => ({ rank: i + 1 }))
   const [booted, setBooted] = useState(false)
   useEffect(() => setBooted(true), [])
@@ -66,6 +68,19 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
           )
         })}
       </ol>
+      <div className="mt-[5px] grid h-[44px] grid-cols-[2.75rem_1fr] gap-[3px] sm:h-[52px] md:mt-2 md:h-[64px] md:grid-cols-[4rem_1fr]">
+        <Flap text="X" tone="miss" align="center" className="h-full" />
+        <Flap
+          text={misses.length ? `Mimo tabuli · ${misses.join(" · ")}` : "Mimo tabuli"}
+          tone={misses.length ? undefined : "dim"}
+          className="hidden h-full sm:block"
+        />
+        <Flap
+          text={misses.length ? misses.join(" · ") : "Mimo tabuli"}
+          tone={misses.length ? undefined : "dim"}
+          className="h-full text-[length:var(--step-body)] sm:hidden"
+        />
+      </div>
       <p className="hidden px-1 pt-3 pb-1 text-sm text-field-soft sm:block md:px-2">{title}</p>
       {missKey > 0 && (
         <div key={missKey} aria-hidden className="pointer-events-none absolute inset-0 grid place-items-center motion-reduce:hidden">
@@ -80,7 +95,12 @@ export function Board({ answers, found, revealAll, title, missKey, hints, intera
 
 function SlotHelp({ rank, left, clue, onLetter, onClue }: { rank: number; left: number; clue: string | null; onLetter: () => void; onClue: () => void }) {
   return (
-    <PopoverContent align="end" sideOffset={6} className="w-[min(22rem,calc(100vw-2rem))]">
+    <PopoverContent
+      align="end"
+      sideOffset={6}
+      onOpenAutoFocus={focusContainer}
+      className="w-[min(22rem,calc(100vw-2rem))] focus:outline-none"
+    >
       <p className="px-3 pt-2 text-sm text-ink-soft">Nápověda k odpovědi č. {rank}</p>
       <button type="button" disabled={left <= 0} onClick={onLetter} className="flex flex-col items-start px-3 py-2.5 text-left transition-colors hover:bg-paper-step disabled:cursor-default disabled:opacity-55 disabled:hover:bg-transparent">
         <span className="font-semibold">Odkrýt písmeno</span>

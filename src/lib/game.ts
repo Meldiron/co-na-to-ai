@@ -147,12 +147,16 @@ export function shareText(opts: {
   answers: Array<BoardAnswer>
   total: number
   url: string
+  challenge?: boolean
 }): string {
-  const { label, question, state, answers, total, url } = opts
+  const { label, question, state, answers, total, url, challenge } = opts
   const board = answers
     .map((_, i) => (!state.found.includes(i) ? "⬜" : hintsUsed(state, i) ? "🟨" : "🟩"))
     .join("")
   const guesses = state.guesses.map((g) => (g.result === "hit" ? "🟩" : "🟥")).join("")
+  if (challenge) {
+    return [`Dáte víc než ${total} ${pointsWord(total)}?`, `Ptali jsme se 100 AI · ${label}`, question, `${board} ${state.found.length}/${answers.length}`, guesses, url].join("\n")
+  }
   return [
     `Ptali jsme se 100 AI · ${label}`,
     question,

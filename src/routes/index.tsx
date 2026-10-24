@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { PuzzlePage } from "@/components/puzzle-page"
+import { SITE_URL } from "@/lib/site"
 import { getPuzzle } from "@/server/api"
 
 export const Route = createFileRoute("/")({
@@ -10,6 +11,9 @@ export const Route = createFileRoute("/")({
       ? [
           { title: `${loaderData.puzzle.question} · Ptali jsme se 100 AI` },
           { property: "og:title", content: `Dnešní otázka: ${loaderData.puzzle.question}` },
+          { property: "og:url", content: `${SITE_URL}/hra/${loaderData.puzzle.date}` },
+          { property: "og:image", content: `${SITE_URL}/og/${loaderData.puzzle.date}` },
+          { name: "twitter:image", content: `${SITE_URL}/og/${loaderData.puzzle.date}` },
         ]
       : [],
   }),

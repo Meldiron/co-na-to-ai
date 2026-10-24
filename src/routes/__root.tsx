@@ -1,6 +1,8 @@
 import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-router"
+import { HowToPlay } from "@/components/how-to-play"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
+import { SITE_URL } from "@/lib/site"
 import appCss from "../styles.css?url"
 
 export const Route = createRootRoute({
@@ -18,10 +20,12 @@ export const Route = createRootRoute({
       { property: "og:description", content: "Uhodnete, co odpověděla stovka umělých inteligencí? Nová otázka každý den." },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "cs_CZ" },
-      { property: "og:image", content: "/og.png" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}/og.png` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${SITE_URL}/og.png` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -41,6 +45,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <main className="bg-ground">{children}</main>
+        <HowToPlay />
         <SiteFooter />
         <Scripts />
       </body>

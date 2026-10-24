@@ -10,7 +10,6 @@ type ResultsProps = {
   payload: PuzzlePayload
   state: GameState
   answers: Array<BoardAnswer>
-  daily: boolean
 }
 
 const plural = new Intl.PluralRules("cs-CZ")
@@ -20,7 +19,7 @@ const pick = (n: number, one: string, few: string, many: string) => {
   return category === "one" ? one : category === "few" ? few : many
 }
 
-export function Results({ payload, state, answers, daily }: ResultsProps) {
+export function Results({ payload, state, answers }: ResultsProps) {
   const { bonus, total } = scoreLines(state, answers)
 
   return (
@@ -73,7 +72,7 @@ export function Results({ payload, state, answers, daily }: ResultsProps) {
         </div>
       </div>
 
-      <Share payload={payload} state={state} answers={answers} total={total} daily={daily} />
+      <Share payload={payload} state={state} answers={answers} total={total} />
     </section>
   )
 }
@@ -83,13 +82,11 @@ function Share({
   state,
   answers,
   total,
-  daily,
 }: {
   payload: PuzzlePayload
   state: GameState
   answers: Array<BoardAnswer>
   total: number
-  daily: boolean
 }) {
   const ticketRef = useRef<HTMLDivElement>(null)
   const [status, setStatus] = useState("")
@@ -97,9 +94,9 @@ function Share({
 
   useEffect(() => setOrigin(window.location.origin), [])
 
-  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
+  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : `/hra/${payload.date}`
   const url = `${origin}${path}`
-  const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url })
+  const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url, challenge: true })
   const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
 
   async function image(): Promise<Blob | null> {
@@ -153,11 +150,11 @@ function Share({
         <Ticket ref={ticketRef} payload={payload} state={state} answers={answers} total={total} host={origin.replace(/^https?:\/\//, "")} />
       </div>
       <div className="flex flex-col gap-6 md:col-span-4 md:col-start-9">
-        <h2 className="head reveal">Pochlubte se</h2>
-        <p>Jízdenka neprozradí žádnou odpověď: ukazuje jen otázku, kolik odpovědí jste našli a kolik bodů máte.</p>
+        <h2 className="head reveal">Vyzvěte kamarády</h2>
+        <p>Pošlete jim jízdenku s odkazem na tutéž otázku a uvidíte, kdo zná AI líp. Jízdenka žádnou odpověď neprozradí.</p>
         <div className="flex flex-wrap gap-3">
           <Button onClick={share} className="h-12 px-6 text-base font-semibold">
-            Sdílet výsledek
+            Vyzvat kamarády
           </Button>
           <Button onClick={copy} variant="secondary" className="h-12 bg-ground px-5 text-base text-foreground hover:bg-paper">
             Kopírovat text
@@ -207,10 +204,13 @@ function Ticket({
         >
           {payload.question}
         </p>
-        <p className="text-[12cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">
-          {total}
-          <span className="ml-[1.5cqw] text-[3.6cqw] tracking-normal [font-stretch:85%]">{pointsWord(total)}</span>
-        </p>
+        <div>
+          <p className="text-[12cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">
+            {total}
+            <span className="ml-[1.5cqw] text-[3.6cqw] tracking-normal [font-stretch:85%]">{pointsWord(total)}</span>
+          </p>
+          <p className="mt-[1.6cqw] text-[3.4cqw] leading-none font-semibold text-red">Překonáte mě?</p>
+        </div>
         <div>
           <div className="flex items-center gap-[0.8cqw]">
             {answers.map((answer, index) => (

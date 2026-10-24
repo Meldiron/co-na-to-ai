@@ -59,6 +59,14 @@ function clearResult(date: string): void {
   write("vysledky", results)
 }
 
+export function guideSeen(): boolean {
+  return read<boolean>("navod") === true
+}
+
+export function markGuideSeen(): void {
+  write("navod", true)
+}
+
 export function loadResults(): Record<string, Result> {
   return read<Record<string, Result>>("vysledky") ?? {}
 }

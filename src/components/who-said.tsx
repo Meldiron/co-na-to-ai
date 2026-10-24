@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react"
 import { firstName, modelOf, personaOf } from "@/lib/cast"
-import type { PuzzleSecret, Response } from "@/lib/types"
+import { area, band, personaClue, type Band } from "@/lib/clue"
+import type { Persona, PuzzleSecret, Response } from "@/lib/types"
 import { PersonaAvatar } from "./persona-avatar"
 import { PersonaDialog } from "./persona-dialog"
 
@@ -10,8 +11,40 @@ const votesWord = (n: number) => {
   return c === "one" ? "hlas" : c === "few" ? "hlasy" : "hlasů"
 }
 
+const AREAS = ["Praha", "Čechy", "Morava"] as const
+const BANDS: Array<[Band, string]> = [
+  ["young", "do 25"],
+  ["adult", "25–45"],
+  ["senior", "46–64"],
+  ["retired", "65+"],
+]
+const TONES = ["bg-field", "bg-field/65", "bg-field/35", "bg-field/15"]
+
+function StackBar({ title, segments }: { title: string; segments: Array<{ label: string; count: number }> }) {
+  const total = segments.reduce((sum, s) => sum + s.count, 0) || 1
+  return (
+    <div className="grid gap-1.5 sm:grid-cols-[4.5rem_1fr] sm:items-center sm:gap-3">
+      <span className="text-sm text-muted-foreground">{title}</span>
+      <div>
+        <div className="flex h-3.5 w-full" role="img" aria-label={`${title}: ${segments.map((s) => `${s.label} ${s.count}`).join(", ")}`}>
+          {segments.map((s, i) => (s.count ? <span key={s.label} className={TONES[i]} style={{ width: `${(s.count / total) * 100}%` }} /> : null))}
+        </div>
+        <ul className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          {segments.map((s, i) => (
+            <li key={s.label} className="flex items-center gap-1.5">
+              <span className={`size-2.5 ${TONES[i]}`} />
+              {s.label} {s.count}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
 export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
   const [open, setOpen] = useState<Response | null>(null)
+  const [expanded, setExpanded] = useState<ReadonlySet<number>>(new Set())
   const byAnswerer = useMemo(() => new Map(secret.responses.map((r) => [r.answerer, r])), [secret.responses])
   const silent = secret.responses.filter((r) => !r.raw)
   const invalid = secret.responses.filter((r) => r.raw && !r.answer)
@@ -45,7 +78,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
         <div className="grid gap-4 md:grid-cols-12 md:gap-6">
           <h2 className="head reveal md:col-span-4">Kdo co řekl</h2>
           <p className="reveal max-w-[60ch] md:col-span-7 md:col-start-6">
-            Všech {secret.responses.length} odpovědí, seřazených podle tabule. Klikněte na jméno a uvidíte, kdo za odpovědí stojí, jak přesně odpověděl a který model ji napsal.
+            Všech {secret.responses.length} odpovědí, seřazených podle tabule, a kdo je dal: odkud jsou a kolik jim je. Pod každou odpovědí najdete i jména a modely, které postavy hrály.
           </p>
         </div>
 
@@ -60,7 +93,27 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
                   {answer.votes} {votesWord(answer.votes)}
                 </p>
               </div>
-              <ul className="flex flex-wrap gap-2 md:col-span-8 md:col-start-5">{answer.answerers.map(chip)}</ul>
+              <div className="grid gap-4 md:col-span-8 md:col-start-5">
+                <Breakdown
+                  people={answer.answerers.map((id) => byAnswerer.get(id)).flatMap((r) => (r && personaOf(r.persona) ? [personaOf(r.persona) as Persona] : []))}
+                />
+                <button
+                  type="button"
+                  aria-expanded={expanded.has(answer.rank)}
+                  onClick={() =>
+                    setExpanded((current) => {
+                      const next = new Set(current)
+                      if (next.has(answer.rank)) next.delete(answer.rank)
+                      else next.add(answer.rank)
+                      return next
+                    })
+                  }
+                  className="inline-flex h-11 w-fit items-center bg-ground-step px-4 font-semibold transition-colors hover:bg-field hover:text-field-ink"
+                >
+                  {expanded.has(answer.rank) ? "Skrýt jména" : `Zobrazit ${answer.answerers.length === 1 ? "jméno" : `všech ${answer.answerers.length}`}`}
+                </button>
+                {expanded.has(answer.rank) && <ul className="flex flex-wrap gap-2">{answer.answerers.map(chip)}</ul>}
+              </div>
             </li>
           ))}
         </ol>
@@ -74,7 +127,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
               </p>
               <ul className="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
                 {secret.others.map((other) => (
-                  <li key={other.text} className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <li key={other.text} className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
                     <span className="font-semibold">{other.text}</span>
                     <span className="text-muted-foreground">
                       {other.votes} {votesWord(other.votes)}:
@@ -83,7 +136,13 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
                       const response = byAnswerer.get(id)
                       const persona = response && personaOf(response.persona)
                       return response && persona ? (
-                        <button key={id} type="button" onClick={() => setOpen(response)} className="underline underline-offset-4 hover:text-red">
+                        <button
+                          key={id}
+                          type="button"
+                          onClick={() => setOpen(response)}
+                          className="inline-flex h-11 items-center gap-2 bg-ground-step pr-3 pl-1.5 font-semibold transition-colors hover:bg-field hover:text-field-ink"
+                        >
+                          <PersonaAvatar id={persona.id} size={30} className="shrink-0" />
                           {firstName(persona)}
                         </button>
                       ) : null
@@ -104,5 +163,15 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
       </div>
       <PersonaDialog response={open} onOpenChange={(value) => !value && setOpen(null)} secret={secret} />
     </section>
+  )
+}
+
+function Breakdown({ people }: { people: Array<Persona> }) {
+  return (
+    <div className="grid gap-4">
+      <p className="max-w-[60ch]">{personaClue(people)}</p>
+      <StackBar title="Odkud" segments={AREAS.map((label) => ({ label, count: people.filter((p) => area(p) === label).length }))} />
+      <StackBar title="Věk" segments={BANDS.map(([key, label]) => ({ label, count: people.filter((p) => band(p.age) === key).length }))} />
+    </div>
   )
 }

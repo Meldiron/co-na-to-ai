@@ -5,7 +5,7 @@ const FLIP_MS = 130
 
 type FlapProps = {
   text: string
-  tone?: "dim" | "key"
+  tone?: "dim" | "key" | "miss"
   align?: "center" | "end"
   delay?: number
   className?: string

@@ -222,6 +222,16 @@
     color: var(--field-ink);
     font-weight: 700;
   }
+  .flap[data-tone="miss"] {
+    color: var(--red-ink);
+    font-weight: 700;
+  }
+  .flap[data-tone="miss"] .flap-top {
+    background: var(--red);
+  }
+  .flap[data-tone="miss"] .flap-bottom {
+    background: var(--red-low);
+  }
   .flap[data-tone="key"] .flap-top {
     background: var(--field);
   }
@@ -285,6 +295,26 @@
     inset: 50% 0 0 0;
     z-index: -1;
     background: var(--tile-low);
+  }
+  .tile-key {
+    --tile: var(--field);
+    --tile-low: var(--field-step);
+    color: var(--field-ink);
+  }
+  .tile-paper {
+    --tile: var(--paper);
+    --tile-low: var(--paper-step);
+    color: var(--ink);
+  }
+  .tile-button {
+    cursor: pointer;
+    transition: color 140ms var(--ease-out);
+  }
+  .tile-button:hover,
+  .tile-button:focus-visible {
+    --tile: var(--red);
+    --tile-low: var(--red-low);
+    color: var(--red-ink);
   }
   .tile-red {
     --tile: var(--red);
@@ -502,5 +532,43 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .input-bar {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: 0.625rem var(--margin) calc(0.5rem + env(safe-area-inset-bottom));
+    background: var(--board);
+    color: var(--field-ink);
+  }
+  .input-bar .input-bar-row {
+    margin-top: 0;
+    gap: 0.5rem;
+  }
+  .input-bar .input-bar-row input,
+  .input-bar .input-bar-row button[type="submit"] {
+    height: 3rem;
+  }
+  .input-bar [role="img"] > span {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  .input-bar .input-bar-row .flap {
+    height: 2.25rem;
+  }
+  .input-bar .input-bar-note {
+    margin-top: 0.375rem;
+    font-size: var(--step-small);
+    line-height: 1.35;
+  }
+  .input-bar .input-bar-note p {
+    min-height: 0;
+  }
+  body:has(.input-bar) {
+    padding-bottom: calc(9.5rem + env(safe-area-inset-bottom));
   }
 }

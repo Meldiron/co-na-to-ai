@@ -17,6 +17,7 @@ export type GateResult = {
   topShare: number
   boardShare: number
   clustersWithTwo: number
+  offensive?: boolean
   flags: Array<string>
 }
 
@@ -58,7 +59,7 @@ export function gate(grouped: Array<Grouped>, answered: number, judgement: Judge
   if (clustersWithTwo < GATE.minClustersWithTwo) flags.push(`only ${clustersWithTwo} answers with 2+ votes (min ${GATE.minClustersWithTwo})`)
   if (boardShare < GATE.minBoardShare) flags.push(`the board holds only ${Math.round(boardShare * 100)} % of answers (min ${GATE.minBoardShare * 100} %)`)
   if (judgement.offensive) flags.push("judge flagged offensive content")
-  return { passed: flags.length === 0, answered, topShare, boardShare, clustersWithTwo, flags }
+  return { passed: flags.length === 0, answered, topShare, boardShare, clustersWithTwo, offensive: judgement.offensive, flags }
 }
 
 export function buildPuzzle(opts: {

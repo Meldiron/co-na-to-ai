@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start"
 import { z } from "zod"
 import { pragueDate } from "@/lib/day"
+import { gateReasons } from "@/lib/gate-text"
 import { checkPassword, endSession, isAdmin, requireAdmin, startSession } from "./auth"
 import { deleteCustom, getJob, listCustom, loadCustom, startJob } from "./custom"
 import { loadPuzzle, recentSummaries, toPayload } from "./puzzles"
@@ -22,7 +23,7 @@ export const getAdminState = createServerFn({ method: "GET" }).handler(async () 
       answered: g.answered,
       costUsd: g.meta.costUsd,
       passed: g.gate.passed,
-      flags: g.gate.flags,
+      flags: gateReasons(g.gate, g.answers[0]?.text),
       top: g.answers.map((a) => [a.text, a.votes] as const),
     })),
   }
