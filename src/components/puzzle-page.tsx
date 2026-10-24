@@ -1,28 +1,41 @@
 import { Link, useRouter } from "@tanstack/react-router"
 import { useEffect, useState } from "react"
 import { msUntilNextPragueMidnight, pragueDate } from "@/lib/day"
-import type { PuzzlePayload } from "@/lib/types"
+import type { PuzzlePayload, PuzzleSummary } from "@/lib/types"
 import { Game } from "./game"
-import { HowMade } from "./how-made"
+import { Departure } from "./departure"
 import { Rules } from "./rules"
 import { SiteHeader } from "./site-header"
 
-type Props = { today: string; date: string; puzzle: PuzzlePayload | null }
+type Props = { today: string; date: string; puzzle: PuzzlePayload | null; recent: Array<PuzzleSummary>; custom?: boolean }
 
-export function PuzzlePage({ today, date, puzzle }: Props) {
+export function PuzzlePage({ today, date, puzzle, recent, custom = false }: Props) {
   return (
     <>
       <SiteHeader />
-      <NewDayNotice today={today} />
-      {puzzle ? <Game key={puzzle.date} payload={puzzle} today={today} /> : <Missing date={date} today={today} />}
-      <HowMade payload={puzzle} />
+      {!custom && <NewDayNotice today={today} />}
+      {puzzle ? <Game key={puzzle.id} payload={puzzle} today={today} /> : <Missing date={date} today={today} custom={custom} />}
+      <Departure today={today} recent={recent} />
       <Rules />
     </>
   )
 }
 
-function Missing({ date, today }: { date: string; today: string }) {
+function Missing({ date, today, custom }: { date: string; today: string; custom: boolean }) {
   const future = date > today
+  if (custom) {
+    return (
+      <section className="bg-field text-field-ink">
+        <div className="page pt-8 pb-24 md:pt-12 md:pb-40">
+          <h1 className="display">Tahle vlastní hra neexistuje</h1>
+          <p className="mt-5 max-w-[56ch]">Odkaz je buď překlepnutý, nebo autor hru smazal. Dnešní otázka ale platí pro všechny.</p>
+          <Link to="/" className="mt-8 inline-flex h-12 items-center bg-red px-6 font-semibold text-red-ink hover:bg-red/90">
+            Na dnešní hru
+          </Link>
+        </div>
+      </section>
+    )
+  }
   return (
     <section className="bg-field text-field-ink">
       <div className="page pt-8 pb-24 md:pt-12 md:pb-40">

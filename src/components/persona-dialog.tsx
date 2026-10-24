@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { modelOf, personaOf } from "@/lib/cast"
+import { PersonaAvatar } from "./persona-avatar"
 import type { PuzzleSecret, Response } from "@/lib/types"
 
 type Props = {
@@ -19,11 +20,14 @@ export function PersonaDialog({ response, secret, onOpenChange }: Props) {
       <DialogContent className="max-h-[calc(100svh-2rem)] overflow-y-auto sm:max-w-lg">
         {persona && model && (
           <>
-            <div className="pr-8">
-              <DialogTitle className="head">{persona.name}</DialogTitle>
-              <DialogDescription className="mt-2 text-base text-ink">
-                {persona.age} let · {persona.town}, {persona.region}
-              </DialogDescription>
+            <div className="flex items-center gap-4 pr-8">
+              <PersonaAvatar id={persona.id} size={88} animate="always" className="shrink-0" />
+              <div>
+                <DialogTitle className="head">{persona.name}</DialogTitle>
+                <DialogDescription className="mt-2 text-base text-ink">
+                  {persona.age} let · {persona.town}, {persona.region}
+                </DialogDescription>
+              </div>
             </div>
             <p className="font-semibold">{persona.occupation}</p>
             <p>{persona.bio}</p>

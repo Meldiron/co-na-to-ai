@@ -3,8 +3,6 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/bricolage-grotesque/standard.css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --font-sans: "Bricolage Grotesque Variable", "Arial Narrow", system-ui, sans-serif;
   --font-heading: var(--font-sans);
@@ -64,6 +62,7 @@
   --board: #091429;
   --flap: #1a2743;
   --flap-low: #141f37;
+  --flap-seam: #0f182c;
   --flap-ink: #f5f7fa;
   --flap-dim: #8c9dba;
   --paper: #ffffff;
@@ -103,31 +102,6 @@
 
   --margin: clamp(1rem, 0.4rem + 2.6vw, 2rem);
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.dark {
-  --field: #0c2d55;
-  --field-step: #0a2647;
-  --field-soft: #a9bcd8;
-  --board: #040a17;
-  --flap: #141f36;
-  --flap-low: #0f182b;
-  --flap-ink: #e9eef5;
-  --flap-dim: #74859f;
-  --paper: #e4e9f0;
-  --paper-step: #cdd6e2;
-  --ink: #0b1a33;
-  --ink-soft: #3a4c69;
-  --ground: #081324;
-  --ground-step: #0e1d35;
-  --red: #e0262c;
-
-  --background: var(--ground);
-  --foreground: #e9eef5;
-  --muted-foreground: #a9b7cc;
-  --border: #1b2c48;
-  --input: #1b2c48;
-  --ring: #6caef4;
 }
 
 @layer base {
@@ -199,6 +173,7 @@
     position: relative;
     display: block;
     perspective: 600px;
+    background: var(--flap-seam);
     color: var(--flap-ink);
     font-size: var(--step-head);
     font-weight: 650;
@@ -219,10 +194,10 @@
     overflow: hidden;
   }
   .flap-top {
-    clip-path: inset(0 0 calc(50% + 1px) 0);
+    clip-path: inset(0 0 calc(50% + 0.5px) 0);
   }
   .flap-bottom {
-    clip-path: inset(calc(50% + 1px) 0 0 0);
+    clip-path: inset(calc(50% + 0.5px) 0 0 0);
     background: var(--flap-low);
   }
   .flap-fall {
@@ -247,6 +222,38 @@
   }
   .flap[data-align="end"] .flap-half {
     justify-content: flex-end;
+  }
+
+  .tile {
+    --tile: var(--flap);
+    --tile-low: var(--flap-low);
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    height: 2.75rem;
+    padding-inline: 0.7rem;
+    background: var(--tile);
+    color: var(--flap-ink);
+    font-size: 1.25rem;
+    font-weight: 650;
+    font-stretch: 75%;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .tile::before {
+    content: "";
+    position: absolute;
+    inset: 50% 0 0 0;
+    z-index: -1;
+    background: var(--tile-low);
+  }
+  .tile-red {
+    --tile: var(--red);
+    --tile-low: #b90f15;
+    color: var(--red-ink);
   }
 
   .zigzag-bottom {
@@ -365,16 +372,6 @@
       radial-gradient(circle var(--n) at 100% 50%, #0000 98%, #000) right / 51% 100% no-repeat;
   }
 
-  .js .reveal {
-    transition:
-      opacity 560ms var(--ease-out),
-      transform 560ms var(--ease-out);
-    transition-delay: var(--d, 0ms);
-  }
-  .js .reveal:not(.is-in) {
-    opacity: 0;
-    transform: translateY(24px);
-  }
   .inverted-row {
     display: flex;
     align-items: baseline;
@@ -455,10 +452,25 @@
     animation-duration: 1ms !important;
     animation-delay: 0ms !important;
   }
-  .js .reveal,
-  .js .reveal:not(.is-in) {
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0.3;
+    transform: translateY(28px);
+  }
+  to {
     opacity: 1;
     transform: none;
-    transition: none;
   }
 }

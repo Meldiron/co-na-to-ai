@@ -2,7 +2,7 @@ import { useRef, useState, type FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useGame } from "@/hooks/use-game"
-import { formatLong } from "@/lib/day"
+import { formatShort } from "@/lib/day"
 import { CLEAR_BONUS, MAX_STRIKES, pointsWord, scoreLines } from "@/lib/game"
 import type { PuzzlePayload } from "@/lib/types"
 import { Board, Strikes } from "./board"
@@ -13,6 +13,23 @@ import { WhoSaid } from "./who-said"
 type Message = { text: string; tone: "hit" | "miss" | "info" }
 
 const triesLeft = new Intl.PluralRules("cs-CZ")
+const weekday = new Intl.DateTimeFormat("cs-CZ", { weekday: "long", timeZone: "UTC" })
+
+export function gameTitle(payload: PuzzlePayload): string {
+  return payload.kind === "custom" ? "Vlastní hra" : `Hra č. ${payload.number}`
+}
+
+function DateStrip({ payload, daily }: { payload: PuzzlePayload; daily: boolean }) {
+  const tag = payload.kind === "custom" ? "Vlastní hra" : daily ? "Dnes" : "Z archivu"
+  return (
+    <p className="mt-4 flex flex-wrap items-center gap-[6px] md:mt-5">
+      <span className={`tile ${daily ? "tile-red" : ""}`}>{tag}</span>
+      <span className="tile">{weekday.format(new Date(`${payload.date}T12:00:00Z`))}</span>
+      <span className="tile">{formatShort(payload.date)}</span>
+      {payload.kind === "daily" && <span className="ml-2">hra č. {payload.number}</span>}
+    </p>
+  )
+}
 
 function remaining(n: number): string {
   return triesLeft.select(n) === "one" ? `Zbývá ${n} pokus.` : `Zbývají ${n} pokusy.`
@@ -43,7 +60,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
         setMissKey((k) => k + 1)
         setMessage({
           tone: "miss",
-          text: next.status === "lost" ? "Třetí chyba. Konec hry." : `Tohle žádná AI neřekla. ${remaining(MAX_STRIKES - next.strikes)}`,
+          text: next.status === "lost" ? "Pátá chyba. Konec hry." : `Tohle žádná AI neřekla. ${remaining(MAX_STRIKES - next.strikes)}`,
         })
         setValue("")
         break
@@ -67,18 +84,19 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
   return (
     <>
       <section className="bg-field text-field-ink">
-        <div className="page pt-8 pb-14 md:pt-12 md:pb-20">
+        <div className="page pt-5 pb-14 md:pt-12 md:pb-20">
           <h1 className="display">{payload.question}</h1>
-          <p className="mt-5 max-w-[62ch] text-base">
-            Ptali jsme se stovky umělých inteligencí, každé v roli jiného Čecha. Najděte jejich osm nejčastějších odpovědí. Tři chyby a konec.
+          <DateStrip payload={payload} daily={daily} />
+          <p className="mt-4 max-w-[62ch] text-base md:mt-5">
+            Ptali jsme se stovky umělých inteligencí, každé v roli jiného Čecha. Najděte jejich osm nejčastějších odpovědí. Máte pět životů.
           </p>
 
-          <div className="mt-8 md:mt-10">
+          <div className="mt-5 md:mt-10">
             <Board
               answers={ready ? secret.answers : null}
               found={state.found}
               revealAll={over}
-              title={`Hra č. ${payload.number} · ${formatLong(payload.date)}${daily ? "" : " · z archivu"}`}
+              title={`Odpovědělo ${payload.answered} ze ${payload.asked} AI. Body za odpověď = kolik AI ji řeklo.`}
               missKey={missKey}
             />
           </div>
@@ -131,7 +149,13 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
               {message?.text ?? (over ? `${state.found.length} z 8 odpovědí, ${total} ${pointsWord(total)}.` : "Diakritika, velká písmena ani drobné překlepy nevadí.")}
             </p>
             {!over && ready && (
-              <button type="button" onClick={surrender} className="text-sm text-field-soft underline underline-offset-4 hover:text-field-ink">
+              <button
+                type="button"
+                onClick={() => {
+                  setMessage(null)
+                  surrender()
+                }}
+                className="text-sm text-field-soft underline underline-offset-4 hover:text-field-ink">
                 Vzdát se a ukázat odpovědi
               </button>
             )}
@@ -141,7 +165,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
 
       {over && ready && (
         <>
-          <Results payload={payload} state={state} answers={secret.answers} daily={daily} today={today} />
+          <Results payload={payload} state={state} answers={secret.answers} daily={daily} />
           <WhoSaid secret={secret} />
         </>
       )}

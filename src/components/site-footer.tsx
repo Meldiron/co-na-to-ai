@@ -39,14 +39,8 @@ export function SiteFooter() {
             <p className="mt-2 text-flap-dim">Sto jazykových modelů přes OpenRouter, každý v roli jiného Čecha. Hra není spojená s žádnou televizní soutěží.</p>
           </div>
           <div className="md:col-span-3">
-            <p className="font-semibold">Fotografie</p>
-            <p className="mt-2 text-flap-dim">
-              Tabule Pragotron v Karlových Varech:{" "}
-              <a href="https://commons.wikimedia.org/w/index.php?curid=59213103" className="underline underline-offset-4 hover:text-flap-ink">
-                PetrS., CC BY-SA 4.0
-              </a>
-              , Wikimedia Commons.
-            </p>
+            <p className="font-semibold">Pravidla ve zkratce</p>
+            <p className="mt-2 text-flap-dim">Osm odpovědí na tabuli, pět životů. Každá odpověď má tolik bodů, kolik AI ji řeklo.</p>
           </div>
         </div>
         <div />

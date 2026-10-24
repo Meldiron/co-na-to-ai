@@ -1,10 +1,7 @@
 import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-router"
 import { SiteFooter } from "@/components/site-footer"
-import { RevealObserver } from "@/components/reveal-observer"
 import { SiteHeader } from "@/components/site-header"
 import appCss from "../styles.css?url"
-
-const themeScript = `document.documentElement.classList.add("js");try{var t=localStorage.getItem("pjs100:tema");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}`
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,7 +11,7 @@ export const Route = createRootRoute({
       { title: "Ptali jsme se 100 AI · denní hra" },
       {
         name: "description",
-        content: "Denní česká hra: sto umělých inteligencí odpovědělo na anketní otázku. Uhodnete jejich osm nejčastějších odpovědí? Tři chyby a konec.",
+        content: "Denní česká hra: sto umělých inteligencí odpovědělo na anketní otázku. Uhodnete jejich osm nejčastějších odpovědí? Pět chyb a konec.",
       },
       { name: "theme-color", content: "#11457e" },
       { property: "og:title", content: "Ptali jsme se 100 AI" },
@@ -31,7 +28,6 @@ export const Route = createRootRoute({
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "manifest", href: "/manifest.json" },
     ],
-    scripts: [{ children: themeScript }],
   }),
   notFoundComponent: NotFound,
   shellComponent: RootDocument,
@@ -45,7 +41,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <main className="bg-ground">{children}</main>
-        <RevealObserver />
         <SiteFooter />
         <Scripts />
       </body>

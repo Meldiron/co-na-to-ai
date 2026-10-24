@@ -1,7 +1,7 @@
 import { matchGuess, normalize } from "./match.ts"
 import type { BoardAnswer } from "./types.ts"
 
-export const MAX_STRIKES = 3
+export const MAX_STRIKES = 5
 export const CLEAR_BONUS = 20
 
 export type Guess = {
@@ -93,19 +93,19 @@ export function maxScore(answers: Array<BoardAnswer>): number {
 }
 
 export function shareText(opts: {
-  number: number
+  label: string
   state: GameState
   answers: Array<BoardAnswer>
   total: number
   url: string
 }): string {
-  const { number, state, answers, total, url } = opts
+  const { label, state, answers, total, url } = opts
   const board = answers
     .map((_, i) => (state.found.includes(i) ? "🟩" : "⬜"))
     .join("")
   const guesses = state.guesses.map((g) => (g.result === "hit" ? "🟩" : "🟥")).join("")
   return [
-    `Ptali jsme se 100 AI · č. ${number}`,
+    `Ptali jsme se 100 AI · ${label}`,
     `${board} ${state.found.length}/${answers.length}`,
     guesses,
     `${total} ${pointsWord(total)}`,

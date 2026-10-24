@@ -1,0 +1,1165 @@
+{
+  "date": "2026-10-21",
+  "number": 5,
+  "questionId": "nedelni-obed-tema",
+  "question": "O čem se mluví u nedělního oběda?",
+  "asked": 100,
+  "answered": 98,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Rodina",
+      "votes": 44,
+      "aliases": [
+        "rodině",
+        "rodinu",
+        "rodiny",
+        "příbuzní",
+        "příbuzných",
+        "příbuzenstvo",
+        "rodiče",
+        "rodičích",
+        "famílie",
+        "rodinách",
+        "příbuzenstvu",
+        "rodiče a děti",
+        "babička",
+        "babičce",
+        "dědeček",
+        "děda",
+        "dědovi",
+        "teta",
+        "tety",
+        "strýc",
+        "strejda",
+        "bratr",
+        "sestra",
+        "sourozenci",
+        "sourozencích",
+        "máma",
+        "mamka",
+        "táta",
+        "taťka",
+        "manžel",
+        "manželka",
+        "švagr",
+        "švagrová",
+        "tchyně",
+        "vnoučata",
+        "vnuci",
+        "drby",
+        "pomluvy",
+        "sousedé"
+      ],
+      "answerers": [
+        "a002",
+        "a005",
+        "a006",
+        "a008",
+        "a009",
+        "a010",
+        "a012",
+        "a013",
+        "a018",
+        "a021",
+        "a023",
+        "a026",
+        "a029",
+        "a030",
+        "a031",
+        "a034",
+        "a035",
+        "a038",
+        "a041",
+        "a042",
+        "a044",
+        "a046",
+        "a049",
+        "a051",
+        "a053",
+        "a054",
+        "a055",
+        "a057",
+        "a058",
+        "a059",
+        "a065",
+        "a066",
+        "a070",
+        "a075",
+        "a078",
+        "a079",
+        "a081",
+        "a083",
+        "a088",
+        "a091",
+        "a095",
+        "a097",
+        "a098",
+        "a099"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Politika",
+      "votes": 14,
+      "aliases": [
+        "politice",
+        "politiku",
+        "politici",
+        "politicích",
+        "vláda",
+        "volby",
+        "politikové",
+        "politiky",
+        "politik",
+        "vládě",
+        "volbách",
+        "prezident",
+        "prezidentovi",
+        "premiér",
+        "ministr",
+        "ministři",
+        "parlament",
+        "sněmovna",
+        "strany",
+        "strana",
+        "babiš",
+        "fiala",
+        "zprávy",
+        "zpravodajství",
+        "novinky",
+        "aktuality",
+        "ekonomika",
+        "ceny",
+        "zdražování",
+        "inflace",
+        "daně",
+        "válka"
+      ],
+      "answerers": [
+        "a007",
+        "a014",
+        "a017",
+        "a024",
+        "a028",
+        "a039",
+        "a040",
+        "a047",
+        "a050",
+        "a056",
+        "a060",
+        "a067",
+        "a076",
+        "a089"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Počasí",
+      "votes": 10,
+      "aliases": [
+        "o počasí",
+        "déšť",
+        "předpověď",
+        "předpověď počasí",
+        "předpovědi",
+        "dešti",
+        "prší",
+        "sníh",
+        "sněhu",
+        "zima",
+        "zimě",
+        "horko",
+        "vedro",
+        "teplo",
+        "teplota",
+        "teploty",
+        "slunce",
+        "sluníčko",
+        "bouřka",
+        "bouřky",
+        "mráz",
+        "klima",
+        "sucho",
+        "vítr",
+        "počasíčko",
+        "roční období",
+        "jaro",
+        "léto",
+        "podzim"
+      ],
+      "answerers": [
+        "a001",
+        "a015",
+        "a019",
+        "a020",
+        "a022",
+        "a032",
+        "a033",
+        "a068",
+        "a094",
+        "a096"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Sport",
+      "votes": 9,
+      "aliases": [
+        "sportu",
+        "sporty",
+        "fotbal",
+        "fotbale",
+        "fotbalu",
+        "hokej",
+        "hokeji",
+        "hokeje",
+        "zápas",
+        "zápasy",
+        "sportech",
+        "sportovní",
+        "hokejka",
+        "zápase",
+        "mistrovství",
+        "olympiáda",
+        "olympiádě",
+        "tenis",
+        "tenisu",
+        "formule",
+        "f1",
+        "sparta",
+        "slavie",
+        "liga",
+        "lize",
+        "reprezentace",
+        "nároďák",
+        "góly",
+        "výsledky",
+        "běhání",
+        "cyklistika",
+        "lyžování",
+        "biatlon"
+      ],
+      "answerers": [
+        "a003",
+        "a004",
+        "a037",
+        "a052",
+        "a062",
+        "a064",
+        "a072",
+        "a080",
+        "a082"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Děti",
+      "votes": 4,
+      "aliases": [
+        "dětech",
+        "dítě",
+        "děcka",
+        "potomci",
+        "dítěti",
+        "dětem",
+        "děckách",
+        "dětičky",
+        "syn",
+        "synovi",
+        "synové",
+        "dcera",
+        "dceři",
+        "potomstvo",
+        "miminko",
+        "mimino",
+        "vnouče",
+        "výchova",
+        "výchově",
+        "kluci",
+        "holky",
+        "puberta",
+        "prcek",
+        "prckové"
+      ],
+      "answerers": [
+        "a069",
+        "a071",
+        "a074",
+        "a090"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Jídlo",
+      "votes": 4,
+      "aliases": [
+        "jídle",
+        "jídla",
+        "oběd",
+        "obědě",
+        "nedělní oběd",
+        "vaření",
+        "recepty",
+        "jídlu",
+        "o nedělním obědě",
+        "obědu",
+        "vaření a recepty",
+        "recept",
+        "svíčková",
+        "řízek",
+        "řízky",
+        "knedlíky",
+        "knedlík",
+        "polévka",
+        "polévky",
+        "kachna",
+        "guláš",
+        "maso",
+        "dezert",
+        "zákusek",
+        "moučník",
+        "bábovka",
+        "koláč",
+        "chuť",
+        "chutná",
+        "jak to chutná",
+        "pití",
+        "víno",
+        "pivo",
+        "večeře",
+        "nákupy",
+        "nákup",
+        "kuchyně"
+      ],
+      "answerers": [
+        "a043",
+        "a063",
+        "a077",
+        "a092"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Práce",
+      "votes": 3,
+      "aliases": [
+        "práci",
+        "zaměstnání",
+        "job",
+        "šéf",
+        "kolegové",
+        "práce a zaměstnání",
+        "zaměstnáních",
+        "šichta",
+        "kšeft",
+        "kariéra",
+        "kariéře",
+        "šéfovi",
+        "kolegy",
+        "firma",
+        "firmě",
+        "výplata",
+        "plat",
+        "platy",
+        "peníze",
+        "penězích",
+        "výdělek",
+        "povýšení",
+        "podnikání",
+        "kancelář",
+        "pracovní",
+        "prachy",
+        "finance"
+      ],
+      "answerers": [
+        "a011",
+        "a027",
+        "a048"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Škola",
+      "votes": 2,
+      "aliases": [
+        "školu",
+        "škole",
+        "školy",
+        "známky",
+        "učení",
+        "školách",
+        "školní",
+        "vysvědčení",
+        "známkách",
+        "učitel",
+        "učitelka",
+        "učitelé",
+        "úkoly",
+        "domácí úkoly",
+        "studium",
+        "studiu",
+        "studia",
+        "vysoká",
+        "univerzita",
+        "výška",
+        "gympl",
+        "maturita",
+        "maturitě",
+        "zkoušky",
+        "písemka",
+        "písemky",
+        "prázdniny",
+        "ve škole",
+        "školka",
+        "školce"
+      ],
+      "answerers": [
+        "a025",
+        "a073"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Rybaření",
+      "votes": 2,
+      "answerers": [
+        "a036",
+        "a085"
+      ]
+    },
+    {
+      "text": "Dovolená",
+      "votes": 1,
+      "answerers": [
+        "a045"
+      ]
+    },
+    {
+      "text": "Všechno",
+      "votes": 1,
+      "answerers": [
+        "a084"
+      ]
+    },
+    {
+      "text": "Klobouky",
+      "votes": 1,
+      "answerers": [
+        "a100"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "fotbal",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Fotbal",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "práce",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "zubníplocha",
+      "answer": null
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "školu",
+      "answer": "Škola"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "práce",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "rybolovu",
+      "answer": "Rybaření"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Sport",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "Politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "Jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a045",
+      "model": "mistralai/mistral-small-2603",
+      "persona": "stepan-klatovy",
+      "raw": "dovolená",
+      "answer": "Dovolená"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "práce",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a049",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "pavla-brno",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-saba",
+      "persona": "aneta-holesovice",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "fotbal",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a055",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a056",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "dagmar-teplice",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "příbuzní",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a060",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "jaroslava-ostrava",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a061",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "denisa-jicin",
+      "raw": "pokoj",
+      "answer": null
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "hokej",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "Sport",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "Děti",
+      "answer": "Děti"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Děti",
+      "answer": "Děti"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "o fotbale",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "Škola",
+      "answer": "Škola"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "o dětech",
+      "answer": "Děti"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "politice",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "Jídlo.",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a079",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "pavel-stodulky",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Hokej",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Rodina.",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Sport.",
+      "answer": "Sport"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "všechno",
+      "answer": "Všechno"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "ryba",
+      "answer": "Rybaření"
+    },
+    {
+      "answerer": "a086",
+      "model": "x-ai/grok-4.3",
+      "persona": "stanislav-mikulov",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a087",
+      "model": "z-ai/glm-4.6",
+      "persona": "sarka-most",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "politika",
+      "answer": "Politika"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "děti",
+      "answer": "Děti"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "o nedělním obědě",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "polední cesta",
+      "answer": null
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "O počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "rodiče a děti",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Klobouky",
+      "answer": "Klobouky"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T10:24:23.424Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1898,
+    "durationMs": 22953,
+    "failed": 2,
+    "clusters": 12,
+    "topShare": 0.449
+  }
+}

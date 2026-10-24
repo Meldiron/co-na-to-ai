@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react"
+import { gameTitle } from "./game"
 import { domToBlob } from "modern-screenshot"
 import { Button } from "@/components/ui/button"
 import { formatShort } from "@/lib/day"
-import { CLEAR_BONUS, maxScore, pointsWord, scoreLines, shareText, type GameState } from "@/lib/game"
-import { computeStats, loadResults, type Stats } from "@/lib/storage"
+import { CLEAR_BONUS, MAX_STRIKES, maxScore, pointsWord, scoreLines, shareText, type GameState } from "@/lib/game"
 import type { BoardAnswer, PuzzlePayload } from "@/lib/types"
 
 type ResultsProps = {
@@ -11,7 +11,6 @@ type ResultsProps = {
   state: GameState
   answers: Array<BoardAnswer>
   daily: boolean
-  today: string
 }
 
 const plural = new Intl.PluralRules("cs-CZ")
@@ -20,23 +19,18 @@ const pick = (n: number, one: string, few: string, many: string) => {
   return category === "one" ? one : category === "few" ? few : many
 }
 
-export function Results({ payload, state, answers, daily, today }: ResultsProps) {
+export function Results({ payload, state, answers, daily }: ResultsProps) {
   const { bonus, total } = scoreLines(state, answers)
-  const [stats, setStats] = useState<Stats | null>(null)
-
-  useEffect(() => {
-    setStats(computeStats(loadResults(), today))
-  }, [today, state.status])
 
   return (
     <section id="vysledek" className="scroll-mt-4 bg-ground-step text-foreground">
       <div className="page grid gap-12 pt-24 pb-16 md:grid-cols-12 md:gap-6 md:pt-36 md:pb-24">
         <div className="flex flex-col md:col-span-6">
           <h2 className="head reveal">Váš výsledek</h2>
-          <p className="reveal mt-4 max-w-[44ch]" style={{ "--d": "80ms" } as React.CSSProperties}>
+          <p className="reveal mt-4 max-w-[44ch]">
             Každá odpověď má tolik bodů, kolik AI ji řeklo. Za celou tabuli je {CLEAR_BONUS} bodů navíc.
           </p>
-          <div className="reveal mt-12 md:mt-auto md:pt-16" style={{ "--d": "160ms" } as React.CSSProperties}>
+          <div className="reveal mt-12 md:mt-auto md:pt-16">
             <p className="giant">{total}</p>
             <p className="mt-5">
               {pointsWord(total)} z {maxScore(answers)} možných · {state.found.length} z {answers.length} odpovědí ·{" "}
@@ -46,8 +40,8 @@ export function Results({ payload, state, answers, daily, today }: ResultsProps)
         </div>
 
         <div className="md:col-span-5 md:col-start-8">
-          <div className="reveal zigzag-bottom bg-paper px-6 pt-7 pb-14 text-ink md:px-8" style={{ "--d": "120ms" } as React.CSSProperties}>
-            <p className="font-semibold">Účtenka, hra č. {payload.number}</p>
+          <div className="zigzag-bottom bg-paper px-6 pt-7 pb-14 text-ink md:px-8">
+            <p className="font-semibold">Účtenka, {gameTitle(payload).toLowerCase()}</p>
             <ul className="mt-5 grid gap-2.5">
               {answers.map((answer, index) => {
                 const found = state.found.includes(index)
@@ -76,7 +70,7 @@ export function Results({ payload, state, answers, daily, today }: ResultsProps)
         </div>
       </div>
 
-      <Share payload={payload} state={state} answers={answers} total={total} daily={daily} stats={stats} />
+      <Share payload={payload} state={state} answers={answers} total={total} daily={daily} />
     </section>
   )
 }
@@ -87,14 +81,12 @@ function Share({
   answers,
   total,
   daily,
-  stats,
 }: {
   payload: PuzzlePayload
   state: GameState
   answers: Array<BoardAnswer>
   total: number
   daily: boolean
-  stats: Stats | null
 }) {
   const ticketRef = useRef<HTMLDivElement>(null)
   const [status, setStatus] = useState("")
@@ -102,8 +94,10 @@ function Share({
 
   useEffect(() => setOrigin(window.location.origin), [])
 
-  const url = `${origin}${daily ? "/" : `/hra/${payload.date}`}`
-  const text = shareText({ number: payload.number, state, answers, total, url })
+  const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : daily ? "/" : `/hra/${payload.date}`
+  const url = `${origin}${path}`
+  const text = shareText({ label: payload.kind === "custom" ? "vlastní hra" : `č. ${payload.number}`, state, answers, total, url })
+  const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.number}.png`
 
   async function image(): Promise<Blob | null> {
     const node = ticketRef.current
@@ -114,7 +108,7 @@ function Share({
   async function share() {
     try {
       const blob = await image()
-      const file = blob ? new File([blob], `ptali-jsme-se-100-ai-${payload.number}.png`, { type: "image/png" }) : null
+      const file = blob ? new File([blob], fileName, { type: "image/png" }) : null
       if (file && "canShare" in navigator && navigator.canShare({ files: [file] })) {
         await navigator.share({ files: [file], text })
         return
@@ -144,7 +138,7 @@ function Share({
     if (!blob) return
     const link = document.createElement("a")
     link.href = URL.createObjectURL(blob)
-    link.download = `ptali-jsme-se-100-ai-${payload.number}.png`
+    link.download = fileName
     link.click()
     URL.revokeObjectURL(link.href)
     setStatus("Obrázek je stažený.")
@@ -152,7 +146,7 @@ function Share({
 
   return (
     <div className="page grid gap-10 pb-24 md:grid-cols-12 md:gap-6 md:pb-40">
-      <div className="reveal md:col-span-7">
+      <div className="md:col-span-7">
         <Ticket ref={ticketRef} payload={payload} state={state} answers={answers} total={total} host={origin.replace(/^https?:\/\//, "")} />
       </div>
       <div className="flex flex-col gap-6 md:col-span-4 md:col-start-9">
@@ -172,24 +166,7 @@ function Share({
         <p aria-live="polite" className="min-h-[1.5em] text-sm">
           {status}
         </p>
-        {stats && (
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-4">
-            <Stat label="Série dnů" value={stats.streak} />
-            <Stat label="Nejdelší série" value={stats.bestStreak} />
-            <Stat label="Odehráno" value={stats.played} />
-            <Stat label="Průměr bodů" value={stats.average} />
-          </dl>
-        )}
       </div>
-    </div>
-  )
-}
-
-function Stat({ label, value }: { label: string; value: number }) {
-  return (
-    <div>
-      <dt className="text-sm text-muted-foreground">{label}</dt>
-      <dd className="head tabular-nums">{value}</dd>
     </div>
   )
 }
@@ -233,7 +210,7 @@ function Ticket({
             <span key={answer.rank} className={`size-[4.4cqw] ${state.found.includes(index) ? "bg-field" : "bg-paper-step"}`} />
           ))}
           <span className="ml-[2cqw] flex gap-[0.6cqw]">
-            {Array.from({ length: 3 }, (_, i) => (
+            {Array.from({ length: MAX_STRIKES }, (_, i) => (
               <svg key={i} viewBox="0 0 24 24" className={`size-[3.4cqw] ${i < state.strikes ? "text-red" : "text-paper-step"}`} aria-hidden>
                 <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" strokeWidth="4" fill="none" />
               </svg>
@@ -242,8 +219,8 @@ function Ticket({
         </div>
       </div>
       <div className="absolute inset-y-0 right-0 flex w-[24.6%] flex-col justify-between py-[5.5%] pr-[3cqw] pl-[2cqw]">
-        <p className="text-[3.2cqw] leading-tight">Hra č.</p>
-        <p className="text-[11cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">{payload.number}</p>
+        <p className="text-[3.2cqw] leading-tight">{payload.kind === "custom" ? "Vlastní" : "Hra č."}</p>
+        <p className="text-[11cqw] leading-[0.8] font-bold tracking-[-0.04em] [font-stretch:75%]">{payload.kind === "custom" ? "hra" : payload.number}</p>
         <p className="text-[3.2cqw] leading-tight">
           {formatShort(payload.date)}
           <br />

@@ -16,14 +16,14 @@
     "pipeline": "node pipeline/run.ts"
   },
   "dependencies": {
+    "@blobatar/react": "^2.7.0",
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",
     "@openrouter/sdk": "^1.5.7",
     "@phosphor-icons/react": "^2.1.10",
     "@tailwindcss/vite": "^4",
-    "@tanstack/react-devtools": "latest",
     "@tanstack/react-router": "latest",
-    "@tanstack/react-router-devtools": "latest",
     "@tanstack/react-start": "latest",
+    "blobatar": "^2.7.0",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.0",
     "damerau-levenshtein": "^1.0.8",
@@ -38,7 +38,6 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@tanstack/devtools-vite": "latest",
     "@tanstack/eslint-config": "latest",
     "@tanstack/router-cli": "^1.167.39",
     "@types/damerau-levenshtein": "^1.0.2",

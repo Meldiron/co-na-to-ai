@@ -1,13 +1,15 @@
 import { existsSync } from "node:fs"
-import { join } from "node:path"
+import { join, resolve } from "node:path"
 import { parseArgs } from "node:util"
 import type { OpenRouter } from "@openrouter/sdk"
 import type { Model } from "@openrouter/sdk/models"
 import { addDays, isValidDate, pragueDate, puzzleNumber } from "../src/lib/day.ts"
-import type { Question } from "../src/lib/types.ts"
+import type { Puzzle, Question } from "../src/lib/types.ts"
 import { askAll, type RawResponse } from "./ask.ts"
-import { buildPuzzle, gate, group } from "./build.ts"
-import { JUDGE_MODEL, judge } from "./cluster.ts"
+import { buildPuzzle, type gate, type group } from "./build.ts"
+import { JUDGE_MODEL, type judge } from "./cluster.ts"
+import { finalize } from "./finalize.ts"
+import { resolveAliases, writeAliases } from "./aliases.ts"
 import { PATHS, loadCast, loadEnv, loadQuestionFiles, puzzlePath, readJson, saveQuestionFile, writeJson, type QuestionFile } from "./lib/io.ts"
 import { catalogue, client } from "./lib/openrouter.ts"
 import { SPARES } from "./lib/roster.ts"
@@ -67,12 +69,11 @@ async function fanOut(sdk: OpenRouter, models: Map<string, Model>, question: Que
 }
 
 async function judgeAndPublish(sdk: OpenRouter, run: Run, file: QuestionFile): Promise<boolean> {
-  const answered = run.responses.filter((r) => r.raw !== null)
-  const { judgement, costUsd } = await judge(sdk, run.question.text, answered.map((r) => r.raw!))
-  run.judgement = judgement
-  run.costUsd += costUsd
-  const grouped = group(run.responses, judgement)
-  run.gate = gate(grouped, answered.length, judgement)
+  const result = await finalize(sdk, run.question.text, run.responses)
+  const { grouped } = result
+  run.judgement = result.judgement
+  run.costUsd += result.costUsd
+  run.gate = result.gate
   await writeJson(runFile(run.date, run.question.id), run)
 
   report(run, grouped)
@@ -103,7 +104,7 @@ function report(run: Run, grouped: ReturnType<typeof group>) {
   const g = run.gate!
   console.log(`\n${run.date} · ${run.question.text}`)
   grouped.slice(0, 8).forEach((c, i) => console.log(`  ${i + 1}. ${c.canonical.padEnd(24)} ${c.answerers.length}`))
-  console.log(`  answered ${g.answered}/${run.responses.length} · clusters ${grouped.length} · top ${Math.round(g.topShare * 100)} % · cost $${run.costUsd.toFixed(3)} · ${Math.round(run.durationMs / 1000)} s`)
+  console.log(`  answered ${g.answered}/${run.responses.length} · clusters ${grouped.length} · top ${Math.round(g.topShare * 100)} % · board ${Math.round(g.boardShare * 100)} % · cost $${run.costUsd.toFixed(3)} · ${Math.round(run.durationMs / 1000)} s`)
   console.log(g.passed ? "  gate: passed" : `  gate: FAILED · ${g.flags.join(" · ")}`)
 }
 
@@ -142,6 +143,55 @@ async function recluster(sdk: OpenRouter, date: string) {
   await judgeAndPublish(sdk, run, slot.file)
 }
 
+async function rejudge(sdk: OpenRouter, path: string) {
+  const puzzle = await readJson<Puzzle & { gate?: unknown }>(path)
+  const responses: Array<RawResponse> = puzzle.responses.map((r) => ({
+    answerer: r.answerer,
+    persona: r.persona,
+    model: r.raw ? r.model : null,
+    raw: r.raw || null,
+    attempts: [],
+  }))
+  const result = await finalize(sdk, puzzle.question, responses, { aliasesOnFail: true })
+  const rebuilt = buildPuzzle({
+    date: puzzle.date,
+    number: path.includes(`${PATHS.puzzles}/`) ? puzzleNumber(puzzle.date) : puzzle.number,
+    questionId: puzzle.questionId,
+    question: puzzle.question,
+    responses,
+    grouped: result.grouped,
+    judgeModel: JUDGE_MODEL,
+    costUsd: puzzle.meta.costUsd + result.costUsd,
+    durationMs: puzzle.meta.durationMs,
+  })
+  rebuilt.responses = puzzle.responses.map((r) => ({ ...r, answer: rebuilt.responses.find((x) => x.answerer === r.answerer)?.answer ?? null }))
+  await writeJson(path, { ...puzzle, ...rebuilt, ...(puzzle.gate ? { gate: result.gate } : {}) })
+  console.log(`${path}: ${puzzle.question}`)
+  rebuilt.answers.forEach((a) => console.log(`  ${a.rank}. ${a.text.padEnd(18)} ${String(a.votes).padStart(3)}  ${a.aliases.length} aliases`))
+  console.log(`  gate ${result.gate.passed ? "passed" : `FAILED · ${result.gate.flags.join(" · ")}`} · +$${result.costUsd.toFixed(3)}`)
+}
+
+async function refreshAliases(sdk: OpenRouter, path: string) {
+  const puzzle = await readJson<Puzzle>(path)
+  const rawOf = new Map(puzzle.responses.map((r) => [r.answerer, r.raw]))
+  const outside = puzzle.others.map((o) => o.text)
+  const { answers, costUsd } = await writeAliases(
+    sdk,
+    puzzle.question,
+    puzzle.answers.map((a) => ({ canonical: a.text, examples: a.answerers.map((id) => rawOf.get(id) ?? "") })),
+    outside,
+  )
+  const merged = resolveAliases(
+    puzzle.answers.map((a) => a.text),
+    puzzle.answers.map((a) => ({ canonical: a.text, accept: [...a.aliases, ...(answers.find((x) => x.canonical === a.text)?.accept ?? [])] })),
+    outside,
+  )
+  for (const a of puzzle.answers) a.aliases = merged.get(a.text) ?? []
+  puzzle.meta.costUsd = Math.round((puzzle.meta.costUsd + costUsd) * 10_000) / 10_000
+  await writeJson(path, puzzle)
+  console.log(`${path}: ${puzzle.answers.map((a) => `${a.text} ${a.aliases.length}`).join(" · ")} · +$${costUsd.toFixed(3)}`)
+}
+
 async function main() {
   loadEnv()
   if (!process.env.OPENROUTER_API_KEY) {
@@ -155,9 +205,21 @@ async function main() {
       from: { type: "string" },
       force: { type: "boolean", default: false },
       recluster: { type: "string" },
+      rejudge: { type: "string", multiple: true },
+      aliases: { type: "string", multiple: true },
     },
   })
   const sdk = client()
+
+  if (values.aliases) {
+    for (const path of values.aliases) await refreshAliases(sdk, resolve(path))
+    return
+  }
+
+  if (values.rejudge) {
+    for (const path of values.rejudge) await rejudge(sdk, resolve(path))
+    return
+  }
 
   if (values.recluster) {
     await recluster(sdk, values.recluster)

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react"
 import { firstName, modelOf, personaOf } from "@/lib/cast"
 import type { PuzzleSecret, Response } from "@/lib/types"
+import { PersonaAvatar } from "./persona-avatar"
 import { PersonaDialog } from "./persona-dialog"
 
 const plural = new Intl.PluralRules("cs-CZ")
@@ -24,12 +25,15 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
         <button
           type="button"
           onClick={() => setOpen(response)}
-          className="flex h-full flex-col items-start bg-ground-step px-3 py-2 text-left transition-colors hover:bg-field hover:text-field-ink focus-visible:bg-field focus-visible:text-field-ink"
+          className="flex h-full items-center gap-2.5 bg-ground-step py-2 pr-3 pl-2 text-left transition-colors hover:bg-field hover:text-field-ink focus-visible:bg-field focus-visible:text-field-ink"
         >
-          <span className="font-semibold">
-            {firstName(persona)}, {persona.age}
+          <PersonaAvatar id={persona.id} size={36} className="shrink-0" />
+          <span className="flex flex-col">
+            <span className="font-semibold">
+              {firstName(persona)}, {persona.age}
+            </span>
+            <span className="text-sm opacity-80">{modelOf(response.model).name}</span>
           </span>
-          <span className="text-sm opacity-80">{modelOf(response.model).name}</span>
         </button>
       </li>
     )
@@ -40,14 +44,14 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
       <div className="page pt-24 pb-24 md:pt-40 md:pb-40">
         <div className="grid gap-4 md:grid-cols-12 md:gap-6">
           <h2 className="head reveal md:col-span-4">Kdo co řekl</h2>
-          <p className="reveal max-w-[60ch] md:col-span-7 md:col-start-6" style={{ "--d": "80ms" } as React.CSSProperties}>
+          <p className="reveal max-w-[60ch] md:col-span-7 md:col-start-6">
             Všech {secret.responses.length} odpovědí, seřazených podle tabule. Klikněte na jméno a uvidíte, kdo za odpovědí stojí, jak přesně odpověděl a který model ji napsal.
           </p>
         </div>
 
         <ol className="mt-12 grid gap-10 md:mt-16 md:gap-12">
           {secret.answers.map((answer) => (
-            <li key={answer.rank} className="reveal grid gap-4 md:grid-cols-12 md:gap-6">
+            <li key={answer.rank} className="grid gap-4 md:grid-cols-12 md:gap-6">
               <div className="flex items-baseline gap-4 md:col-span-4 md:flex-col md:gap-1">
                 <h3 className="head">
                   {answer.rank}. {answer.text}

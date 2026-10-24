@@ -10,6 +10,10 @@ export function normalize(text: string): string {
     .trim()
 }
 
+export function looseKey(text: string): string {
+  return normalize(text).replaceAll("y", "i").replaceAll("w", "v").replace(/(\p{L})\1+/gu, "$1")
+}
+
 export function allowedTypos(length: number): number {
   if (length <= 3) return 0
   if (length <= 6) return 1
@@ -33,14 +37,14 @@ export function matchGuess(
   answers: Array<Pick<BoardAnswer, "text" | "aliases">>,
   found: ReadonlySet<number>,
 ): MatchResult {
-  const g = normalize(guess)
+  const g = looseKey(guess)
   if (!g) return { kind: "miss" }
   const compact = g.replaceAll(" ", "")
 
   let best = { index: -1, distance: Infinity }
   for (const [index, answer] of answers.entries()) {
     for (const form of [answer.text, ...answer.aliases]) {
-      const f = normalize(form)
+      const f = looseKey(form)
       if (!f) continue
       const distance = f === g || f.replaceAll(" ", "") === compact ? 0 : typoDistance(g, f)
       if (distance < best.distance) best = { index, distance }

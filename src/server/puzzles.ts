@@ -17,9 +17,13 @@ export function publishedDates(today: string): Array<string> {
   return [...byDate.keys()].filter((date) => date <= today).sort()
 }
 
-export function toPayload(puzzle: Puzzle): PuzzlePayload {
+export function toPayload(puzzle: Puzzle, kind: PuzzlePayload["kind"] = "daily", id = puzzle.date): PuzzlePayload {
   const { answers, others, responses, ...rest } = puzzle
-  return { ...rest, secret: encodeSecret({ answers, others, responses }, puzzle.date) }
+  return { ...rest, kind, id, secret: encodeSecret({ answers, others, responses }, id) }
+}
+
+export async function recentSummaries(today: string, exclude: string, count = 3): Promise<Array<PuzzleSummary>> {
+  return (await summaries(today)).filter((s) => s.date !== exclude && s.date !== today).slice(0, count)
 }
 
 export async function summaries(today: string): Promise<Array<PuzzleSummary>> {

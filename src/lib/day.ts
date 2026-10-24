@@ -1,4 +1,4 @@
-export const LAUNCH_DATE = "2026-10-24"
+export const LAUNCH_DATE = "2026-10-17"
 export const TIME_ZONE = "Europe/Prague"
 
 const isoFormatter = new Intl.DateTimeFormat("en-CA", {
@@ -47,6 +47,12 @@ const shortFormatter = new Intl.DateTimeFormat("cs-CZ", {
   year: "numeric",
   timeZone: "UTC",
 })
+
+const dayMonthFormatter = new Intl.DateTimeFormat("cs-CZ", { day: "numeric", month: "numeric", timeZone: "UTC" })
+
+export function formatDayMonth(date: string): string {
+  return dayMonthFormatter.format(new Date(`${date}T12:00:00Z`))
+}
 
 export function formatLong(date: string): string {
   return longFormatter.format(new Date(`${date}T12:00:00Z`))

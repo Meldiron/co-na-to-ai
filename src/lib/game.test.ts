@@ -15,9 +15,9 @@ function play(guesses: Array<string>): GameState {
 }
 
 describe("applyGuess", () => {
-  it("ends the game on the third strike", () => {
-    const state = play(["auto", "vlak", "letadlo"])
-    expect(state.strikes).toBe(3)
+  it("ends the game on the fifth strike", () => {
+    const state = play(["auto", "vlak", "letadlo", "lod", "kolo"])
+    expect(state.strikes).toBe(5)
     expect(state.status).toBe("lost")
   })
 
@@ -37,7 +37,7 @@ describe("applyGuess", () => {
   })
 
   it("ignores guesses after the game is over", () => {
-    const over = play(["a1", "a2", "a3"])
+    const over = play(["a1", "a2", "a3", "a4", "a5"])
     expect(applyGuess(over, answers, "pivo").outcome.kind).toBe("over")
   })
 })
@@ -59,7 +59,7 @@ describe("scoreLines", () => {
 describe("shareText", () => {
   it("shows the board in slot order and the guesses in order, without spoilers", () => {
     const state = play(["pivo", "auto", "kytara"])
-    const text = shareText({ number: 7, state, answers, total: 26, url: "https://example.cz/" })
+    const text = shareText({ label: "č. 7", state, answers, total: 26, url: "https://example.cz/" })
     expect(text).toBe(["Ptali jsme se 100 AI · č. 7", "🟩⬜⬜⬜⬜⬜⬜🟩 2/8", "🟩🟥🟩", "26 bodů", "https://example.cz/"].join("\n"))
     expect(text).not.toMatch(/pivo|kytara/i)
   })

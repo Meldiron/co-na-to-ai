@@ -5,15 +5,8 @@
     "tags": [
       "domov"
     ],
-    "status": "approved"
-  },
-  {
-    "id": "kocovina",
-    "text": "Co vám nejlíp pomůže na kocovinu?",
-    "tags": [
-      "kocovina"
-    ],
-    "status": "approved"
+    "status": "rejected",
+    "date": "2026-10-17"
   },
   {
     "id": "podcenovane-povolani",
@@ -21,7 +14,8 @@
     "tags": [
       "práce"
     ],
-    "status": "approved"
+    "status": "used",
+    "date": "2026-10-17"
   },
   {
     "id": "nedelni-obed-tema",
@@ -29,15 +23,8 @@
     "tags": [
       "rodina"
     ],
-    "status": "approved"
-  },
-  {
-    "id": "ztraceny-cas",
-    "text": "Na čem nejvíc ztrácíte čas?",
-    "tags": [
-      "čas"
-    ],
-    "status": "approved"
+    "status": "used",
+    "date": "2026-10-21"
   },
   {
     "id": "kdyz-je-smutno",
@@ -45,7 +32,8 @@
     "tags": [
       "emoce"
     ],
-    "status": "approved"
+    "status": "used",
+    "date": "2026-10-22"
   },
   {
     "id": "otravny-zvuk",
@@ -72,34 +60,10 @@
     "status": "approved"
   },
   {
-    "id": "ceska-svatba",
-    "text": "Co nesmí chybět na české svatbě?",
-    "tags": [
-      "svatba"
-    ],
-    "status": "approved"
-  },
-  {
     "id": "rozesmeje",
     "text": "Co vás vždycky rozesměje?",
     "tags": [
       "nálada"
-    ],
-    "status": "approved"
-  },
-  {
-    "id": "cekani-na-vlak",
-    "text": "Co děláte, když čekáte na vlak?",
-    "tags": [
-      "doprava"
-    ],
-    "status": "approved"
-  },
-  {
-    "id": "novy-byt",
-    "text": "Co si do nového bytu koupíte jako první?",
-    "tags": [
-      "bydlení"
     ],
     "status": "approved"
   },
@@ -116,15 +80,6 @@
     "text": "Co se dá uvařit z mletého masa?",
     "tags": [
       "vaření"
-    ],
-    "status": "approved"
-  },
-  {
-    "id": "deti-jedi",
-    "text": "Jaké jídlo děti milují?",
-    "tags": [
-      "děti",
-      "jídlo"
     ],
     "status": "approved"
   },
@@ -165,14 +120,6 @@
     "text": "Co děláte, když vás bolí hlava?",
     "tags": [
       "zdraví"
-    ],
-    "status": "approved"
-  },
-  {
-    "id": "v-aute-vzdy",
-    "text": "Co máte v autě pořád s sebou?",
-    "tags": [
-      "auto"
     ],
     "status": "approved"
   },

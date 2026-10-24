@@ -1,0 +1,1138 @@
+{
+  "date": "2026-10-24",
+  "number": 0,
+  "questionId": "7d73a5b207",
+  "question": "Co potřebuje právnik na každodenní práci?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Zákony",
+      "votes": 40,
+      "aliases": [
+        "zákon",
+        "zákoník",
+        "zákoníky",
+        "zákonů",
+        "předpisy",
+        "právní předpisy",
+        "paragrafy",
+        "paragraf",
+        "právo",
+        "legislativa",
+        "norma",
+        "zákonná norma",
+        "právní texty",
+        "zákoníku",
+        "zákona",
+        "sbírka zákonů",
+        "práva",
+        "předpis",
+        "paragrafů",
+        "normy",
+        "zákonné normy",
+        "občanský zákoník",
+        "trestní zákoník",
+        "ústava",
+        "vyhlášky",
+        "vyhláška",
+        "nařízení",
+        "směrnice",
+        "judikatura",
+        "judikáty",
+        "rozsudky",
+        "literatura zákonů"
+      ],
+      "answerers": [
+        "a002",
+        "a004",
+        "a005",
+        "a007",
+        "a012",
+        "a018",
+        "a021",
+        "a022",
+        "a023",
+        "a024",
+        "a026",
+        "a028",
+        "a029",
+        "a030",
+        "a031",
+        "a033",
+        "a034",
+        "a039",
+        "a043",
+        "a045",
+        "a052",
+        "a054",
+        "a056",
+        "a062",
+        "a063",
+        "a064",
+        "a066",
+        "a067",
+        "a068",
+        "a069",
+        "a075",
+        "a076",
+        "a079",
+        "a081",
+        "a083",
+        "a084",
+        "a085",
+        "a088",
+        "a094",
+        "a095"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Počítač",
+      "votes": 31,
+      "aliases": [
+        "počítače",
+        "pc",
+        "notebook",
+        "laptop",
+        "computer",
+        "compjútr",
+        "noťas",
+        "počítačů",
+        "komp",
+        "kompl",
+        "compl",
+        "notebooky",
+        "macbook",
+        "mac",
+        "tablet",
+        "ipad",
+        "software",
+        "program",
+        "programy",
+        "internet",
+        "beck",
+        "aspi",
+        "technika",
+        "monitor",
+        "klávesnice",
+        "myš",
+        "tiskárna",
+        "elektronika"
+      ],
+      "answerers": [
+        "a003",
+        "a006",
+        "a008",
+        "a009",
+        "a011",
+        "a014",
+        "a017",
+        "a019",
+        "a020",
+        "a032",
+        "a035",
+        "a038",
+        "a040",
+        "a041",
+        "a042",
+        "a046",
+        "a048",
+        "a049",
+        "a050",
+        "a053",
+        "a055",
+        "a058",
+        "a060",
+        "a070",
+        "a073",
+        "a074",
+        "a077",
+        "a078",
+        "a090",
+        "a096",
+        "a098"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Papír",
+      "votes": 11,
+      "aliases": [
+        "papíry",
+        "papírky",
+        "papírek",
+        "pero a papír",
+        "papíru",
+        "pero",
+        "pera",
+        "propiska",
+        "propisky",
+        "tužka",
+        "tužky",
+        "psací potřeby",
+        "kancelářské potřeby",
+        "blok",
+        "bloky",
+        "poznámkový blok",
+        "sešit",
+        "sešity",
+        "diář",
+        "notes",
+        "tiskopis",
+        "tiskopisy",
+        "formuláře",
+        "formulář",
+        "kopírák",
+        "lepíky",
+        "sponky",
+        "šanon",
+        "šanony",
+        "složky",
+        "složka",
+        "razítko",
+        "razítka"
+      ],
+      "answerers": [
+        "a001",
+        "a016",
+        "a036",
+        "a044",
+        "a047",
+        "a059",
+        "a061",
+        "a065",
+        "a071",
+        "a072",
+        "a086"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Spisy",
+      "votes": 5,
+      "aliases": [
+        "spis",
+        "advokátní spisy",
+        "dokumenty",
+        "dokument",
+        "listiny",
+        "spisu",
+        "dokumentů",
+        "dokumentace",
+        "listina",
+        "smlouvy",
+        "smlouva",
+        "smluv",
+        "akta",
+        "akty",
+        "složky klientů",
+        "případy",
+        "případ",
+        "kauzy",
+        "kauza",
+        "podklady",
+        "podání",
+        "žaloby",
+        "žaloba",
+        "klienti",
+        "klient",
+        "klientů",
+        "materiály",
+        "agenda"
+      ],
+      "answerers": [
+        "a013",
+        "a057",
+        "a089",
+        "a091",
+        "a099"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Knihy",
+      "votes": 4,
+      "aliases": [
+        "kniha",
+        "knihu",
+        "právní knihy",
+        "knížky",
+        "literatura",
+        "knih",
+        "knížka",
+        "knížku",
+        "odborné knihy",
+        "učebnice",
+        "učebnici",
+        "odborná literatura",
+        "komentáře",
+        "komentář",
+        "encyklopedie",
+        "příručky",
+        "příručka",
+        "slovník",
+        "slovníky",
+        "knihovna",
+        "časopis",
+        "časopisy",
+        "rozum",
+        "vzdělání",
+        "znalosti",
+        "vědomosti"
+      ],
+      "answerers": [
+        "a010",
+        "a082",
+        "a092",
+        "a093"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Oblečení",
+      "votes": 2,
+      "aliases": [
+        "oblek",
+        "kvalitní oblek",
+        "oblek a kravata",
+        "šaty",
+        "kvádro",
+        "obleky",
+        "sako",
+        "saka",
+        "kravata",
+        "kravaty",
+        "košile",
+        "košili",
+        "košil",
+        "talár",
+        "taláry",
+        "kostým",
+        "kostýmek",
+        "boty",
+        "polobotky",
+        "kalhoty",
+        "oděv",
+        "oděvy",
+        "outfit",
+        "hadry",
+        "róba",
+        "manžety"
+      ],
+      "answerers": [
+        "a025",
+        "a027"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Stůl",
+      "votes": 1,
+      "aliases": [
+        "psací stůl",
+        "stolek",
+        "stoly",
+        "pracovní stůl",
+        "kancelářský stůl",
+        "stolu",
+        "židle",
+        "židli",
+        "křeslo",
+        "kancelářská židle",
+        "nábytek",
+        "lampa",
+        "lampička",
+        "deska stolu",
+        "pracovní místo",
+        "stolec"
+      ],
+      "answerers": [
+        "a015"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Kancelář",
+      "votes": 1,
+      "aliases": [
+        "kanceláře",
+        "kancl",
+        "pracovna",
+        "úřadovna",
+        "advokátní kancelář",
+        "kanceláři",
+        "pracovnu",
+        "pracoviště",
+        "ofis",
+        "office",
+        "místnost",
+        "prostory",
+        "firma",
+        "sídlo",
+        "budova",
+        "soud",
+        "soudní síň",
+        "klid",
+        "pracovní prostředí",
+        "sekretářka",
+        "asistentka",
+        "telefon",
+        "mobil",
+        "kafe",
+        "káva",
+        "kávu"
+      ],
+      "answerers": [
+        "a051"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Důkazy",
+      "votes": 1,
+      "answerers": [
+        "a097"
+      ]
+    },
+    {
+      "text": "Klobouk",
+      "votes": 1,
+      "answerers": [
+        "a100"
+      ]
+    },
+    {
+      "text": "Čepice",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Pero a papír",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "knihy",
+      "answer": "Knihy"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "Právo",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "spis, práva, klid",
+      "answer": "Spisy"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "Počítač a zákony",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "Psací stůl",
+      "answer": "Stůl"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "časopis, papír, kafe",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "právní texty",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "Oblečení",
+      "answer": "Oblečení"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "Kvalitní oblek",
+      "answer": "Oblečení"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Papíry, počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Zákoníky",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "papíry a počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Papír, kladivo",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Právník",
+      "answer": null
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "počítač a zákony",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "zákonní norma",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "papíry",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a045",
+      "model": "mistralai/mistral-small-2603",
+      "persona": "stepan-klatovy",
+      "raw": "Předpisy",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "papíry",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a049",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "pavla-brno",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-saba",
+      "persona": "aneta-holesovice",
+      "raw": "Kancelář",
+      "answer": "Kancelář"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-v4-flash",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a056",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "dagmar-teplice",
+      "raw": "zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "advokátní spisy",
+      "answer": "Spisy"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "notebook",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "Papír a pero",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a060",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "jaroslava-ostrava",
+      "raw": "počítač a zákony",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a061",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "denisa-jicin",
+      "raw": "Papíry",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "paragrafy",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Papír",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "Zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "paragrafy",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Pera a papíry",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "Papíry",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "zákon",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "právní předpisy",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a079",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "pavel-stodulky",
+      "raw": "zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Odpověď: Čepice",
+      "answer": "Čepice"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Právní předpisy.",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Právní knihy.",
+      "answer": "Knihy"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "právní předpisy",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "Zákony a předpisy",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "právní zákony",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a086",
+      "model": "x-ai/grok-4.3",
+      "persona": "stanislav-mikulov",
+      "raw": "papíry",
+      "answer": "Papír"
+    },
+    {
+      "answerer": "a087",
+      "model": "z-ai/glm-4.6",
+      "persona": "sarka-most",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Zákoník",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "Počítač a spisy",
+      "answer": "Spisy"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "notebook",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "spisy",
+      "answer": "Spisy"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Knihu a rozum",
+      "answer": "Knihy"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Právní knihy",
+      "answer": "Knihy"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Zákoníky",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "paragrafy",
+      "answer": "Zákony"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "Důkazy",
+      "answer": "Důkazy"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "počítač",
+      "answer": "Počítač"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Dokumenty, legislativa, software, komunikace, zkušenosti.",
+      "answer": "Spisy"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Klobouk.",
+      "answer": "Klobouk"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T10:27:37.841Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.2092,
+    "durationMs": 36556,
+    "failed": 1,
+    "clusters": 11,
+    "topShare": 0.404
+  },
+  "id": "7d73a5b207",
+  "createdAt": "2026-10-24T09:42:19.168Z",
+  "gate": {
+    "passed": false,
+    "answered": 99,
+    "topShare": 0.40404040404040403,
+    "boardShare": 0.9595959595959596,
+    "clustersWithTwo": 6,
+    "flags": [
+      "only 6 answers with 2+ votes (min 8)"
+    ]
+  }
+}

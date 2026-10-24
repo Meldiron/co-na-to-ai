@@ -79,6 +79,8 @@ export type Puzzle = {
 } & PuzzleSecret
 
 export type PuzzlePayload = Omit<Puzzle, keyof PuzzleSecret> & {
+  kind: "daily" | "custom"
+  id: string
   secret: string
 }
 

@@ -4,21 +4,27 @@ import { decodeSecret } from "@/lib/secret"
 import { loadGame, saveGame, saveResult } from "@/lib/storage"
 import type { PuzzlePayload } from "@/lib/types"
 
+export function gameKey(payload: PuzzlePayload): string {
+  return payload.kind === "custom" ? `vlastni:${payload.id}` : payload.date
+}
+
 export function useGame(payload: PuzzlePayload, daily: boolean) {
-  const secret = useMemo(() => decodeSecret(payload.secret, payload.date), [payload.secret, payload.date])
+  const key = gameKey(payload)
+  const secret = useMemo(() => decodeSecret(payload.secret, payload.id), [payload.secret, payload.id])
+  const board = useMemo(() => secret.answers.map((a) => a.text).join("|"), [secret.answers])
   const [state, setState] = useState<GameState>(initialState)
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    setState(loadGame(payload.date) ?? initialState)
+    setState(loadGame(key, board) ?? initialState)
     setReady(true)
-  }, [payload.date])
+  }, [key, board])
 
   const commit = useCallback(
     (next: GameState) => {
       setState(next)
-      saveGame(payload.date, next)
-      if (next.status !== "playing") {
+      saveGame(key, board, next)
+      if (next.status !== "playing" && payload.kind === "daily") {
         const { total } = scoreLines(next, secret.answers)
         saveResult(payload.date, {
           score: total,
@@ -29,7 +35,7 @@ export function useGame(payload: PuzzlePayload, daily: boolean) {
         })
       }
     },
-    [payload.date, secret.answers, daily],
+    [key, board, payload.date, payload.kind, secret.answers, daily],
   )
 
   const guess = useCallback(

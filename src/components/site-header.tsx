@@ -1,6 +1,4 @@
 import { Link } from "@tanstack/react-router"
-import { MoonIcon, SunIcon } from "@phosphor-icons/react"
-import { useEffect, useState } from "react"
 
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -12,34 +10,6 @@ export function Wordmark({ className = "" }: { className?: string }) {
       </span>
       AI
     </span>
-  )
-}
-
-function ThemeToggle() {
-  const [dark, setDark] = useState<boolean | null>(null)
-
-  useEffect(() => setDark(document.documentElement.classList.contains("dark")), [])
-
-  function toggle() {
-    const next = !document.documentElement.classList.contains("dark")
-    document.documentElement.classList.toggle("dark", next)
-    try {
-      localStorage.setItem("pjs100:tema", next ? "dark" : "light")
-    } catch {
-      // private mode: the choice lasts for this visit
-    }
-    setDark(next)
-  }
-
-  return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-label={dark ? "Přepnout na světlý vzhled" : "Přepnout na tmavý vzhled"}
-      className="grid size-11 place-items-center transition-colors hover:bg-black/15"
-    >
-      {dark ? <SunIcon className="size-5" weight="bold" /> : <MoonIcon className="size-5" weight="bold" />}
-    </button>
   )
 }
 
@@ -70,7 +40,9 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
           <a href="/#pravidla" className="hidden h-11 items-center px-3 underline-offset-[6px] hover:underline md:inline-flex">
             Pravidla
           </a>
-          <ThemeToggle />
+          <Link to="/admin" className="inline-flex h-11 items-center px-3 underline-offset-[6px] hover:underline data-[status=active]:underline">
+            Admin
+          </Link>
         </nav>
       </div>
     </header>

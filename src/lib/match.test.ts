@@ -48,6 +48,15 @@ describe("matchGuess", () => {
     expect(matchGuess("piva", answers, new Set([0]))).toEqual({ kind: "repeat", index: 0 })
   })
 
+  it("forgives Czech i/y mistakes, doubled letters and w for v", () => {
+    expect(matchGuess("pyvo", answers, none)).toEqual({ kind: "hit", index: 0 })
+    expect(matchGuess("jahodi", answers, none)).toEqual({ kind: "hit", index: 3 })
+    expect(matchGuess("repellent", answers, none)).toEqual({ kind: "hit", index: 1 })
+    expect(matchGuess("pivko", answers, none)).toEqual({ kind: "hit", index: 0 })
+    expect(matchGuess("teplé oblečený", answers, none)).toEqual({ kind: "hit", index: 2 })
+    expect(matchGuess("swetr", answers, none)).toEqual({ kind: "hit", index: 2 })
+  })
+
   it("matches multi-word answers typed without spaces", () => {
     expect(matchGuess("sprejnakomary", answers, none)).toEqual({ kind: "hit", index: 1 })
   })

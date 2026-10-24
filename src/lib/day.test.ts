@@ -35,8 +35,8 @@ describe("msUntilNextPragueMidnight", () => {
 describe("puzzle numbering", () => {
   it("starts at 1 on launch day and counts days", () => {
     expect(puzzleNumber(LAUNCH_DATE)).toBe(1)
-    expect(puzzleNumber("2026-10-31")).toBe(8)
-    expect(puzzleNumber("2027-10-24")).toBe(366)
+    expect(puzzleNumber("2026-10-24")).toBe(8)
+    expect(puzzleNumber("2027-10-24")).toBe(373)
   })
 
   it("adds days across month and DST boundaries", () => {

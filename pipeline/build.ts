@@ -8,12 +8,14 @@ export const GATE = {
   minAnswered: 80,
   maxTopShare: 0.45,
   minClustersWithTwo: 8,
+  minBoardShare: 0.5,
 }
 
 export type GateResult = {
   passed: boolean
   answered: number
   topShare: number
+  boardShare: number
   clustersWithTwo: number
   flags: Array<string>
 }
@@ -48,12 +50,15 @@ export function gate(grouped: Array<Grouped>, answered: number, judgement: Judge
   const top = grouped[0]?.answerers.length ?? 0
   const topShare = answered ? top / answered : 0
   const clustersWithTwo = grouped.filter((c) => c.answerers.length >= 2).length
+  const onBoard = grouped.slice(0, BOARD_SIZE).reduce((sum, c) => sum + c.answerers.length, 0)
+  const boardShare = answered ? onBoard / answered : 0
   const flags: Array<string> = []
   if (answered < GATE.minAnswered) flags.push(`only ${answered} answers (min ${GATE.minAnswered})`)
   if (topShare > GATE.maxTopShare) flags.push(`top answer "${grouped[0].canonical}" has ${Math.round(topShare * 100)} % (max ${GATE.maxTopShare * 100} %)`)
   if (clustersWithTwo < GATE.minClustersWithTwo) flags.push(`only ${clustersWithTwo} answers with 2+ votes (min ${GATE.minClustersWithTwo})`)
+  if (boardShare < GATE.minBoardShare) flags.push(`the board holds only ${Math.round(boardShare * 100)} % of answers (min ${GATE.minBoardShare * 100} %)`)
   if (judgement.offensive) flags.push("judge flagged offensive content")
-  return { passed: flags.length === 0, answered, topShare, clustersWithTwo, flags }
+  return { passed: flags.length === 0, answered, topShare, boardShare, clustersWithTwo, flags }
 }
 
 export function buildPuzzle(opts: {

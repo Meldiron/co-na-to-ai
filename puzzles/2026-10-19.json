@@ -1,0 +1,1158 @@
+{
+  "date": "2026-10-19",
+  "number": 3,
+  "questionId": "ztraceny-cas",
+  "question": "Na čem nejvíc ztrácíte čas?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Telefon",
+      "votes": 32,
+      "aliases": [
+        "telefonu",
+        "telefony",
+        "mobil",
+        "mobilu",
+        "mobily",
+        "mobilem",
+        "telefonem",
+        "smartphone",
+        "mobilní telefon",
+        "telefonování",
+        "telefonovat",
+        "mobilní",
+        "mobilek",
+        "smartfoun",
+        "iphone",
+        "android",
+        "samsung",
+        "mobajl",
+        "volání",
+        "esemesky",
+        "sms",
+        "zprávy",
+        "psaní zpráv",
+        "displej",
+        "aplikace",
+        "appky",
+        "whatsapp",
+        "messenger",
+        "chatování"
+      ],
+      "answerers": [
+        "a002",
+        "a003",
+        "a006",
+        "a008",
+        "a011",
+        "a012",
+        "a014",
+        "a015",
+        "a016",
+        "a017",
+        "a020",
+        "a022",
+        "a026",
+        "a027",
+        "a030",
+        "a041",
+        "a042",
+        "a046",
+        "a049",
+        "a054",
+        "a064",
+        "a066",
+        "a067",
+        "a068",
+        "a070",
+        "a073",
+        "a078",
+        "a081",
+        "a083",
+        "a088",
+        "a095",
+        "a098"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Televize",
+      "votes": 24,
+      "aliases": [
+        "televizi",
+        "televizor",
+        "televizoru",
+        "tv",
+        "telka",
+        "telku",
+        "bedna",
+        "koukání na televizi",
+        "seriály",
+        "telce",
+        "bednu",
+        "seriál",
+        "seriálů",
+        "filmy",
+        "film",
+        "netflix",
+        "sledování televize",
+        "dívání na televizi",
+        "zprávy v televizi",
+        "telenovely",
+        "streamování",
+        "hbo"
+      ],
+      "answerers": [
+        "a001",
+        "a005",
+        "a007",
+        "a009",
+        "a021",
+        "a029",
+        "a031",
+        "a037",
+        "a039",
+        "a043",
+        "a050",
+        "a056",
+        "a057",
+        "a059",
+        "a060",
+        "a065",
+        "a069",
+        "a072",
+        "a075",
+        "a079",
+        "a086",
+        "a089",
+        "a096",
+        "a100"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Sítě",
+      "votes": 10,
+      "aliases": [
+        "sociální sítě",
+        "sociální síti",
+        "sociálních sítích",
+        "instagram",
+        "instagramu",
+        "facebook",
+        "facebooku",
+        "scrollování",
+        "sociální",
+        "tiktok",
+        "sítích",
+        "insta",
+        "fb",
+        "tiktoku",
+        "twitter",
+        "x",
+        "skrolování",
+        "reels",
+        "snapchat",
+        "sociálky",
+        "socky"
+      ],
+      "answerers": [
+        "a004",
+        "a010",
+        "a032",
+        "a093",
+        "a019",
+        "a053",
+        "a061",
+        "a063",
+        "a052",
+        "a018"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Internet",
+      "votes": 6,
+      "aliases": [
+        "internetu",
+        "net",
+        "netu",
+        "web",
+        "surfování",
+        "brouzdání",
+        "weby",
+        "stránky",
+        "surfování na internetu",
+        "youtube",
+        "youtubu",
+        "videa",
+        "počítač",
+        "počítači",
+        "pc",
+        "notebook",
+        "noťas",
+        "noťasu",
+        "google",
+        "googlení",
+        "online",
+        "zprávy na internetu",
+        "diskuze",
+        "reddit"
+      ],
+      "answerers": [
+        "a045",
+        "a051",
+        "a074",
+        "a076",
+        "a090",
+        "a094"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Úklid",
+      "votes": 6,
+      "aliases": [
+        "úklidu",
+        "uklízení",
+        "uklízet",
+        "domácnost",
+        "domácí práce",
+        "domácích pracích",
+        "domácí",
+        "domácích",
+        "domácnosti",
+        "vysávání",
+        "luxování",
+        "žehlení",
+        "praní",
+        "mytí nádobí",
+        "nádobí",
+        "utírání prachu",
+        "vytírání",
+        "vaření",
+        "pořádek",
+        "úklid doma",
+        "drhnutí"
+      ],
+      "answerers": [
+        "a024",
+        "a028",
+        "a034",
+        "a085",
+        "a013",
+        "a044"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Hry",
+      "votes": 2,
+      "aliases": [
+        "hrami",
+        "hra",
+        "hraní",
+        "počítačové hry",
+        "hrách",
+        "gaming",
+        "hraní her",
+        "videohry",
+        "hry na mobilu",
+        "gamesy",
+        "gamy",
+        "hraní na počítači",
+        "playstation",
+        "xbox",
+        "konzole",
+        "konzoli",
+        "pařba",
+        "paření",
+        "hrát",
+        "minecraft",
+        "fortnite",
+        "karty"
+      ],
+      "answerers": [
+        "a055",
+        "a077"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Práce",
+      "votes": 2,
+      "aliases": [
+        "práci",
+        "zaměstnání",
+        "job",
+        "šichta",
+        "v práci",
+        "šichtě",
+        "robota",
+        "makání",
+        "kancelář",
+        "kanceláři",
+        "pracování",
+        "maily",
+        "e-maily",
+        "meetingy",
+        "škola",
+        "škole",
+        "učení"
+      ],
+      "answerers": [
+        "a035",
+        "a082"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Čekání",
+      "votes": 2,
+      "aliases": [
+        "čekat",
+        "fronta",
+        "fronty",
+        "čekáním",
+        "frontách",
+        "frontě",
+        "stání ve frontě",
+        "čekárna",
+        "čekárně",
+        "zácpa",
+        "zácpy",
+        "zácpě",
+        "kolona",
+        "koloně",
+        "čekání na autobus",
+        "čekání na lékaře",
+        "čekání u doktora",
+        "zpoždění"
+      ],
+      "answerers": [
+        "a062",
+        "a091"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Pacienti",
+      "votes": 1,
+      "answerers": [
+        "a023"
+      ]
+    },
+    {
+      "text": "Trénink",
+      "votes": 1,
+      "answerers": [
+        "a025"
+      ]
+    },
+    {
+      "text": "Počasí",
+      "votes": 1,
+      "answerers": [
+        "a033"
+      ]
+    },
+    {
+      "text": "Rybaření",
+      "votes": 1,
+      "answerers": [
+        "a036"
+      ]
+    },
+    {
+      "text": "Doprava",
+      "votes": 1,
+      "answerers": [
+        "a038"
+      ]
+    },
+    {
+      "text": "Opravování",
+      "votes": 1,
+      "answerers": [
+        "a040"
+      ]
+    },
+    {
+      "text": "Vnoučata",
+      "votes": 1,
+      "answerers": [
+        "a047"
+      ]
+    },
+    {
+      "text": "Porady",
+      "votes": 1,
+      "answerers": [
+        "a048"
+      ]
+    },
+    {
+      "text": "Modlitba",
+      "votes": 1,
+      "answerers": [
+        "a058"
+      ]
+    },
+    {
+      "text": "Úřady",
+      "votes": 1,
+      "answerers": [
+        "a071"
+      ]
+    },
+    {
+      "text": "Hokej",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    },
+    {
+      "text": "Manželka",
+      "votes": 1,
+      "answerers": [
+        "a084"
+      ]
+    },
+    {
+      "text": "Nahánění",
+      "votes": 1,
+      "answerers": [
+        "a092"
+      ]
+    },
+    {
+      "text": "Řízení",
+      "votes": 1,
+      "answerers": [
+        "a097"
+      ]
+    },
+    {
+      "text": "Obchody",
+      "votes": 1,
+      "answerers": [
+        "a099"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "mobil",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Sociální sítě",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "mobil",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "sociální",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "mobil",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "domácí",
+      "answer": "Úklid"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "telefonu",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "telefonu",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Scrollování",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Instagramu",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Mobilu",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "pacientů",
+      "answer": "Pacienti"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Úklid",
+      "answer": "Úklid"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "Trénink",
+      "answer": "Trénink"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "mobil",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "Mobil",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "úklid",
+      "answer": "Úklid"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Sociální.",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "počasí",
+      "answer": "Počasí"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "úklid",
+      "answer": "Úklid"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "práci",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "na rybníku",
+      "answer": "Rybaření"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "doprava",
+      "answer": "Doprava"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "televizor",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "opravování",
+      "answer": "Opravování"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "mobil",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "Televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "domácích",
+      "answer": "Úklid"
+    },
+    {
+      "answerer": "a045",
+      "model": "mistralai/mistral-small-2603",
+      "persona": "stepan-klatovy",
+      "raw": "internet",
+      "answer": "Internet"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "vnoučata",
+      "answer": "Vnoučata"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "porady",
+      "answer": "Porady"
+    },
+    {
+      "answerer": "a049",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "pavla-brno",
+      "raw": "Mobilu",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-saba",
+      "persona": "aneta-holesovice",
+      "raw": "internet",
+      "answer": "Internet"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "facebook",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "Instagram",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-v4-flash",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "Hry",
+      "answer": "Hry"
+    },
+    {
+      "answerer": "a056",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "dagmar-teplice",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Televizi",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "modlitba",
+      "answer": "Modlitba"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a060",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "jaroslava-ostrava",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a061",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "denisa-jicin",
+      "raw": "Instagram",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "čekání",
+      "answer": "Čekání"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "Instagram",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "telefonu",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "mobil",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "úřad",
+      "answer": "Úřady"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "Mobil",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "internet",
+      "answer": "Internet"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "internet",
+      "answer": "Internet"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "hrami",
+      "answer": "Hry"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a079",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "pavel-stodulky",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Hokej",
+      "answer": "Hokej"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Telefonu.",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Práce.",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "ženu",
+      "answer": "Manželka"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "úklidu",
+      "answer": "Úklid"
+    },
+    {
+      "answerer": "a086",
+      "model": "x-ai/grok-4.3",
+      "persona": "stanislav-mikulov",
+      "raw": "Televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a087",
+      "model": "z-ai/glm-4.6",
+      "persona": "sarka-most",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "televize",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "internet",
+      "answer": "Internet"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "čekání",
+      "answer": "Čekání"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Nahánění",
+      "answer": "Nahánění"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "sociální síti",
+      "answer": "Sítě"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Internetu",
+      "answer": "Internet"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Televizi",
+      "answer": "Televize"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "řízení",
+      "answer": "Řízení"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "telefon",
+      "answer": "Telefon"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "obchody",
+      "answer": "Obchody"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Televize",
+      "answer": "Televize"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T10:22:53.351Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1966,
+    "durationMs": 25960,
+    "failed": 1,
+    "clusters": 23,
+    "topShare": 0.323
+  }
+}

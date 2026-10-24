@@ -16,7 +16,9 @@ export type Stats = {
   streak: number
   bestStreak: number
   average: number
+  best: number
   cleared: number
+  distribution: Array<number>
 }
 
 function read<T>(key: string): T | null {
@@ -36,22 +38,38 @@ function write(key: string, value: unknown): void {
   }
 }
 
-export function loadGame(date: string): GameState | null {
-  return read<GameState>(`hra:${date}`)
+type SavedGame = GameState & { board?: string }
+
+export function loadGame(key: string, board: string): GameState | null {
+  const saved = read<SavedGame>(`hra:${key}`)
+  if (!saved) return null
+  if (saved.board === board) return saved
+  clearResult(key)
+  return null
 }
 
-export function saveGame(date: string, state: GameState): void {
-  write(`hra:${date}`, state)
+export function saveGame(key: string, board: string, state: GameState): void {
+  write(`hra:${key}`, { ...state, board })
+}
+
+function clearResult(date: string): void {
+  const results = loadResults()
+  if (!(date in results)) return
+  delete results[date]
+  write("vysledky", results)
 }
 
 export function loadResults(): Record<string, Result> {
   return read<Record<string, Result>>("vysledky") ?? {}
 }
 
+export const RESULTS_EVENT = "pjs100:vysledky"
+
 export function saveResult(date: string, result: Result): void {
   const results = loadResults()
   if (date in results) return
   write("vysledky", { ...results, [date]: result })
+  window.dispatchEvent(new Event(RESULTS_EVENT))
 }
 
 export function computeStats(results: Record<string, Result>, today: string): Stats {
@@ -74,12 +92,16 @@ export function computeStats(results: Record<string, Result>, today: string): St
     previous = date
   }
 
-  const scores = Object.values(results).map((r) => r.score)
+  const all = Object.values(results)
+  const scores = all.map((r) => r.score)
+  const distribution = Array.from({ length: 9 }, (_, found) => all.filter((r) => r.found === found).length)
   return {
-    played: Object.keys(results).length,
+    played: all.length,
     streak,
     bestStreak,
     average: scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0,
-    cleared: Object.values(results).filter((r) => r.cleared).length,
+    best: scores.length ? Math.max(...scores) : 0,
+    cleared: all.filter((r) => r.cleared).length,
+    distribution,
   }
 }

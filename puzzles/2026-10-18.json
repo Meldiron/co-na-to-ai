@@ -1,0 +1,1128 @@
+{
+  "date": "2026-10-18",
+  "number": 2,
+  "questionId": "cekani-na-vlak",
+  "question": "Co děláte, když čekáte na vlak?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Čtení",
+      "votes": 34,
+      "aliases": [
+        "čtu",
+        "čtu si",
+        "čtu knihu",
+        "kniha",
+        "knížka",
+        "časopis",
+        "časopisy",
+        "noviny",
+        "čtu noviny",
+        "čtu časopis",
+        "četba",
+        "čtení knihy",
+        "číst",
+        "knihu",
+        "knížku",
+        "knihy",
+        "časopisu",
+        "novin",
+        "e-book",
+        "čtečka",
+        "čtečku",
+        "kindle",
+        "detektivka",
+        "román",
+        "komiks",
+        "přečtu",
+        "počtu si",
+        "metro noviny"
+      ],
+      "answerers": [
+        "a001",
+        "a002",
+        "a007",
+        "a009",
+        "a013",
+        "a014",
+        "a021",
+        "a022",
+        "a024",
+        "a031",
+        "a032",
+        "a033",
+        "a037",
+        "a038",
+        "a039",
+        "a040",
+        "a046",
+        "a047",
+        "a048",
+        "a057",
+        "a058",
+        "a060",
+        "a068",
+        "a077",
+        "a078",
+        "a079",
+        "a085",
+        "a086",
+        "a088",
+        "a092",
+        "a094",
+        "a096",
+        "a097",
+        "a099"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Mobil",
+      "votes": 24,
+      "aliases": [
+        "mobilu",
+        "telefon",
+        "telefonu",
+        "mobilní telefon",
+        "koukám na mobil",
+        "koukám do mobilu",
+        "koukám do telefonu",
+        "facebook",
+        "sociální sítě",
+        "hraju na mobilu",
+        "smartphone",
+        "internet",
+        "mobilem",
+        "telefonem",
+        "mobily",
+        "chytrý telefon",
+        "iphone",
+        "samsung",
+        "android",
+        "instagram",
+        "tiktok",
+        "sítě",
+        "brouzdám",
+        "surfuju",
+        "esemesky",
+        "sms",
+        "píšu zprávy",
+        "zprávy",
+        "whatsapp",
+        "messenger",
+        "hry na mobilu",
+        "hraju hry",
+        "hry",
+        "scrolluju",
+        "mobilek",
+        "mobajl",
+        "youtube"
+      ],
+      "answerers": [
+        "a003",
+        "a010",
+        "a011",
+        "a012",
+        "a015",
+        "a020",
+        "a026",
+        "a027",
+        "a030",
+        "a034",
+        "a041",
+        "a049",
+        "a050",
+        "a053",
+        "a054",
+        "a055",
+        "a063",
+        "a067",
+        "a073",
+        "a074",
+        "a081",
+        "a090",
+        "a095",
+        "a098"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Čekám",
+      "votes": 11,
+      "aliases": [
+        "čekání",
+        "čekat",
+        "čekám na vlak",
+        "nic",
+        "nedělám nic",
+        "jen čekám",
+        "počkám",
+        "vyčkávám",
+        "nic nedělám",
+        "nudím se",
+        "nuda",
+        "stojím",
+        "postávám",
+        "přešlapuju",
+        "netrpělivě čekám",
+        "trpělivě čekám",
+        "vyhlížím vlak",
+        "čekám až přijede",
+        "prostě čekám"
+      ],
+      "answerers": [
+        "a005",
+        "a016",
+        "a019",
+        "a023",
+        "a059",
+        "a065",
+        "a070",
+        "a080",
+        "a082",
+        "a083",
+        "a093"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Koukám",
+      "votes": 8,
+      "aliases": [
+        "koukání",
+        "čumím",
+        "sleduji",
+        "pozoruji",
+        "rozhlížím se",
+        "koukám kolem",
+        "pozoruji lidi",
+        "koukat",
+        "čumět",
+        "sleduju",
+        "sledovat",
+        "dívám se",
+        "dívat se",
+        "pozoruju",
+        "pozorovat",
+        "pozoruju lidi",
+        "koukám na lidi",
+        "čumím do blba",
+        "zírám",
+        "civím",
+        "okukuju",
+        "okukuju holky",
+        "koukám na vlaky",
+        "sleduju lidi",
+        "sleduju okolí",
+        "prohlížím si",
+        "koukám na tabuli",
+        "kejklím"
+      ],
+      "answerers": [
+        "a006",
+        "a042",
+        "a052",
+        "a062",
+        "a071",
+        "a075",
+        "a089",
+        "a091"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Telefonuji",
+      "votes": 3,
+      "aliases": [
+        "telefonuju",
+        "volám",
+        "volám někomu",
+        "telefonování",
+        "volání",
+        "telefonovat",
+        "volat",
+        "zavolám",
+        "volám domů",
+        "volám mámě",
+        "volám kamarádovi",
+        "volám přítelkyni",
+        "volám manželce",
+        "hovor",
+        "hovořím",
+        "povídám po telefonu",
+        "mluvím do telefonu",
+        "mluvím po telefonu",
+        "vyřizuju hovory",
+        "klábosím",
+        "kecám po telefonu"
+      ],
+      "answerers": [
+        "a018",
+        "a051",
+        "a064"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Kouřím",
+      "votes": 2,
+      "aliases": [
+        "kouření",
+        "cigareta",
+        "cigarety",
+        "zapálím si",
+        "cigárko",
+        "kouřit",
+        "zakouřím si",
+        "hulím",
+        "cigaretu",
+        "cigáro",
+        "čvaňhám",
+        "vapuju",
+        "vape",
+        "elektronická cigareta",
+        "iqos",
+        "dýmka",
+        "doutník",
+        "jdu si zapálit",
+        "cígo",
+        "retko",
+        "dávám si cigáro",
+        "kouřím cigaretu"
+      ],
+      "answerers": [
+        "a008",
+        "a084"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Káva",
+      "votes": 2,
+      "aliases": [
+        "kafe",
+        "kávu",
+        "kafíčko",
+        "piju kafe",
+        "piju kávu",
+        "kávy",
+        "kafčo",
+        "kafí",
+        "kávička",
+        "kávičku",
+        "espresso",
+        "cappuccino",
+        "latte",
+        "kafe z automatu",
+        "automat na kávu",
+        "dám si kafe",
+        "kafe s sebou",
+        "coffee",
+        "kofein",
+        "čaj",
+        "pití",
+        "piju",
+        "nápoj",
+        "horká čokoláda",
+        "kelímek kávy",
+        "bufet",
+        "občerstvení",
+        "kavárna",
+        "jídlo",
+        "svačina",
+        "svačím",
+        "jím",
+        "bageta",
+        "sendvič",
+        "rohlík"
+      ],
+      "answerers": [
+        "a004",
+        "a028"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Sedím",
+      "votes": 2,
+      "aliases": [
+        "sezení",
+        "sednu si",
+        "posedím",
+        "lavička",
+        "sedím na lavičce",
+        "sedět",
+        "lavičce",
+        "lavičku",
+        "sedím v čekárně",
+        "čekárna",
+        "čekárně",
+        "odpočívám",
+        "odpočinek",
+        "odpočívat",
+        "relaxuju",
+        "relax",
+        "lenoším",
+        "posedávám",
+        "sedím na kufru",
+        "sedím na nástupišti"
+      ],
+      "answerers": [
+        "a056",
+        "a069"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Hudba",
+      "votes": 2,
+      "answerers": [
+        "a025",
+        "a066"
+      ]
+    },
+    {
+      "text": "Spím",
+      "votes": 2,
+      "answerers": [
+        "a017",
+        "a087"
+      ]
+    },
+    {
+      "text": "Přemýšlím",
+      "votes": 1,
+      "answerers": [
+        "a035"
+      ]
+    },
+    {
+      "text": "Pivo",
+      "votes": 1,
+      "answerers": [
+        "a029"
+      ]
+    },
+    {
+      "text": "Kofola",
+      "votes": 1,
+      "answerers": [
+        "a072"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "čtení",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a002",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "libor-prerov",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Kafe",
+      "answer": "Káva"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "koukám",
+      "answer": "Koukám"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "kouřím",
+      "answer": "Kouřím"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "čtení",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "čtení",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "telefonu",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a017",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "oldrich-jihlava",
+      "raw": "pospím",
+      "answer": "Spím"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "telefonuji",
+      "answer": "Telefonuji"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Koukám na mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "čtení",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "čekání",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "poslouchám",
+      "answer": "Hudba"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Káva",
+      "answer": "Káva"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "čtení",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "časopis",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "přemýšlím",
+      "answer": "Přemýšlím"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Cítím",
+      "answer": null
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Noviny",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "koukám",
+      "answer": "Koukám"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "Houfy sbíráme.",
+      "answer": null
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "ositáčka",
+      "answer": null
+    },
+    {
+      "answerer": "a045",
+      "model": "mistralai/mistral-small-2603",
+      "persona": "stepan-klatovy",
+      "raw": "krávy",
+      "answer": null
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-saba",
+      "persona": "aneta-holesovice",
+      "raw": "telefonuji",
+      "answer": "Telefonuji"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "čumím",
+      "answer": "Koukám"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a056",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "dagmar-teplice",
+      "raw": "sedím",
+      "answer": "Sedím"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a060",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "jaroslava-ostrava",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a061",
+      "model": "z-ai/glm-4.6",
+      "persona": "denisa-jicin",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "koukám",
+      "answer": "Koukám"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "telefonuji",
+      "answer": "Telefonuji"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "hudba",
+      "answer": "Hudba"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "sedím",
+      "answer": "Sedím"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Koukám",
+      "answer": "Koukám"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "Kofolu",
+      "answer": "Kofola"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "Telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "koukám do mobilu",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "sleduji",
+      "answer": "Koukám"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "}výlet",
+      "answer": null
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "Čtu.",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a079",
+      "model": "x-ai/grok-4.3",
+      "persona": "pavel-stodulky",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Facebook.",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Čekám.",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "Čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "kouřím",
+      "answer": "Kouřím"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "čtu časopis",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a086",
+      "model": "minimax/minimax-01",
+      "persona": "stanislav-mikulov",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a087",
+      "model": "amazon/nova-micro-v1",
+      "persona": "sarka-most",
+      "raw": "lehák",
+      "answer": "Spím"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "koukám",
+      "answer": "Koukám"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "koukám",
+      "answer": "Koukám"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Čekám",
+      "answer": "Čekám"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "mobil",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "čtu",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "Čtení",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "telefon",
+      "answer": "Mobil"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Čtu.",
+      "answer": "Čtení"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Klobouk",
+      "answer": null
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T10:22:15.075Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1934,
+    "durationMs": 26128,
+    "failed": 1,
+    "clusters": 13,
+    "topShare": 0.343
+  }
+}

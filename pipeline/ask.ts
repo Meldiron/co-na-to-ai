@@ -32,14 +32,13 @@ const AnswerSchema = z.object({ odpoved: z.string().min(1) })
 
 export function systemPrompt(persona: Persona, structured: boolean): string {
   return [
-    `Jsi ${persona.name}, je ti ${persona.age} let. Bydliště: ${persona.town}, ${persona.region}. Povolání: ${persona.occupation}.`,
-    persona.bio,
-    `Jak odpovídáš: ${persona.voice}.`,
+    "Jsi jeden ze stovky obyčejných Čechů, kterých se ptáme v anketě pro televizní soutěž.",
+    `Tvoje postava: ${persona.name}, ${persona.age} let, ${persona.town}. ${persona.occupation}. ${persona.bio}`,
     "",
-    "Hraješ televizní anketu, kde se ptáme stovky lidí. Odpověz za sebe, jako tato osoba, tím, co tě napadne jako první.",
+    "Odpověz rychle a přirozeně tím, co tě napadne jako první, tak jak by odpověděla většina lidí. Nesnaž se být originální ani vtipný. Postava tvou odpověď jen lehce zabarví.",
     "Pravidla odpovědi:",
-    "- jedna odpověď o 1 až 3 slovech, česky, se správnou diakritikou",
-    "- žádné vysvětlení, žádná věta, žádný výčet",
+    "- odpověz jedním jediným slovem, česky, se správnou diakritikou",
+    "- žádné vysvětlení, žádná věta, žádný výčet, žádné spojení dvou věcí",
     "- pokud to jde, podstatné jméno v 1. pádě",
     structured
       ? 'Vrať pouze JSON ve tvaru {"odpoved": "…"}.'
@@ -47,19 +46,29 @@ export function systemPrompt(persona: Persona, structured: boolean): string {
   ].join("\n")
 }
 
+function reasoningFor(model: Model | undefined): ChatRequest["reasoning"] {
+  const r = model?.reasoning
+  if (!r || (!r.mandatory && !r.defaultEnabled)) return undefined
+  const efforts = r.supportedEfforts ?? []
+  const preferred = r.mandatory ? (["minimal", "low"] as const) : (["none", "minimal", "low"] as const)
+  const effort = efforts.length ? preferred.find((e) => efforts.includes(e)) : preferred[0]
+  return effort ? { effort } : undefined
+}
+
 function request(model: Model | undefined, id: string, persona: Persona, question: string, structured: boolean): ChatRequest & { stream: false } {
-  const reasoning = supports(model, "reasoning")
+  const thinks = !!(model?.reasoning?.mandatory || model?.reasoning?.defaultEnabled)
+  const reasoning = reasoningFor(model)
   const req: ChatRequest & { stream: false } = {
     stream: false,
     model: id,
     temperature: TEMPERATURE,
-    maxTokens: reasoning ? 2000 : 60,
+    maxTokens: thinks ? 2000 : 80,
     messages: [
       { role: "system", content: systemPrompt(persona, structured) },
       { role: "user", content: `Otázka: ${question}` },
     ],
   }
-  if (reasoning) req.reasoning = { effort: "minimal" }
+  if (reasoning) req.reasoning = reasoning
   if (structured) {
     req.responseFormat = {
       type: "json_schema",
@@ -68,7 +77,7 @@ function request(model: Model | undefined, id: string, persona: Persona, questio
         strict: true,
         schema: {
           type: "object",
-          properties: { odpoved: { type: "string", description: "1 až 3 slova česky" } },
+          properties: { odpoved: { type: "string", description: "jedno slovo česky" } },
           required: ["odpoved"],
           additionalProperties: false,
         },

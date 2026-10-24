@@ -4,7 +4,7 @@ import { providerCount } from "@/lib/cast"
 
 export function Rules() {
   const items: Array<[string, React.ReactNode]> = [
-    ["Jak se hraje?", "Píšete odpovědi na otázku dne. Když odpověď patří mezi osm nejčastějších, otočí se na tabuli. Hra končí, když najdete všech osm, nebo po třetí chybě."],
+    ["Jak se hraje?", "Píšete odpovědi na otázku dne. Když odpověď patří mezi osm nejčastějších, otočí se na tabuli. Hra končí, když najdete všech osm, nebo po páté chybě."],
     ["Kolik mám pokusů?", `Chyby jsou ${MAX_STRIKES}. Správných tipů můžete dát kolik chcete. Zopakovaný tip ani odpověď, která už na tabuli je, se za chybu nepočítá.`],
     ["Jak se počítají body?", `Odpověď má tolik bodů, kolik umělých inteligencí ji řeklo. Čím výš na tabuli, tím víc bodů. Za celou tabuli je ${CLEAR_BONUS} bodů navíc.`],
     ["Musím psát přesně?", "Ne. Velká písmena a diakritika nevadí, drobné překlepy také ne. Uznáváme i jiné tvary a blízká synonyma, která jsme připravili předem."],

@@ -1,5 +1,69 @@
 [
   {
+    "id": "kocovina",
+    "text": "Co vám nejlíp pomůže na kocovinu?",
+    "tags": [
+      "kocovina"
+    ],
+    "status": "rejected",
+    "date": "2026-10-17"
+  },
+  {
+    "id": "cekani-na-vlak",
+    "text": "Co děláte, když čekáte na vlak?",
+    "tags": [
+      "doprava"
+    ],
+    "status": "used",
+    "date": "2026-10-18"
+  },
+  {
+    "id": "ztraceny-cas",
+    "text": "Na čem nejvíc ztrácíte čas?",
+    "tags": [
+      "čas"
+    ],
+    "status": "used",
+    "date": "2026-10-19"
+  },
+  {
+    "id": "v-aute-vzdy",
+    "text": "Co máte v autě pořád s sebou?",
+    "tags": [
+      "auto"
+    ],
+    "status": "used",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "deti-jedi",
+    "text": "Jaké jídlo děti milují?",
+    "tags": [
+      "děti",
+      "jídlo"
+    ],
+    "status": "rejected",
+    "date": "2026-10-21"
+  },
+  {
+    "id": "novy-byt",
+    "text": "Co si do nového bytu koupíte jako první?",
+    "tags": [
+      "bydlení"
+    ],
+    "status": "rejected",
+    "date": "2026-10-22"
+  },
+  {
+    "id": "ceska-svatba",
+    "text": "Co nesmí chybět na české svatbě?",
+    "tags": [
+      "svatba"
+    ],
+    "status": "used",
+    "date": "2026-10-23"
+  },
+  {
     "id": "chata-co-s-sebou",
     "date": "2026-10-24",
     "text": "Co si berete s sebou na chatu?",
@@ -7,7 +71,7 @@
       "chata",
       "víkend"
     ],
-    "status": "approved"
+    "status": "used"
   },
   {
     "id": "hodiny-zimni-cas",
