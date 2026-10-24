@@ -47,7 +47,7 @@ export default async ({ req, res, log, error }: Context) => {
   const ready = new Set([...bundled, ...attempts.filter((a) => a.passed).map((a) => a.date)])
   const generated: Array<string> = []
   const missing: Array<string> = []
-  const setup = { sdk: client(), models: await catalogue() }
+  let setup: { sdk: ReturnType<typeof client>; models: Awaited<ReturnType<typeof catalogue>> } | null = null
 
   const record = async (date: string, question: Question, passed: boolean, data: { gate: unknown; costUsd: number; puzzle: unknown }) => {
     attempts.push({ date, questionId: question.id, passed })
@@ -90,6 +90,7 @@ export default async ({ req, res, log, error }: Context) => {
         break
       }
 
+      setup ??= { sdk: client(), models: await catalogue() }
       const check = await probe(question.text, setup)
       const top = `${check.top} ${Math.round(check.share * 100)} % of ${check.answered}`
       if (verdict(check)) {
