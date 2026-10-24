@@ -18,3 +18,7 @@ todos.json
 .taste-skill/
 
 functions/*/dist
+
+qa/shots/
+qa/review/**/*.jpg
+qa/review/**/*.png
