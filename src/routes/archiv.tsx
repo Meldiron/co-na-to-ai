@@ -46,9 +46,13 @@ const STEPS: Partial<Record<string, number>> = { ArrowLeft: -1, ArrowRight: 1, A
 
 const monthTitle = new Intl.DateTimeFormat("cs-CZ", { month: "long", year: "numeric", timeZone: "UTC" })
 
+const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1)
+
+const monthName = new Intl.DateTimeFormat("cs-CZ", { month: "long", timeZone: "UTC" })
+const MONTHS = Array.from({ length: 12 }, (_, i) => capitalize(monthName.format(new Date(Date.UTC(2026, i, 15)))))
+
 function titleOf(month: string): string {
-  const title = monthTitle.format(new Date(`${month}-01T12:00:00Z`))
-  return title.charAt(0).toUpperCase() + title.slice(1)
+  return capitalize(monthTitle.format(new Date(`${month}-01T12:00:00Z`)))
 }
 
 function weeksOf(month: string): Array<Array<string | null>> {
@@ -77,9 +81,60 @@ function Arrow({ flip = false }: { flip?: boolean }) {
   )
 }
 
+function Step({ to, label, flip = false }: { to: string | undefined; label: string; flip?: boolean }) {
+  const box = "grid size-12 shrink-0 place-items-center bg-paper"
+  if (!to) {
+    return (
+      <span aria-hidden className={`${box} text-ink-soft/35`}>
+        <Arrow flip={flip} />
+      </span>
+    )
+  }
+  return (
+    <Link to="/archiv" search={{ mesic: to }} resetScroll={false} aria-label={`${label}: ${titleOf(to)}`} className={`${box} transition-colors hover:bg-ground-step`}>
+      <Arrow flip={flip} />
+    </Link>
+  )
+}
+
+type PickerProps = {
+  id: string
+  label: string
+  value: string
+  options: Array<{ value: string; label: string; disabled?: boolean }>
+  onChange: (value: string) => void
+  className?: string
+}
+
+function Picker({ id, label, value, options, onChange, className = "" }: PickerProps) {
+  return (
+    <div className={`relative ${className}`}>
+      <label htmlFor={id} className="sr-only">
+        {label}
+      </label>
+      <select
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="h-12 w-full cursor-pointer appearance-none bg-paper pr-10 pl-4 text-[1.125rem] font-bold text-ink transition-colors hover:bg-ground-step"
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value} disabled={option.disabled}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      <svg viewBox="0 0 24 24" aria-hidden className="pointer-events-none absolute top-1/2 right-3 size-5 -translate-y-1/2">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="square" />
+      </svg>
+    </div>
+  )
+}
+
 function Archive() {
   const { today, puzzles } = Route.useLoaderData()
   const { mesic } = Route.useSearch()
+  const navigate = Route.useNavigate()
   const results = useResults()
   const [active, setActive] = useState<string | null>(null)
   const [cursor, setCursor] = useState<string | null>(null)
@@ -106,6 +161,9 @@ function Archive() {
 
   const index = months.indexOf(month)
   const title = titleOf(month)
+  const year = month.slice(0, 4)
+  const years = [...new Set(months.map((m) => m.slice(0, 4)))].sort()
+  const go = (target: string) => void navigate({ search: { mesic: target }, resetScroll: false })
   const played = days.filter((p) => resultOf(p.date)).length
   const cleared = days.filter((p) => resultOf(p.date)?.cleared).length
 
@@ -151,39 +209,36 @@ function Archive() {
         <div className="mt-12 grid gap-12 md:mt-20 md:grid-cols-12 md:gap-6">
           <div className="md:col-span-5">
             <div className="md:sticky md:top-8">
-              <div className="flex items-end justify-between gap-4">
-                <div>
-                  <h2 id="archiv-mesic" className="text-[1.5rem] leading-tight font-bold">
-                    {title}
-                  </h2>
-                  <p className="mt-1 min-h-[1.5em] text-ink-soft">{results && `Odehráno ${played} z ${days.length} · celá tabule ${cleared}×`}</p>
-                </div>
-                {months.length > 1 && (
-                  <nav aria-label="Měsíce" className="flex gap-[3px]">
-                    {[
-                      { to: months[index + 1], label: "Předchozí měsíc", flip: true },
-                      { to: months[index - 1], label: "Další měsíc", flip: false },
-                    ].map(({ to, label, flip }) =>
-                      to ? (
-                        <Link
-                          key={label}
-                          to="/archiv"
-                          search={{ mesic: to === months[0] ? undefined : to }}
-                          resetScroll={false}
-                          aria-label={`${label}: ${titleOf(to)}`}
-                          className="grid size-11 place-items-center bg-paper transition-colors hover:bg-ground-step"
-                        >
-                          <Arrow flip={flip} />
-                        </Link>
-                      ) : (
-                        <span key={label} aria-hidden className="grid size-11 place-items-center bg-paper/50 text-ink-soft/40">
-                          <Arrow flip={flip} />
-                        </span>
-                      ),
-                    )}
-                  </nav>
-                )}
-              </div>
+              <h2 id="archiv-mesic" className="sr-only">
+                {title}
+              </h2>
+              <nav aria-label="Výběr měsíce" className="flex gap-[3px]">
+                <Step to={months[index + 1]} label="Předchozí měsíc" flip />
+                <Picker
+                  id="archiv-mesic-vyber"
+                  label="Měsíc"
+                  value={month.slice(5)}
+                  onChange={(value) => go(`${year}-${value}`)}
+                  options={MONTHS.map((name, i) => {
+                    const value = String(i + 1).padStart(2, "0")
+                    return { value, label: name, disabled: !months.includes(`${year}-${value}`) }
+                  })}
+                  className="min-w-0 flex-1"
+                />
+                <Picker
+                  id="archiv-rok"
+                  label="Rok"
+                  value={year}
+                  onChange={(value) => {
+                    const inYear = months.filter((m) => m.startsWith(value))
+                    go(inYear.find((m) => m.endsWith(month.slice(4))) ?? inYear[0])
+                  }}
+                  options={years.map((y) => ({ value: y, label: y }))}
+                  className="w-[6.5rem] shrink-0"
+                />
+                <Step to={months[index - 1]} label="Další měsíc" />
+              </nav>
+              <p className="mt-3 min-h-[1.5em] text-ink-soft">{results && `Odehráno ${played} z ${days.length} · celá tabule ${cleared}×`}</p>
 
               <div className="mt-4 [container-type:inline-size]">
                 <table ref={gridRef} role="grid" aria-labelledby="archiv-mesic" onKeyDown={move} className="table-fixed border-separate border-spacing-[4px] -mx-[4px] w-[calc(100%+8px)]">
