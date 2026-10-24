@@ -120,16 +120,12 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
           <p className="mb-3 max-w-[56ch] text-field-soft md:mb-4">100 AI jsme se zeptali a teď hledáme osm nejčastějších odpovědí na otázku:</p>
           <h1 className="display">{payload.question}</h1>
           <DateStrip payload={payload} daily={daily} />
-          <p className="mt-4 max-w-[62ch] text-base md:mt-5">
-            Každá AI odpovídala v roli jiného Čecha. Tipujte jedním slovem, po páté chybě hra končí.
-          </p>
 
           <div className="mt-5 md:mt-10">
             <Board
               answers={ready ? secret.answers : null}
               found={state.found}
               revealAll={over}
-              title={`Odpovědělo ${payload.answered} ze ${payload.asked} AI. Otazník u skryté odpovědi nabízí nápovědu: písmeno, nebo kdo ji řekl.`}
               missKey={missKey}
               hints={state.hints ?? []}
               misses={misses}
@@ -228,7 +224,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
 
             <div className="input-bar-note mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
               <p aria-live="polite" className={`min-h-[1.5em] ${message?.tone === "miss" ? "font-semibold" : ""}`}>
-                {message?.text ?? (over ? `${state.found.length} z 8 odpovědí, ${total} ${pointsWord(total)}.` : "Diakritika, velká písmena ani drobné překlepy nevadí.")}
+                {message?.text ?? (over ? `${state.found.length} z 8 odpovědí, ${total} ${pointsWord(total)}.` : "")}
               </p>
             </div>
           </div>

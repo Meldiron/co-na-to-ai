@@ -9,7 +9,6 @@ type BoardProps = {
   answers: Array<BoardAnswer> | null
   found: ReadonlyArray<number>
   revealAll: boolean
-  title: string
   missKey: number
   hints: ReadonlyArray<number>
   misses: ReadonlyArray<string>
@@ -19,7 +18,7 @@ type BoardProps = {
   onClue: (index: number) => void
 }
 
-export function Board({ answers, found, revealAll, title, missKey, hints, misses, interactive, clueFor, onLetter, onClue }: BoardProps) {
+export function Board({ answers, found, revealAll, missKey, hints, misses, interactive, clueFor, onLetter, onClue }: BoardProps) {
   const slots: Array<Partial<BoardAnswer> & { rank: number }> = answers ?? Array.from({ length: 8 }, (_, i) => ({ rank: i + 1 }))
   const [booted, setBooted] = useState(false)
   useEffect(() => setBooted(true), [])
@@ -88,7 +87,6 @@ export function Board({ answers, found, revealAll, title, missKey, hints, misses
         />
       </div>
       <p className="sr-only">{misses.length ? `Chybné tipy: ${misses.join(", ")}.` : "Zatím žádný chybný tip."}</p>
-      <p className="hidden px-1 pt-3 pb-1 text-sm text-field-soft sm:block md:px-2">{title}</p>
       {missKey > 0 && (
         <div key={missKey} aria-hidden className="pointer-events-none absolute inset-0 grid place-items-center motion-reduce:hidden">
           <svg viewBox="0 0 100 100" className="size-40 text-red md:size-56" style={{ animation: "strike-pop 900ms ease-out forwards" }}>

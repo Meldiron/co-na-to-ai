@@ -70,7 +70,6 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
             </span>
             <Flap text={seconds} align="center" className="h-20 w-[4.6rem] text-[length:var(--step-display)] md:h-28 md:w-28" />
           </div>
-          <p className="reveal mt-6 max-w-[44ch]">Nová otázka vychází každý den o půlnoci českého času, pro všechny stejná.</p>
 
           {recent.length > 0 && (
             <>
@@ -204,7 +203,6 @@ function StatsNote() {
           Založit účet
         </button>
       )}
-      {" "}Do série se počítá hra dohraná v den, kdy otázka vyšla.
     </p>
   )
 }

@@ -69,12 +69,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
   return (
     <section id="kdo-co-rekl" className="scroll-mt-4 bg-ground text-foreground">
       <div className="page pt-24 pb-24 md:pt-40 md:pb-40">
-        <div className="grid gap-4 md:grid-cols-12 md:gap-6">
-          <h2 className="head reveal md:col-span-4">Kdo co řekl</h2>
-          <p className="reveal max-w-[60ch] md:col-span-7 md:col-start-6">
-            Všech {secret.responses.length} odpovědí, seřazených podle tabule, a kdo je dal: odkud jsou a kolik jim je. Pod každou odpovědí najdete i jména a modely, které postavy hrály.
-          </p>
-        </div>
+        <h2 className="head reveal">Kdo co řekl</h2>
 
         <ol className="mt-12 grid gap-10 md:mt-16 md:gap-12">
           {secret.answers.map((answer) => (

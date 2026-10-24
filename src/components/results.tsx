@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { domToBlob } from "modern-screenshot"
 import { Button } from "@/components/ui/button"
 import { formatDayMonth } from "@/lib/day"
-import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, maxScore, pointsFor, pointsWord, scoreLines, shareText, type GameState } from "@/lib/game"
+import { MAX_STRIKES, hintsUsed, maxScore, pointsFor, pointsWord, scoreLines, shareText, type GameState } from "@/lib/game"
 import type { BoardAnswer, PuzzlePayload } from "@/lib/types"
 import { gameLabel } from "./game"
 
@@ -28,9 +28,6 @@ export function Results({ payload, state, answers, rank }: ResultsProps) {
       <div className="page grid gap-12 pt-24 pb-16 md:grid-cols-12 md:gap-6 md:pt-36 md:pb-24">
         <div className="flex flex-col md:col-span-6">
           <h2 className="head reveal">Váš výsledek</h2>
-          <p className="reveal mt-4 max-w-[44ch]">
-            Odpověď má 10 bodů za každou AI, která ji řekla. Každé odkryté písmeno ubere čtvrtinu. Za celou tabuli je {CLEAR_BONUS} bodů navíc.
-          </p>
           <div className="reveal mt-12 md:mt-auto md:pt-16">
             <p className="giant">{total}</p>
             <p className="mt-5">

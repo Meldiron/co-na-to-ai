@@ -59,7 +59,6 @@ export function HowToPlay() {
             </p>
           </li>
         </ul>
-        <p className="text-ink-soft">Návod najdete kdykoli znovu pod tlačítkem Jak hrát? vedle data.</p>
         <Button onClick={() => change(false)} className="h-12 justify-self-start px-8 font-semibold">
           Hrát
         </Button>
