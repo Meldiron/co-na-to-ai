@@ -17,7 +17,7 @@ npm run build      # production build in dist/
 
 Routes: `/` today's game, `/hra/YYYY-MM-DD` a past day, `/archiv` the archive, `/obsazeni` the cast of 100, `/vlastni/<id>` a custom game, `/admin` the password-protected admin.
 
-A new puzzle starts at 00:00 Europe/Prague. Puzzle #1 is 2026-10-17 (`LAUNCH_DATE` in `src/lib/day.ts`). The server only returns puzzles whose date is on or before today in Prague, so the client never receives future boards. The answers in a payload are XOR'd with a per-day key and base64-encoded, so they aren't readable at a glance. That is obfuscation, not security.
+A new puzzle starts at 00:00 Europe/Prague. Puzzle #1 is 2026-10-01 (`LAUNCH_DATE` in `src/lib/day.ts`). The server only returns puzzles whose date is on or before today in Prague, so the client never receives future boards. The answers in a payload are XOR'd with a per-day key and base64-encoded, so they aren't readable at a glance. That is obfuscation, not security.
 
 ## The pipeline
 
@@ -77,9 +77,11 @@ Live at https://ai100.appwrite.network. It runs in the Appwrite project *Playgro
 
 | Resource | ID | Notes |
 | --- | --- | --- |
-| Site | `ai100` | TanStack Start, SSR, `npm ci` and `npm run build`, output `./dist`. The per-request key is scoped to `files.*` and `execution.*`. Secret variable `ADMIN_PASSWORD`. |
+| Site | `ai100` | TanStack Start, SSR, `npm ci` and `npm run build`, output `./dist`. The per-request key is scoped to `files.*`, `execution.*` and `rows.read`. Secret variable `ADMIN_PASSWORD`. |
 | Function | `custom-game` | Node 22, 900 s timeout, scopes `files.read` and `files.write`, no public execute. Secret variable `OPENROUTER_API_KEY`. Runs one custom game (the 100 calls plus the judge) and saves it to the bucket. |
+| Function | `daily-puzzles` | Node 22, 900 s timeout, runs every hour (`0 * * * *`), scopes `rows.read` and `rows.write`. Secret variable `OPENROUTER_API_KEY`. Makes sure today and the next 3 days have a board. |
 | Bucket | `custom-games` | One JSON file per custom game, server access only. |
+| Table | `ai100` / `puzzles` | One row per generation attempt: `date`, `questionId`, `question`, `number`, `passed`, `gate` (JSON), `costUsd`, `puzzle` (the board as JSON when it passed). A passed row's ID is its date. Server access only. |
 
 A Site request may run for at most 30 s, so the admin starts the Function asynchronously and polls the execution. Locally (no `x-appwrite-key` header) custom games run in-process and save to `custom/`.
 
@@ -88,12 +90,13 @@ A Site request may run for at most 30 s, so the admin starts the Function asynch
 git archive --format=tar HEAD | tar -x -C /tmp/ai100 && cd /tmp/ai100 \
   && appwrite sites create-deployment --site-id ai100 --code . --activate --config-file <repo>/appwrite.config.json
 
-# function: bundle, then deploy package.json + dist/main.js
-npm run build:function
-appwrite functions create-deployment --function-id custom-game --code <folder with package.json and dist/main.js> --entrypoint dist/main.js --activate
+# functions: bundle, then deploy package.json + dist/main.js
+npm run build:function   # custom-game
+npm run build:daily      # daily-puzzles
+appwrite functions create-deployment --function-id <id> --code <folder with package.json and dist/main.js> --entrypoint dist/main.js --activate
 ```
 
-Daily puzzles are bundled into the Site build, one chunk per day, so every new day needs a pipeline run and a redeploy.
+Daily boards come from two places. Boards made locally with `npm run pipeline` live in `puzzles/` and are bundled into the Site build. The hourly `daily-puzzles` function covers the rest: for today and the next 3 days without a bundled board or a passed row, it takes the question scheduled in `questions/`, runs the 100 answerers and the judge, and saves a row. If the board fails the quality gate it tries an unused reserve question, up to 3 attempts per day, and stops starting new attempts after 8 minutes so the next hourly run picks up the rest. Redeploy the function after changing `questions/`, since the bank is bundled into it. The local pipeline doesn't read the table, so use it for back-filling or redoing past days, not for days the function already covered. Run it by hand with `appwrite functions create-execution --function-id daily-puzzles --async`.
 
 ## Credits
 

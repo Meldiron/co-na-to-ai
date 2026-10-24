@@ -14,7 +14,8 @@
     "test": "vitest run",
     "cast": "node pipeline/cast.ts",
     "pipeline": "node pipeline/run.ts",
-    "build:function": "vite build --config functions/custom-game/vite.config.ts"
+    "build:function": "vite build --config functions/custom-game/vite.config.ts",
+    "build:daily": "vite build --config functions/daily-puzzles/vite.config.ts"
   },
   "dependencies": {
     "@blobatar/react": "^2.7.0",

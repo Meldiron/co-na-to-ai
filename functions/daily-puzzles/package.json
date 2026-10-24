@@ -1,0 +1,6 @@
+{
+  "name": "daily-puzzles",
+  "private": true,
+  "type": "module",
+  "main": "dist/main.js"
+}

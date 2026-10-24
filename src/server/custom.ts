@@ -2,9 +2,9 @@ import "@tanstack/react-start/server-only"
 import { randomBytes } from "node:crypto"
 import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises"
 import { join } from "node:path"
-import { getRequestHeader } from "@tanstack/react-start/server"
-import { AppwriteException, Client, Functions, Query, Storage } from "node-appwrite"
+import { AppwriteException, Query } from "node-appwrite"
 import { CUSTOM_ID, generateCustomGame, type CustomGame } from "../../pipeline/custom-game"
+import { appwrite } from "./appwrite"
 import { answerers } from "@/lib/cast"
 
 export type { CustomGame }
@@ -23,15 +23,6 @@ const BUCKET = process.env.CUSTOM_GAMES_BUCKET ?? "custom-games"
 const FUNCTION = process.env.CUSTOM_GAME_FUNCTION ?? "custom-game"
 const DIR = process.env.CUSTOM_GAMES_DIR ?? join(process.cwd(), "custom")
 const jobs = new Map<string, Job>()
-
-function appwrite() {
-  const endpoint = process.env.APPWRITE_SITE_API_ENDPOINT
-  const project = process.env.APPWRITE_SITE_PROJECT_ID
-  const key = getRequestHeader("x-appwrite-key")
-  if (!endpoint || !project || !key) return null
-  const sdk = new Client().setEndpoint(endpoint).setProject(project).setKey(key)
-  return { storage: new Storage(sdk), functions: new Functions(sdk) }
-}
 
 export async function startJob(question: string): Promise<Job> {
   const id = randomBytes(5).toString("hex")
