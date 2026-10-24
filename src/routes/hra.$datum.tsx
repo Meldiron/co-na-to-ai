@@ -12,13 +12,13 @@ export const Route = createFileRoute("/hra/$datum")({
   head: ({ loaderData }) => ({
     meta: loaderData?.puzzle
       ? [
-          { title: `${loaderData.puzzle.question} · ${formatShort(loaderData.puzzle.date)} · Ptali jsme se 100 AI` },
+          { title: `${loaderData.puzzle.question} · ${formatShort(loaderData.puzzle.date)} · Co na to AI` },
           { property: "og:title", content: `${formatShort(loaderData.puzzle.date)}: ${loaderData.puzzle.question}` },
           { property: "og:url", content: `${SITE_URL}/hra/${loaderData.puzzle.date}` },
           { property: "og:image", content: `${SITE_URL}/og/${loaderData.puzzle.date}` },
           { name: "twitter:image", content: `${SITE_URL}/og/${loaderData.puzzle.date}` },
         ]
-      : [{ title: "Hra nenalezena · Ptali jsme se 100 AI" }],
+      : [{ title: "Hra nenalezena · Co na to AI" }],
   }),
   component: PastGame,
 })

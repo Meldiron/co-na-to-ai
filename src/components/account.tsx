@@ -150,7 +150,6 @@ function Field({
       </label>
       <Input
         id={id}
-        className="h-12 border-0 bg-paper-step px-4 text-ink placeholder:text-ink-soft"
         {...props}
       />
     </div>

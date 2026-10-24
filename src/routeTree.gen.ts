@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ArchivRouteImport } from './routes/archiv'
+import { Route as DotazaniRouteImport } from './routes/dotazani'
 import { Route as ObnovaHeslaRouteImport } from './routes/obnova-hesla'
 import { Route as ObsazeniRouteImport } from './routes/obsazeni'
+import { Route as OgDotpngRouteImport } from './routes/og[.]png'
 import { Route as HraDatumRouteImport } from './routes/hra.$datum'
 import { Route as OgDatumRouteImport } from './routes/og.$datum'
 import { Route as VlastniIdRouteImport } from './routes/vlastni.$id'
@@ -33,6 +35,11 @@ const ArchivRoute = ArchivRouteImport.update({
   path: '/archiv',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DotazaniRoute = DotazaniRouteImport.update({
+  id: '/dotazani',
+  path: '/dotazani',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ObnovaHeslaRoute = ObnovaHeslaRouteImport.update({
   id: '/obnova-hesla',
   path: '/obnova-hesla',
@@ -41,6 +48,11 @@ const ObnovaHeslaRoute = ObnovaHeslaRouteImport.update({
 const ObsazeniRoute = ObsazeniRouteImport.update({
   id: '/obsazeni',
   path: '/obsazeni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OgDotpngRoute = OgDotpngRouteImport.update({
+  id: '/og.png',
+  path: '/og.png',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HraDatumRoute = HraDatumRouteImport.update({
@@ -63,8 +75,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/archiv': typeof ArchivRoute
+  '/dotazani': typeof DotazaniRoute
   '/obnova-hesla': typeof ObnovaHeslaRoute
   '/obsazeni': typeof ObsazeniRoute
+  '/og.png': typeof OgDotpngRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
   '/vlastni/$id': typeof VlastniIdRoute
@@ -73,8 +87,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/archiv': typeof ArchivRoute
+  '/dotazani': typeof DotazaniRoute
   '/obnova-hesla': typeof ObnovaHeslaRoute
   '/obsazeni': typeof ObsazeniRoute
+  '/og.png': typeof OgDotpngRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
   '/vlastni/$id': typeof VlastniIdRoute
@@ -84,8 +100,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/archiv': typeof ArchivRoute
+  '/dotazani': typeof DotazaniRoute
   '/obnova-hesla': typeof ObnovaHeslaRoute
   '/obsazeni': typeof ObsazeniRoute
+  '/og.png': typeof OgDotpngRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
   '/vlastni/$id': typeof VlastniIdRoute
@@ -96,8 +114,10 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/archiv'
+    | '/dotazani'
     | '/obnova-hesla'
     | '/obsazeni'
+    | '/og.png'
     | '/hra/$datum'
     | '/og/$datum'
     | '/vlastni/$id'
@@ -106,8 +126,10 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/archiv'
+    | '/dotazani'
     | '/obnova-hesla'
     | '/obsazeni'
+    | '/og.png'
     | '/hra/$datum'
     | '/og/$datum'
     | '/vlastni/$id'
@@ -116,8 +138,10 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/archiv'
+    | '/dotazani'
     | '/obnova-hesla'
     | '/obsazeni'
+    | '/og.png'
     | '/hra/$datum'
     | '/og/$datum'
     | '/vlastni/$id'
@@ -127,8 +151,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   ArchivRoute: typeof ArchivRoute
+  DotazaniRoute: typeof DotazaniRoute
   ObnovaHeslaRoute: typeof ObnovaHeslaRoute
   ObsazeniRoute: typeof ObsazeniRoute
+  OgDotpngRoute: typeof OgDotpngRoute
   HraDatumRoute: typeof HraDatumRoute
   OgDatumRoute: typeof OgDatumRoute
   VlastniIdRoute: typeof VlastniIdRoute
@@ -157,6 +183,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArchivRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dotazani': {
+      id: '/dotazani'
+      path: '/dotazani'
+      fullPath: '/dotazani'
+      preLoaderRoute: typeof DotazaniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/obnova-hesla': {
       id: '/obnova-hesla'
       path: '/obnova-hesla'
@@ -169,6 +202,13 @@ declare module '@tanstack/react-router' {
       path: '/obsazeni'
       fullPath: '/obsazeni'
       preLoaderRoute: typeof ObsazeniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/og.png': {
+      id: '/og.png'
+      path: '/og.png'
+      fullPath: '/og.png'
+      preLoaderRoute: typeof OgDotpngRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hra/$datum': {
@@ -199,8 +239,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   ArchivRoute: ArchivRoute,
+  DotazaniRoute: DotazaniRoute,
   ObnovaHeslaRoute: ObnovaHeslaRoute,
   ObsazeniRoute: ObsazeniRoute,
+  OgDotpngRoute: OgDotpngRoute,
   HraDatumRoute: HraDatumRoute,
   OgDatumRoute: OgDatumRoute,
   VlastniIdRoute: VlastniIdRoute,

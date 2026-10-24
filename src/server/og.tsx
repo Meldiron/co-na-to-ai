@@ -56,37 +56,66 @@ function Tile({ children, background, low, grow = false }: { children: string; b
   )
 }
 
-export async function renderOgImage(puzzle: { date: string; question: string }): Promise<Uint8Array<ArrayBuffer>> {
+function Wordmark({ size }: { size: number }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", fontSize: size, fontWeight: 800, letterSpacing: "-0.01em" }}>
+      Co na to
+      <div style={{ display: "flex", marginLeft: size * 0.3, padding: `0 ${Math.round(size * 0.28)}px`, background: C.red }}>AI</div>
+    </div>
+  )
+}
+
+function HiddenBoard() {
+  return (
+    <div style={{ display: "flex", gap: 10, padding: 14, background: C.board }}>
+      {Array.from({ length: 8 }, (_, i) => (
+        <div key={i} style={{ display: "flex", flexGrow: 1, gap: 4 }}>
+          <Tile background={C.flap} low={C.flapLow}>
+            {String(i + 1)}
+          </Tile>
+          <Tile background={C.key} low={C.keyLow} grow>
+            ?
+          </Tile>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+async function render(children: React.ReactNode): Promise<Uint8Array<ArrayBuffer>> {
   const svg = await satori(
     <div style={{ width: 1200, height: 630, display: "flex", position: "relative", background: C.field, color: C.ink, fontFamily: "Bricolage, Bricolage Ext" }}>
-      <div style={{ position: "absolute", top: 52, right: 64, bottom: 52, left: 64, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-        <div style={{ display: "flex", alignItems: "center", fontSize: 34, fontWeight: 800, letterSpacing: "-0.01em" }}>
-          Ptali jsme se
-          <div style={{ display: "flex", margin: "0 12px", padding: "0 10px", background: C.red }}>100</div>
-          AI
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", gap: 8 }}>
-            <Tile background={C.flap} low={C.flapLow}>{weekday.format(new Date(`${puzzle.date}T12:00:00Z`))}</Tile>
-            <Tile background={C.flap} low={C.flapLow}>{formatShort(puzzle.date)}</Tile>
-          </div>
-          <div style={{ display: "flex", marginTop: 26, fontSize: puzzle.question.length > 42 ? 64 : 78, fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.03em" }}>{puzzle.question}</div>
-        </div>
-        <div style={{ display: "flex", gap: 10, padding: 14, background: C.board }}>
-          {Array.from({ length: 8 }, (_, i) => (
-            <div key={i} style={{ display: "flex", flexGrow: 1, gap: 4 }}>
-              <Tile background={C.flap} low={C.flapLow}>
-                {String(i + 1)}
-              </Tile>
-              <Tile background={C.key} low={C.keyLow} grow>
-                ?
-              </Tile>
-            </div>
-          ))}
-        </div>
-      </div>
+      <div style={{ position: "absolute", top: 52, right: 64, bottom: 52, left: 64, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>{children}</div>
     </div>,
     { width: 1200, height: 630, fonts: await loadFonts() },
   )
   return new Uint8Array(new Resvg(svg, { fitTo: { mode: "width", value: 1200 } }).render().asPng())
+}
+
+export function renderOgImage(puzzle: { date: string; question: string }): Promise<Uint8Array<ArrayBuffer>> {
+  return render(
+    <>
+      <Wordmark size={34} />
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", gap: 8 }}>
+          <Tile background={C.flap} low={C.flapLow}>{weekday.format(new Date(`${puzzle.date}T12:00:00Z`))}</Tile>
+          <Tile background={C.flap} low={C.flapLow}>{formatShort(puzzle.date)}</Tile>
+        </div>
+        <div style={{ display: "flex", marginTop: 26, fontSize: puzzle.question.length > 42 ? 64 : 78, fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.03em" }}>{puzzle.question}</div>
+      </div>
+      <HiddenBoard />
+    </>,
+  )
+}
+
+export function renderBrandImage(): Promise<Uint8Array<ArrayBuffer>> {
+  return render(
+    <>
+      <Wordmark size={92} />
+      <div style={{ display: "flex", maxWidth: 1000, fontSize: 50, fontWeight: 700, lineHeight: 1.12, letterSpacing: "-0.02em" }}>
+        100 AI jsme se zeptali a teď hledáme osm nejčastějších odpovědí na otázku:
+      </div>
+      <HiddenBoard />
+    </>,
+  )
 }

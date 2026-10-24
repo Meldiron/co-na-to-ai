@@ -59,7 +59,7 @@ export const signUp = createServerFn({ method: "POST" })
           user_email_already_exists: "Tenhle e-mail už má účet. Přihlaste se.",
           user_already_exists: "Tenhle e-mail už má účet. Přihlaste se.",
           password_personal_data: "Heslo nesmí obsahovat vaše jméno ani e-mail.",
-          password_recently_used: "Tohle heslo se objevilo v únicích dat. Zvolte jiné.",
+          password_recently_used: "Tohle heslo jste nedávno použili. Zvolte jiné.",
           general_argument_invalid: "Zkontrolujte e-mail a heslo (aspoň 8 znaků).",
         },
         "Účet se nepodařilo založit. Zkuste to prosím znovu.",
@@ -125,7 +125,7 @@ export const completePasswordReset = createServerFn({ method: "POST" })
         {
           user_invalid_token: "Odkaz už neplatí. Požádejte o nový.",
           user_not_found: "Odkaz už neplatí. Požádejte o nový.",
-          password_recently_used: "Tohle heslo se objevilo v únicích dat. Zvolte jiné.",
+          password_recently_used: "Tohle heslo jste nedávno použili. Zvolte jiné.",
           password_personal_data: "Heslo nesmí obsahovat vaše jméno ani e-mail.",
           general_argument_invalid: "Heslo musí mít aspoň 8 znaků.",
         },

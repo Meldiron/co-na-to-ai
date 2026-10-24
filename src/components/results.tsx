@@ -42,7 +42,7 @@ export function Results({ payload, state, answers, rank }: ResultsProps) {
 
         <div className="md:col-span-5 md:col-start-8">
           <div className="zigzag-bottom bg-paper px-6 pt-7 pb-14 text-ink md:px-8">
-            <p className="font-semibold">Účtenka, {gameLabel(payload)}</p>
+            <p className="font-semibold">Rozpis bodů · {gameLabel(payload)}</p>
             <ul className="mt-5 grid gap-2.5">
               {answers.map((answer, index) => {
                 const found = state.found.includes(index)
@@ -100,7 +100,7 @@ function Share({
   const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : `/hra/${payload.date}`
   const url = `${origin}${path}`
   const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url, challenge: true, rank })
-  const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
+  const fileName = `co-na-to-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
 
   async function image(): Promise<Blob | null> {
     const node = ticketRef.current
@@ -132,7 +132,7 @@ function Share({
       await navigator.clipboard.writeText(text)
       setStatus("Výsledek je ve schránce.")
     } catch {
-      setStatus("Schránka není dostupná. Text výsledku je vedle jízdenky.")
+      setStatus("Text se nepodařilo zkopírovat. Stáhněte si raději obrázek.")
     }
   }
 
@@ -154,7 +154,7 @@ function Share({
       </div>
       <div className="flex flex-col gap-6 md:col-span-4 md:col-start-9">
         <h2 className="head reveal">Vyzvěte kamarády</h2>
-        <p>Pošlete jim jízdenku s odkazem na tutéž otázku a uvidíte, kdo zná AI líp. Jízdenka žádnou odpověď neprozradí.</p>
+        <p>Pošlete jim svůj výsledek s odkazem na stejnou otázku a uvidíte, kdo zná AI líp. Obrázek ani text žádnou odpověď neprozradí.</p>
         <div className="flex flex-wrap gap-3">
           <Button onClick={share} className="h-12 px-6 text-base font-semibold">
             Vyzvat kamarády
@@ -235,9 +235,9 @@ function Ticket({
       </div>
       <div className="absolute inset-y-0 right-0 flex w-[24.6%] flex-col justify-between py-[5.5%] pr-[3cqw] pl-[2cqw]">
         <p className="text-[3.4cqw] leading-[1.05] font-bold [font-stretch:85%]">
-          Ptali jsme se
+          Co na to
           <br />
-          100 AI
+          AI
         </p>
         <div>
           <p className="text-[3cqw] leading-tight">{payload.kind === "custom" ? "Vlastní hra" : weekday.format(new Date(`${payload.date}T12:00:00Z`))}</p>

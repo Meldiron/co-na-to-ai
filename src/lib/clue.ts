@@ -45,7 +45,7 @@ function extremes(people: Array<Persona>): string {
 }
 
 export function personaClue(people: Array<Persona>): string {
-  if (people.length === 0) return "Tuhle odpověď nikdo z obsazení nedal."
+  if (people.length === 0) return "Tuhle odpověď nikdo z dotázaných nedal."
   if (people.length === 1) {
     const [p] = people
     return `Tohle ${p.gender === "f" ? "řekla" : "řekl"} jen jeden člověk: ${p.occupation}, ${p.age} let, ${p.town}.`

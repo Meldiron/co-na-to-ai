@@ -83,7 +83,7 @@ const scenarios = [
   { id: "new-day-notice", url: "/", clockShiftHours: 14, shots: [{ at: "top" }] },
   { id: "archive", url: "/archiv", storage: { vysledky: history }, shots: [{ at: "top" }] },
   { id: "archive-game", url: "/hra/2026-10-19", shots: [{ at: "top" }] },
-  { id: "cast", url: "/obsazeni", shots: [{ at: "top" }, { at: "section:nth-of-type(3)" }] },
+  { id: "cast", url: "/dotazani", shots: [{ at: "top" }, { at: "section:nth-of-type(3)" }] },
   { id: "custom-game", url: "/vlastni/7d73a5b207", shots: [{ at: "top" }] },
   { id: "custom-missing", url: "/vlastni/0000000000", shots: [{ at: "top" }] },
   { id: "future-date", url: "/hra/2027-01-01", shots: [{ at: "top" }] },

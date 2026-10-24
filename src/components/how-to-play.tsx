@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { focusContainer } from "@/lib/focus"
-import { CLEAR_BONUS, MAX_STRIKES } from "@/lib/game"
+import { CLEAR_BONUS } from "@/lib/game"
 import { guideSeen, markGuideSeen } from "@/lib/storage"
 
 const OPEN_EVENT = "pjs100:navod"
@@ -55,7 +55,7 @@ export function HowToPlay() {
               </svg>
             </span>
             <p>
-              Máte {MAX_STRIKES} životů. Odpověď má 10 bodů za každou AI, která ji řekla, za celou tabuli je {CLEAR_BONUS} bodů navíc.
+              Po páté chybě hra končí. Odpověď má 10 bodů za každou AI, která ji řekla, za celou tabuli je {CLEAR_BONUS} bodů navíc.
             </p>
           </li>
         </ul>

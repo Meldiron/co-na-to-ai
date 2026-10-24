@@ -99,7 +99,7 @@ describe("shareText", () => {
     const state = play(["pivo", "auto", "kytara"])
     const hinted = applyGuess(revealLetter(state, answers, 2), answers, "kniha").state
     const text = shareText({ label: "24. 10. 2026", question: "Co si berete na chatu?", state: hinted, answers, total: 335, url: "https://example.cz/" })
-    expect(text).toBe(["Ptali jsme se 100 AI · 24. 10. 2026", "Co si berete na chatu?", "🟩⬜🟨⬜⬜⬜⬜🟩 3/8", "🟩🟥🟩🟩", "335 bodů", "https://example.cz/"].join("\n"))
+    expect(text).toBe(["Co na to AI · 24. 10. 2026", "Co si berete na chatu?", "🟩⬜🟨⬜⬜⬜⬜🟩 3/8", "🟩🟥🟩🟩", "335 bodů", "https://example.cz/"].join("\n"))
     expect(text).not.toMatch(/pivo|kytara/i)
   })
 })
@@ -108,7 +108,7 @@ describe("challenge share text", () => {
   it("leads with the score to beat and links the same question", () => {
     const state = play(["pivo", "auto"])
     const text = shareText({ label: "24. 10. 2026", question: "Q?", state, answers, total: 200, url: "https://example.cz/hra/2026-10-24", challenge: true })
-    expect(text.split("\n")).toEqual(["Dáte víc než 200 bodů?", "Ptali jsme se 100 AI · 24. 10. 2026", "Q?", "🟩⬜⬜⬜⬜⬜⬜⬜ 1/8", "🟩🟥", "https://example.cz/hra/2026-10-24"])
+    expect(text.split("\n")).toEqual(["Dáte víc než 200 bodů?", "Co na to AI · 24. 10. 2026", "Q?", "🟩⬜⬜⬜⬜⬜⬜⬜ 1/8", "🟩🟥", "https://example.cz/hra/2026-10-24"])
   })
 })
 

@@ -5,12 +5,6 @@ import type { Persona, PuzzleSecret, Response } from "@/lib/types"
 import { PersonaAvatar } from "./persona-avatar"
 import { PersonaDialog } from "./persona-dialog"
 
-const plural = new Intl.PluralRules("cs-CZ")
-const votesWord = (n: number) => {
-  const c = plural.select(n)
-  return c === "one" ? "hlas" : c === "few" ? "hlasy" : "hlasů"
-}
-
 const AREAS = ["Praha", "Čechy", "Morava"] as const
 const BANDS: Array<[Band, string]> = [
   ["young", "do 25"],
@@ -90,7 +84,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
                   {answer.rank}. {answer.text}
                 </h3>
                 <p className="text-muted-foreground">
-                  {answer.votes} {votesWord(answer.votes)}
+                  {answer.votes} AI
                 </p>
               </div>
               <div className="grid gap-4 md:col-span-8 md:col-start-5">
@@ -130,7 +124,7 @@ export function WhoSaid({ secret }: { secret: PuzzleSecret }) {
                   <li key={other.text} className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
                     <span className="font-semibold">{other.text}</span>
                     <span className="text-muted-foreground">
-                      {other.votes} {votesWord(other.votes)}:
+                      {other.votes} AI:
                     </span>
                     {other.answerers.map((id) => {
                       const response = byAnswerer.get(id)

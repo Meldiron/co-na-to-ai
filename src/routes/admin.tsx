@@ -15,7 +15,7 @@ import type { Job } from "@/server/custom"
 
 export const Route = createFileRoute("/admin")({
   loader: () => getAdminState(),
-  head: () => ({ meta: [{ title: "Administrace · Ptali jsme se 100 AI" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Administrace · Co na to AI" }, { name: "robots", content: "noindex" }] }),
   component: Admin,
 })
 
@@ -122,7 +122,7 @@ function Dashboard({ state }: { state: State }) {
               placeholder="Jmenujte něco, co…"
               maxLength={90}
               disabled={running}
-              className="mt-2 h-14 border-0 bg-paper px-4 text-ink placeholder:text-ink-soft"
+              className="mt-2 h-14 border-transparent focus-visible:shadow-[inset_0_0_0_2px_var(--ring)]"
             />
             <p className="mt-3 text-sm text-field-soft">
               Nejlíp funguje otázka, na kterou lidé odpovídají různě, ale ne úplně náhodně: „Co si berete na chatu?“, ne „Jmenujte ovoce“. 8 až 90 znaků, stojí asi 0,10 až

@@ -71,12 +71,12 @@ export function Board({ answers, found, revealAll, title, missKey, hints, misses
       <div className="mt-[5px] grid h-[44px] grid-cols-[2.75rem_1fr] gap-[3px] sm:h-[52px] md:mt-2 md:h-[64px] md:grid-cols-[4rem_1fr]">
         <Flap text="X" tone="miss" align="center" className="h-full" />
         <Flap
-          text={misses.length ? `Mimo tabuli · ${misses.join(" · ")}` : "Mimo tabuli"}
+          text={misses.length ? `Chyby · ${misses.join(" · ")}` : "Chyby"}
           tone={misses.length ? undefined : "dim"}
           className="hidden h-full sm:block"
         />
         <Flap
-          text={misses.length ? misses.join(" · ") : "Mimo tabuli"}
+          text={misses.length ? misses.join(" · ") : "Chyby"}
           tone={misses.length ? undefined : "dim"}
           className="h-full text-[length:var(--step-body)] sm:hidden"
         />

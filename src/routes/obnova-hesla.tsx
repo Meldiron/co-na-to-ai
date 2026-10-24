@@ -9,7 +9,7 @@ import { completePasswordReset } from "@/server/account-api"
 
 export const Route = createFileRoute("/obnova-hesla")({
   validateSearch: z.object({ userId: z.string().optional(), secret: z.string().optional() }),
-  head: () => ({ meta: [{ title: "Nové heslo · Ptali jsme se 100 AI" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Nové heslo · Co na to AI" }, { name: "robots", content: "noindex" }] }),
   component: Reset,
 })
 
@@ -83,7 +83,7 @@ function Reset() {
                   required
                   value={value}
                   onChange={(e) => set(e.target.value)}
-                  className="h-14 border-0 bg-paper px-4 text-ink"
+                  className="h-14"
                 />
               </div>
             ))}

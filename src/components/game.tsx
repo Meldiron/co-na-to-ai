@@ -20,7 +20,6 @@ import { WhoSaid } from "./who-said"
 
 type Message = { text: string; tone: "hit" | "miss" | "info" }
 
-const triesLeft = new Intl.PluralRules("cs-CZ")
 const weekday = new Intl.DateTimeFormat("cs-CZ", { weekday: "long", timeZone: "UTC" })
 
 export function gameLabel(payload: PuzzlePayload): string {
@@ -39,10 +38,6 @@ function DateStrip({ payload, daily }: { payload: PuzzlePayload; daily: boolean 
       </button>
     </p>
   )
-}
-
-function remaining(n: number): string {
-  return triesLeft.select(n) === "one" ? `Zbývá ${n} pokus.` : `Zbývají ${n} pokusy.`
 }
 
 export function Game({ payload, today }: { payload: PuzzlePayload; today: string }) {
@@ -94,7 +89,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
         setMissKey((k) => k + 1)
         setMessage({
           tone: "miss",
-          text: next.status === "lost" ? "Pátá chyba. Konec hry." : `Tohle žádná AI neřekla. ${remaining(MAX_STRIKES - next.strikes)}`,
+          text: next.status === "lost" ? "Tohle na tabuli není. Pátá chyba, konec hry." : `Tohle na tabuli není. Chyba ${next.strikes} z ${MAX_STRIKES}.`,
         })
         setValue("")
         break
@@ -122,10 +117,11 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
     <>
       <section className="bg-field text-field-ink">
         <div className="page pt-5 pb-14 md:pt-12 md:pb-20">
+          <p className="mb-3 max-w-[56ch] text-field-soft md:mb-4">100 AI jsme se zeptali a teď hledáme osm nejčastějších odpovědí na otázku:</p>
           <h1 className="display">{payload.question}</h1>
           <DateStrip payload={payload} daily={daily} />
           <p className="mt-4 max-w-[62ch] text-base md:mt-5">
-            Ptali jsme se stovky umělých inteligencí, každé v roli jiného Čecha. Najděte jejich osm nejčastějších odpovědí. Máte pět životů.
+            Každá AI odpovídala v roli jiného Čecha. Tipujte jedním slovem, po páté chybě hra končí.
           </p>
 
           <div className="mt-5 md:mt-10">
@@ -192,7 +188,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
                     spellCheck={false}
                     enterKeyHint="send"
                     maxLength={40}
-                    className="h-14 min-w-0 flex-1 border-0 bg-paper px-4 text-base text-ink placeholder:text-ink-soft md:h-16 md:text-base"
+                    className="h-14 min-w-0 flex-1 border-transparent focus-visible:shadow-[inset_0_0_0_2px_var(--ring)] md:h-16"
                   />
                   <Button type="submit" className="h-14 px-5 text-base font-semibold md:h-16 md:px-8">
                     Tipnout

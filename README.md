@@ -1,6 +1,6 @@
-# Ptali jsme se 100 AI
+# Co na to AI
 
-Daily Czech guessing game in the spirit of Family Feud / *5 proti 5*. Every day one survey question goes to 100 AI answerers (a different OpenRouter model per answerer, each playing a different Czech persona). Their answers are merged, and the player guesses the 8 most common. Five wrong guesses and the game is over.
+Daily Czech guessing game in the spirit of Family Feud / *Co na to Češi*: „100 AI jsme se zeptali a teď hledáme osm nejčastějších odpovědí na otázku…“ Live at https://ai100.appwrite.network. Every day one survey question goes to 100 AI answerers (a different OpenRouter model per answerer, each playing a different Czech persona). Their answers are merged, and the player guesses the 8 most common. Five wrong guesses and the game is over.
 
 Scoring: an answer is worth 10 points per AI that gave it, and clearing the board adds 200. Tapping a hidden answer offers two clues. "Odkrýt písmeno" reveals the next letter, up to 3, and never the whole word; each one takes a quarter of that answer's points, so a hinted answer is always worth more than a miss and less than finding it with fewer letters. "Kdo to řekl?" is free: it describes the personas who gave the answer ("hlavně důchodci z Moravy") and names the youngest and the oldest.
 
@@ -15,7 +15,7 @@ npm test           # matching, scoring, Prague day switch, stats, pipeline shape
 npm run build      # production build in dist/
 ```
 
-Routes: `/` today's game, `/hra/YYYY-MM-DD` a past day, `/archiv` the archive, `/obsazeni` the cast of 100, `/vlastni/<id>` a custom game, `/admin` the admin for accounts with the `admin` label.
+Routes: `/` today's game, `/hra/YYYY-MM-DD` a past day, `/archiv` the archive, `/dotazani` the 100 respondents (`/obsazeni` redirects there), `/vlastni/<id>` a custom game, `/admin` the admin for accounts with the `admin` label.
 
 A new puzzle starts at 00:00 Europe/Prague. Puzzle #1 is 2026-10-01 (`LAUNCH_DATE` in `src/lib/day.ts`). The server only returns puzzles whose date is on or before today in Prague, so the client never receives future boards. The answers in a payload are XOR'd with a per-day key and base64-encoded, so they aren't readable at a glance. That is obfuscation, not security.
 

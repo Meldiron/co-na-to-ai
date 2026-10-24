@@ -6,8 +6,8 @@ export function client(): OpenRouter {
   if (!apiKey) throw new Error("OPENROUTER_API_KEY is not set (put it in .env or the environment)")
   return new OpenRouter({
     apiKey,
-    httpReferer: "https://github.com/ptali-jsme-se-ai",
-    appTitle: "Ptali jsme se 100 AI",
+    httpReferer: "https://github.com/Meldiron/co-na-to-ai",
+    appTitle: "Co na to AI",
   })
 }
 

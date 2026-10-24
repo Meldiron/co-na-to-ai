@@ -70,7 +70,7 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
             </span>
             <Flap text={seconds} align="center" className="h-20 w-[4.6rem] text-[length:var(--step-display)] md:h-28 md:w-28" />
           </div>
-          <p className="reveal mt-6 max-w-[44ch]">Nová tabule vyjíždí každý den o půlnoci českého času, pro všechny stejná.</p>
+          <p className="reveal mt-6 max-w-[44ch]">Nová otázka vychází každý den o půlnoci českého času, pro všechny stejná.</p>
 
           {recent.length > 0 && (
             <>
@@ -183,7 +183,7 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
                 </p>
               </>
             ) : (
-              <p className="mt-5 text-ink-soft">Načítám statistiky z tohoto prohlížeče…</p>
+              <p className="mt-5 text-ink-soft">Načítám statistiky…</p>
             )}
           </div>
           <StatsNote />

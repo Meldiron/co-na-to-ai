@@ -8,12 +8,12 @@ export const Route = createFileRoute("/vlastni/$id")({
   head: ({ loaderData }) => ({
     meta: loaderData?.puzzle
       ? [
-          { title: `${loaderData.puzzle.question} · vlastní hra · Ptali jsme se 100 AI` },
+          { title: `${loaderData.puzzle.question} · vlastní hra · Co na to AI` },
           { property: "og:title", content: `Vlastní hra: ${loaderData.puzzle.question}` },
           { property: "og:url", content: `${SITE_URL}/vlastni/${loaderData.puzzle.id}` },
           { name: "robots", content: "noindex" },
         ]
-      : [{ title: "Hra nenalezena · Ptali jsme se 100 AI" }],
+      : [{ title: "Hra nenalezena · Co na to AI" }],
   }),
   component: CustomGame,
 })

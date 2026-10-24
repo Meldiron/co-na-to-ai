@@ -10,7 +10,7 @@ export function SiteFooter() {
             <ul className="mt-3 grid grid-cols-2 gap-[3px] md:grid-cols-1">
               <li>
                 <Link to="/" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
-                  Dnešní otázka
+                  Dnešní hra
                 </Link>
               </li>
               <li>
@@ -19,8 +19,8 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link to="/obsazeni" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
-                  Obsazení
+                <Link to="/dotazani" className="flex h-12 items-center bg-flap px-4 text-flap-ink transition-colors hover:bg-flap-hover">
+                  Dotázaní
                 </Link>
               </li>
               <li>
@@ -41,21 +41,21 @@ export function SiteFooter() {
           </div>
           <div className="md:col-span-3">
             <p className="font-semibold">Odpovědi</p>
-            <p className="mt-2 text-flap-dim">Sto jazykových modelů přes OpenRouter, každý v roli jiného Čecha. Hra není spojená s žádnou televizní soutěží.</p>
+            <p className="mt-2 text-flap-dim">Sto jazykových modelů přes OpenRouter, každý v roli jiného Čecha. Hra není spojená s pořadem Co na to Češi ani s žádnou jinou televizní soutěží.</p>
           </div>
           <div className="md:col-span-3">
             <p className="font-semibold">Pravidla ve zkratce</p>
-            <p className="mt-2 text-flap-dim">Osm odpovědí na tabuli, pět životů, 10 bodů za každou AI. Odkryté písmeno ubere čtvrtinu.</p>
+            <p className="mt-2 text-flap-dim">Osm odpovědí na tabuli, pátá chyba končí hru, 10 bodů za každou AI. Odkryté písmeno ubere čtvrtinu.</p>
           </div>
         </div>
         <div />
         <div>
-          <svg viewBox="0 0 1000 192" className="block w-full" role="img" aria-label="Ptali jsme se 100 AI">
-            <text x="0" y="150" textLength="1000" lengthAdjust="spacing" fill="currentColor" fontWeight="700" style={{ fontSize: 175, fontStretch: "75%", letterSpacing: "-0.02em" }}>
-              Ptali jsme se 100 AI
+          <svg viewBox="0 0 530 192" className="block w-full" role="img" aria-label="Co na to AI">
+            <text x="0" y="150" textLength="530" lengthAdjust="spacing" fill="currentColor" fontWeight="700" style={{ fontSize: 175, fontStretch: "75%", letterSpacing: "-0.02em" }}>
+              Co na to <tspan fill="var(--red)">AI</tspan>
             </text>
           </svg>
-          <p className="mt-5 text-sm text-flap-dim">© 2026 Ptali jsme se 100 AI · Písmo Bricolage Grotesque (OFL)</p>
+          <p className="mt-5 text-sm text-flap-dim">© 2026 Co na to AI · Písmo Bricolage Grotesque (OFL)</p>
         </div>
       </div>
     </footer>

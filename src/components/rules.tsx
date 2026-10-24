@@ -1,12 +1,12 @@
 import { Link } from "@tanstack/react-router"
-import { CLEAR_BONUS, MAX_STRIKES } from "@/lib/game"
+import { CLEAR_BONUS } from "@/lib/game"
 import { providerCount } from "@/lib/cast"
 import { FREEZES } from "@/lib/streak"
 
 export function Rules() {
   const items: Array<[string, React.ReactNode]> = [
     ["Jak se hraje?", "Píšete odpovědi na otázku dne. Když odpověď patří mezi osm nejčastějších, otočí se na tabuli. Hra končí, když najdete všech osm, nebo po páté chybě."],
-    ["Kolik mám pokusů?", `Chyby jsou ${MAX_STRIKES}. Správných tipů můžete dát kolik chcete. Zopakovaný tip ani odpověď, která už na tabuli je, se za chybu nepočítá.`],
+    ["Kolik chyb si můžu dovolit?", `Čtyři, pátá chyba hru ukončí. Správných odpovědí můžete najít kolik chcete. Zopakovaný tip ani odpověď, která už na tabuli je, se za chybu nepočítá.`],
     ["Jak se počítají body?", `Odpověď má 10 bodů za každou umělou inteligenci, která ji řekla. Čím výš na tabuli, tím víc bodů. Za celou tabuli je ${CLEAR_BONUS} bodů navíc.`],
     ["Jaké jsou nápovědy?", "Klepněte na skrytou odpověď. Odkrýt písmeno můžete až třikrát, každé ubere čtvrtinu bodů za tu odpověď, takže uhodnutá odpověď s nápovědou pořád stojí za to. Nápověda Kdo to řekl je zdarma: prozradí, jaké postavy odpověď daly, třeba že hlavně důchodci z Moravy."],
     ["Musím psát přesně?", "Ne. Odpovědi jsou vždy jedno slovo. Velká písmena a diakritika nevadí, drobné překlepy ani záměna i a y také ne. Uznáváme i jiné tvary a blízká synonyma, která jsme připravili předem."],

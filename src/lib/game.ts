@@ -172,10 +172,10 @@ export function shareText(opts: {
     .join("")
   const guesses = state.guesses.map((g) => (g.result === "hit" ? "🟩" : "🟥")).join("")
   if (challenge) {
-    return [`Dáte víc než ${total} ${pointsWord(total)}?`, `Ptali jsme se 100 AI · ${label}`, question, `${board} ${state.found.length}/${answers.length}`, guesses, ...rank, url].join("\n")
+    return [`Dáte víc než ${total} ${pointsWord(total)}?`, `Co na to AI · ${label}`, question, `${board} ${state.found.length}/${answers.length}`, guesses, ...rank, url].join("\n")
   }
   return [
-    `Ptali jsme se 100 AI · ${label}`,
+    `Co na to AI · ${label}`,
     question,
     `${board} ${state.found.length}/${answers.length}`,
     guesses,
