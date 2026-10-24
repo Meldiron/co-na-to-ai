@@ -3,7 +3,7 @@ import { AppwriteException } from "node-appwrite"
 import { z } from "zod"
 import { MAX_STRIKES } from "@/lib/game"
 import { NAME_MAX, NAME_MIN, cleanName, guestName } from "@/lib/players"
-import { appwrite, asUser } from "./appwrite"
+import { appwrite, asUser, siteOrigin } from "./appwrite"
 import { dayStats, listResults, loadGame, missedGuesses, moveGames, saveGame, setPlayerName } from "./games"
 import { loadCustom } from "./custom"
 import { loadPuzzle } from "./puzzles"
@@ -96,6 +96,43 @@ export const signOut = createServerFn({ method: "POST" }).handler(async () => {
   forget()
   return { ok: true }
 })
+
+export const requestPasswordReset = createServerFn({ method: "POST" })
+  .validator(z.object({ email: z.email().max(200) }))
+  .handler(async ({ data }) => {
+    const admin = appwrite()
+    if (!admin) return { ok: false as const, error: "Účty teď nejsou k dispozici." }
+    try {
+      await admin.account.createRecovery({ email: data.email, url: `${siteOrigin()}/obnova-hesla` })
+      return { ok: true as const }
+    } catch (error) {
+      if (error instanceof AppwriteException && error.type === "user_not_found") return { ok: true as const }
+      return failure(error, { general_rate_limit_exceeded: "Moc pokusů. Zkuste to za chvíli." }, "Odkaz se nepodařilo poslat. Zkuste to prosím znovu.")
+    }
+  })
+
+export const completePasswordReset = createServerFn({ method: "POST" })
+  .validator(z.object({ userId: z.string().min(1).max(36), secret: z.string().min(1).max(1024), password: z.string().min(8).max(256) }))
+  .handler(async ({ data }) => {
+    const admin = appwrite()
+    if (!admin) return { ok: false as const, error: "Účty teď nejsou k dispozici." }
+    try {
+      await admin.account.updateRecovery({ userId: data.userId, secret: data.secret, password: data.password })
+      return { ok: true as const }
+    } catch (error) {
+      return failure(
+        error,
+        {
+          user_invalid_token: "Odkaz už neplatí. Požádejte o nový.",
+          user_not_found: "Odkaz už neplatí. Požádejte o nový.",
+          password_recently_used: "Tohle heslo se objevilo v únicích dat. Zvolte jiné.",
+          password_personal_data: "Heslo nesmí obsahovat vaše jméno ani e-mail.",
+          general_argument_invalid: "Heslo musí mít aspoň 8 znaků.",
+        },
+        "Heslo se nepodařilo změnit. Zkuste to prosím znovu.",
+      )
+    }
+  })
 
 export const setName = createServerFn({ method: "POST" })
   .validator(z.object({ name }))

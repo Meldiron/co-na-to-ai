@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { rankLine, useDayStats } from "@/hooks/use-day-stats"
 import { useGame } from "@/hooks/use-game"
 import { formatShort } from "@/lib/day"
 import { personaOf } from "@/lib/cast"
@@ -47,6 +48,7 @@ function remaining(n: number): string {
 export function Game({ payload, today }: { payload: PuzzlePayload; today: string }) {
   const daily = payload.date === today
   const { secret, state, ready, synced, guess, surrender, letter, clue } = useGame(payload, daily)
+  const stats = useDayStats(payload, synced, ready && state.status !== "playing")
   const [value, setValue] = useState("")
   const [message, setMessage] = useState<Message | null>(null)
   const [missKey, setMissKey] = useState(0)
@@ -239,8 +241,8 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
 
       {over && ready && (
         <>
-          <Results payload={payload} state={state} answers={secret.answers} />
-          <Others payload={payload} answers={secret.answers} synced={synced} />
+          <Results payload={payload} state={state} answers={secret.answers} rank={rankLine(stats, payload.kind === "daily")} />
+          <Others answers={secret.answers} stats={stats} />
           <WhoSaid secret={secret} />
         </>
       )}

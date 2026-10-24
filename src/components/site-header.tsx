@@ -123,7 +123,7 @@ export function SiteHeader({ tone = "field" }: { tone?: "field" | "ground" }) {
           {account && (
             <button
               type="button"
-              onClick={openAccount}
+              onClick={() => openAccount()}
               className={`ml-2 inline-flex h-11 max-w-[14rem] items-center truncate px-4 font-semibold transition-colors ${tone === "field" ? "bg-field-step hover:bg-board" : "bg-ground-step hover:bg-paper-step"}`}
             >
               {account}

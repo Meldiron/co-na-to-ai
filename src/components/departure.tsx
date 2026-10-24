@@ -200,7 +200,7 @@ function StatsNote() {
     <p className="mt-6 text-sm text-flap-dim">
       {member ? "Statistiky se ukládají k vašemu účtu." : enabled ? "Hrajete jako host, statistiky jsou jen v tomto prohlížeči. " : "Statistiky se ukládají jen v tomto prohlížeči. "}
       {enabled && !member && (
-        <button type="button" onClick={openAccount} className="font-semibold text-flap-ink underline underline-offset-4">
+        <button type="button" onClick={() => openAccount()} className="font-semibold text-flap-ink underline underline-offset-4">
           Založit účet
         </button>
       )}

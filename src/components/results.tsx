@@ -10,6 +10,7 @@ type ResultsProps = {
   payload: PuzzlePayload
   state: GameState
   answers: Array<BoardAnswer>
+  rank: string | null
 }
 
 const plural = new Intl.PluralRules("cs-CZ")
@@ -19,7 +20,7 @@ const pick = (n: number, one: string, few: string, many: string) => {
   return category === "one" ? one : category === "few" ? few : many
 }
 
-export function Results({ payload, state, answers }: ResultsProps) {
+export function Results({ payload, state, answers, rank }: ResultsProps) {
   const { bonus, total } = scoreLines(state, answers)
 
   return (
@@ -72,7 +73,7 @@ export function Results({ payload, state, answers }: ResultsProps) {
         </div>
       </div>
 
-      <Share payload={payload} state={state} answers={answers} total={total} />
+      <Share payload={payload} state={state} answers={answers} total={total} rank={rank} />
     </section>
   )
 }
@@ -82,11 +83,13 @@ function Share({
   state,
   answers,
   total,
+  rank,
 }: {
   payload: PuzzlePayload
   state: GameState
   answers: Array<BoardAnswer>
   total: number
+  rank: string | null
 }) {
   const ticketRef = useRef<HTMLDivElement>(null)
   const [status, setStatus] = useState("")
@@ -96,7 +99,7 @@ function Share({
 
   const path = payload.kind === "custom" ? `/vlastni/${payload.id}` : `/hra/${payload.date}`
   const url = `${origin}${path}`
-  const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url, challenge: true })
+  const text = shareText({ label: gameLabel(payload), question: payload.question, state, answers, total, url, challenge: true, rank })
   const fileName = `ptali-jsme-se-100-ai-${payload.kind === "custom" ? payload.id : payload.date}.png`
 
   async function image(): Promise<Blob | null> {
@@ -147,7 +150,7 @@ function Share({
   return (
     <div className="page grid gap-10 pb-24 md:grid-cols-12 md:gap-6 md:pb-40">
       <div className="md:col-span-7">
-        <Ticket ref={ticketRef} payload={payload} state={state} answers={answers} total={total} host={origin.replace(/^https?:\/\//, "")} />
+        <Ticket ref={ticketRef} payload={payload} state={state} answers={answers} total={total} rank={rank} host={origin.replace(/^https?:\/\//, "")} />
       </div>
       <div className="flex flex-col gap-6 md:col-span-4 md:col-start-9">
         <h2 className="head reveal">Vyzvěte kamarády</h2>
@@ -177,6 +180,7 @@ function Ticket({
   state,
   answers,
   total,
+  rank,
   host,
 }: {
   ref: React.Ref<HTMLDivElement>
@@ -184,6 +188,7 @@ function Ticket({
   state: GameState
   answers: Array<BoardAnswer>
   total: number
+  rank: string | null
   host: string
 }) {
   return (
@@ -209,7 +214,8 @@ function Ticket({
             {total}
             <span className="ml-[1.5cqw] text-[3.6cqw] tracking-normal [font-stretch:85%]">{pointsWord(total)}</span>
           </p>
-          <p className="mt-[1.6cqw] text-[3.4cqw] leading-none font-semibold text-red">Překonáte mě?</p>
+          {rank && <p className="mt-[1.8cqw] text-[3.2cqw] leading-none font-semibold">{rank}</p>}
+          <p className={`${rank ? "mt-[1cqw]" : "mt-[1.6cqw]"} text-[3.4cqw] leading-none font-semibold text-red`}>Překonáte mě?</p>
         </div>
         <div>
           <div className="flex items-center gap-[0.8cqw]">

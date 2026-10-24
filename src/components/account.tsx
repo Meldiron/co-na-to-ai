@@ -1,27 +1,67 @@
 import { Link } from "@tanstack/react-router"
-import { createContext, useCallback, useContext, useEffect, useRef, useState, type FormEvent } from "react"
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+} from "react"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { isValidDate } from "@/lib/day"
 import { focusContainer } from "@/lib/focus"
 import type { GameRef } from "@/lib/game-ref"
 import { NAME_MAX, NAME_MIN, cleanName } from "@/lib/players"
-import { forgetLocalGames, loadResults, localGames, markSynced, syncedFor } from "@/lib/storage"
-import { getAccount, saveMyGame, setName, signIn, signOut, signUp, type AccountUser } from "@/server/account-api"
+import {
+  forgetLocalGames,
+  loadResults,
+  localGames,
+  markSynced,
+  syncedFor,
+} from "@/lib/storage"
+import {
+  getAccount,
+  requestPasswordReset,
+  saveMyGame,
+  setName,
+  signIn,
+  signOut,
+  signUp,
+  type AccountUser,
+} from "@/server/account-api"
 
 const OPEN_EVENT = "pjs100:ucet"
 
-type AccountValue = { enabled: boolean; ready: boolean; user: AccountUser | null; refresh: () => Promise<AccountUser | null> }
+type AccountValue = {
+  enabled: boolean
+  ready: boolean
+  user: AccountUser | null
+  refresh: () => Promise<AccountUser | null>
+}
 
-const AccountContext = createContext<AccountValue>({ enabled: false, ready: false, user: null, refresh: async () => null })
+const AccountContext = createContext<AccountValue>({
+  enabled: false,
+  ready: false,
+  user: null,
+  refresh: async () => null,
+})
 
 export function useAccount(): AccountValue {
   return useContext(AccountContext)
 }
 
-export function openAccount(): void {
-  window.dispatchEvent(new Event(OPEN_EVENT))
+type Mode = "signup" | "signin" | "reset"
+
+export function openAccount(mode: Mode = "signup"): void {
+  window.dispatchEvent(new CustomEvent<Mode>(OPEN_EVENT, { detail: mode }))
 }
 
 function refOf(key: string): GameRef | null {
@@ -35,9 +75,20 @@ async function importLocalGames(): Promise<number> {
   let sent = 0
   for (const game of localGames()) {
     const ref = refOf(game.key)
-    if (!ref || (game.state.status === "playing" && game.state.guesses.length === 0)) continue
+    if (
+      !ref ||
+      (game.state.status === "playing" && game.state.guesses.length === 0)
+    )
+      continue
     try {
-      await saveMyGame({ data: { ref, board: game.board, state: game.state, daily: game.key in results && results[game.key].daily } })
+      await saveMyGame({
+        data: {
+          ref,
+          board: game.board,
+          state: game.state,
+          daily: game.key in results && results[game.key].daily,
+        },
+      })
       sent++
     } catch {
       // the game stays in this browser and is offered again next visit
@@ -47,7 +98,11 @@ async function importLocalGames(): Promise<number> {
 }
 
 export function AccountProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = useState<Omit<AccountValue, "refresh">>({ enabled: false, ready: false, user: null })
+  const [state, setState] = useState<Omit<AccountValue, "refresh">>({
+    enabled: false,
+    ready: false,
+    user: null,
+  })
   const importing = useRef(false)
 
   const refresh = useCallback(async () => {
@@ -76,21 +131,39 @@ export function AccountProvider({ children }: { children: React.ReactNode }) {
     })
   }, [state.ready, state.enabled, state.user, refresh])
 
-  return <AccountContext.Provider value={{ ...state, refresh }}>{children}</AccountContext.Provider>
+  return (
+    <AccountContext.Provider value={{ ...state, refresh }}>
+      {children}
+    </AccountContext.Provider>
+  )
 }
 
-function Field({ id, label, ...props }: { id: string; label: string } & React.ComponentProps<typeof Input>) {
+function Field({
+  id,
+  label,
+  ...props
+}: { id: string; label: string } & React.ComponentProps<typeof Input>) {
   return (
     <div className="grid gap-1.5">
       <label htmlFor={id} className="font-semibold">
         {label}
       </label>
-      <Input id={id} className="h-12 border-0 bg-paper-step px-4 text-ink placeholder:text-ink-soft" {...props} />
+      <Input
+        id={id}
+        className="h-12 border-0 bg-paper-step px-4 text-ink placeholder:text-ink-soft"
+        {...props}
+      />
     </div>
   )
 }
 
-function NameForm({ user, onSaved }: { user: AccountUser | null; onSaved: () => Promise<unknown> }) {
+function NameForm({
+  user,
+  onSaved,
+}: {
+  user: AccountUser | null
+  onSaved: () => Promise<unknown>
+}) {
   const [name, setNameValue] = useState(user?.named ? user.name : "")
   const [note, setNote] = useState("")
   const [busy, setBusy] = useState(false)
@@ -122,7 +195,12 @@ function NameForm({ user, onSaved }: { user: AccountUser | null; onSaved: () => 
         placeholder={user ? user.name : "Třeba Pepa z Brna"}
       />
       <div className="flex flex-wrap items-center gap-3">
-        <Button type="submit" disabled={busy || !valid || clean === user?.name} variant="secondary" className="h-11 bg-paper-step px-5 font-semibold hover:bg-ground-step">
+        <Button
+          type="submit"
+          disabled={busy || !valid || clean === user?.name}
+          variant="secondary"
+          className="h-11 bg-paper-step px-5 font-semibold hover:bg-ground-step"
+        >
           Uložit jméno
         </Button>
         <p aria-live="polite" className="text-sm text-ink-soft">
@@ -133,11 +211,18 @@ function NameForm({ user, onSaved }: { user: AccountUser | null; onSaved: () => 
   )
 }
 
-function Credentials({ onSignedUp }: { onSignedUp: () => Promise<unknown> }) {
-  const [mode, setMode] = useState<"signup" | "signin">("signup")
+function Credentials({
+  initial,
+  onSignedUp,
+}: {
+  initial: Mode
+  onSignedUp: () => Promise<unknown>
+}) {
+  const [mode, setMode] = useState<Mode>(initial)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const [sent, setSent] = useState(false)
   const [busy, setBusy] = useState(false)
 
   async function submit(event: FormEvent) {
@@ -145,7 +230,11 @@ function Credentials({ onSignedUp }: { onSignedUp: () => Promise<unknown> }) {
     setBusy(true)
     setError("")
     try {
-      if (mode === "signup") {
+      if (mode === "reset") {
+        const result = await requestPasswordReset({ data: { email } })
+        if (!result.ok) setError(result.error)
+        else setSent(true)
+      } else if (mode === "signup") {
         const result = await signUp({ data: { email, password } })
         if (!result.ok) setError(result.error)
         else await onSignedUp()
@@ -159,14 +248,30 @@ function Credentials({ onSignedUp }: { onSignedUp: () => Promise<unknown> }) {
         }
       }
     } catch {
-      setError(mode === "signup" ? "Zkontrolujte e-mail a heslo (aspoň 8 znaků)." : "Přihlášení se nepovedlo.")
+      setError(
+        mode === "signup"
+          ? "Zkontrolujte e-mail a heslo (aspoň 8 znaků)."
+          : mode === "reset"
+            ? "Zkontrolujte e-mail."
+            : "Přihlášení se nepovedlo."
+      )
     }
     setBusy(false)
   }
 
+  function switchTo(next: Mode) {
+    setMode(next)
+    setError("")
+    setSent(false)
+  }
+
   return (
     <div className="grid gap-4">
-      <div className="grid grid-cols-2 gap-[3px]" role="tablist" aria-label="Účet">
+      <div
+        className="grid grid-cols-2 gap-[3px]"
+        role="tablist"
+        aria-label="Účet"
+      >
         {(
           [
             ["signup", "Založit účet"],
@@ -177,12 +282,9 @@ function Credentials({ onSignedUp }: { onSignedUp: () => Promise<unknown> }) {
             key={id}
             type="button"
             role="tab"
-            aria-selected={mode === id}
-            onClick={() => {
-              setMode(id)
-              setError("")
-            }}
-            className={`h-11 font-semibold transition-colors ${mode === id ? "bg-field text-field-ink" : "bg-paper-step hover:bg-ground-step"}`}
+            aria-selected={mode === id || (id === "signin" && mode === "reset")}
+            onClick={() => switchTo(id)}
+            className={`h-11 font-semibold transition-colors ${mode === id || (id === "signin" && mode === "reset") ? "bg-field text-field-ink" : "bg-paper-step hover:bg-ground-step"}`}
           >
             {label}
           </button>
@@ -192,26 +294,73 @@ function Credentials({ onSignedUp }: { onSignedUp: () => Promise<unknown> }) {
         <p className="text-ink-soft">
           {mode === "signup"
             ? "Z hosta se stane trvalý účet. Hry, výsledky i série zůstanou a budete je mít na každém zařízení."
-            : "Hry z tohoto prohlížeče, které v účtu ještě nemáte, se do něj přesunou."}
+            : mode === "reset"
+              ? "Pošleme vám e-mail s odkazem, přes který si nastavíte nové heslo."
+              : "Hry z tohoto prohlížeče, které v účtu ještě nemáte, se do něj přesunou."}
         </p>
-        <Field id="email" label="E-mail" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         <Field
-          id="heslo"
-          label="Heslo"
-          type="password"
-          autoComplete={mode === "signup" ? "new-password" : "current-password"}
-          minLength={mode === "signup" ? 8 : 1}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder={mode === "signup" ? "Aspoň 8 znaků" : undefined}
+          id="email"
+          label="E-mail"
+          type="email"
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <p aria-live="polite" className="min-h-[1.5em] font-semibold text-red">
-          {error}
+        {mode !== "reset" && (
+          <Field
+            id="heslo"
+            label="Heslo"
+            type="password"
+            autoComplete={
+              mode === "signup" ? "new-password" : "current-password"
+            }
+            minLength={mode === "signup" ? 8 : 1}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder={mode === "signup" ? "Aspoň 8 znaků" : undefined}
+            required
+          />
+        )}
+        {mode === "signin" && (
+          <button
+            type="button"
+            onClick={() => switchTo("reset")}
+            className="justify-self-start text-sm font-semibold underline underline-offset-4"
+          >
+            Zapomněli jste heslo?
+          </button>
+        )}
+        <p
+          aria-live="polite"
+          className={`min-h-[1.5em] font-semibold ${sent ? "text-field" : "text-red"}`}
+        >
+          {sent
+            ? "Pokud k tomu e-mailu patří účet, přijde na něj odkaz na nové heslo. Platí hodinu."
+            : error}
         </p>
-        <Button type="submit" disabled={busy || !email || !password} className="h-12 justify-self-start px-8 font-semibold">
-          {busy ? "Chvilku…" : mode === "signup" ? "Založit účet" : "Přihlásit se"}
+        <Button
+          type="submit"
+          disabled={busy || !email || (mode !== "reset" && !password) || sent}
+          className="h-12 justify-self-start px-8 font-semibold"
+        >
+          {busy
+            ? "Chvilku…"
+            : mode === "signup"
+              ? "Založit účet"
+              : mode === "reset"
+                ? "Poslat odkaz"
+                : "Přihlásit se"}
         </Button>
+        {mode === "reset" && (
+          <button
+            type="button"
+            onClick={() => switchTo("signin")}
+            className="justify-self-start text-sm font-semibold underline underline-offset-4"
+          >
+            Zpět na přihlášení
+          </button>
+        )}
       </form>
     </div>
   )
@@ -220,10 +369,18 @@ function Credentials({ onSignedUp }: { onSignedUp: () => Promise<unknown> }) {
 export function AccountDialog() {
   const { enabled, user, refresh } = useAccount()
   const [open, setOpen] = useState(false)
+  const [mode, setMode] = useState<Mode>("signup")
   const member = user && !user.guest
 
   useEffect(() => {
-    const show = () => setOpen(true)
+    const show = (event: Event) => {
+      setMode(
+        event instanceof CustomEvent && typeof event.detail === "string"
+          ? (event.detail as Mode)
+          : "signup"
+      )
+      setOpen(true)
+    }
     window.addEventListener(OPEN_EVENT, show)
     return () => window.removeEventListener(OPEN_EVENT, show)
   }, [])
@@ -236,9 +393,14 @@ export function AccountDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent onOpenAutoFocus={focusContainer} className="max-h-[calc(100svh-2rem)] gap-6 overflow-y-auto focus:outline-none sm:max-w-lg">
+      <DialogContent
+        onOpenAutoFocus={focusContainer}
+        className="max-h-[calc(100svh-2rem)] gap-6 overflow-y-auto focus:outline-none sm:max-w-lg"
+      >
         <div>
-          <DialogTitle className="head">{member ? "Váš účet" : "Účet"}</DialogTitle>
+          <DialogTitle className="head">
+            {member ? "Váš účet" : "Účet"}
+          </DialogTitle>
           <DialogDescription className="mt-2 text-base text-ink-soft">
             {!enabled
               ? "Účty teď nejsou k dispozici. Hrát můžete dál, výsledky se uloží v tomto prohlížeči."
@@ -253,16 +415,24 @@ export function AccountDialog() {
             {member ? (
               <div className="flex flex-wrap gap-3">
                 {user.admin && (
-                  <Link to="/admin" onClick={() => setOpen(false)} className="inline-flex h-11 items-center bg-field px-5 font-semibold text-field-ink hover:bg-field/90">
+                  <Link
+                    to="/admin"
+                    onClick={() => setOpen(false)}
+                    className="inline-flex h-11 items-center bg-field px-5 font-semibold text-field-ink hover:bg-field/90"
+                  >
                     Administrace
                   </Link>
                 )}
-                <Button onClick={leave} variant="secondary" className="h-11 bg-paper-step px-5 font-semibold hover:bg-red hover:text-red-ink">
+                <Button
+                  onClick={leave}
+                  variant="secondary"
+                  className="h-11 bg-paper-step px-5 font-semibold hover:bg-red hover:text-red-ink"
+                >
                   Odhlásit se
                 </Button>
               </div>
             ) : (
-              <Credentials onSignedUp={refresh} />
+              <Credentials key={mode} initial={mode} onSignedUp={refresh} />
             )}
           </>
         )}

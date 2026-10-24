@@ -163,14 +163,16 @@ export function shareText(opts: {
   total: number
   url: string
   challenge?: boolean
+  rank?: string | null
 }): string {
   const { label, question, state, answers, total, url, challenge } = opts
+  const rank = opts.rank ? [opts.rank] : []
   const board = answers
     .map((_, i) => (!state.found.includes(i) ? "⬜" : hintsUsed(state, i) ? "🟨" : "🟩"))
     .join("")
   const guesses = state.guesses.map((g) => (g.result === "hit" ? "🟩" : "🟥")).join("")
   if (challenge) {
-    return [`Dáte víc než ${total} ${pointsWord(total)}?`, `Ptali jsme se 100 AI · ${label}`, question, `${board} ${state.found.length}/${answers.length}`, guesses, url].join("\n")
+    return [`Dáte víc než ${total} ${pointsWord(total)}?`, `Ptali jsme se 100 AI · ${label}`, question, `${board} ${state.found.length}/${answers.length}`, guesses, ...rank, url].join("\n")
   }
   return [
     `Ptali jsme se 100 AI · ${label}`,
@@ -178,6 +180,7 @@ export function shareText(opts: {
     `${board} ${state.found.length}/${answers.length}`,
     guesses,
     `${total} ${pointsWord(total)}`,
+    ...rank,
     url,
   ].join("\n")
 }

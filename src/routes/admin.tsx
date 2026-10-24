@@ -10,7 +10,7 @@ import { formatShort } from "@/lib/day"
 import type { GameRef } from "@/lib/game-ref"
 import { forgetLocalGames } from "@/lib/storage"
 import { getMissedGuesses, signOut as endSession } from "@/server/account-api"
-import { createCustomGame, getAdminState, getCustomJob, removeCustomGame } from "@/server/admin-api"
+import { createCustomGame, getAdminState, getCustomJob, getRefill, refillBank, removeCustomGame, reviewBankQuestion } from "@/server/admin-api"
 import type { Job } from "@/server/custom"
 
 export const Route = createFileRoute("/admin")({
@@ -42,7 +42,7 @@ function Gate({ member }: { member: boolean }) {
             ? "Tenhle účet nemá roli správce. Přihlaste se jiným účtem, nebo si roli nechte přidat."
             : "Tady se zakládají vlastní hry a kontrolují chybné tipy. Přihlaste se účtem, který má roli správce."}
         </p>
-        <button type="button" onClick={openAccount} className="mt-8 inline-flex h-12 items-center bg-red px-6 font-semibold text-red-ink hover:bg-red/90">
+        <button type="button" onClick={() => openAccount("signin")} className="mt-8 inline-flex h-12 items-center bg-red px-6 font-semibold text-red-ink hover:bg-red/90">
           {member ? "Přepnout účet" : "Přihlásit se"}
         </button>
       </div>
@@ -179,6 +179,8 @@ function Dashboard({ state }: { state: State }) {
           )}
         </div>
       </section>
+
+      <Bank bank={state.bank} />
 
       <Misses days={state.days} games={state.games} />
 
@@ -348,6 +350,143 @@ function Misses({ days, games }: { days: State["days"]; games: State["games"] })
                   </li>
                 ))}
               </ol>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const STATUS: Record<string, string> = { approved: "schválená", rejected: "vyřazená", used: "použitá", candidate: "čeká" }
+
+function Bank({ bank }: { bank: State["bank"] }) {
+  const router = useRouter()
+  const [busy, setBusy] = useState<string | null>(null)
+  const [refill, setRefill] = useState<{ executionId: string; status: string } | null>(null)
+  const running = refill !== null && refill.status !== "completed" && refill.status !== "failed"
+  const waiting = bank.pool.bundled + bank.pool.approved + bank.pool.candidates
+
+  useEffect(() => {
+    if (!refill || !running) return
+    const timer = setInterval(async () => {
+      try {
+        const { status } = await getRefill({ data: { executionId: refill.executionId } })
+        setRefill({ ...refill, status })
+        if (status === "completed") await router.invalidate()
+      } catch {
+        // retried on the next tick
+      }
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [refill, running, router])
+
+  async function review(id: string, decision: "approved" | "rejected") {
+    setBusy(id)
+    await reviewBankQuestion({ data: { id, decision } })
+    await router.invalidate()
+    setBusy(null)
+  }
+
+  async function draft() {
+    setRefill({ executionId: "", status: "waiting" })
+    try {
+      setRefill({ ...(await refillBank()), status: "waiting" })
+    } catch {
+      setRefill({ executionId: "", status: "failed" })
+    }
+  }
+
+  return (
+    <section className="bg-ground-step">
+      <div className="page grid gap-10 py-20 md:grid-cols-12 md:gap-6 md:py-32">
+        <div className="md:col-span-4">
+          <h2 className="head">Zásobník otázek</h2>
+          <p className="mt-4 max-w-[44ch]">
+            Když otázka dne neprojde kontrolou kvality, hra sáhne do zálohy. Každou noc se záloha doplní na {bank.pool.target} otázek: model navrhne nové a 15 AI je na
+            zkoušku zodpoví. Otázku, kde skoro všichni řeknou totéž, rovnou vyřadí.
+          </p>
+          <ul className="mt-6 grid gap-2 bg-ground p-5">
+            {[
+              ["Z balíčku", bank.pool.bundled],
+              ["Schválené", bank.pool.approved],
+              ["Čeká na schválení", bank.pool.candidates],
+            ].map(([label, value]) => (
+              <li key={label} className="flex items-baseline gap-2">
+                <span>{label}</span>
+                <span className="leader" aria-hidden />
+                <span className="tabular-nums">{value}</span>
+              </li>
+            ))}
+            <li className="flex items-baseline gap-2 font-semibold">
+              <span>V záloze celkem</span>
+              <span className="leader" aria-hidden />
+              <span className="tabular-nums">
+                {waiting} z {bank.pool.target}
+              </span>
+            </li>
+          </ul>
+          <p className="mt-3 text-sm text-muted-foreground">Schválené jdou na řadu před neschválenými. Neschválené se použijí, jen když ostatní dojdou.</p>
+          <Button onClick={draft} disabled={running} className="mt-6 h-12 px-6 font-semibold">
+            {running ? "Navrhuji…" : "Navrhnout nové otázky"}
+          </Button>
+          <p aria-live="polite" className="mt-3 min-h-[1.5em] text-sm">
+            {refill?.status === "failed"
+              ? "Nepovedlo se. Podrobnosti jsou v logu funkce maintenance."
+              : running
+                ? "Model navrhuje dvacet otázek a zkouší je na 15 AI. Trvá to pár minut."
+                : refill?.status === "completed"
+                  ? "Hotovo, nové otázky čekají vpravo."
+                  : ""}
+          </p>
+        </div>
+        <div className="md:col-span-7 md:col-start-6">
+          {bank.candidates.length === 0 ? (
+            <p className="bg-ground p-6">Nic nečeká na schválení.</p>
+          ) : (
+            <ul className="grid gap-3">
+              {bank.candidates.map((question) => (
+                <li key={question.id} className="grid gap-4 bg-ground p-5 md:grid-cols-[1fr_auto] md:items-start">
+                  <div>
+                    <p className="text-[1.125rem] leading-snug font-bold">{question.text}</p>
+                    {question.probe && (
+                      <p className="mt-1.5 text-muted-foreground">
+                        Zkouška na {question.probe.answered} AI: {question.probe.answers.map(([text, count]) => `${text} ${count}`).join(" · ")}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex gap-2">
+                    <Button onClick={() => review(question.id, "approved")} disabled={busy === question.id} className="h-11 px-4">
+                      Schválit
+                    </Button>
+                    <Button
+                      onClick={() => review(question.id, "rejected")}
+                      disabled={busy === question.id}
+                      variant="secondary"
+                      className="h-11 bg-ground-step px-4 hover:bg-paper"
+                    >
+                      Zamítnout
+                    </Button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+          {bank.recent.length > 0 && (
+            <>
+              <h3 className="mt-12 text-[1.25rem] font-bold">Naposledy rozhodnuté</h3>
+              <ul className="mt-4 grid gap-2">
+                {bank.recent.map((question) => (
+                  <li key={question.id} className="flex items-baseline gap-2">
+                    <span className="truncate">{question.text}</span>
+                    <span className="leader" aria-hidden />
+                    <span className="whitespace-nowrap text-muted-foreground">
+                      {STATUS[question.status]}
+                      {question.usedOn ? ` ${formatShort(question.usedOn)}` : ""}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </>
           )}
         </div>

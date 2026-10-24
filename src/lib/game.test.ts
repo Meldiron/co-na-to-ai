@@ -149,3 +149,14 @@ describe("replay", () => {
     expect(progress(playing)).toBeGreaterThan(progress(initialState))
   })
 })
+
+describe("share text with rank", () => {
+  it("adds the rank before the link when there is one", () => {
+    const state: GameState = { ...initialState, found: [0], guesses: [{ text: "pivo", result: "hit", index: 0 }], status: "lost" }
+    const base = { label: "24. 10.", question: "Co?", state, answers, total: 120, url: "https://ai100.appwrite.network/hra/2026-10-24", challenge: true }
+    const lines = shareText({ ...base, rank: "Lepší než 82 % hráčů" }).split("\n")
+    expect(lines.at(-2)).toBe("Lepší než 82 % hráčů")
+    expect(lines.at(-1)).toBe(base.url)
+    expect(shareText({ ...base, rank: null })).not.toContain("Lepší")
+  })
+})

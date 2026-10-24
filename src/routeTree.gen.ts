@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ArchivRouteImport } from './routes/archiv'
+import { Route as ObnovaHeslaRouteImport } from './routes/obnova-hesla'
 import { Route as ObsazeniRouteImport } from './routes/obsazeni'
 import { Route as HraDatumRouteImport } from './routes/hra.$datum'
 import { Route as OgDatumRouteImport } from './routes/og.$datum'
@@ -30,6 +31,11 @@ const AdminRoute = AdminRouteImport.update({
 const ArchivRoute = ArchivRouteImport.update({
   id: '/archiv',
   path: '/archiv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObnovaHeslaRoute = ObnovaHeslaRouteImport.update({
+  id: '/obnova-hesla',
+  path: '/obnova-hesla',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ObsazeniRoute = ObsazeniRouteImport.update({
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/archiv': typeof ArchivRoute
+  '/obnova-hesla': typeof ObnovaHeslaRoute
   '/obsazeni': typeof ObsazeniRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/archiv': typeof ArchivRoute
+  '/obnova-hesla': typeof ObnovaHeslaRoute
   '/obsazeni': typeof ObsazeniRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/archiv': typeof ArchivRoute
+  '/obnova-hesla': typeof ObnovaHeslaRoute
   '/obsazeni': typeof ObsazeniRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/archiv'
+    | '/obnova-hesla'
     | '/obsazeni'
     | '/hra/$datum'
     | '/og/$datum'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/archiv'
+    | '/obnova-hesla'
     | '/obsazeni'
     | '/hra/$datum'
     | '/og/$datum'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/archiv'
+    | '/obnova-hesla'
     | '/obsazeni'
     | '/hra/$datum'
     | '/og/$datum'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   ArchivRoute: typeof ArchivRoute
+  ObnovaHeslaRoute: typeof ObnovaHeslaRoute
   ObsazeniRoute: typeof ObsazeniRoute
   HraDatumRoute: typeof HraDatumRoute
   OgDatumRoute: typeof OgDatumRoute
@@ -142,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/archiv'
       fullPath: '/archiv'
       preLoaderRoute: typeof ArchivRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/obnova-hesla': {
+      id: '/obnova-hesla'
+      path: '/obnova-hesla'
+      fullPath: '/obnova-hesla'
+      preLoaderRoute: typeof ObnovaHeslaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/obsazeni': {
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   ArchivRoute: ArchivRoute,
+  ObnovaHeslaRoute: ObnovaHeslaRoute,
   ObsazeniRoute: ObsazeniRoute,
   HraDatumRoute: HraDatumRoute,
   OgDatumRoute: OgDatumRoute,

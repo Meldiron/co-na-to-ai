@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react"
-import { gameRef } from "@/hooks/use-game"
 import { pointsWord } from "@/lib/game"
-import type { BoardAnswer, PuzzlePayload } from "@/lib/types"
-import { getDayStats } from "@/server/account-api"
+import type { BoardAnswer } from "@/lib/types"
 import type { DayStats } from "@/server/games"
 import { openAccount, useAccount } from "./account"
 
@@ -21,23 +18,10 @@ function finishedBy(n: number): string {
   return `Tuhle tabuli zatím dohrálo ${n} hráčů`
 }
 
-export function Others({ payload, answers, synced }: { payload: PuzzlePayload; answers: Array<BoardAnswer>; synced: number }) {
-  const { enabled, user } = useAccount()
-  const [stats, setStats] = useState<DayStats | null>(null)
-  const { kind, id } = gameRef(payload)
+export function Others({ answers, stats }: { answers: Array<BoardAnswer>; stats: DayStats | null }) {
+  const { user } = useAccount()
 
-  useEffect(() => {
-    if (!enabled) return
-    let cancelled = false
-    getDayStats({ data: { kind, id } })
-      .then((next) => !cancelled && setStats(next))
-      .catch(() => undefined)
-    return () => {
-      cancelled = true
-    }
-  }, [enabled, kind, id, synced])
-
-  if (!enabled || !stats || stats.players === 0) return null
+  if (!stats || stats.players === 0) return null
   const { players: count, me } = stats
   const leaderIncludesMe = stats.leaders.some((l) => l.me)
 
@@ -122,7 +106,7 @@ export function Others({ payload, answers, synced }: { payload: PuzzlePayload; a
               </p>
               <button
                 type="button"
-                onClick={openAccount}
+                onClick={() => openAccount()}
                 className="mt-4 inline-flex h-11 items-center bg-paper px-5 font-semibold text-ink transition-colors hover:bg-red hover:text-red-ink"
               >
                 {user.guest ? "Založit účet a jméno" : "Nastavit jméno"}

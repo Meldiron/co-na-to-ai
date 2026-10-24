@@ -4,6 +4,7 @@ import { pragueDate } from "@/lib/day"
 import { gateReasons } from "@/lib/gate-text"
 import { deleteCustom, getJob, listCustom, loadCustom, startJob } from "./custom"
 import { loadPuzzle, recentSummaries, summaries, toPayload } from "./puzzles"
+import { questionBank, refillStatus, reviewQuestion, startRefill } from "./question-bank"
 import { currentSession, isAdmin, requireAdmin } from "./session"
 
 export const getAdminState = createServerFn({ method: "GET" }).handler(async () => {
@@ -15,6 +16,7 @@ export const getAdminState = createServerFn({ method: "GET" }).handler(async () 
   return {
     authed: true as const,
     days: (await summaries(today)).slice(0, 30).map((s) => ({ date: s.date, question: s.question })),
+    bank: await questionBank(),
     today: puzzle
       ? { date: puzzle.date, question: puzzle.question, asked: puzzle.asked, answered: puzzle.answered, meta: puzzle.meta, top: puzzle.answers.map((a) => [a.text, a.votes] as const) }
       : null,
@@ -59,4 +61,24 @@ export const getCustomPuzzle = createServerFn({ method: "GET" })
     const game = await loadCustom(data.id)
     const today = pragueDate()
     return { today, puzzle: game ? toPayload(game, "custom", game.id) : null, recent: await recentSummaries(today, "") }
+  })
+
+export const reviewBankQuestion = createServerFn({ method: "POST" })
+  .validator(z.object({ id: z.string().max(36), decision: z.enum(["approved", "rejected"]) }))
+  .handler(async ({ data }) => {
+    await requireAdmin()
+    await reviewQuestion(data.id, data.decision)
+    return { ok: true }
+  })
+
+export const refillBank = createServerFn({ method: "POST" }).handler(async () => {
+  await requireAdmin()
+  return { executionId: await startRefill() }
+})
+
+export const getRefill = createServerFn({ method: "GET" })
+  .validator(z.object({ executionId: z.string().max(36) }))
+  .handler(async ({ data }) => {
+    await requireAdmin()
+    return { status: await refillStatus(data.executionId) }
   })

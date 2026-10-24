@@ -56,6 +56,14 @@ Questions live in `questions/YYYY-MM.json`:
 
 `status` is `draft | approved | used | rejected`; the pipeline only uses `approved` ones. The bank is dated through 2027-10-31 and has 50 undated reserves. A good question has an open but finite answer space. Avoid one obvious answer ("Jmenujte ovoce" gives 70 % jablko) and avoid hundreds of equally likely ones. Keep it under 70 characters.
 
+## The question bank
+
+Questions come from `questions/` (dated through 2027-10-31, plus reserves) and from the `questions` table, which refills itself:
+
+- **Probe.** Before the full run of 100, 15 answerers spread across the cast answer the question (`pipeline/probe.ts`, about $0.02). If one answer takes half of them, or the answers are nearly all different, the question is skipped and the next reserve is tried. That saves the full run and the judge on questions that would fail the gate anyway.
+- **Refill.** Every night the `maintenance` function counts the reserves still waiting (unused bundled reserves, approved and unreviewed drafts). Below 30, the judge model drafts 20 new questions (`pipeline/bank.ts`), learning from recent boards that passed and failed, and drops anything too close to an existing question. Each draft is probed; the ones that pass wait for review, the rest are stored as rejected with the reason.
+- **Review.** The admin's "Zásobník otázek" lists the drafts with the probe's answers. Approved drafts are used before unreviewed ones; unreviewed drafts are used only when everything else runs out, so a day never stays without a board. "Navrhnout nové otázky" runs a refill right away.
+
 ## The cast
 
 `data/personas.json` holds 100 Czech personas. `pipeline/lib/roster.ts` lists 100 distinct models plus spares. `npm run cast` pairs them, deterministically, into `data/answerers.json`. Keep persona ids stable, because old puzzles refer to them.
@@ -66,7 +74,9 @@ Everyone plays as a guest first. The first move creates an Appwrite anonymous se
 
 Every move is saved to the `games` table. The server replays the guesses against the real board before saving, so found answers, strikes and the score can't be claimed without the guesses. A finished game is never overwritten, and an older state from another device never replaces a newer one. The browser keeps a copy in localStorage and uses it when the server can't be reached. Guest games that were played before accounts existed are uploaded once.
 
-Players pick the name shown on the leaderboard (`players` table, also set as the Appwrite user name). After a game, "Jak hráli ostatní" shows how many players finished the board, the average, the share that found each answer, your rank and the top 10.
+A forgotten password is reset by email: "Zapomněli jste heslo?" in the account dialog asks Appwrite to send a recovery link (in Czech) to `/obnova-hesla`, where the new password is set. The form never reveals whether an email has an account. Recovery links only go to hostnames registered as web platforms in the project (`ai100.appwrite.network` and `localhost`).
+
+Players pick the name shown on the leaderboard (`players` table, also set as the Appwrite user name). After a game, "Jak hráli ostatní" shows how many players finished the board, the average, the share that found each answer, your rank and the top 10. The share ticket and text carry the rank too ("Lepší než 82 % hráčů", or "Nejlepší výsledek dne").
 
 The streak counts days when the board was finished on the day it came out. Two streak freezes are always ready: up to two missed days in a row keep the streak alive (they don't add to it), and both refill after the next played day. The third missed day in a row ends the streak (`src/lib/streak.ts`).
 
@@ -89,6 +99,7 @@ APPWRITE_API_KEY=$(appwrite project create-ephemeral-key --duration 3600 --show-
 - get a playable `/vlastni/<id>` link, with the gate verdict and cost;
 - copy links to your custom games or delete them;
 - read the missed guesses of any day or custom game, grouped across spellings, to find synonyms the board should accept;
+- review drafted questions in the question bank and run a refill;
 - see today's run details and answers.
 
 Custom games are written to `custom/<id>.json` (or `CUSTOM_GAMES_DIR`) at runtime, so the server needs a writable disk. They don't count towards stats or streaks.
@@ -103,6 +114,8 @@ Live at https://ai100.appwrite.network. It runs in the Appwrite project *Playgro
 | Function | `custom-game` | Node 22, 900 s timeout, scopes `files.read` and `files.write`, no public execute. Secret variable `OPENROUTER_API_KEY`. Runs one custom game (the 100 calls plus the judge) and saves it to the bucket. |
 | Function | `daily-puzzles` | Node 22, 900 s timeout, runs every hour (`0 * * * *`), scopes `rows.read` and `rows.write`. Secret variable `OPENROUTER_API_KEY`. Makes sure today and the next 3 days have a board. |
 | Bucket | `custom-games` | One JSON file per custom game, server access only. |
+| Function | `maintenance` | Node 22, 900 s timeout, runs every night (`30 3 * * *`), scopes `users.*` and `rows.*`. Secret variable `OPENROUTER_API_KEY`. Refills the question bank and deletes guest users with no games after 30 days. Body `{ "task": "all" \| "questions" \| "cleanup", "force": bool, "dryRun": bool, "olderThanDays": n }`. |
+| Table | `ai100` / `questions` | Drafted questions: `text`, `status` (candidate, approved, used, rejected), `source`, the `probe` result as JSON, `note`, `usedOn`. Server access only. |
 | Table | `ai100` / `games` | One row per player and game: the replayed state, score, found answers, strikes, missed guesses, whether it was finished on the day. Unique on `userId` + `key`. Server access only. |
 | Table | `ai100` / `players` | Leaderboard names, row ID = user ID. Server access only. |
 | Table | `ai100` / `puzzles` | One row per generation attempt: `date`, `questionId`, `question`, `number`, `passed`, `gate` (JSON), `costUsd`, `puzzle` (the board as JSON when it passed). A passed row's ID is its date. Server access only. |
@@ -117,6 +130,7 @@ git archive --format=tar HEAD | tar -x -C /tmp/ai100 && cd /tmp/ai100 \
 # functions: bundle, then deploy package.json + dist/main.js
 npm run build:function   # custom-game
 npm run build:daily      # daily-puzzles
+npm run build:maintenance # maintenance
 appwrite functions create-deployment --function-id <id> --code <folder with package.json and dist/main.js> --entrypoint dist/main.js --activate
 ```
 
