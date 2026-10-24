@@ -9,7 +9,7 @@ export const Route = createFileRoute("/finale/")({
   head: ({ loaderData }) => ({
     meta: [
       { title: `Finále${loaderData ? ` č. ${finaleNumber(loaderData.week)}` : ""} · Co na to AI` },
-      { name: "description", content: "Týdenní finále: pět otázek, dvacet sekund na každou. Trefíte nejčastější odpovědi stovky AI?" },
+      { name: "description", content: "Týdenní finále: pět otázek, třicet sekund. Trefíte nejčastější odpovědi stovky AI?" },
       { property: "og:url", content: `${SITE_URL}/finale` },
     ],
   }),

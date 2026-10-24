@@ -80,7 +80,7 @@ Players pick the name shown on the leaderboard (`players` table, also set as the
 
 ## Finále
 
-Once a week there is a Finále, like the last round of the show: 5 questions, 20 seconds each, one answer per question. An answer scores the votes of the board answer it matches, and 100 points wins. A week runs Monday to Sunday (Prague time), and its id is the Monday's date. The server keeps the boards. It hands out one question at a time, records when it was shown, scores each answer as it arrives, and gives nothing for an answer that comes more than 3 s after the timer ran out. Reloading doesn't reset the clock. The leaderboard counts games finished within their week. Earlier weeks stay playable for practice.
+Once a week there is a Finále, like the last round of the show: 5 questions and 30 seconds for all of them, one answer per question. An answer scores the votes of the board answer it matches, and 100 points wins. A week runs Monday to Sunday (Prague time), and its id is the Monday's date. The server keeps the boards. It hands out one question at a time, records when the round started, and scores each answer as it arrives. When the 30 s run out, the answer being sent still counts if it arrives within 3 s, and every question not reached scores 0. Reloading doesn't reset the clock, and a round left open is closed the next time it's loaded. The leaderboard counts games finished within their week. Earlier weeks stay playable for practice.
 
 The hourly `daily-puzzles` function keeps this week's and next week's Finále ready, after it has covered the days. It takes approved questions from the bank first, then newer candidates, then bundled reserves from the end of the list, so it doesn't compete with the daily boards for the same reserve. Each question is probed first: it is skipped when one answer has over 60 % or the answers are all over the place. Then it runs through the full pipeline, and the board is kept if at least 70 answered and it has at least 5 answers. At most 8 failed questions are tried per week.
 
@@ -124,7 +124,7 @@ Live at https://ai100.appwrite.network. It runs in the Appwrite project *Playgro
 | Table | `ai100` / `questions` | Drafted questions: `text`, `status` (candidate, approved, used, rejected), `source`, the `probe` result as JSON, `note`, `usedOn`. Server access only. |
 | Table | `ai100` / `games` | One row per player and game: the replayed state, score, found answers, strikes, missed guesses, whether it was finished on the day. Unique on `userId` + `key`. Server access only. |
 | Table | `ai100` / `finales` | Finále questions: `week`, `slot` (0–4), `questionId`, `question`, `passed`, `board` (answers with votes and aliases, as JSON), `answered`, `costUsd`, `note`. A passed row's ID is `<week>-<slot>`. Server access only. |
-| Table | `ai100` / `finale_games` | One row per player and week: current `slot`, `shownAt`, the scored `answers` as JSON, `score`, `status`, `onTime`, `finishedAt`. Unique on `userId` + `week`. Server access only. |
+| Table | `ai100` / `finale_games` | One row per player and week: current `slot`, `startedAt`, the scored `answers` as JSON, `score`, `status`, `onTime`, `finishedAt`. Unique on `userId` + `week`. Server access only. |
 | Table | `ai100` / `players` | Leaderboard names, row ID = user ID. Server access only. |
 | Table | `ai100` / `puzzles` | One row per generation attempt: `date`, `questionId`, `question`, `number`, `passed`, `gate` (JSON), `costUsd`, `puzzle` (the board as JSON when it passed). A passed row's ID is its date. Server access only. |
 

@@ -77,7 +77,7 @@ export function Departure({ today, recent }: { today: string; recent: Array<Puzz
           >
             <span>
               <span className="block font-semibold">Týdenní finále</span>
-              <span className="block text-sm">Pět otázek, dvacet sekund na každou.</span>
+              <span className="block text-sm">Pět otázek, třicet sekund.</span>
             </span>
             <span className="inline-flex items-center gap-1.5 font-semibold">Hrát</span>
           </Link>

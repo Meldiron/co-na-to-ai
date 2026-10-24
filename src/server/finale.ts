@@ -1,7 +1,7 @@
 import "@tanstack/react-start/server-only"
 import { AppwriteException, ID, Query, type Models } from "node-appwrite"
 import { pragueDate } from "@/lib/day"
-import { FINALE_GRACE_MS, FINALE_SECONDS, FINALE_SLOTS, finaleScore, scoreAnswer, weekOf, type FinaleAnswer, type FinaleQuestion } from "@/lib/finale"
+import { FINALE_GRACE_MS, FINALE_SECONDS, FINALE_SLOTS, finaleScore, scoreAnswer, timeUp, weekOf, type FinaleAnswer, type FinaleQuestion } from "@/lib/finale"
 import { guestName } from "@/lib/players"
 import { DATABASE, appwrite } from "./appwrite"
 import { namesOf } from "./games"
@@ -15,7 +15,7 @@ type GameRow = Models.Row & {
   userId: string
   week: string
   slot: number
-  shownAt: string | null
+  startedAt: string | null
   answers: string | null
   score: number
   status: "playing" | "finished"
@@ -92,18 +92,39 @@ function view(row: GameRow | null, questions: Array<FinaleQuestion>): FinaleView
       }),
     }
   }
-  const elapsed = Date.now() - Date.parse(row.shownAt ?? new Date().toISOString())
-  return { status: "playing", slot: row.slot, question: questions[row.slot].question, remainingMs: Math.max(0, FINALE_SECONDS * 1000 - elapsed) }
+  return { status: "playing", slot: row.slot, question: questions[row.slot].question, remainingMs: Math.max(0, FINALE_SECONDS * 1000 - elapsed(row)) }
+}
+
+const elapsed = (row: GameRow) => Date.now() - Date.parse(row.startedAt ?? "")
+
+async function save(row: GameRow, week: string, answers: Array<FinaleAnswer>): Promise<GameRow> {
+  const finished = answers.length >= FINALE_SLOTS
+  const now = new Date().toISOString()
+  return db().updateRow<GameRow>({
+    databaseId: DATABASE,
+    tableId: GAMES,
+    rowId: row.$id,
+    data: {
+      slot: answers.length,
+      answers: JSON.stringify(answers),
+      score: finaleScore(answers),
+      status: finished ? "finished" : "playing",
+      onTime: finished ? week === currentWeek() : null,
+      finishedAt: finished ? now : null,
+    },
+  })
 }
 
 export async function finaleState(userId: string | null, week: string, questions: Array<FinaleQuestion>): Promise<FinaleView> {
-  return view(userId ? await findGame(userId, week) : null, questions)
+  const row = userId ? await findGame(userId, week) : null
+  if (row?.status === "playing" && elapsed(row) > FINALE_SECONDS * 1000 + FINALE_GRACE_MS) return view(await save(row, week, timeUp(answersOf(row))), questions)
+  return view(row, questions)
 }
 
 export async function startFinale(userId: string, week: string, questions: Array<FinaleQuestion>): Promise<FinaleView> {
   const existing = await findGame(userId, week)
   if (existing) return view(existing, questions)
-  const data = { userId, week, slot: 0, shownAt: new Date().toISOString(), answers: "[]", score: 0, status: "playing" as const, onTime: null, finishedAt: null }
+  const data = { userId, week, slot: 0, startedAt: new Date().toISOString(), answers: "[]", score: 0, status: "playing" as const, onTime: null, finishedAt: null }
   try {
     const row = await db().createRow<GameRow>({ databaseId: DATABASE, tableId: GAMES, rowId: ID.unique(), data })
     return view(row, questions)
@@ -116,25 +137,9 @@ export async function startFinale(userId: string, week: string, questions: Array
 export async function answerFinale(userId: string, week: string, questions: Array<FinaleQuestion>, slot: number, text: string): Promise<FinaleView> {
   const row = await findGame(userId, week)
   if (!row || row.status === "finished" || row.slot !== slot) return view(row, questions)
-  const late = Date.now() - Date.parse(row.shownAt ?? "") > FINALE_SECONDS * 1000 + FINALE_GRACE_MS
-  const answers = [...answersOf(row), scoreAnswer(questions[slot], text, late)]
-  const finished = answers.length >= FINALE_SLOTS
-  const now = new Date().toISOString()
-  const updated = await db().updateRow<GameRow>({
-    databaseId: DATABASE,
-    tableId: GAMES,
-    rowId: row.$id,
-    data: {
-      slot: slot + 1,
-      shownAt: finished ? null : now,
-      answers: JSON.stringify(answers),
-      score: finaleScore(answers),
-      status: finished ? "finished" : "playing",
-      onTime: finished ? week === currentWeek() : null,
-      finishedAt: finished ? now : null,
-    },
-  })
-  return view(updated, questions)
+  const spent = elapsed(row)
+  const answers = [...answersOf(row), scoreAnswer(questions[slot], text, spent > FINALE_SECONDS * 1000 + FINALE_GRACE_MS)]
+  return view(await save(row, week, spent > FINALE_SECONDS * 1000 ? timeUp(answers) : answers), questions)
 }
 
 export type FinaleLeaderboard = {

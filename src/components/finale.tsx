@@ -74,9 +74,9 @@ export function FinalePage({ meta }: { meta: FinaleMeta }) {
           ) : view?.status === "finished" ? (
             <Reveal week={meta.week} view={view} animate={fresh} />
           ) : (
-            <Intro kicker={kicker} title={`Pět otázek, ${FINALE_SECONDS} sekund na každou`}>
+            <Intro kicker={kicker} title={`Pět otázek, ${FINALE_SECONDS} sekund`}>
               <p className="mt-5 max-w-[56ch]">
-                Na každou otázku jedna odpověď. Body jsou počet AI, které řekly totéž. Na výhru potřebujete {FINALE_GOAL} bodů.
+                Na všech pět otázek máte dohromady {FINALE_SECONDS} sekund, na každou jednu odpověď. Body jsou počet AI, které řekly totéž. Na výhru potřebujete {FINALE_GOAL} bodů.
                 {!meta.current && " Tohle finále už skončilo, do žebříčku se nepočítá."}
               </p>
               <Button onClick={start} disabled={busy || !view} className="mt-8 h-14 px-8 text-base font-semibold">
@@ -287,7 +287,7 @@ function Reveal({ week, view, animate }: { week: string; view: Finished; animate
                 />
               </div>
               <p className="mt-1.5 text-sm text-field-soft">
-                {r.answer.late ? "Pozdě. " : ""}
+                {r.answer.late ? "Čas vypršel. " : ""}
                 {r.answer.index === 0 ? "Nejčastější odpověď." : `Nejčastější: ${r.top.text} · ${r.top.votes}`}
               </p>
             </li>

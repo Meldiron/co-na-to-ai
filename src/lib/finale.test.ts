@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { finaleNumber, finaleShareText, isFinaleWeek, scoreAnswer, weekLabel, weekOf, type FinaleQuestion } from "./finale"
+import { finaleNumber, finaleShareText, isFinaleWeek, scoreAnswer, timeUp, weekLabel, weekOf, type FinaleQuestion } from "./finale"
 
 const question: FinaleQuestion = {
   slot: 0,
@@ -49,6 +49,17 @@ describe("scoreAnswer", () => {
     expect(scoreAnswer(question, "chleba", false).points).toBe(0)
     expect(scoreAnswer(question, "", false)).toEqual({ text: "", index: null, points: 0, late: false })
     expect(scoreAnswer(question, "utopenec", true)).toEqual({ text: "utopenec", index: null, points: 0, late: true })
+  })
+})
+
+describe("timeUp", () => {
+  it("fills the questions nobody got to with late, empty answers", () => {
+    const first = { text: "utopenec", index: 0, points: 38, late: false }
+    const filled = timeUp([first])
+    expect(filled).toHaveLength(5)
+    expect(filled[0]).toBe(first)
+    expect(filled.slice(1).every((a) => a.late && a.points === 0 && a.text === "")).toBe(true)
+    expect(timeUp(filled)).toHaveLength(5)
   })
 })
 
