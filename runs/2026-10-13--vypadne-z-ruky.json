@@ -1,0 +1,2518 @@
+{
+  "date": "2026-10-13",
+  "question": {
+    "id": "vypadne-z-ruky",
+    "date": "2026-10-13",
+    "text": "Co vám nejčastěji vypadne z ruky?",
+    "tags": [
+      "domov"
+    ],
+    "status": "approved"
+  },
+  "startedAt": "2026-10-24T13:33:06.313Z",
+  "durationMs": 46870,
+  "costUsd": 0.09847207235000002,
+  "responses": [
+    {
+      "answerer": "a001",
+      "persona": "marie-pribram",
+      "model": "anthropic/claude-haiku-4.5",
+      "raw": "Hrnec",
+      "attempts": [
+        {
+          "model": "anthropic/claude-haiku-4.5",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1268,
+          "costUsd": 0.00056,
+          "promptTokens": 495,
+          "completionTokens": 13
+        }
+      ]
+    },
+    {
+      "answerer": "a002",
+      "persona": "libor-prerov",
+      "model": "anthropic/claude-haiku-5.5",
+      "raw": "Telefon",
+      "attempts": [
+        {
+          "model": "anthropic/claude-haiku-5.5",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 148,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "anthropic/claude-haiku-5.5",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1149,
+          "costUsd": 0.0000422,
+          "promptTokens": 392,
+          "completionTokens": 6
+        }
+      ]
+    },
+    {
+      "answerer": "a003",
+      "persona": "adam-rokycany",
+      "model": "anthropic/claude-sonnet-4.6",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "anthropic/claude-sonnet-4.6",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1157,
+          "costUsd": 0.001623,
+          "promptTokens": 486,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a004",
+      "persona": "radek-smichov",
+      "model": "anthropic/claude-sonnet-5",
+      "raw": "Mobil",
+      "attempts": [
+        {
+          "model": "anthropic/claude-sonnet-5",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 222,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "anthropic/claude-sonnet-5",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1468,
+          "costUsd": 0.00087,
+          "promptTokens": 405,
+          "completionTokens": 6
+        }
+      ]
+    },
+    {
+      "answerer": "a005",
+      "persona": "helena-trutnov",
+      "model": "anthropic/claude-sonnet-5.5",
+      "raw": "Hrnek",
+      "attempts": [
+        {
+          "model": "anthropic/claude-sonnet-5.5",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 162,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "anthropic/claude-sonnet-5.5",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1061,
+          "costUsd": 0.000882,
+          "promptTokens": 406,
+          "completionTokens": 7
+        }
+      ]
+    },
+    {
+      "answerer": "a006",
+      "persona": "matyas-vinohrady",
+      "model": "anthropic/claude-opus-4.5",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "anthropic/claude-opus-4.5",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 2068,
+          "costUsd": 0.00272,
+          "promptTokens": 494,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a007",
+      "persona": "vlastimil-svitavy",
+      "model": "anthropic/claude-opus-5.5",
+      "raw": "Telefon",
+      "attempts": [
+        {
+          "model": "anthropic/claude-opus-5.5",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 203,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "anthropic/claude-opus-5.5",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1652,
+          "costUsd": 0.00168,
+          "promptTokens": 390,
+          "completionTokens": 6
+        }
+      ]
+    },
+    {
+      "answerer": "a008",
+      "persona": "veronika-bruntal",
+      "model": "anthropic/claude-sonnet-4.5",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "openai/gpt-3.5-turbo",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 334,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "Provider returned error"
+        },
+        {
+          "model": "openai/gpt-3.5-turbo",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 207,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "Provider returned error"
+        },
+        {
+          "model": "anthropic/claude-sonnet-4.5",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1753,
+          "costUsd": 0.001635,
+          "promptTokens": 490,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a009",
+      "persona": "jarmila-litomysl",
+      "model": "openai/gpt-4o",
+      "raw": "hrnček",
+      "attempts": [
+        {
+          "model": "openai/gpt-4o",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1604,
+          "costUsd": 0.000925,
+          "promptTokens": 334,
+          "completionTokens": 9
+        }
+      ]
+    },
+    {
+      "answerer": "a010",
+      "persona": "eliska-prosek",
+      "model": "openai/gpt-4o-mini",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "openai/gpt-4o-mini",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 774,
+          "costUsd": 0.0000534,
+          "promptTokens": 332,
+          "completionTokens": 6
+        }
+      ]
+    },
+    {
+      "answerer": "a011",
+      "persona": "martin-decin",
+      "model": "openai/gpt-4.1",
+      "raw": "klíče",
+      "attempts": [
+        {
+          "model": "openai/gpt-4.1",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1019,
+          "costUsd": 0.000734,
+          "promptTokens": 327,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a012",
+      "persona": "barbora-vsetin",
+      "model": "openai/gpt-4.1-mini",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "openai/gpt-4.1-mini",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 884,
+          "costUsd": 0.0001424,
+          "promptTokens": 324,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a013",
+      "persona": "emilie-prachatice",
+      "model": "openai/gpt-4.1-nano",
+      "raw": "nůžky",
+      "attempts": [
+        {
+          "model": "openai/gpt-4.1-nano",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1534,
+          "costUsd": 0.0000381,
+          "promptTokens": 337,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a014",
+      "persona": "rudolf-cheb",
+      "model": "openai/gpt-5",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "openai/gpt-5",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 151,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-5",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1141,
+          "costUsd": 0.00054875,
+          "promptTokens": 287,
+          "completionTokens": 19
+        }
+      ]
+    },
+    {
+      "answerer": "a015",
+      "persona": "marek-hradec-kralove",
+      "model": "openai/gpt-5-mini",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "openai/gpt-5-mini",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 1439,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-5-mini",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1149,
+          "costUsd": 0.00010975,
+          "promptTokens": 287,
+          "completionTokens": 19
+        }
+      ]
+    },
+    {
+      "answerer": "a016",
+      "persona": "michal-vyskov",
+      "model": "openai/gpt-5-nano",
+      "raw": "klíče",
+      "attempts": [
+        {
+          "model": "openai/gpt-5-nano",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 187,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-5-nano",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1043,
+          "costUsd": 0.0000227,
+          "promptTokens": 286,
+          "completionTokens": 21
+        }
+      ]
+    },
+    {
+      "answerer": "a017",
+      "persona": "oldrich-jihlava",
+      "model": "openai/gpt-5.2",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "openai/gpt-5.2",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 662,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-5.2",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 2418,
+          "costUsd": 0.00138425,
+          "promptTokens": 287,
+          "completionTokens": 63
+        }
+      ]
+    },
+    {
+      "answerer": "a018",
+      "persona": "jan-tabor",
+      "model": "openai/gpt-5.4-mini",
+      "raw": "Lžíce",
+      "attempts": [
+        {
+          "model": "openai/gpt-5.4-mini",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 558,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-5.4-mini",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 883,
+          "costUsd": 0.00024225,
+          "promptTokens": 281,
+          "completionTokens": 7
+        }
+      ]
+    },
+    {
+      "answerer": "a019",
+      "persona": "renata-tisnov",
+      "model": "openai/gpt-5.6-luna",
+      "raw": "Telefon",
+      "attempts": [
+        {
+          "model": "openai/gpt-5.6-luna",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 53,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-5.6-luna",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 999,
+          "costUsd": 0.000064,
+          "promptTokens": 290,
+          "completionTokens": 5
+        }
+      ]
+    },
+    {
+      "answerer": "a020",
+      "persona": "filip-brandys",
+      "model": "openai/gpt-6-luna",
+      "raw": "Mobil",
+      "attempts": [
+        {
+          "model": "openai/gpt-6-luna",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 138,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-6-luna",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1328,
+          "costUsd": 0.0000315,
+          "promptTokens": 285,
+          "completionTokens": 6
+        }
+      ]
+    },
+    {
+      "answerer": "a021",
+      "persona": "bohumil-plzen",
+      "model": "openai/gpt-6-sol",
+      "raw": "Telefon",
+      "attempts": [
+        {
+          "model": "openai/gpt-6-sol",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 68,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-6-sol",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1187,
+          "costUsd": 0.000628,
+          "promptTokens": 289,
+          "completionTokens": 5
+        }
+      ]
+    },
+    {
+      "answerer": "a022",
+      "persona": "blanka-cesky-krumlov",
+      "model": "openai/gpt-oss-120b",
+      "raw": "klíč",
+      "attempts": [
+        {
+          "model": "openai/gpt-oss-120b",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 712,
+          "costUsd": 0.0000586,
+          "promptTokens": 421,
+          "completionTokens": 33
+        }
+      ]
+    },
+    {
+      "answerer": "a023",
+      "persona": "monika-opava",
+      "model": "openai/gpt-oss-20b",
+      "raw": "klíč",
+      "attempts": [
+        {
+          "model": "openai/gpt-oss-20b",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 822,
+          "costUsd": 0.0000105,
+          "promptTokens": 345,
+          "completionTokens": 36
+        }
+      ]
+    },
+    {
+      "answerer": "a024",
+      "persona": "sona-domazlice",
+      "model": "google/gemini-2.5-flash",
+      "raw": "Talíř",
+      "attempts": [
+        {
+          "model": "google/gemini-2.5-flash",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 639,
+          "costUsd": 0.0001065,
+          "promptTokens": 280,
+          "completionTokens": 9
+        }
+      ]
+    },
+    {
+      "answerer": "a025",
+      "persona": "natalie-pisek",
+      "model": "google/gemini-2.5-flash-lite",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "google/gemini-2.5-flash-lite",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 461,
+          "costUsd": 0.0000309,
+          "promptTokens": 277,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a026",
+      "persona": "lenka-pardubice",
+      "model": "google/gemini-2.5-pro",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "google/gemini-2.5-pro",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 3513,
+          "costUsd": 0.001485,
+          "promptTokens": 276,
+          "completionTokens": 114
+        }
+      ]
+    },
+    {
+      "answerer": "a027",
+      "persona": "katerina-prostejov",
+      "model": "google/gemini-3-flash-preview",
+      "raw": "jehla",
+      "attempts": [
+        {
+          "model": "google/gemini-3-flash-preview",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1095,
+          "costUsd": 0.000191,
+          "promptTokens": 334,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a028",
+      "persona": "alena-sumperk",
+      "model": "google/gemini-3.1-pro-preview",
+      "raw": "hrnek",
+      "attempts": [
+        {
+          "model": "google/gemini-3.1-pro-preview",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 6278,
+          "costUsd": 0.00611,
+          "promptTokens": 343,
+          "completionTokens": 452
+        }
+      ]
+    },
+    {
+      "answerer": "a029",
+      "persona": "antonin-uherske-hradiste",
+      "model": "google/gemini-3.5-flash",
+      "raw": "mýdlo",
+      "attempts": [
+        {
+          "model": "google/gemini-3.5-flash",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1376,
+          "costUsd": 0.000603,
+          "promptTokens": 336,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a030",
+      "persona": "simona-breclav",
+      "model": "google/gemini-3.7-flash",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "google/gemini-3.7-flash",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1791,
+          "costUsd": 0.0002415,
+          "promptTokens": 282,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a031",
+      "persona": "vera-dejvice",
+      "model": "google/gemini-4-argon",
+      "raw": "brýle",
+      "attempts": [
+        {
+          "model": "google/gemini-4-argon",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 3315,
+          "costUsd": 0.001204,
+          "promptTokens": 477,
+          "completionTokens": 25
+        }
+      ]
+    },
+    {
+      "answerer": "a032",
+      "persona": "tadeas-sokolov",
+      "model": "google/gemma-3-12b-it",
+      "raw": "}klíč",
+      "attempts": [
+        {
+          "model": "google/gemma-3-12b-it",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 519,
+          "costUsd": 0.0000231,
+          "promptTokens": 288,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a033",
+      "persona": "bohdan-spindleruv-mlyn",
+      "model": "google/gemma-3-27b-it",
+      "raw": "šroubovák",
+      "attempts": [
+        {
+          "model": "google/gemma-3-27b-it",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1571,
+          "costUsd": 0.00002873,
+          "promptTokens": 286,
+          "completionTokens": 13
+        }
+      ]
+    },
+    {
+      "answerer": "a034",
+      "persona": "jana-kutna-hora",
+      "model": "google/gemma-4-31b-it",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "google/gemma-4-31b-it",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 585,
+          "costUsd": 0.00003276,
+          "promptTokens": 297,
+          "completionTokens": 9
+        }
+      ]
+    },
+    {
+      "answerer": "a035",
+      "persona": "ladislav-zatec",
+      "model": "google/gemma-4-26b-a4b-it",
+      "raw": "nůž",
+      "attempts": [
+        {
+          "model": "google/gemma-4-26b-a4b-it",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 874,
+          "costUsd": 0.000018464,
+          "promptTokens": 382,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a036",
+      "persona": "robert-trebon",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "raw": "sítě",
+      "attempts": [
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 366,
+          "costUsd": 0.00006798,
+          "promptTokens": 298,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a037",
+      "persona": "frantisek-olomouc",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "raw": "Pero",
+      "attempts": [
+        {
+          "model": "meta-llama/llama-3.1-70b-instruct",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 970,
+          "costUsd": 0.0001144,
+          "promptTokens": 276,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a038",
+      "persona": "lukas-ricany",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "meta-llama/llama-3.3-70b-instruct",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 2940,
+          "costUsd": 0.0000311,
+          "promptTokens": 279,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a039",
+      "persona": "jaroslav-blansko",
+      "model": "meta-llama/llama-4-maverick",
+      "raw": "Lžíce",
+      "attempts": [
+        {
+          "model": "meta-llama/llama-4-maverick",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 966,
+          "costUsd": 0.000023075,
+          "promptTokens": 276,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a040",
+      "persona": "irena-rakovnik",
+      "model": "meta-llama/llama-4-scout",
+      "raw": "pero",
+      "attempts": [
+        {
+          "model": "meta-llama/llama-4-scout",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 935,
+          "costUsd": 0.0000312,
+          "promptTokens": 288,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a041",
+      "persona": "petr-benesov",
+      "model": "meta/muse-spark-1.3",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "meta/muse-spark-1.3",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1252,
+          "costUsd": 0.00060615,
+          "promptTokens": 323,
+          "completionTokens": 110
+        }
+      ]
+    },
+    {
+      "answerer": "a042",
+      "persona": "vit-jesenik",
+      "model": "meta/muse-glimmer-30b",
+      "raw": "pila",
+      "attempts": [
+        {
+          "model": "meta/muse-glimmer-30b",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 2615,
+          "costUsd": 0.00038102,
+          "promptTokens": 285,
+          "completionTokens": 274
+        }
+      ]
+    },
+    {
+      "answerer": "a043",
+      "persona": "bedrich-jablonec",
+      "model": "mistralai/mistral-nemo",
+      "raw": "pile",
+      "attempts": [
+        {
+          "model": "mistralai/mistral-nemo",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 2034,
+          "costUsd": 0.000005556,
+          "promptTokens": 292,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a044",
+      "persona": "vladimira-havirov",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "raw": "mop",
+      "attempts": [
+        {
+          "model": "mistralai/mistral-small-3.2-24b-instruct",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 936,
+          "costUsd": 0.000023675,
+          "promptTokens": 289,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a045",
+      "persona": "stepan-klatovy",
+      "model": "mistralai/mistral-small-2603",
+      "raw": "vidlička",
+      "attempts": [
+        {
+          "model": "mistralai/mistral-small-2603",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 536,
+          "costUsd": 0.0000489,
+          "promptTokens": 282,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a046",
+      "persona": "kristyna-branik",
+      "model": "mistralai/ministral-8b-2512",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "mistralai/ministral-8b-2512",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 516,
+          "costUsd": 0.000020445,
+          "promptTokens": 300,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a047",
+      "persona": "hana-letnany",
+      "model": "mistralai/ministral-14b-2512",
+      "raw": "tužka",
+      "attempts": [
+        {
+          "model": "mistralai/ministral-14b-2512",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 468,
+          "costUsd": 0.00002646,
+          "promptTokens": 295,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a048",
+      "persona": "petra-plzen",
+      "model": "mistralai/mistral-medium-3-5",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "mistralai/mistral-medium-3-5",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 434,
+          "costUsd": 0.0004935,
+          "promptTokens": 279,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a049",
+      "persona": "pavla-brno",
+      "model": "mistralai/mistral-large-2512",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "mistralai/mistral-large-2512",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 751,
+          "costUsd": 0.0001605,
+          "promptTokens": 291,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a050",
+      "persona": "jitka-susice",
+      "model": "mistralai/mistral-large-4-0",
+      "raw": "hrnek",
+      "attempts": [
+        {
+          "model": "mistralai/mistral-large-4-0",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 9330,
+          "costUsd": 0.00053684,
+          "promptTokens": 364,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a051",
+      "persona": "aneta-holesovice",
+      "model": "mistralai/mistral-saba",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "mistralai/mistral-saba",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 777,
+          "costUsd": 0.0000644,
+          "promptTokens": 292,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a052",
+      "persona": "jiri-chodov",
+      "model": "deepseek/deepseek-chat",
+      "raw": "klíče",
+      "attempts": [
+        {
+          "model": "deepseek/deepseek-chat",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 2373,
+          "costUsd": 0.00010707,
+          "promptTokens": 304,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a053",
+      "persona": "tereza-zizkov",
+      "model": "deepseek/deepseek-v3.2",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "deepseek/deepseek-v3.2",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1979,
+          "costUsd": 0.00006126,
+          "promptTokens": 317,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a054",
+      "persona": "zuzana-karlovy-vary",
+      "model": "deepseek/deepseek-r1-0528",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "deepseek/deepseek-r1-0528",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 13627,
+          "costUsd": 0.0012726,
+          "promptTokens": 300,
+          "completionTokens": 540
+        }
+      ]
+    },
+    {
+      "answerer": "a055",
+      "persona": "kamil-havlickuv-brod",
+      "model": "google/gemini-3.1-flash-lite",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "deepseek/deepseek-v4-flash",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 1491,
+          "costUsd": 0.0000265118,
+          "promptTokens": 493,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "deepseek/deepseek-v4-flash",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 3177,
+          "costUsd": 0.0000504399,
+          "promptTokens": 381,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1022,
+          "costUsd": 0.0000965,
+          "promptTokens": 338,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a056",
+      "persona": "dagmar-teplice",
+      "model": "openai/gpt-5.6-terra",
+      "raw": "Telefon",
+      "attempts": [
+        {
+          "model": "deepseek/deepseek-v4-pro",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 2256,
+          "costUsd": 0.00009706648,
+          "promptTokens": 488,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "deepseek/deepseek-v4-pro",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 2107,
+          "costUsd": 0.00005219867,
+          "promptTokens": 297,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "openai/gpt-5.6-terra",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 142,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection"
+        },
+        {
+          "model": "openai/gpt-5.6-terra",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1048,
+          "costUsd": 0.000644,
+          "promptTokens": 292,
+          "completionTokens": 5
+        }
+      ]
+    },
+    {
+      "answerer": "a057",
+      "persona": "zdenek-karvina",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "raw": "klíče",
+      "attempts": [
+        {
+          "model": "qwen/qwen-2.5-72b-instruct",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1225,
+          "costUsd": 0.00014048,
+          "promptTokens": 378,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a058",
+      "persona": "radim-kromeriz",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "raw": "modlitebník",
+      "attempts": [
+        {
+          "model": "qwen/qwen3-235b-a22b-2507",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1422,
+          "costUsd": 0.00003762,
+          "promptTokens": 359,
+          "completionTokens": 13
+        }
+      ]
+    },
+    {
+      "answerer": "a059",
+      "persona": "bozena-kyjov",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "raw": "klíče",
+      "attempts": [
+        {
+          "model": "qwen/qwen3-next-80b-a3b-instruct",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 744,
+          "costUsd": 0.0000499,
+          "promptTokens": 378,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a060",
+      "persona": "jaroslava-ostrava",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "raw": "Klíče",
+      "attempts": [
+        {
+          "model": "qwen/qwen3.5-397b-a17b",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 1534,
+          "costUsd": 0.0004405,
+          "promptTokens": 305,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "qwen/qwen3.5-397b-a17b",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 40915,
+          "costUsd": 0.00595608,
+          "promptTokens": 302,
+          "completionTokens": 2495
+        }
+      ]
+    },
+    {
+      "answerer": "a061",
+      "persona": "denisa-jicin",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "qwen/qwen3.6-plus",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 2273,
+          "costUsd": 0.000253825,
+          "promptTokens": 289,
+          "completionTokens": 82,
+          "error": "unparseable: "
+        },
+        {
+          "model": "qwen/qwen3.6-plus",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 2264,
+          "costUsd": 0.0002522,
+          "promptTokens": 284,
+          "completionTokens": 82,
+          "error": "unparseable: "
+        },
+        {
+          "model": "deepseek/deepseek-chat-v3.1",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 568,
+          "costUsd": 0.0001793,
+          "promptTokens": 296,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a062",
+      "persona": "vaclav-ceske-budejovice",
+      "model": "qwen/qwen3.7-plus",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "qwen/qwen3.7-plus",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1861,
+          "costUsd": 0.00010944,
+          "promptTokens": 294,
+          "completionTokens": 12
+        }
+      ]
+    },
+    {
+      "answerer": "a063",
+      "persona": "adela-znojmo",
+      "model": "qwen/qwen3.7-max",
+      "raw": "fixa",
+      "attempts": [
+        {
+          "model": "qwen/qwen3.7-max",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1295,
+          "costUsd": 0.000485275,
+          "promptTokens": 302,
+          "completionTokens": 9
+        }
+      ]
+    },
+    {
+      "answerer": "a064",
+      "persona": "daniel-usti-nad-orlici",
+      "model": "qwen/qwen3.8-flash",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "qwen/qwen3.8-flash",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 905,
+          "costUsd": 0.000013406,
+          "promptTokens": 293,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a065",
+      "persona": "josef-kladno",
+      "model": "x-ai/grok-4.20",
+      "raw": "klíče",
+      "attempts": [
+        {
+          "model": "x-ai/grok-4.20",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1025,
+          "costUsd": 0.0005931,
+          "promptTokens": 566,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a066",
+      "persona": "stepanka-orlova",
+      "model": "x-ai/grok-4.5",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "x-ai/grok-4.5",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 4219,
+          "costUsd": 0.0021424,
+          "promptTokens": 544,
+          "completionTokens": 212
+        }
+      ]
+    },
+    {
+      "answerer": "a067",
+      "persona": "roman-brno",
+      "model": "x-ai/grok-4.7",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "x-ai/grok-4.7",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 3572,
+          "costUsd": 0.002904,
+          "promptTokens": 1581,
+          "completionTokens": 245
+        }
+      ]
+    },
+    {
+      "answerer": "a068",
+      "persona": "michaela-chrudim",
+      "model": "moonshotai/kimi-k2.5",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "moonshotai/kimi-k2.5",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 756,
+          "costUsd": 0.000225302,
+          "promptTokens": 361,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a069",
+      "persona": "olga-litovel",
+      "model": "moonshotai/kimi-k2.6",
+      "raw": "Mobil",
+      "attempts": [
+        {
+          "model": "moonshotai/kimi-k2.6",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1682,
+          "costUsd": 0.0002939265,
+          "promptTokens": 449,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a070",
+      "persona": "zbynek-ceska-lipa",
+      "model": "moonshotai/kimi-k3",
+      "raw": "klíče",
+      "attempts": [
+        {
+          "model": "moonshotai/kimi-k3",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 877,
+          "costUsd": 0.00030194,
+          "promptTokens": 476,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a071",
+      "persona": "ludmila-hodonin",
+      "model": "z-ai/glm-4.7",
+      "raw": "brýle",
+      "attempts": [
+        {
+          "model": "z-ai/glm-4.7",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 896,
+          "costUsd": 0.00014725,
+          "promptTokens": 320,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a072",
+      "persona": "vojtech-zbraslav",
+      "model": "z-ai/glm-5",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "z-ai/glm-5",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1155,
+          "costUsd": 0.0002415,
+          "promptTokens": 313,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a073",
+      "persona": "simon-semily",
+      "model": "z-ai/glm-5.1",
+      "raw": "Telefon",
+      "attempts": [
+        {
+          "model": "z-ai/glm-5.1",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1724,
+          "costUsd": 0.00033558,
+          "promptTokens": 311,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a074",
+      "persona": "ales-krnov",
+      "model": "z-ai/glm-5.3",
+      "raw": "klíč",
+      "attempts": [
+        {
+          "model": "z-ai/glm-5.3",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 817,
+          "costUsd": 0.00055512,
+          "promptTokens": 318,
+          "completionTokens": 39
+        }
+      ]
+    },
+    {
+      "answerer": "a075",
+      "persona": "zdenka-nymburk",
+      "model": "minimax/minimax-m2.5",
+      "raw": "jehla",
+      "attempts": [
+        {
+          "model": "minimax/minimax-m2.5",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 4325,
+          "costUsd": 0.00059562,
+          "promptTokens": 370,
+          "completionTokens": 531
+        }
+      ]
+    },
+    {
+      "answerer": "a076",
+      "persona": "sabina-roznov",
+      "model": "minimax/minimax-m3",
+      "raw": "}: {",
+      "attempts": [
+        {
+          "model": "minimax/minimax-m3",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 582,
+          "costUsd": 0.0000676,
+          "promptTokens": 502,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a077",
+      "persona": "jakub-brno",
+      "model": "cohere/command-r-08-2024",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "cohere/command-r-08-2024",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 955,
+          "costUsd": 0.00004005,
+          "promptTokens": 231,
+          "completionTokens": 9
+        }
+      ]
+    },
+    {
+      "answerer": "a078",
+      "persona": "gabriela-trebic",
+      "model": "cohere/command-a",
+      "raw": "Telefon",
+      "attempts": [
+        {
+          "model": "cohere/command-a",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 512,
+          "costUsd": 0.0006625,
+          "promptTokens": 229,
+          "completionTokens": 9
+        }
+      ]
+    },
+    {
+      "answerer": "a079",
+      "persona": "pavel-stodulky",
+      "model": "mistralai/mistral-medium-3.1",
+      "raw": "lžička",
+      "attempts": [
+        {
+          "model": "cohere/command-a-plus",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 940,
+          "costUsd": 0.0001878,
+          "promptTokens": 226,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "cohere/command-a-plus",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 947,
+          "costUsd": 0.0001866,
+          "promptTokens": 222,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "mistralai/mistral-medium-3.1",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 742,
+          "costUsd": 0.0001424,
+          "promptTokens": 296,
+          "completionTokens": 12
+        }
+      ]
+    },
+    {
+      "answerer": "a080",
+      "persona": "dominik-frydek-mistek",
+      "model": "amazon/nova-lite-v1",
+      "raw": "Klíč",
+      "attempts": [
+        {
+          "model": "amazon/nova-lite-v1",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 378,
+          "costUsd": 0.0000219,
+          "promptTokens": 349,
+          "completionTokens": 4
+        }
+      ]
+    },
+    {
+      "answerer": "a081",
+      "persona": "klara-kolin",
+      "model": "amazon/nova-pro-v1",
+      "raw": "Nákupní košík.",
+      "attempts": [
+        {
+          "model": "amazon/nova-pro-v1",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 528,
+          "costUsd": 0.0002976,
+          "promptTokens": 340,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a082",
+      "persona": "david-slany",
+      "model": "amazon/nova-2-lite-v1",
+      "raw": "Klíč",
+      "attempts": [
+        {
+          "model": "amazon/nova-2-lite-v1",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 569,
+          "costUsd": 0.0001049,
+          "promptTokens": 308,
+          "completionTokens": 5
+        }
+      ]
+    },
+    {
+      "answerer": "a083",
+      "persona": "tomas-mlada-boleslav",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 695,
+          "costUsd": 0.0001164,
+          "promptTokens": 308,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a084",
+      "persona": "lubos-pelhrimov",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "raw": "křemílek",
+      "attempts": [
+        {
+          "model": "nvidia/nemotron-3-ultra-550b-a55b",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 642,
+          "costUsd": 0.0001786,
+          "promptTokens": 300,
+          "completionTokens": 13
+        }
+      ]
+    },
+    {
+      "answerer": "a085",
+      "persona": "iveta-zdar",
+      "model": "microsoft/phi-4",
+      "raw": "balík",
+      "attempts": [
+        {
+          "model": "microsoft/phi-4",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 694,
+          "costUsd": 0.00002793,
+          "promptTokens": 377,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a086",
+      "persona": "stanislav-mikulov",
+      "model": "x-ai/grok-4.3",
+      "raw": "Sklenice",
+      "attempts": [
+        {
+          "model": "bytedance-seed/seed-2.0-lite",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 3936,
+          "costUsd": 0.00027975,
+          "promptTokens": 479,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "bytedance-seed/seed-2.0-lite",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 4508,
+          "costUsd": 0.00023925,
+          "promptTokens": 317,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "x-ai/grok-4.3",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 841,
+          "costUsd": 0.00058185,
+          "promptTokens": 555,
+          "completionTokens": 9
+        }
+      ]
+    },
+    {
+      "answerer": "a087",
+      "persona": "sarka-most",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "bytedance-seed/seed-2-1-turbo",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 2982,
+          "costUsd": 0.000439,
+          "promptTokens": 478,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "bytedance-seed/seed-2-1-turbo",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 4411,
+          "costUsd": 0.000358,
+          "promptTokens": 316,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "qwen/qwen3-30b-a3b-instruct-2507",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1519,
+          "costUsd": 0.00003591,
+          "promptTokens": 369,
+          "completionTokens": 9
+        }
+      ]
+    },
+    {
+      "answerer": "a088",
+      "persona": "ivana-litomerice",
+      "model": "tencent/hy3",
+      "raw": "jablko",
+      "attempts": [
+        {
+          "model": "tencent/hy3",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 1852,
+          "costUsd": 0.00005846,
+          "promptTokens": 372,
+          "completionTokens": 11
+        }
+      ]
+    },
+    {
+      "answerer": "a089",
+      "persona": "miroslav-usti",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "raw": "šroubovák",
+      "attempts": [
+        {
+          "model": "xiaomi/mimo-v2.6-flash",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 757,
+          "costUsd": 0.00005369,
+          "promptTokens": 385,
+          "completionTokens": 13
+        }
+      ]
+    },
+    {
+      "answerer": "a090",
+      "persona": "lucie-modrany",
+      "model": "stepfun/step-3.7-flash",
+      "raw": "mobil",
+      "attempts": [
+        {
+          "model": "stepfun/step-3.7-flash",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 10748,
+          "costUsd": 0.000665,
+          "promptTokens": 312,
+          "completionTokens": 524
+        }
+      ]
+    },
+    {
+      "answerer": "a091",
+      "persona": "rostislav-nachod",
+      "model": "inception/mercury-3",
+      "raw": "Mobil",
+      "attempts": [
+        {
+          "model": "inception/mercury-3",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 471,
+          "costUsd": 0.00005329,
+          "promptTokens": 485,
+          "completionTokens": 16
+        }
+      ]
+    },
+    {
+      "answerer": "a092",
+      "persona": "ondrej-karlin",
+      "model": "ibm-granite/granite-4.2-8b",
+      "raw": "kniha",
+      "attempts": [
+        {
+          "model": "ibm-granite/granite-4.2-8b",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 202,
+          "costUsd": 0,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "error": "Provider returned error"
+        },
+        {
+          "model": "ibm-granite/granite-4.2-8b",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 1157,
+          "costUsd": 0.00000802,
+          "promptTokens": 381,
+          "completionTokens": 4
+        }
+      ]
+    },
+    {
+      "answerer": "a093",
+      "persona": "miroslava-zlin",
+      "model": "upstage/solar-pro4",
+      "raw": "Klíče",
+      "attempts": [
+        {
+          "model": "upstage/solar-pro4",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 854,
+          "costUsd": 0.00007185,
+          "promptTokens": 431,
+          "completionTokens": 12
+        }
+      ]
+    },
+    {
+      "answerer": "a094",
+      "persona": "kamila-liberec",
+      "model": "nousresearch/hermes-4-405b",
+      "raw": "Pero",
+      "attempts": [
+        {
+          "model": "nousresearch/hermes-4-405b",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 13459,
+          "costUsd": 0.000301,
+          "promptTokens": 271,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a095",
+      "persona": "patrik-ostrava",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "reflection/beam-1.0-501b-a23b",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 944,
+          "costUsd": 0.000268,
+          "promptTokens": 400,
+          "completionTokens": 186
+        }
+      ]
+    },
+    {
+      "answerer": "a096",
+      "persona": "milan-melnik",
+      "model": "writer/palmyra-x5",
+      "raw": "Šroubovák",
+      "attempts": [
+        {
+          "model": "writer/palmyra-x5",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 466,
+          "costUsd": 0.000273,
+          "promptTokens": 375,
+          "completionTokens": 8
+        }
+      ]
+    },
+    {
+      "answerer": "a097",
+      "persona": "martina-beroun",
+      "model": null,
+      "raw": null,
+      "attempts": [
+        {
+          "model": "liquid/lfm-2.5-24b-a2b",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 5550,
+          "costUsd": 0.00141605,
+          "promptTokens": 321,
+          "completionTokens": 2000,
+          "error": "unparseable: "
+        },
+        {
+          "model": "liquid/lfm-2.5-24b-a2b",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 6103,
+          "costUsd": 0.00141585,
+          "promptTokens": 317,
+          "completionTokens": 2000,
+          "error": "unparseable: "
+        },
+        {
+          "model": "z-ai/glm-4.6",
+          "mode": "structured",
+          "ok": false,
+          "latencyMs": 2125,
+          "costUsd": 0.00027717,
+          "promptTokens": 319,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        },
+        {
+          "model": "z-ai/glm-4.6",
+          "mode": "plain",
+          "ok": false,
+          "latencyMs": 2177,
+          "costUsd": 0.0002289,
+          "promptTokens": 317,
+          "completionTokens": 80,
+          "error": "unparseable: "
+        }
+      ]
+    },
+    {
+      "answerer": "a098",
+      "persona": "nikola-chomutov",
+      "model": "inclusionai/ling-3.1-flash",
+      "raw": "telefon",
+      "attempts": [
+        {
+          "model": "inclusionai/ling-3.1-flash",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 2276,
+          "costUsd": 0.00002835,
+          "promptTokens": 348,
+          "completionTokens": 10
+        }
+      ]
+    },
+    {
+      "answerer": "a099",
+      "persona": "anezka-trinec",
+      "model": "rekaai/reka-flash-3",
+      "raw": "klíč",
+      "attempts": [
+        {
+          "model": "rekaai/reka-flash-3",
+          "mode": "structured",
+          "ok": true,
+          "latencyMs": 539,
+          "costUsd": 0.0000404,
+          "promptTokens": 380,
+          "completionTokens": 12
+        }
+      ]
+    },
+    {
+      "answerer": "a100",
+      "persona": "karel-novy-jicin",
+      "model": "meituan/longcat-2.0",
+      "raw": "Klobouk",
+      "attempts": [
+        {
+          "model": "meituan/longcat-2.0",
+          "mode": "plain",
+          "ok": true,
+          "latencyMs": 2321,
+          "costUsd": 0.000048036,
+          "promptTokens": 395,
+          "completionTokens": 4
+        }
+      ]
+    }
+  ],
+  "judgement": {
+    "clusters": [
+      {
+        "canonical": "Telefon",
+        "members": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          11,
+          13,
+          14,
+          16,
+          18,
+          19,
+          20,
+          24,
+          25,
+          29,
+          33,
+          37,
+          40,
+          45,
+          47,
+          48,
+          50,
+          52,
+          53,
+          54,
+          55,
+          60,
+          61,
+          63,
+          65,
+          66,
+          67,
+          68,
+          71,
+          72,
+          76,
+          77,
+          82,
+          86,
+          89,
+          90,
+          94,
+          96
+        ],
+        "aliases": [
+          "telefon",
+          "telefony",
+          "telefonu",
+          "mobil",
+          "mobily",
+          "mobilu",
+          "mobilní telefon",
+          "mobílek",
+          "smartphone",
+          "telefonek",
+          "telka"
+        ]
+      },
+      {
+        "canonical": "Klíče",
+        "members": [
+          10,
+          15,
+          21,
+          22,
+          31,
+          51,
+          56,
+          58,
+          59,
+          64,
+          69,
+          73,
+          79,
+          81,
+          92,
+          97
+        ],
+        "aliases": [
+          "klíč",
+          "klíče",
+          "klíčů",
+          "klíček",
+          "klíčky",
+          "klíčem",
+          "svazek klíčů",
+          "klíčích"
+        ]
+      },
+      {
+        "canonical": "Hrnek",
+        "members": [
+          4,
+          8,
+          27,
+          49
+        ],
+        "aliases": [
+          "hrnek",
+          "hrnky",
+          "hrnček",
+          "hrneček",
+          "hrníček",
+          "hrnku",
+          "šálek",
+          "hrnečky"
+        ]
+      },
+      {
+        "canonical": "Lžíce",
+        "members": [
+          17,
+          38,
+          78
+        ],
+        "aliases": [
+          "lžíce",
+          "lžíci",
+          "lžička",
+          "lžičku",
+          "lžičky",
+          "lžíce",
+          "lžic"
+        ]
+      },
+      {
+        "canonical": "Pero",
+        "members": [
+          36,
+          39,
+          93
+        ],
+        "aliases": [
+          "pero",
+          "pera",
+          "propiska",
+          "propisku",
+          "propisky",
+          "pírko",
+          "kuličkové pero"
+        ]
+      },
+      {
+        "canonical": "Šroubovák",
+        "members": [
+          32,
+          88,
+          95
+        ],
+        "aliases": [
+          "šroubovák",
+          "šroubováky",
+          "šroubováku",
+          "šroubováček",
+          "šroubovákem",
+          "šroubováčky"
+        ]
+      },
+      {
+        "canonical": "Jehla",
+        "members": [
+          26,
+          74
+        ],
+        "aliases": [
+          "jehla",
+          "jehly",
+          "jehlu",
+          "jehlička",
+          "jehličky",
+          "jehel"
+        ]
+      },
+      {
+        "canonical": "Brýle",
+        "members": [
+          30,
+          70
+        ],
+        "aliases": [
+          "brýle",
+          "brýlí",
+          "brejle",
+          "brýlemi",
+          "brýličky",
+          "sluneční brýle"
+        ]
+      },
+      {
+        "canonical": "Pila",
+        "members": [
+          41,
+          42
+        ],
+        "aliases": [
+          "pila",
+          "pilu",
+          "pily",
+          "pilka",
+          "pilku",
+          "pilky"
+        ]
+      },
+      {
+        "canonical": "Hrnec",
+        "members": [
+          0
+        ],
+        "aliases": [
+          "hrnec",
+          "hrnce",
+          "hrnců",
+          "kastrol",
+          "kastrolu",
+          "hrncem"
+        ]
+      },
+      {
+        "canonical": "Nůžky",
+        "members": [
+          12
+        ],
+        "aliases": [
+          "nůžky",
+          "nůžek",
+          "nůžtičky",
+          "nůžkami",
+          "nožičky na stříhání",
+          "nůžkách"
+        ]
+      },
+      {
+        "canonical": "Talíř",
+        "members": [
+          23
+        ],
+        "aliases": [
+          "talíř",
+          "talíře",
+          "talířek",
+          "talířky",
+          "talířů",
+          "talířem"
+        ]
+      },
+      {
+        "canonical": "Mýdlo",
+        "members": [
+          28
+        ],
+        "aliases": [
+          "mýdlo",
+          "mýdla",
+          "mýdlem",
+          "mejdlo",
+          "mýdélko",
+          "mýdélka"
+        ]
+      },
+      {
+        "canonical": "Nůž",
+        "members": [
+          34
+        ],
+        "aliases": [
+          "nůž",
+          "nože",
+          "nožík",
+          "nožem",
+          "nožíky",
+          "nožů"
+        ]
+      },
+      {
+        "canonical": "Sítě",
+        "members": [
+          35
+        ],
+        "aliases": [
+          "síť",
+          "sítě",
+          "sítí",
+          "síťka",
+          "síťku",
+          "síťky"
+        ]
+      },
+      {
+        "canonical": "Mop",
+        "members": [
+          43
+        ],
+        "aliases": [
+          "mop",
+          "mopy",
+          "mopu",
+          "mopem",
+          "hadr na podlahu",
+          "smeták"
+        ]
+      },
+      {
+        "canonical": "Vidlička",
+        "members": [
+          44
+        ],
+        "aliases": [
+          "vidlička",
+          "vidličku",
+          "vidličky",
+          "vidle",
+          "vidliček",
+          "vidličkou"
+        ]
+      },
+      {
+        "canonical": "Tužka",
+        "members": [
+          46
+        ],
+        "aliases": [
+          "tužka",
+          "tužku",
+          "tužky",
+          "tužtička",
+          "pastelka",
+          "tužek"
+        ]
+      },
+      {
+        "canonical": "Modlitebník",
+        "members": [
+          57
+        ],
+        "aliases": [
+          "modlitebník",
+          "modlitebníky",
+          "modlitební knížka",
+          "modlitebníku",
+          "modlitebníkem",
+          "breviář"
+        ]
+      },
+      {
+        "canonical": "Fixa",
+        "members": [
+          62
+        ],
+        "aliases": [
+          "fixa",
+          "fixu",
+          "fixy",
+          "fixka",
+          "fixky",
+          "popisovač"
+        ]
+      },
+      {
+        "canonical": "Košík",
+        "members": [
+          80
+        ],
+        "aliases": [
+          "košík",
+          "nákupní košík",
+          "košíky",
+          "košíku",
+          "košíček",
+          "koš na nákup"
+        ]
+      },
+      {
+        "canonical": "Křemílek",
+        "members": [
+          83
+        ],
+        "aliases": [
+          "křemílek",
+          "křemílka",
+          "křemílky",
+          "křemílkem",
+          "křemílku",
+          "křemílků"
+        ]
+      },
+      {
+        "canonical": "Balík",
+        "members": [
+          84
+        ],
+        "aliases": [
+          "balík",
+          "balíky",
+          "balíček",
+          "balíčky",
+          "balíku",
+          "zásilka"
+        ]
+      },
+      {
+        "canonical": "Sklenice",
+        "members": [
+          85
+        ],
+        "aliases": [
+          "sklenice",
+          "sklenici",
+          "skleničky",
+          "sklenička",
+          "sklenka",
+          "skleničku"
+        ]
+      },
+      {
+        "canonical": "Jablko",
+        "members": [
+          87
+        ],
+        "aliases": [
+          "jablko",
+          "jablka",
+          "jablíčko",
+          "jablíčka",
+          "jablkem",
+          "jablek"
+        ]
+      },
+      {
+        "canonical": "Kniha",
+        "members": [
+          91
+        ],
+        "aliases": [
+          "kniha",
+          "knihu",
+          "knihy",
+          "knížka",
+          "knížku",
+          "knížky"
+        ]
+      },
+      {
+        "canonical": "Klobouk",
+        "members": [
+          98
+        ],
+        "aliases": [
+          "klobouk",
+          "klobouky",
+          "klobouček",
+          "kloboučky",
+          "klobouku",
+          "čepice"
+        ]
+      }
+    ],
+    "invalid": [
+      75
+    ],
+    "offensive": false,
+    "notes": "Merged mobil with telefon and pile with pila as a typo; kept tužka, pero and fixa separate."
+  },
+  "gate": {
+    "passed": false,
+    "answered": 99,
+    "topShare": 0.45454545454545453,
+    "boardShare": 0.7878787878787878,
+    "clustersWithTwo": 9,
+    "offensive": false,
+    "flags": [
+      "top answer \"Telefon\" has 45 % (max 45 %)"
+    ]
+  }
+}

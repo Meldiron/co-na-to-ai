@@ -1,0 +1,1184 @@
+{
+  "date": "2026-10-16",
+  "number": 16,
+  "questionId": "zakazat-ve-meste",
+  "question": "Co byste ve městě nejradši zakázali?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Auta",
+      "votes": 23,
+      "aliases": [
+        "auto",
+        "aut",
+        "automobily",
+        "automobil",
+        "osobní auta",
+        "vozy",
+        "káry",
+        "autům",
+        "automobilů",
+        "vozidla",
+        "vozidlo",
+        "kára",
+        "fáro",
+        "fára",
+        "plechovky",
+        "řidiči",
+        "řidič",
+        "řidičů",
+        "motorová vozidla",
+        "auťáky",
+        "autíčka",
+        "suv",
+        "esuvéčka",
+        "osobáky",
+        "osobní automobily"
+      ],
+      "answerers": [
+        "a002",
+        "a003",
+        "a007",
+        "a011",
+        "a017",
+        "a021",
+        "a027",
+        "a028",
+        "a029",
+        "a041",
+        "a045",
+        "a046",
+        "a049",
+        "a050",
+        "a051",
+        "a052",
+        "a068",
+        "a069",
+        "a073",
+        "a074",
+        "a075",
+        "a088",
+        "a094"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Hluk",
+      "votes": 22,
+      "aliases": [
+        "hlučnost",
+        "rámus",
+        "randál",
+        "kravál",
+        "šum",
+        "šumění",
+        "rušení",
+        "hlučení",
+        "lomoz",
+        "řev",
+        "křik",
+        "hlasitá hudba",
+        "hudba",
+        "noční klid",
+        "rušení nočního klidu",
+        "hulákání",
+        "hluku",
+        "halas",
+        "povyk",
+        "bordel v noci",
+        "troubení",
+        "houkání",
+        "huhlání",
+        "hlučné sousedy",
+        "hlučnost aut"
+      ],
+      "answerers": [
+        "a001",
+        "a004",
+        "a005",
+        "a009",
+        "a010",
+        "a012",
+        "a022",
+        "a025",
+        "a032",
+        "a033",
+        "a037",
+        "a040",
+        "a042",
+        "a055",
+        "a057",
+        "a063",
+        "a082",
+        "a083",
+        "a097",
+        "a098",
+        "a059",
+        "a093"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Kouření",
+      "votes": 7,
+      "aliases": [
+        "cigarety",
+        "cigareta",
+        "kouřit",
+        "cigára",
+        "kuřáci",
+        "kouř",
+        "cigaretám",
+        "cígo",
+        "cíga",
+        "kuřák",
+        "kuřáky",
+        "tabák",
+        "vejpování",
+        "vapování",
+        "elektronické cigarety",
+        "vejpy",
+        "vape",
+        "dýmky",
+        "doutníky",
+        "nedopalky",
+        "špačky",
+        "čvaňhání",
+        "pokuřování",
+        "kouření na zastávkách",
+        "kouření venku"
+      ],
+      "answerers": [
+        "a006",
+        "a024",
+        "a044",
+        "a054",
+        "a062",
+        "a081",
+        "a065"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Parkování",
+      "votes": 7,
+      "aliases": [
+        "parkoviště",
+        "parkovat",
+        "parkující",
+        "stání",
+        "parkovací místa",
+        "parkovné",
+        "parkování na chodníku",
+        "parkování v centru",
+        "parkovací zóny",
+        "modré zóny",
+        "zóny",
+        "parkovací automaty",
+        "parkovací místo",
+        "parkovací dům",
+        "garáže",
+        "odtahy"
+      ],
+      "answerers": [
+        "a018",
+        "a034",
+        "a035",
+        "a036",
+        "a061",
+        "a084",
+        "a089"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Koloběžky",
+      "votes": 4,
+      "aliases": [
+        "koloběžka",
+        "koloběžek",
+        "elektrokoloběžky",
+        "elektrokoloběžka",
+        "koloběžkám",
+        "elektrické koloběžky",
+        "sdílené koloběžky",
+        "lime",
+        "limetky",
+        "bolt",
+        "hulajnogi",
+        "koloběžkáři",
+        "koloběžkář",
+        "sdílená kola",
+        "sdílení koloběžek",
+        "elektroběžky",
+        "e-koloběžky"
+      ],
+      "answerers": [
+        "a026",
+        "a030",
+        "a031",
+        "a067"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Doprava",
+      "votes": 4,
+      "aliases": [
+        "dopravu",
+        "provoz",
+        "zácpy",
+        "zácpa",
+        "dopravní zácpy",
+        "kolony",
+        "kolona",
+        "dopravní provoz",
+        "silniční doprava",
+        "automobilová doprava",
+        "individuální doprava",
+        "tranzit",
+        "kamiony",
+        "kamion",
+        "náklaďáky",
+        "nákladní auta",
+        "dopravní zácpa",
+        "dopravní špička",
+        "špička",
+        "průjezd",
+        "průjezd centrem",
+        "křižovatky",
+        "semafory",
+        "dálnice",
+        "silnice"
+      ],
+      "answerers": [
+        "a020",
+        "a038",
+        "a087",
+        "a015"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Alkohol",
+      "votes": 3,
+      "aliases": [
+        "pití",
+        "chlast",
+        "opilci",
+        "pivo",
+        "alkoholu",
+        "chlastání",
+        "pití na veřejnosti",
+        "pití alkoholu",
+        "piva",
+        "víno",
+        "vodka",
+        "rum",
+        "tvrdý alkohol",
+        "opilec",
+        "ožralové",
+        "ožralci",
+        "alkoholici",
+        "alkoholik",
+        "bezdomovci",
+        "bezdomovec",
+        "opilost",
+        "hospody",
+        "bary",
+        "večerky",
+        "nonstopy",
+        "kořalka"
+      ],
+      "answerers": [
+        "a016",
+        "a060",
+        "a064"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Smog",
+      "votes": 3,
+      "aliases": [
+        "znečištění",
+        "exhalace",
+        "výfukové plyny",
+        "zplodiny",
+        "špína ve vzduchu",
+        "smogu",
+        "znečištění ovzduší",
+        "emise",
+        "špína",
+        "prach",
+        "prašnost",
+        "špatný vzduch",
+        "ovzduší",
+        "dým",
+        "kouř z komínů",
+        "výfuky",
+        "co2",
+        "oxid uhličitý",
+        "mlha",
+        "jedovatý vzduch",
+        "polétavý prach"
+      ],
+      "answerers": [
+        "a077",
+        "a078",
+        "a095"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Autobusy",
+      "votes": 3,
+      "answerers": [
+        "a079",
+        "a091",
+        "a096"
+      ]
+    },
+    {
+      "text": "Graffiti",
+      "votes": 2,
+      "answerers": [
+        "a008",
+        "a058"
+      ]
+    },
+    {
+      "text": "Děti",
+      "votes": 1,
+      "answerers": [
+        "a013"
+      ]
+    },
+    {
+      "text": "Hazard",
+      "votes": 1,
+      "answerers": [
+        "a014"
+      ]
+    },
+    {
+      "text": "Petardy",
+      "votes": 1,
+      "answerers": [
+        "a019"
+      ]
+    },
+    {
+      "text": "Továrny",
+      "votes": 1,
+      "answerers": [
+        "a023"
+      ]
+    },
+    {
+      "text": "Řetězce",
+      "votes": 1,
+      "answerers": [
+        "a039"
+      ]
+    },
+    {
+      "text": "Přestavby",
+      "votes": 1,
+      "answerers": [
+        "a047"
+      ]
+    },
+    {
+      "text": "Psy",
+      "votes": 1,
+      "answerers": [
+        "a056"
+      ]
+    },
+    {
+      "text": "Odpadky",
+      "votes": 1,
+      "answerers": [
+        "a066"
+      ]
+    },
+    {
+      "text": "Cyklisté",
+      "votes": 1,
+      "answerers": [
+        "a070"
+      ]
+    },
+    {
+      "text": "Nevěstince",
+      "votes": 1,
+      "answerers": [
+        "a071"
+      ]
+    },
+    {
+      "text": "Skútry",
+      "votes": 1,
+      "answerers": [
+        "a072"
+      ]
+    },
+    {
+      "text": "Mobily",
+      "votes": 1,
+      "answerers": [
+        "a076"
+      ]
+    },
+    {
+      "text": "Rozhledna",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    },
+    {
+      "text": "Koncerty",
+      "votes": 1,
+      "answerers": [
+        "a085"
+      ]
+    },
+    {
+      "text": "Krádeže",
+      "votes": 1,
+      "answerers": [
+        "a090"
+      ]
+    },
+    {
+      "text": "Reklamy",
+      "votes": 1,
+      "answerers": [
+        "a092"
+      ]
+    },
+    {
+      "text": "Motorky",
+      "votes": 1,
+      "answerers": [
+        "a100"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "kouření",
+      "answer": "Kouření"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "graffiti",
+      "answer": "Graffiti"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "hlučnost",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "hlučnost",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "děti",
+      "answer": "Děti"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "hazard",
+      "answer": "Hazard"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "Dopravní zácpy",
+      "answer": "Doprava"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "alkohol",
+      "answer": "Alkohol"
+    },
+    {
+      "answerer": "a017",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "oldrich-jihlava",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Parkování",
+      "answer": "Parkování"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Petardy",
+      "answer": "Petardy"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Dopravu",
+      "answer": "Doprava"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "továrny",
+      "answer": "Továrny"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Kouření",
+      "answer": "Kouření"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "koloběžky",
+      "answer": "Koloběžky"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "koloběžky",
+      "answer": "Koloběžky"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Koloběžky",
+      "answer": "Koloběžky"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "}Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "parkování",
+      "answer": "Parkování"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "parkování",
+      "answer": "Parkování"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "parkování",
+      "answer": "Parkování"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "hlučnost",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "doprava",
+      "answer": "Doprava"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Řetězce",
+      "answer": "Řetězce"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "आयाಾಕärsklo",
+      "answer": null
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "kouření",
+      "answer": "Kouření"
+    },
+    {
+      "answerer": "a045",
+      "model": "mistralai/mistral-small-2603",
+      "persona": "stepan-klatovy",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "autá",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "přestavby",
+      "answer": "Přestavby"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "kuř zmar",
+      "answer": null
+    },
+    {
+      "answerer": "a049",
+      "model": "mistralai/mistral-large-2512",
+      "persona": "pavla-brno",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a051",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "aneta-holesovice",
+      "raw": "Auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "Autodoplňovačky",
+      "answer": null
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "kouření",
+      "answer": "Kouření"
+    },
+    {
+      "answerer": "a055",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a056",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "dagmar-teplice",
+      "raw": "psy",
+      "answer": "Psy"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "sprejování",
+      "answer": "Graffiti"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "šumění",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a060",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "persona": "jaroslava-ostrava",
+      "raw": "Alkohol",
+      "answer": "Alkohol"
+    },
+    {
+      "answerer": "a061",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "denisa-jicin",
+      "raw": "parkování",
+      "answer": "Parkování"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "kouření",
+      "answer": "Kouření"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "alkohol",
+      "answer": "Alkohol"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Cigaretám",
+      "answer": "Kouření"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "odpadky",
+      "answer": "Odpadky"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "koloběžky",
+      "answer": "Koloběžky"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Cyklisty",
+      "answer": "Cyklisté"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Nevěstince",
+      "answer": "Nevěstince"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "skútry",
+      "answer": "Skútry"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "Mobily",
+      "answer": "Mobily"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "smog",
+      "answer": "Smog"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Smog",
+      "answer": "Smog"
+    },
+    {
+      "answerer": "a079",
+      "model": "x-ai/grok-4.3",
+      "persona": "pavel-stodulky",
+      "raw": "Autobusy",
+      "answer": "Autobusy"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Rozhledna",
+      "answer": "Rozhledna"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Kouření.",
+      "answer": "Kouření"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "parkování",
+      "answer": "Parkování"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "nehlučná koncerta",
+      "answer": "Koncerty"
+    },
+    {
+      "answerer": "a086",
+      "model": "z-ai/glm-4.6",
+      "persona": "stanislav-mikulov",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a087",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "sarka-most",
+      "raw": "doprava",
+      "answer": "Doprava"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "parkování",
+      "answer": "Parkování"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "krádeže",
+      "answer": "Krádeže"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Autobusy",
+      "answer": "Autobusy"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Nadměrné reklamy",
+      "answer": "Reklamy"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "rušení",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Auta",
+      "answer": "Auta"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "smog",
+      "answer": "Smog"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "autobusy",
+      "answer": "Autobusy"
+    },
+    {
+      "answerer": "a097",
+      "model": "minimax/minimax-01",
+      "persona": "martina-beroun",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Zakázat hanbu v ulicích.",
+      "answer": null
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Motorky",
+      "answer": "Motorky"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:42:02.127Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.137,
+    "durationMs": 73123,
+    "failed": 1,
+    "clusters": 27,
+    "topShare": 0.232
+  }
+}

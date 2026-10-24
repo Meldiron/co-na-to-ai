@@ -1,4 +1,4 @@
-export const LAUNCH_DATE = "2026-10-17"
+export const LAUNCH_DATE = "2026-10-01"
 export const TIME_ZONE = "Europe/Prague"
 
 const isoFormatter = new Intl.DateTimeFormat("en-CA", {

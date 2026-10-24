@@ -1,0 +1,1154 @@
+{
+  "date": "2026-10-08",
+  "number": 8,
+  "questionId": "zapomenuty-destnik",
+  "question": "Kde nejčastěji zapomenete deštník?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Autobus",
+      "votes": 35,
+      "aliases": [
+        "autobusy",
+        "autobuse",
+        "autobusu",
+        "autobusem",
+        "v autobuse",
+        "bus",
+        "busu",
+        "busem",
+        "v busu",
+        "buse",
+        "v autobusu",
+        "mhd",
+        "městská doprava",
+        "hromadná doprava",
+        "dálkový autobus",
+        "linka",
+        "linkový autobus",
+        "regionální autobus",
+        "zastávka",
+        "autobusová zastávka",
+        "na zastávce",
+        "autobusák",
+        "autobusové nádraží"
+      ],
+      "answerers": [
+        "a002",
+        "a003",
+        "a005",
+        "a007",
+        "a008",
+        "a011",
+        "a012",
+        "a017",
+        "a019",
+        "a020",
+        "a021",
+        "a022",
+        "a024",
+        "a027",
+        "a028",
+        "a030",
+        "a033",
+        "a035",
+        "a037",
+        "a038",
+        "a041",
+        "a047",
+        "a049",
+        "a050",
+        "a055",
+        "a057",
+        "a059",
+        "a070",
+        "a084",
+        "a086",
+        "a087",
+        "a088",
+        "a091",
+        "a094",
+        "a100"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Auto",
+      "votes": 12,
+      "aliases": [
+        "autě",
+        "v autě",
+        "auta",
+        "autem",
+        "vautě",
+        "osobák",
+        "káru",
+        "vůz",
+        "voze",
+        "ve voze",
+        "automobil",
+        "automobilu",
+        "kára",
+        "káře",
+        "fára",
+        "fáře",
+        "bourák",
+        "taxi",
+        "taxík",
+        "taxíku",
+        "v taxíku",
+        "kufr",
+        "v kufru",
+        "služebák"
+      ],
+      "answerers": [
+        "a015",
+        "a026",
+        "a043",
+        "a045",
+        "a046",
+        "a061",
+        "a064",
+        "a080",
+        "a081",
+        "a090",
+        "a093",
+        "a096"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Doma",
+      "votes": 12,
+      "aliases": [
+        "domů",
+        "dům",
+        "v domě",
+        "domov",
+        "domově",
+        "byt",
+        "v bytě",
+        "domova",
+        "domě",
+        "bytě",
+        "předsíň",
+        "v předsíni",
+        "chodba",
+        "na chodbě",
+        "věšák",
+        "na věšáku",
+        "botník",
+        "skříň",
+        "ve skříni",
+        "chata",
+        "na chatě",
+        "barák",
+        "baráku",
+        "u nás",
+        "sklep"
+      ],
+      "answerers": [
+        "a001",
+        "a009",
+        "a032",
+        "a039",
+        "a040",
+        "a042",
+        "a076",
+        "a077",
+        "a079",
+        "a092",
+        "a097",
+        "a099"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Hospoda",
+      "votes": 5,
+      "aliases": [
+        "hospodě",
+        "v hospodě",
+        "hospody",
+        "bar",
+        "hospodu",
+        "knajpa",
+        "hospůdka",
+        "hospůdce",
+        "knajpě",
+        "putyka",
+        "putyce",
+        "baru",
+        "v baru",
+        "pivnice",
+        "pivnici",
+        "výčep",
+        "výčepu",
+        "hostinec",
+        "hostinci",
+        "nálevna",
+        "pub",
+        "klub",
+        "na pivu",
+        "diskotéka",
+        "disko"
+      ],
+      "answerers": [
+        "a029",
+        "a062",
+        "a065",
+        "a074",
+        "a095"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Práce",
+      "votes": 5,
+      "aliases": [
+        "v práci",
+        "práci",
+        "zaměstnání",
+        "v zaměstnání",
+        "na pracovišti",
+        "prácička",
+        "zaměstnávání",
+        "job",
+        "šichta",
+        "na šichtě",
+        "firma",
+        "firmě",
+        "ve firmě",
+        "fabrika",
+        "fabrice",
+        "továrna",
+        "továrně",
+        "dílna",
+        "porada",
+        "pracoviště",
+        "úřad",
+        "úřadě"
+      ],
+      "answerers": [
+        "a014",
+        "a058",
+        "a072",
+        "a078",
+        "a083"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Tramvaj",
+      "votes": 5,
+      "aliases": [
+        "tramvaji",
+        "v tramvaji",
+        "šalina",
+        "tramvaje",
+        "tramvajích",
+        "tramvajka",
+        "šalině",
+        "v šalině",
+        "tramvajce",
+        "tram",
+        "tramka",
+        "električka",
+        "tramvajová zastávka",
+        "metro",
+        "metru",
+        "v metru",
+        "podzemka"
+      ],
+      "answerers": [
+        "a006",
+        "a031",
+        "a052",
+        "a060",
+        "a089"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Restaurace",
+      "votes": 4,
+      "aliases": [
+        "restauraci",
+        "v restauraci",
+        "restaurant",
+        "jídelna",
+        "restika",
+        "restice",
+        "jídelně",
+        "v jídelně",
+        "menza",
+        "menze",
+        "bistro",
+        "bistru",
+        "pizzerie",
+        "pizzerii",
+        "mcdonald",
+        "mekáč",
+        "mekáči",
+        "fastfood",
+        "oběd",
+        "na obědě",
+        "večeře",
+        "na večeři",
+        "kantýna",
+        "závodka"
+      ],
+      "answerers": [
+        "a018",
+        "a053",
+        "a054",
+        "a069"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Obchod",
+      "votes": 4,
+      "aliases": [
+        "obchodě",
+        "v obchodě",
+        "obchody",
+        "krám",
+        "supermarket",
+        "nákupy",
+        "obchodu",
+        "krámu",
+        "v krámě",
+        "samoobsluha",
+        "sámoška",
+        "sámošce",
+        "supermarketu",
+        "hypermarket",
+        "market",
+        "marketu",
+        "nákupní centrum",
+        "nákupák",
+        "obchoďák",
+        "obchoďáku",
+        "galerie",
+        "tesco",
+        "lidl",
+        "kaufland",
+        "albert",
+        "billa",
+        "penny",
+        "nákup",
+        "na nákupu",
+        "pokladna",
+        "u pokladny",
+        "večerka",
+        "večerce",
+        "trafika",
+        "lékárna"
+      ],
+      "answerers": [
+        "a044",
+        "a071",
+        "a075",
+        "a098"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Škola",
+      "votes": 4,
+      "answerers": [
+        "a010",
+        "a063",
+        "a066",
+        "a073"
+      ]
+    },
+    {
+      "text": "Kavárna",
+      "votes": 2,
+      "answerers": [
+        "a004",
+        "a051"
+      ]
+    },
+    {
+      "text": "Kancelář",
+      "votes": 2,
+      "answerers": [
+        "a023",
+        "a048"
+      ]
+    },
+    {
+      "text": "Vlak",
+      "votes": 1,
+      "answerers": [
+        "a034"
+      ]
+    },
+    {
+      "text": "Trolejbus",
+      "votes": 1,
+      "answerers": [
+        "a067"
+      ]
+    },
+    {
+      "text": "Dodávka",
+      "votes": 1,
+      "answerers": [
+        "a082"
+      ]
+    },
+    {
+      "text": "Divadlo",
+      "votes": 1,
+      "answerers": [
+        "a068"
+      ]
+    },
+    {
+      "text": "Bazén",
+      "votes": 1,
+      "answerers": [
+        "a025"
+      ]
+    },
+    {
+      "text": "Přístřešek",
+      "votes": 1,
+      "answerers": [
+        "a036"
+      ]
+    },
+    {
+      "text": "Vstup",
+      "votes": 1,
+      "answerers": [
+        "a016"
+      ]
+    },
+    {
+      "text": "Místnost",
+      "votes": 1,
+      "answerers": [
+        "a085"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "domů",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Kavárna",
+      "answer": "Kavárna"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "tramvaj",
+      "answer": "Tramvaj"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "doma",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "škola",
+      "answer": "Škola"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "v",
+      "answer": null
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "práce",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "autě",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "vstupu",
+      "answer": "Vstup"
+    },
+    {
+      "answerer": "a017",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "oldrich-jihlava",
+      "raw": "autobuse",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Restaurace",
+      "answer": "Restaurace"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Autobusem",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Autobus.",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "kanceláře",
+      "answer": "Kancelář"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "bazén",
+      "answer": "Bazén"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "auto",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "hospoda",
+      "answer": "Hospoda"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "tramvaj",
+      "answer": "Tramvaj"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "}Doma{",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "vlak",
+      "answer": "Vlak"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "bus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "přístřešku",
+      "answer": "Přístřešek"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Doma",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "doma",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "doma",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "V autě",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "v obchode",
+      "answer": "Obchod"
+    },
+    {
+      "answerer": "a045",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "stepan-klatovy",
+      "raw": "Vautě",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "autě",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "kancelář",
+      "answer": "Kancelář"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-saba",
+      "persona": "aneta-holesovice",
+      "raw": "Kavárna",
+      "answer": "Kavárna"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "tramvaj",
+      "answer": "Tramvaj"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "restaurace",
+      "answer": "Restaurace"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "restaurace",
+      "answer": "Restaurace"
+    },
+    {
+      "answerer": "a055",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "v autobuse",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a056",
+      "model": "z-ai/glm-4.6",
+      "persona": "dagmar-teplice",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "v práci",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "v autobuse",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a060",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "jaroslava-ostrava",
+      "raw": "tramvaj",
+      "answer": "Tramvaj"
+    },
+    {
+      "answerer": "a061",
+      "model": "x-ai/grok-4.3",
+      "persona": "denisa-jicin",
+      "raw": "autě",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "hospoda",
+      "answer": "Hospoda"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "školka",
+      "answer": "Škola"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "autě",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "hospodě",
+      "answer": "Hospoda"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "škola",
+      "answer": "Škola"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "trolejbus",
+      "answer": "Trolejbus"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "v divadle",
+      "answer": "Divadlo"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "Restaurace",
+      "answer": "Restaurace"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "obchod",
+      "answer": "Obchod"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "v práci",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "škola",
+      "answer": "Škola"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "v hospodě",
+      "answer": "Hospoda"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "obchodě",
+      "answer": "Obchod"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "Doma",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "doma",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "práce",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a079",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "pavel-stodulky",
+      "raw": "doma",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "V autě",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Autě.",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Dodávce",
+      "answer": "Dodávka"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "v práci",
+      "answer": "Práce"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "místnost",
+      "answer": "Místnost"
+    },
+    {
+      "answerer": "a086",
+      "model": "minimax/minimax-01",
+      "persona": "stanislav-mikulov",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a087",
+      "model": "amazon/nova-micro-v1",
+      "persona": "sarka-most",
+      "raw": "autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "v tramvaji",
+      "answer": "Tramvaj"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "auto",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "autobusu",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Domu",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "auto",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "autobusu",
+      "answer": "Autobus"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "hospoda",
+      "answer": "Hospoda"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "v autě",
+      "answer": "Auto"
+    },
+    {
+      "answerer": "a097",
+      "model": "cohere/command-r7b-12-2024",
+      "persona": "martina-beroun",
+      "raw": "doma",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Obchod",
+      "answer": "Obchod"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "v domě",
+      "answer": "Doma"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Autobus",
+      "answer": "Autobus"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:19:32.624Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1138,
+    "durationMs": 35526,
+    "failed": 1,
+    "clusters": 19,
+    "topShare": 0.354
+  }
+}

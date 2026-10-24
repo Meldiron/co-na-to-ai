@@ -1,0 +1,1132 @@
+{
+  "date": "2026-10-02",
+  "number": 2,
+  "questionId": "suplik-na-vsechno",
+  "question": "Co najdete v šuplíku, kam se doma dává všechno?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Baterie",
+      "votes": 13,
+      "aliases": [
+        "baterka",
+        "baterky",
+        "baterek",
+        "tužkové baterie",
+        "článek",
+        "články",
+        "monočlánky",
+        "akumulátor",
+        "baterii",
+        "tužkovky",
+        "tužková baterie",
+        "monočlánek",
+        "akumulátory",
+        "nabíjecí baterie",
+        "knoflíková baterie",
+        "knoflíkové baterie",
+        "vybité baterie",
+        "duracell",
+        "varta",
+        "energizer",
+        "aa",
+        "mikrotužky",
+        "nabíječka",
+        "nabíječky",
+        "powerbanka"
+      ],
+      "answerers": [
+        "a002",
+        "a007",
+        "a011",
+        "a017",
+        "a020",
+        "a021",
+        "a027",
+        "a029",
+        "a049",
+        "a055",
+        "a069",
+        "a070",
+        "a086"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Bordel",
+      "votes": 12,
+      "aliases": [
+        "nepořádek",
+        "smetí",
+        "šrot",
+        "binec",
+        "svinčík",
+        "odpad",
+        "odpadky",
+        "chaos",
+        "haluz",
+        "sajrajt",
+        "bordýlek",
+        "mišmaš",
+        "zmatek",
+        "chlív",
+        "prach",
+        "drobky",
+        "bincl",
+        "humus"
+      ],
+      "answerers": [
+        "a010",
+        "a022",
+        "a033",
+        "a039",
+        "a041",
+        "a048",
+        "a066",
+        "a067",
+        "a077",
+        "a095",
+        "a025",
+        "a089"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Nůžky",
+      "votes": 9,
+      "aliases": [
+        "nůžtičky",
+        "nůžek",
+        "nožičky",
+        "stříhátka",
+        "nůžkami",
+        "nůžkách",
+        "nůžtky",
+        "stříhátko",
+        "nůžky na papír",
+        "nůžky na nehty",
+        "kancelářské nůžky",
+        "krejčovské nůžky",
+        "nůžtičky na nehty",
+        "štípačky"
+      ],
+      "answerers": [
+        "a030",
+        "a035",
+        "a046",
+        "a056",
+        "a062",
+        "a063",
+        "a084",
+        "a090",
+        "a098"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Věci",
+      "votes": 8,
+      "aliases": [
+        "věc",
+        "všechno",
+        "všecko",
+        "různé",
+        "drobnosti",
+        "věcičky",
+        "cokoli",
+        "náhradní",
+        "věcička",
+        "cokoliv",
+        "všelicos",
+        "různé věci",
+        "maličkosti",
+        "drobné věci",
+        "náhradní díly",
+        "všechno možné",
+        "všehochuť",
+        "potřeby",
+        "pomůcky",
+        "serepetičky",
+        "propriety",
+        "blbosti",
+        "blbůstky",
+        "hlouposti",
+        "kraviny",
+        "nesmysly",
+        "ptákoviny"
+      ],
+      "answerers": [
+        "a012",
+        "a059",
+        "a088",
+        "a078",
+        "a099",
+        "a044",
+        "a042",
+        "a094"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Šroubovák",
+      "votes": 7,
+      "aliases": [
+        "šroubováky",
+        "šroubováku",
+        "šroubováček",
+        "kloubák",
+        "křížák",
+        "plochý šroubovák",
+        "šroubováčky",
+        "křížový šroubovák",
+        "šroubovací",
+        "bity",
+        "bit",
+        "imbus",
+        "imbusy",
+        "imbusový klíč",
+        "torx",
+        "šroubovacího"
+      ],
+      "answerers": [
+        "a006",
+        "a008",
+        "a045",
+        "a053",
+        "a060",
+        "a068",
+        "a081"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Krámy",
+      "votes": 6,
+      "aliases": [
+        "krámky",
+        "haraburdí",
+        "harampádí",
+        "veteš",
+        "krámů",
+        "házel",
+        "krám",
+        "krámek",
+        "šmejdy",
+        "šmejd",
+        "blbinky",
+        "starý krámy",
+        "staré věci",
+        "nepotřebné věci",
+        "zbytečnosti",
+        "cetky",
+        "tretky",
+        "tretka",
+        "cetka",
+        "suvenýry",
+        "drobotina",
+        "rumpál",
+        "rejdiště"
+      ],
+      "answerers": [
+        "a014",
+        "a018",
+        "a065",
+        "a073",
+        "a091",
+        "a037"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Klíče",
+      "votes": 6,
+      "aliases": [
+        "klíč",
+        "klíčky",
+        "klíček",
+        "klíčů",
+        "svazek klíčů",
+        "náhradní klíče",
+        "klíče od auta",
+        "klíče od bytu",
+        "klíčenka",
+        "přívěsek",
+        "přívěsky",
+        "klíč od sklepa",
+        "klíče od garáže",
+        "klíčky od auta"
+      ],
+      "answerers": [
+        "a009",
+        "a023",
+        "a034",
+        "a040",
+        "a057",
+        "a064"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Oblečení",
+      "votes": 5,
+      "aliases": [
+        "prádlo",
+        "ponožky",
+        "pyžamo",
+        "kravata",
+        "hadrky",
+        "šaty",
+        "pyžam",
+        "hadry",
+        "ponožka",
+        "fusekle",
+        "spodní prádlo",
+        "trenky",
+        "trenýrky",
+        "slipy",
+        "kalhotky",
+        "podprsenka",
+        "tričko",
+        "trička",
+        "šála",
+        "šátek",
+        "šátky",
+        "rukavice",
+        "čepice",
+        "punčochy",
+        "punčocháče",
+        "kravaty",
+        "oblečky",
+        "svetr",
+        "kapesník",
+        "kapesníky",
+        "spoďáry"
+      ],
+      "answerers": [
+        "a047",
+        "a083",
+        "a092",
+        "a096",
+        "a072"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Šroubky",
+      "votes": 4,
+      "answerers": [
+        "a016",
+        "a052",
+        "a054",
+        "a074"
+      ]
+    },
+    {
+      "text": "Propiska",
+      "votes": 3,
+      "answerers": [
+        "a024",
+        "a028",
+        "a031"
+      ]
+    },
+    {
+      "text": "Provázek",
+      "votes": 3,
+      "answerers": [
+        "a001",
+        "a005",
+        "a051"
+      ]
+    },
+    {
+      "text": "Boty",
+      "votes": 3,
+      "answerers": [
+        "a032",
+        "a093",
+        "a079"
+      ]
+    },
+    {
+      "text": "Tužka",
+      "votes": 2,
+      "answerers": [
+        "a003",
+        "a026"
+      ]
+    },
+    {
+      "text": "Nářadí",
+      "votes": 2,
+      "answerers": [
+        "a004",
+        "a075"
+      ]
+    },
+    {
+      "text": "Papíry",
+      "votes": 2,
+      "answerers": [
+        "a061",
+        "a100"
+      ]
+    },
+    {
+      "text": "Gumičky",
+      "votes": 1,
+      "answerers": [
+        "a019"
+      ]
+    },
+    {
+      "text": "Diář",
+      "votes": 1,
+      "answerers": [
+        "a015"
+      ]
+    },
+    {
+      "text": "Nůž",
+      "votes": 1,
+      "answerers": [
+        "a036"
+      ]
+    },
+    {
+      "text": "Hračka",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    },
+    {
+      "text": "Hrnek",
+      "votes": 1,
+      "answerers": [
+        "a058"
+      ]
+    },
+    {
+      "text": "Smeták",
+      "votes": 1,
+      "answerers": [
+        "a050"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Provázek",
+      "answer": "Provázek"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Baterie",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "tužka",
+      "answer": "Tužka"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Nářadí",
+      "answer": "Nářadí"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Provázky",
+      "answer": "Provázek"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "šroubovák",
+      "answer": "Šroubovák"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Baterky",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "šroubováky",
+      "answer": "Šroubovák"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "klíče",
+      "answer": "Klíče"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "nepořádek",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "baterky",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "věci",
+      "answer": "Věci"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "pohádka",
+      "answer": null
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "haraburdí",
+      "answer": "Krámy"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "Diáře",
+      "answer": "Diář"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "šroubky",
+      "answer": "Šroubky"
+    },
+    {
+      "answerer": "a017",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "oldrich-jihlava",
+      "raw": "baterie",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Krámky",
+      "answer": "Krámy"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Gumičky",
+      "answer": "Gumičky"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Baterie",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Baterky",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "nepořádek",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "klíč",
+      "answer": "Klíče"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Propisky",
+      "answer": "Propiska"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "Smetí",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "tužky",
+      "answer": "Tužka"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "baterie",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Propiska",
+      "answer": "Propiska"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "baterky",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Propiska",
+      "answer": "Propiska"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "}boty",
+      "answer": "Boty"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "bordel",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "klíče",
+      "answer": "Klíče"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Kuchyňský nůž.",
+      "answer": "Nůž"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Házel",
+      "answer": "Krámy"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "čmáranice",
+      "answer": null
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Nepořádek",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "klíče",
+      "answer": "Klíče"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "bordel",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "drobnosti",
+      "answer": "Věci"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "sušáka",
+      "answer": null
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "různé",
+      "answer": "Věci"
+    },
+    {
+      "answerer": "a045",
+      "model": "mistralai/mistral-small-2603",
+      "persona": "stepan-klatovy",
+      "raw": "šroubováky",
+      "answer": "Šroubovák"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "prádlo",
+      "answer": "Oblečení"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "bordel",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a049",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "pavla-brno",
+      "raw": "Baterie",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "smeták",
+      "answer": "Smeták"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-saba",
+      "persona": "aneta-holesovice",
+      "raw": "špagáty",
+      "answer": "Provázek"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "šroubky",
+      "answer": "Šroubky"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "šroubovák",
+      "answer": "Šroubovák"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "šroubky",
+      "answer": "Šroubky"
+    },
+    {
+      "answerer": "a055",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "Baterky",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a056",
+      "model": "deepseek/deepseek-v4-pro",
+      "persona": "dagmar-teplice",
+      "raw": "nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Klíče",
+      "answer": "Klíče"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "hrnek",
+      "answer": "Hrnek"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "věci",
+      "answer": "Věci"
+    },
+    {
+      "answerer": "a060",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "jaroslava-ostrava",
+      "raw": "šroubovák",
+      "answer": "Šroubovák"
+    },
+    {
+      "answerer": "a061",
+      "model": "x-ai/grok-4.3",
+      "persona": "denisa-jicin",
+      "raw": "papíry",
+      "answer": "Papíry"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "klíče",
+      "answer": "Klíče"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "krámy",
+      "answer": "Krámy"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "bordel",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "bordel",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "šroubovák",
+      "answer": "Šroubovák"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "baterie",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "baterky",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "brumla",
+      "answer": null
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "hadrky",
+      "answer": "Oblečení"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "harampádí",
+      "answer": "Krámy"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "šrouby",
+      "answer": "Šroubky"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "nářadí",
+      "answer": "Nářadí"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "}{",
+      "answer": null
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "bordel",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Všecko",
+      "answer": "Věci"
+    },
+    {
+      "answerer": "a079",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "pavel-stodulky",
+      "raw": "přezůvky",
+      "answer": "Boty"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Hračka",
+      "answer": "Hračka"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Kloubák.",
+      "answer": "Šroubovák"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Nárameník.",
+      "answer": null
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "ponožky",
+      "answer": "Oblečení"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "zkusenosti",
+      "answer": null
+    },
+    {
+      "answerer": "a086",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "stanislav-mikulov",
+      "raw": "baterky",
+      "answer": "Baterie"
+    },
+    {
+      "answerer": "a087",
+      "model": "z-ai/glm-4.6",
+      "persona": "sarka-most",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "věci",
+      "answer": "Věci"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "šrot",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Krámy",
+      "answer": "Krámy"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "pyžam",
+      "answer": "Oblečení"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Boty",
+      "answer": "Boty"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Náhradní",
+      "answer": "Věci"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "nepořádek",
+      "answer": "Bordel"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "kravata",
+      "answer": "Oblečení"
+    },
+    {
+      "answerer": "a097",
+      "model": "minimax/minimax-01",
+      "persona": "martina-beroun",
+      "raw": "Hajzlík",
+      "answer": null
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Nůžky",
+      "answer": "Nůžky"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "všechno",
+      "answer": "Věci"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Balicí papír",
+      "answer": "Papíry"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:06:43.106Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1557,
+    "durationMs": 31514,
+    "failed": 1,
+    "clusters": 21,
+    "topShare": 0.131
+  }
+}

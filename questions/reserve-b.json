@@ -5,7 +5,8 @@
     "tags": [
       "léto"
     ],
-    "status": "approved"
+    "status": "rejected",
+    "date": "2026-10-10"
   },
   {
     "id": "nejhorsi-domaci-zvire",
@@ -13,7 +14,8 @@
     "tags": [
       "zvířata"
     ],
-    "status": "approved"
+    "status": "used",
+    "date": "2026-10-10"
   },
   {
     "id": "pohadkova-postava",

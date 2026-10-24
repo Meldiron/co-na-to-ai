@@ -1,0 +1,1187 @@
+{
+  "date": "2026-10-15",
+  "number": 15,
+  "questionId": "rodinna-oslava",
+  "question": "Co nesmí chybět na rodinné oslavě?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Dort",
+      "votes": 36,
+      "aliases": [
+        "dorty",
+        "dortu",
+        "dortík",
+        "dortíky",
+        "torta",
+        "dortelix",
+        "narozeninový dort",
+        "dortem",
+        "dorťák",
+        "svatební dort",
+        "šlehačkový dort",
+        "čokoládový dort",
+        "ovocný dort",
+        "dortík s svíčkami",
+        "marcipánový dort",
+        "cheesecake",
+        "sladkosti",
+        "sladké",
+        "zákusek",
+        "zákusky",
+        "zákusků",
+        "dezert",
+        "dezerty",
+        "moučník",
+        "moučníky",
+        "řezy",
+        "věnečky",
+        "větrníky",
+        "laskonky",
+        "cukroví"
+      ],
+      "answerers": [
+        "a003",
+        "a004",
+        "a005",
+        "a006",
+        "a007",
+        "a009",
+        "a010",
+        "a011",
+        "a014",
+        "a015",
+        "a017",
+        "a019",
+        "a020",
+        "a021",
+        "a022",
+        "a024",
+        "a025",
+        "a026",
+        "a027",
+        "a034",
+        "a041",
+        "a045",
+        "a049",
+        "a050",
+        "a051",
+        "a053",
+        "a056",
+        "a063",
+        "a065",
+        "a067",
+        "a068",
+        "a070",
+        "a083",
+        "a087",
+        "a090",
+        "a094"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Koláč",
+      "votes": 17,
+      "aliases": [
+        "koláče",
+        "koláčky",
+        "koláček",
+        "buchtový koláč",
+        "koláčů",
+        "buchta",
+        "buchty",
+        "buchet",
+        "buchtička",
+        "buchtičky",
+        "bábovka",
+        "bábovky",
+        "štrúdl",
+        "závin",
+        "frgál",
+        "frgály",
+        "svatební koláčky",
+        "perník",
+        "bublanina",
+        "drobenkový koláč",
+        "tvarohový koláč",
+        "povidlový koláč",
+        "makový koláč",
+        "pečivo sladké",
+        "pečení"
+      ],
+      "answerers": [
+        "a039",
+        "a040",
+        "a047",
+        "a048",
+        "a052",
+        "a055",
+        "a057",
+        "a058",
+        "a060",
+        "a064",
+        "a074",
+        "a078",
+        "a081",
+        "a085",
+        "a096",
+        "a098",
+        "a099"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Jídlo",
+      "votes": 15,
+      "aliases": [
+        "jídla",
+        "žrádlo",
+        "papání",
+        "jídlem",
+        "pohoštění",
+        "občerstvení",
+        "jídlíčko",
+        "baštění",
+        "bašta",
+        "hostina",
+        "raut",
+        "večeře",
+        "oběd",
+        "obědy",
+        "svačina",
+        "chuťovky",
+        "jednohubky",
+        "salát",
+        "saláty",
+        "bramborový salát",
+        "řízek",
+        "řízky",
+        "maso",
+        "polévka",
+        "pochoutky",
+        "dobroty",
+        "jíst",
+        "menu"
+      ],
+      "answerers": [
+        "a001",
+        "a008",
+        "a013",
+        "a018",
+        "a032",
+        "a038",
+        "a042",
+        "a044",
+        "a066",
+        "a069",
+        "a071",
+        "a075",
+        "a088",
+        "a091",
+        "a095"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Rodina",
+      "votes": 7,
+      "aliases": [
+        "rodiny",
+        "příbuzní",
+        "příbuzné",
+        "rodinu",
+        "rodinní příslušníci",
+        "příbuzenstvo",
+        "příbuzných",
+        "rodiče",
+        "babička",
+        "babičky",
+        "dědeček",
+        "děda",
+        "dědové",
+        "děti",
+        "vnoučata",
+        "vnuci",
+        "teta",
+        "tety",
+        "strejda",
+        "strýc",
+        "strýcové",
+        "bratranci",
+        "sestřenice",
+        "sourozenci",
+        "máma",
+        "táta",
+        "maminka",
+        "tatínek",
+        "hosté",
+        "host",
+        "lidi",
+        "oslavenec",
+        "příbuzenstvo celé"
+      ],
+      "answerers": [
+        "a037",
+        "a043",
+        "a054",
+        "a073",
+        "a076",
+        "a084",
+        "a097"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Chlebíčky",
+      "votes": 3,
+      "aliases": [
+        "chlebíček",
+        "obložené chlebíčky",
+        "chlebíčků",
+        "obložený chlebíček",
+        "chlebíčka",
+        "veky",
+        "obložená mísa",
+        "obložené mísy",
+        "chlebíčky se šunkou",
+        "chlebíčky s vajíčkem",
+        "topinky",
+        "kanapky",
+        "sendviče"
+      ],
+      "answerers": [
+        "a028",
+        "a030",
+        "a031"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Pivo",
+      "votes": 3,
+      "aliases": [
+        "piva",
+        "pivko",
+        "alkohol",
+        "pivečko",
+        "pivem",
+        "pivka",
+        "chlast",
+        "pití",
+        "pitíčko",
+        "lahváč",
+        "lahváče",
+        "plzeň",
+        "pilsner",
+        "gambrinus",
+        "kozel",
+        "budvar",
+        "radegast",
+        "bečka",
+        "sud",
+        "sudové pivo",
+        "točené",
+        "desítka",
+        "dvanáctka",
+        "rum",
+        "vodka",
+        "fernet",
+        "becherovka",
+        "panák",
+        "panáky",
+        "tvrdý",
+        "alkoholické nápoje",
+        "nápoje",
+        "drinky",
+        "kořalka",
+        "chlastání"
+      ],
+      "answerers": [
+        "a035",
+        "a062",
+        "a089"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Radost",
+      "votes": 2,
+      "aliases": [
+        "radosti",
+        "veselí",
+        "zábava",
+        "nálada",
+        "dobrá nálada",
+        "veselost",
+        "pohoda",
+        "štěstí",
+        "smích",
+        "legrace",
+        "sranda",
+        "srandy",
+        "humor",
+        "zpěv",
+        "písničky",
+        "hudba",
+        "muzika",
+        "tanec",
+        "tancování",
+        "hry",
+        "atmosféra",
+        "radostná nálada",
+        "oslava",
+        "party"
+      ],
+      "answerers": [
+        "a012",
+        "a077"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Gril",
+      "votes": 2,
+      "aliases": [
+        "grilování",
+        "grilovačka",
+        "grilu",
+        "griluje",
+        "grilované",
+        "grily",
+        "grilovačky",
+        "grilovat",
+        "barbecue",
+        "bbq",
+        "opékání",
+        "špekáčky",
+        "špekáček",
+        "buřty",
+        "buřt",
+        "klobásy",
+        "klobása",
+        "steak",
+        "steaky",
+        "grilované maso",
+        "krkovice",
+        "oheň",
+        "táborák",
+        "ohniště",
+        "uhlí",
+        "párky",
+        "špízy"
+      ],
+      "answerers": [
+        "a002",
+        "a072"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Víno",
+      "votes": 2,
+      "answerers": [
+        "a029",
+        "a086"
+      ]
+    },
+    {
+      "text": "Úsměv",
+      "votes": 1,
+      "answerers": [
+        "a016"
+      ]
+    },
+    {
+      "text": "Svíčky",
+      "votes": 1,
+      "answerers": [
+        "a023"
+      ]
+    },
+    {
+      "text": "Knedlíky",
+      "votes": 1,
+      "answerers": [
+        "a033"
+      ]
+    },
+    {
+      "text": "Kapesník",
+      "votes": 1,
+      "answerers": [
+        "a036"
+      ]
+    },
+    {
+      "text": "Pečenka",
+      "votes": 1,
+      "answerers": [
+        "a046"
+      ]
+    },
+    {
+      "text": "Chleba",
+      "votes": 1,
+      "answerers": [
+        "a059"
+      ]
+    },
+    {
+      "text": "Hospoda",
+      "votes": 1,
+      "answerers": [
+        "a079"
+      ]
+    },
+    {
+      "text": "Láska",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    },
+    {
+      "text": "Koktejly",
+      "votes": 1,
+      "answerers": [
+        "a082"
+      ]
+    },
+    {
+      "text": "Pozornost",
+      "votes": 1,
+      "answerers": [
+        "a092"
+      ]
+    },
+    {
+      "text": "Péče",
+      "votes": 1,
+      "answerers": [
+        "a093"
+      ]
+    },
+    {
+      "text": "Klobouky",
+      "votes": 1,
+      "answerers": [
+        "a100"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Gril",
+      "answer": "Gril"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "torta",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "radost",
+      "answer": "Radost"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "usměv",
+      "answer": "Úsměv"
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "svíčky",
+      "answer": "Svíčky"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "dortelix",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "chlebíčky",
+      "answer": "Chlebíčky"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "víno",
+      "answer": "Víno"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "chlebíčky",
+      "answer": "Chlebíčky"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "chlebíčky",
+      "answer": "Chlebíčky"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Knedlíky",
+      "answer": "Knedlíky"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "kapesník",
+      "answer": "Kapesník"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Příbuzní",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a045",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "stepan-klatovy",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "pečenka",
+      "answer": "Pečenka"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "koláče",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "aneta-holesovice",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "koláče",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a056",
+      "model": "deepseek/deepseek-v4-pro",
+      "persona": "dagmar-teplice",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Koláče",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "chleba",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a060",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "jaroslava-ostrava",
+      "raw": "koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a061",
+      "model": "z-ai/glm-4.6",
+      "persona": "denisa-jicin",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "torta",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "gril",
+      "answer": "Gril"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "Rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "radost",
+      "answer": "Radost"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a079",
+      "model": "x-ai/grok-4.3",
+      "persona": "pavel-stodulky",
+      "raw": "Hospoda",
+      "answer": "Hospoda"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Láska",
+      "answer": "Láska"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Koktejly.",
+      "answer": "Koktejly"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "buchtový koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a086",
+      "model": "bytedance-seed/seed-2.0-lite",
+      "persona": "stanislav-mikulov",
+      "raw": "Víno",
+      "answer": "Víno"
+    },
+    {
+      "answerer": "a087",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "sarka-most",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "alkohol",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Milost a pozornost",
+      "answer": "Pozornost"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Péče",
+      "answer": "Péče"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Dort",
+      "answer": "Dort"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "Jídlo",
+      "answer": "Jídlo"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "rodina",
+      "answer": "Rodina"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "koláč",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "koláče",
+      "answer": "Koláč"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Klobouky",
+      "answer": "Klobouky"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:40:04.922Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1133,
+    "durationMs": 33343,
+    "failed": 1,
+    "clusters": 21,
+    "topShare": 0.364
+  }
+}

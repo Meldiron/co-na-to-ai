@@ -1,0 +1,1050 @@
+{
+  "date": "2026-10-13",
+  "number": 13,
+  "questionId": "zenska-jmena",
+  "question": "Jaké ženské jméno slyšíte v Česku nejčastěji?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Jana",
+      "votes": 36,
+      "aliases": [
+        "jany",
+        "janě",
+        "janu",
+        "janička",
+        "janinka",
+        "janka",
+        "jano",
+        "janou",
+        "janča",
+        "johana",
+        "jenda",
+        "janinky",
+        "janičky",
+        "jančí"
+      ],
+      "answerers": [
+        "a004",
+        "a006",
+        "a007",
+        "a008",
+        "a009",
+        "a012",
+        "a015",
+        "a017",
+        "a018",
+        "a019",
+        "a020",
+        "a021",
+        "a023",
+        "a024",
+        "a026",
+        "a027",
+        "a028",
+        "a030",
+        "a031",
+        "a035",
+        "a045",
+        "a049",
+        "a050",
+        "a057",
+        "a062",
+        "a063",
+        "a064",
+        "a067",
+        "a070",
+        "a073",
+        "a074",
+        "a083",
+        "a086",
+        "a088",
+        "a097",
+        "a098"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Marie",
+      "votes": 36,
+      "aliases": [
+        "marii",
+        "mařenka",
+        "maruška",
+        "máňa",
+        "majka",
+        "marija",
+        "mária",
+        "marja",
+        "maruš",
+        "majda",
+        "mája",
+        "mery",
+        "mařka",
+        "marinka",
+        "mánička",
+        "marušky",
+        "mařenky"
+      ],
+      "answerers": [
+        "a001",
+        "a002",
+        "a003",
+        "a005",
+        "a011",
+        "a013",
+        "a014",
+        "a029",
+        "a033",
+        "a037",
+        "a039",
+        "a040",
+        "a041",
+        "a042",
+        "a043",
+        "a048",
+        "a051",
+        "a052",
+        "a056",
+        "a058",
+        "a059",
+        "a061",
+        "a065",
+        "a069",
+        "a071",
+        "a072",
+        "a075",
+        "a081",
+        "a084",
+        "a089",
+        "a090",
+        "a091",
+        "a095",
+        "a096",
+        "a099",
+        "a100"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Kateřina",
+      "votes": 5,
+      "aliases": [
+        "katka",
+        "kačka",
+        "kateřiny",
+        "kateřinu",
+        "káťa",
+        "katuška",
+        "kateřině",
+        "kateřino",
+        "kateřinou",
+        "katky",
+        "katce",
+        "katku",
+        "katko",
+        "katkou",
+        "kačenka",
+        "katy",
+        "káča",
+        "katrin",
+        "katarína",
+        "katuš"
+      ],
+      "answerers": [
+        "a036",
+        "a038",
+        "a055",
+        "a076",
+        "a077"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Tereza",
+      "votes": 4,
+      "aliases": [
+        "terezie",
+        "terka",
+        "terezka",
+        "terezy",
+        "terezu",
+        "teri",
+        "tereze",
+        "terezo",
+        "terezou",
+        "terky",
+        "terezky",
+        "terinka",
+        "terezičk",
+        "teruška",
+        "terča"
+      ],
+      "answerers": [
+        "a032",
+        "a047",
+        "a053",
+        "a016"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Eva",
+      "votes": 3,
+      "aliases": [
+        "evy",
+        "evu",
+        "evička",
+        "evka",
+        "evča",
+        "evě",
+        "evo",
+        "evou",
+        "evinka",
+        "evuška",
+        "evičky"
+      ],
+      "answerers": [
+        "a025",
+        "a054",
+        "a087"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Anna",
+      "votes": 3,
+      "aliases": [
+        "anny",
+        "annu",
+        "anička",
+        "anča",
+        "andula",
+        "aninka",
+        "anně",
+        "anno",
+        "annou",
+        "andulka",
+        "anka",
+        "aničky",
+        "hanka",
+        "hana",
+        "hanička",
+        "hanky",
+        "hany"
+      ],
+      "answerers": [
+        "a010",
+        "a022",
+        "a068"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Eliška",
+      "votes": 2,
+      "aliases": [
+        "elišky",
+        "elišku",
+        "eli",
+        "eliškа",
+        "elišce",
+        "eliško",
+        "eliškou",
+        "eliza",
+        "elizabeta",
+        "alžběta",
+        "alžbětka",
+        "bětka",
+        "běta",
+        "elis",
+        "elisa",
+        "alžbět"
+      ],
+      "answerers": [
+        "a066",
+        "a094"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Lucie",
+      "votes": 2,
+      "aliases": [
+        "lucka",
+        "lucinka",
+        "luci",
+        "lucky",
+        "lucce",
+        "lucku",
+        "lucko",
+        "luckou",
+        "lucinky",
+        "lucia",
+        "lucina"
+      ],
+      "answerers": [
+        "a078",
+        "a092"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Markéta",
+      "votes": 2,
+      "answerers": [
+        "a082",
+        "a085"
+      ]
+    },
+    {
+      "text": "Lenka",
+      "votes": 1,
+      "answerers": [
+        "a034"
+      ]
+    },
+    {
+      "text": "Marcela",
+      "votes": 1,
+      "answerers": [
+        "a044"
+      ]
+    },
+    {
+      "text": "Veronika",
+      "votes": 1,
+      "answerers": [
+        "a046"
+      ]
+    },
+    {
+      "text": "Jaroslava",
+      "votes": 1,
+      "answerers": [
+        "a079"
+      ]
+    },
+    {
+      "text": "Anežka",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "Anna",
+      "answer": "Anna"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "Terezie",
+      "answer": "Tereza"
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "Anna",
+      "answer": "Anna"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "Eva",
+      "answer": "Eva"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Tereza",
+      "answer": "Tereza"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "Lenka",
+      "answer": "Lenka"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Kateřina",
+      "answer": "Kateřina"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "Kateřina",
+      "answer": "Kateřina"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "Marcela",
+      "answer": "Marcela"
+    },
+    {
+      "answerer": "a045",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "stepan-klatovy",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "Veronika",
+      "answer": "Veronika"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "Tereza",
+      "answer": "Tereza"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "aneta-holesovice",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "Tereza",
+      "answer": "Tereza"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "Eva",
+      "answer": "Eva"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "Kateřina",
+      "answer": "Kateřina"
+    },
+    {
+      "answerer": "a056",
+      "model": "deepseek/deepseek-v4-pro",
+      "persona": "dagmar-teplice",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a060",
+      "model": "z-ai/glm-4.6",
+      "persona": "jaroslava-ostrava",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a061",
+      "model": "x-ai/grok-4.3",
+      "persona": "denisa-jicin",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "Eliška",
+      "answer": "Eliška"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "Anna",
+      "answer": "Anna"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "Katka",
+      "answer": "Kateřina"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "Kateřina",
+      "answer": "Kateřina"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Lucie",
+      "answer": "Lucie"
+    },
+    {
+      "answerer": "a079",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "pavel-stodulky",
+      "raw": "Jaroslava",
+      "answer": "Jaroslava"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Anežka",
+      "answer": "Anežka"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Marketa.",
+      "answer": "Markéta"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "Markéta",
+      "answer": "Markéta"
+    },
+    {
+      "answerer": "a086",
+      "model": "bytedance-seed/seed-2.0-lite",
+      "persona": "stanislav-mikulov",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a087",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "sarka-most",
+      "raw": "Eva",
+      "answer": "Eva"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Lucie",
+      "answer": "Lucie"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Janák",
+      "answer": null
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Eliška",
+      "answer": "Eliška"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Jana",
+      "answer": "Jana"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Marie",
+      "answer": "Marie"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Marie",
+      "answer": "Marie"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:36:34.994Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.0882,
+    "durationMs": 23955,
+    "failed": 1,
+    "clusters": 14,
+    "topShare": 0.364
+  }
+}

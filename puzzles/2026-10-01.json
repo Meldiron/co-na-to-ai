@@ -1,0 +1,1209 @@
+{
+  "date": "2026-10-01",
+  "number": 1,
+  "questionId": "otravny-zvuk",
+  "question": "Jaký zvuk vás nejvíc otravuje?",
+  "asked": 100,
+  "answered": 100,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Vrtačka",
+      "votes": 30,
+      "aliases": [
+        "vrtačky",
+        "vrtačku",
+        "vrtání",
+        "vrták",
+        "vrtat",
+        "bourání",
+        "vrtáky",
+        "vrtačka od souseda",
+        "soused vrtá",
+        "soused",
+        "sousedi",
+        "sousedovic vrtačka",
+        "příklepová vrtačka",
+        "příklep",
+        "vrtačka u souseda",
+        "šroubovák",
+        "aku vrtačka",
+        "vrtačky souseda",
+        "bouračka",
+        "sbíječka",
+        "sbíječky",
+        "rekonstrukce",
+        "stavba",
+        "stavební práce",
+        "flexa",
+        "bruska",
+        "řezání",
+        "pila",
+        "motorová pila",
+        "kladivo",
+        "bušení",
+        "bouchání",
+        "tlučení",
+        "ťukání"
+      ],
+      "answerers": [
+        "a003",
+        "a004",
+        "a005",
+        "a007",
+        "a011",
+        "a017",
+        "a019",
+        "a020",
+        "a021",
+        "a024",
+        "a026",
+        "a027",
+        "a029",
+        "a030",
+        "a031",
+        "a034",
+        "a041",
+        "a049",
+        "a050",
+        "a052",
+        "a056",
+        "a060",
+        "a061",
+        "a062",
+        "a067",
+        "a071",
+        "a072",
+        "a073",
+        "a075",
+        "a078"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Pískání",
+      "votes": 8,
+      "aliases": [
+        "pištění",
+        "pískot",
+        "pípání pískání",
+        "hvízdání",
+        "pisk",
+        "pískat",
+        "pištět",
+        "písknutí",
+        "pískání v uších",
+        "tinnitus",
+        "hvízdat",
+        "hvizd",
+        "pískání motýlů",
+        "pískání v uchu",
+        "zvonění v uších",
+        "pískavý zvuk",
+        "piští",
+        "píšťalka",
+        "píšťalky",
+        "kvílení",
+        "kvičení",
+        "pištivý zvuk",
+        "vysoký tón",
+        "mikrofon",
+        "pískání mikrofonu",
+        "zpětná vazba"
+      ],
+      "answerers": [
+        "a008",
+        "a042",
+        "a044",
+        "a058",
+        "a068",
+        "a086",
+        "a096",
+        "a085"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Hluk",
+      "votes": 8,
+      "aliases": [
+        "hluky",
+        "hukot",
+        "rachot",
+        "randál",
+        "kravál",
+        "rámus",
+        "hlučno",
+        "lomoz",
+        "burácení",
+        "dunění",
+        "hřmot",
+        "hlučnost",
+        "doprava",
+        "provoz",
+        "auta",
+        "silnice",
+        "motor",
+        "motory",
+        "řev motoru",
+        "hučení",
+        "hučet",
+        "rachocení",
+        "rachotit",
+        "bordel",
+        "hlučení",
+        "hluk z ulice",
+        "město",
+        "stroje",
+        "letadlo",
+        "letadla",
+        "motorka",
+        "motorky",
+        "dálnice",
+        "tramvaj"
+      ],
+      "answerers": [
+        "a013",
+        "a038",
+        "a057",
+        "a079",
+        "a081",
+        "a097",
+        "a099",
+        "a074"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Siréna",
+      "votes": 6,
+      "aliases": [
+        "sirény",
+        "alarm",
+        "houkačka",
+        "poplach",
+        "sirénu",
+        "siren",
+        "alarmy",
+        "poplašné zařízení",
+        "houkání",
+        "houkat",
+        "sanitka",
+        "sanitky",
+        "hasiči",
+        "policie",
+        "policejní siréna",
+        "autoalarm",
+        "alarm auta",
+        "alarm v autě",
+        "požární hlásič",
+        "hlásič",
+        "poplašný zvuk",
+        "signál",
+        "výstraha",
+        "majáky",
+        "houkačky"
+      ],
+      "answerers": [
+        "a002",
+        "a009",
+        "a033",
+        "a082",
+        "a098",
+        "a053"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Křik",
+      "votes": 6,
+      "aliases": [
+        "křičení",
+        "řev",
+        "vřískání",
+        "jekot",
+        "ječení",
+        "křičet",
+        "řvaní",
+        "řvát",
+        "ječet",
+        "vřískot",
+        "vřískat",
+        "výskání",
+        "pláč",
+        "brečení",
+        "řvoucí dítě",
+        "děti",
+        "dítě",
+        "křičící děti",
+        "hádka",
+        "hádání",
+        "nadávání",
+        "hulákání",
+        "povykování",
+        "povyk",
+        "vřeštění",
+        "mimino",
+        "miminko",
+        "řvaní dětí",
+        "pokřikování",
+        "štěkání",
+        "štěkot",
+        "pes",
+        "psi"
+      ],
+      "answerers": [
+        "a010",
+        "a023",
+        "a048",
+        "a063",
+        "a001",
+        "a055"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Vrzání",
+      "votes": 5,
+      "aliases": [
+        "vrzající dveře",
+        "vrzot",
+        "skřípot dveří",
+        "vržení",
+        "vrzat",
+        "vrzavý",
+        "vrznutí",
+        "vrzání dveří",
+        "dveře",
+        "vrzající podlaha",
+        "podlaha",
+        "postel",
+        "vrzání postele",
+        "parkety",
+        "schody",
+        "vrzání schodů",
+        "pant",
+        "panty",
+        "vrže",
+        "vrzání židle",
+        "židle",
+        "vrzající postel",
+        "kňourání dveří"
+      ],
+      "answerers": [
+        "a014",
+        "a018",
+        "a047",
+        "a064",
+        "a089"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Skřípání",
+      "votes": 5,
+      "aliases": [
+        "skřípění",
+        "skřípot",
+        "skřípat",
+        "skřípnutí",
+        "skřípání zubů",
+        "zuby",
+        "skřípání brzd",
+        "brzdy",
+        "brzdění",
+        "skřípání křídy",
+        "křída",
+        "tabule",
+        "škrábání",
+        "škrábání na tabuli",
+        "nehty po tabuli",
+        "nehty",
+        "vidlička po talíři",
+        "příbor po talíři",
+        "polystyren",
+        "kreakání",
+        "skřehotání",
+        "skřípání kol",
+        "kola",
+        "vlak",
+        "koleje",
+        "drhnutí"
+      ],
+      "answerers": [
+        "a035",
+        "a037",
+        "a066",
+        "a100",
+        "a080"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Budík",
+      "votes": 4,
+      "aliases": [
+        "budíky",
+        "budíku",
+        "zvonění budíku",
+        "buzení",
+        "budíček",
+        "vstávání",
+        "ráno",
+        "ranní budík",
+        "budík na mobilu",
+        "mobil",
+        "telefon",
+        "vyzvánění",
+        "vyzváněcí tón",
+        "ranní vstávání",
+        "probouzení",
+        "budík do práce",
+        "alarm na mobilu",
+        "budíček ráno",
+        "hodiny",
+        "tikání",
+        "tikání hodin"
+      ],
+      "answerers": [
+        "a006",
+        "a028",
+        "a090",
+        "a095"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Klakson",
+      "votes": 4,
+      "answerers": [
+        "a012",
+        "a083",
+        "a059",
+        "a091"
+      ]
+    },
+    {
+      "text": "Vrčení",
+      "votes": 4,
+      "answerers": [
+        "a015",
+        "a065",
+        "a094",
+        "a032"
+      ]
+    },
+    {
+      "text": "Bzučení",
+      "votes": 3,
+      "answerers": [
+        "a022",
+        "a045",
+        "a092"
+      ]
+    },
+    {
+      "text": "Pípání",
+      "votes": 1,
+      "answerers": [
+        "a025"
+      ]
+    },
+    {
+      "text": "Šumění",
+      "votes": 1,
+      "answerers": [
+        "a016"
+      ]
+    },
+    {
+      "text": "Traktor",
+      "votes": 1,
+      "answerers": [
+        "a039"
+      ]
+    },
+    {
+      "text": "Kombajn",
+      "votes": 1,
+      "answerers": [
+        "a088"
+      ]
+    },
+    {
+      "text": "Zvonění",
+      "votes": 1,
+      "answerers": [
+        "a051"
+      ]
+    },
+    {
+      "text": "Vrtulník",
+      "votes": 1,
+      "answerers": [
+        "a046"
+      ]
+    },
+    {
+      "text": "Vysavač",
+      "votes": 1,
+      "answerers": [
+        "a069"
+      ]
+    },
+    {
+      "text": "Hudba",
+      "votes": 1,
+      "answerers": [
+        "a070"
+      ]
+    },
+    {
+      "text": "Náraz",
+      "votes": 1,
+      "answerers": [
+        "a043"
+      ]
+    },
+    {
+      "text": "Klapání",
+      "votes": 1,
+      "answerers": [
+        "a054"
+      ]
+    },
+    {
+      "text": "Drnčení",
+      "votes": 1,
+      "answerers": [
+        "a077"
+      ]
+    },
+    {
+      "text": "Pilování",
+      "votes": 1,
+      "answerers": [
+        "a084"
+      ]
+    },
+    {
+      "text": "Sluchátka",
+      "votes": 1,
+      "answerers": [
+        "a087"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Vrískání",
+      "answer": "Křik"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Sirény",
+      "answer": "Siréna"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "budík",
+      "answer": "Budík"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "pískání",
+      "answer": "Pískání"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "siréna",
+      "answer": "Siréna"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "křik",
+      "answer": "Křik"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "klakson",
+      "answer": "Klakson"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "vrzání",
+      "answer": "Vrzání"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "Vrčení",
+      "answer": "Vrčení"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "šumění",
+      "answer": "Šumění"
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "Vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Vrzání",
+      "answer": "Vrzání"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "bzučení",
+      "answer": "Bzučení"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "křik",
+      "answer": "Křik"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "Pípání",
+      "answer": "Pípání"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "budík",
+      "answer": "Budík"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Bručení",
+      "answer": "Vrčení"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "siréna",
+      "answer": "Siréna"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "Skřípění",
+      "answer": "Skřípání"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Sírání",
+      "answer": null
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Skřípání.",
+      "answer": "Skřípání"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Traktor",
+      "answer": "Traktor"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "Svíčení",
+      "answer": null
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "pískání",
+      "answer": "Pískání"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "náraz",
+      "answer": "Náraz"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "pištění",
+      "answer": "Pískání"
+    },
+    {
+      "answerer": "a045",
+      "model": "mistralai/mistral-small-2603",
+      "persona": "stepan-klatovy",
+      "raw": "bzučení",
+      "answer": "Bzučení"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "vrtulák",
+      "answer": "Vrtulník"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "vrzání",
+      "answer": "Vrzání"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "Křik",
+      "answer": "Křik"
+    },
+    {
+      "answerer": "a049",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "pavla-brno",
+      "raw": "Vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-saba",
+      "persona": "aneta-holesovice",
+      "raw": "zvonění",
+      "answer": "Zvonění"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "alarm",
+      "answer": "Siréna"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "klapy",
+      "answer": "Klapání"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-v4-flash",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "Vrskot",
+      "answer": "Křik"
+    },
+    {
+      "answerer": "a056",
+      "model": "deepseek/deepseek-v4-pro",
+      "persona": "dagmar-teplice",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "pískání",
+      "answer": "Pískání"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "trubení",
+      "answer": "Klakson"
+    },
+    {
+      "answerer": "a060",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "jaroslava-ostrava",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a061",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "denisa-jicin",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "křik",
+      "answer": "Křik"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "vrzání",
+      "answer": "Vrzání"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Vrčení",
+      "answer": "Vrčení"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "skřípání",
+      "answer": "Skřípání"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "piskání",
+      "answer": "Pískání"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "vysavač",
+      "answer": "Vysavač"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "hudba",
+      "answer": "Hudba"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "vrták",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "rachot",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "vrtačka",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "}v{rtfm",
+      "answer": null
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "Drnčení.",
+      "answer": "Drnčení"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Vrtání",
+      "answer": "Vrtačka"
+    },
+    {
+      "answerer": "a079",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "pavel-stodulky",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Bělavý kreakání",
+      "answer": "Skřípání"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Hluk.",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Siréna.",
+      "answer": "Siréna"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "klakson",
+      "answer": "Klakson"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "pilování",
+      "answer": "Pilování"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "pískání motýlů",
+      "answer": "Pískání"
+    },
+    {
+      "answerer": "a086",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "stanislav-mikulov",
+      "raw": "pískání",
+      "answer": "Pískání"
+    },
+    {
+      "answerer": "a087",
+      "model": "x-ai/grok-4.3",
+      "persona": "sarka-most",
+      "raw": "Sluchátka",
+      "answer": "Sluchátka"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Kombajn",
+      "answer": "Kombajn"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "vrzání",
+      "answer": "Vrzání"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "budík",
+      "answer": "Budík"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Troubení",
+      "answer": "Klakson"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "bucení",
+      "answer": "Bzučení"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "ztrčetí",
+      "answer": null
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Vrčení",
+      "answer": "Vrčení"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "budík",
+      "answer": "Budík"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Pískání",
+      "answer": "Pískání"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "hluk",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Siréna",
+      "answer": "Siréna"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "hukot",
+      "answer": "Hluk"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Skřipání",
+      "answer": "Skřípání"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:05:11.854Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1229,
+    "durationMs": 100136,
+    "failed": 0,
+    "clusters": 24,
+    "topShare": 0.3
+  }
+}

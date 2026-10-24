@@ -1,0 +1,1049 @@
+{
+  "date": "2026-10-11",
+  "number": 11,
+  "questionId": "bolest-hlavy",
+  "question": "Co děláte, když vás bolí hlava?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Prášek",
+      "votes": 31,
+      "aliases": [
+        "prášky",
+        "prášků",
+        "tableta",
+        "tablety",
+        "tabletka",
+        "tabletku",
+        "tabletky",
+        "pilulka",
+        "pilulky",
+        "prášek na hlavu",
+        "práškem",
+        "prášeček",
+        "prášíček",
+        "tabletu",
+        "tablet",
+        "pilulku",
+        "pilulek",
+        "pilule",
+        "kapsle",
+        "kapsli",
+        "beru prášek",
+        "vezmu si prášek",
+        "prášek na bolest",
+        "prášky na bolest",
+        "šumák",
+        "šumivá tableta"
+      ],
+      "answerers": [
+        "a002",
+        "a005",
+        "a007",
+        "a008",
+        "a011",
+        "a017",
+        "a020",
+        "a021",
+        "a024",
+        "a025",
+        "a026",
+        "a030",
+        "a031",
+        "a041",
+        "a045",
+        "a062",
+        "a066",
+        "a067",
+        "a069",
+        "a075",
+        "a077",
+        "a087",
+        "a088",
+        "a089",
+        "a044",
+        "a059",
+        "a061",
+        "a071",
+        "a073",
+        "a074",
+        "a096"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Léky",
+      "votes": 17,
+      "aliases": [
+        "lék",
+        "léčiva",
+        "lektvar",
+        "beru léky",
+        "medikament",
+        "léku",
+        "lékem",
+        "lektvary",
+        "medikamenty",
+        "léčivo",
+        "vezmu si lék",
+        "analgetikum",
+        "analgetika",
+        "lék na bolest",
+        "lék proti bolesti",
+        "léky proti bolesti",
+        "utišující lék",
+        "lékárna",
+        "sirup",
+        "kapky",
+        "medicína"
+      ],
+      "answerers": [
+        "a013",
+        "a022",
+        "a023",
+        "a032",
+        "a034",
+        "a035",
+        "a038",
+        "a040",
+        "a042",
+        "a049",
+        "a052",
+        "a056",
+        "a063",
+        "a081",
+        "a083",
+        "a097",
+        "a085"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Paralen",
+      "votes": 12,
+      "aliases": [
+        "paralenu",
+        "paracetamol",
+        "paracetamolu",
+        "panadol",
+        "paralen grip",
+        "paralenem",
+        "paraleny",
+        "coldrex",
+        "acifein",
+        "efferalgan",
+        "modafen"
+      ],
+      "answerers": [
+        "a004",
+        "a033",
+        "a039",
+        "a053",
+        "a054",
+        "a064",
+        "a068",
+        "a078",
+        "a090",
+        "a095",
+        "a015",
+        "a093"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Ibalgin",
+      "votes": 10,
+      "aliases": [
+        "ibalginu",
+        "ibuprofen",
+        "ibuprofenu",
+        "nurofen",
+        "brufen",
+        "ibalginem",
+        "ibalginy",
+        "ibumax",
+        "ibak",
+        "ibáček",
+        "ibalgínek",
+        "nalgesin",
+        "naproxen",
+        "veral",
+        "diklofenak",
+        "ataralgin"
+      ],
+      "answerers": [
+        "a003",
+        "a006",
+        "a048",
+        "a070",
+        "a072",
+        "a084",
+        "a086",
+        "a050",
+        "a051",
+        "a091"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Odpočinek",
+      "votes": 8,
+      "aliases": [
+        "odpočívám",
+        "odpočívat",
+        "odpočívej",
+        "klid",
+        "ležím",
+        "ležení",
+        "lehnu si",
+        "relax",
+        "odpočinku",
+        "odpočinu si",
+        "ticho",
+        "ležet",
+        "lehnout si",
+        "ulehnu",
+        "čekám",
+        "počkám",
+        "čekat",
+        "relaxace",
+        "relaxuji",
+        "zatemním",
+        "tma",
+        "pauza",
+        "přestávka",
+        "nic nedělám",
+        "vydržím",
+        "odpočívání",
+        "gauč",
+        "meditace",
+        "masáž"
+      ],
+      "answerers": [
+        "a009",
+        "a012",
+        "a019",
+        "a092",
+        "a058",
+        "a082",
+        "a094",
+        "a080"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Spánek",
+      "votes": 4,
+      "aliases": [
+        "spím",
+        "spát",
+        "jdu spát",
+        "vyspím se",
+        "spaní",
+        "spánku",
+        "vyspat se",
+        "prospím",
+        "zdřímnu si",
+        "šlofík",
+        "šlofíka",
+        "dřímota",
+        "zdřímnutí",
+        "postel",
+        "jdu do postele",
+        "usnu",
+        "schrupnu si",
+        "chrupka",
+        "spinkám",
+        "spinkat",
+        "dáchnu si"
+      ],
+      "answerers": [
+        "a010",
+        "a014",
+        "a018",
+        "a027"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Aspirin",
+      "votes": 4,
+      "aliases": [
+        "aspirinu",
+        "acylpyrin",
+        "acylpyrinu",
+        "celaskon aspirin",
+        "kyselina acetylsalicylová",
+        "aspirinem",
+        "aspiriny",
+        "anopyrin",
+        "alka seltzer",
+        "aspirínek"
+      ],
+      "answerers": [
+        "a001",
+        "a057",
+        "a065",
+        "a100"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Čaj",
+      "votes": 4,
+      "aliases": [
+        "čaje",
+        "piju čaj",
+        "čajík",
+        "bylinkový čaj",
+        "čaji",
+        "čajem",
+        "čajíček",
+        "uvařím čaj",
+        "detoxikační čaj",
+        "bylinky",
+        "bylinný čaj",
+        "mátový čaj",
+        "máta",
+        "heřmánek",
+        "zelený čaj",
+        "meduňka",
+        "pití",
+        "teplý nápoj",
+        "šípek",
+        "lipový čaj",
+        "káva",
+        "kafe"
+      ],
+      "answerers": [
+        "a028",
+        "a036",
+        "a037",
+        "a046"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Voda",
+      "votes": 2,
+      "answerers": [
+        "a029",
+        "a043"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Aspirin",
+      "answer": "Aspirin"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "Ibalgin",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "ibalgin",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "odpočinek",
+      "answer": "Odpočinek"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "spím",
+      "answer": "Spánek"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "odpočinek",
+      "answer": "Odpočinek"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "leky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "spánek",
+      "answer": "Spánek"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "paracetamol",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "odpověď",
+      "answer": null
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "spím",
+      "answer": "Spánek"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Odpočívám",
+      "answer": "Odpočinek"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "lék",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "prášky",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "spánek",
+      "answer": "Spánek"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "čaj",
+      "answer": "Čaj"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "voda",
+      "answer": "Voda"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "Léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "Lék",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Piju čaj",
+      "answer": "Čaj"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Pijte detoxikační čaj.",
+      "answer": "Čaj"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "Lék",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "Piju",
+      "answer": "Voda"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "tabletky",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a045",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "stepan-klatovy",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "čaj",
+      "answer": "Čaj"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "přijímám",
+      "answer": null
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "Ibalgin",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "ibuprofen",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "aneta-holesovice",
+      "raw": "Ibuprofen",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a055",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "něco",
+      "answer": null
+    },
+    {
+      "answerer": "a056",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "dagmar-teplice",
+      "raw": "léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Aspirin",
+      "answer": "Aspirin"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "klid",
+      "answer": "Odpočinek"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "Pilulka",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a060",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "persona": "jaroslava-ostrava",
+      "raw": "Pr",
+      "answer": null
+    },
+    {
+      "answerer": "a061",
+      "model": "x-ai/grok-4.3",
+      "persona": "denisa-jicin",
+      "raw": "tablety",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "lék",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Aspirin",
+      "answer": "Aspirin"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Ibalgin",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Tabletku",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "ibalgín",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "Tableta",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "tabletku",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "}",
+      "answer": null
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "prášky",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a079",
+      "model": "z-ai/glm-4.6",
+      "persona": "pavel-stodulky",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Čekám",
+      "answer": "Odpočinek"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Léky.",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Ležím.",
+      "answer": "Odpočinek"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "léky",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "Ibalgin",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "lektvar",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a086",
+      "model": "minimax/minimax-01",
+      "persona": "stanislav-mikulov",
+      "raw": "Ibalgin",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a087",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "sarka-most",
+      "raw": "prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "Prášek",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Ibuprofen",
+      "answer": "Ibalgin"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "odpočívej",
+      "answer": "Odpočinek"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Paracetamol",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Ležím",
+      "answer": "Odpočinek"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "Paralen",
+      "answer": "Paralen"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Tablety",
+      "answer": "Prášek"
+    },
+    {
+      "answerer": "a097",
+      "model": "amazon/nova-micro-v1",
+      "persona": "martina-beroun",
+      "raw": "lék",
+      "answer": "Léky"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Párka",
+      "answer": null
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Jdu na lekce.",
+      "answer": null
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Aspirin",
+      "answer": "Aspirin"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:30:05.641Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1225,
+    "durationMs": 130814,
+    "failed": 1,
+    "clusters": 9,
+    "topShare": 0.313
+  }
+}

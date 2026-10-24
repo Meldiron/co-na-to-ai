@@ -1,0 +1,1129 @@
+{
+  "date": "2026-10-07",
+  "number": 7,
+  "questionId": "stroj-casu",
+  "question": "Do které doby byste se vydali strojem času?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Budoucnost",
+      "votes": 21,
+      "aliases": [
+        "budoucnosti",
+        "do budoucnosti",
+        "budoucí",
+        "příští století",
+        "budoucno",
+        "zítřek",
+        "dopředu",
+        "vpřed",
+        "za sto let",
+        "za tisíc let",
+        "rok 3000",
+        "rok 2100",
+        "zítra",
+        "futuro",
+        "future",
+        "sci-fi",
+        "vesmírná éra",
+        "příští tisíciletí",
+        "za 100 let",
+        "za 50 let",
+        "dvacáté druhé století",
+        "22. století",
+        "23. století",
+        "daleká budoucnost",
+        "blízká budoucnost"
+      ],
+      "answerers": [
+        "a002",
+        "a016",
+        "a019",
+        "a020",
+        "a022",
+        "a025",
+        "a030",
+        "a042",
+        "a045",
+        "a048",
+        "a051",
+        "a061",
+        "a063",
+        "a066",
+        "a073",
+        "a077",
+        "a087",
+        "a094",
+        "a095",
+        "a098",
+        "a084"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Mládí",
+      "votes": 16,
+      "aliases": [
+        "mladost",
+        "do mládí",
+        "mladosti",
+        "mladá léta",
+        "mladé léta",
+        "léta mládí",
+        "dospívání",
+        "puberta",
+        "teenager",
+        "náctiletí",
+        "studentská léta",
+        "studium",
+        "vysoká škola",
+        "střední škola",
+        "gympl",
+        "škola",
+        "mládenectví",
+        "mladický věk",
+        "když jsem byl mladý",
+        "mladá"
+      ],
+      "answerers": [
+        "a001",
+        "a005",
+        "a007",
+        "a013",
+        "a014",
+        "a024",
+        "a028",
+        "a029",
+        "a033",
+        "a035",
+        "a050",
+        "a059",
+        "a065",
+        "a069",
+        "a089",
+        "a100"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Středověk",
+      "votes": 13,
+      "aliases": [
+        "středověku",
+        "středověké",
+        "do středověku",
+        "středověká doba",
+        "rytíři",
+        "rytíř",
+        "hrady",
+        "hrad",
+        "karel iv",
+        "karel čtvrtý",
+        "doba karla iv",
+        "gotika",
+        "husité",
+        "husitství",
+        "jan hus",
+        "doba rytířů",
+        "křížové výpravy",
+        "lucemburkové",
+        "přemyslovci",
+        "doba hradů",
+        "feudalismus",
+        "čarodějnice",
+        "inkvizice",
+        "vikingové",
+        "raný středověk",
+        "vrcholný středověk"
+      ],
+      "answerers": [
+        "a003",
+        "a006",
+        "a018",
+        "a026",
+        "a031",
+        "a037",
+        "a038",
+        "a049",
+        "a064",
+        "a067",
+        "a078",
+        "a081",
+        "a091"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Minulost",
+      "votes": 13,
+      "aliases": [
+        "minulosti",
+        "do minulosti",
+        "minulý",
+        "prošlost",
+        "historie",
+        "dávno",
+        "zpátky",
+        "zpět",
+        "dozadu",
+        "do historie",
+        "dávná minulost",
+        "stará doba",
+        "staré časy",
+        "dávné časy",
+        "dávnověk",
+        "starověk",
+        "antika",
+        "řím",
+        "starověký řím",
+        "egypt",
+        "starověký egypt",
+        "řecko",
+        "faraoni",
+        "dějiny",
+        "dřív",
+        "dříve",
+        "minulé časy",
+        "nazpět"
+      ],
+      "answerers": [
+        "a008",
+        "a010",
+        "a032",
+        "a041",
+        "a057",
+        "a070",
+        "a071",
+        "a080",
+        "a083",
+        "a092",
+        "a093",
+        "a097",
+        "a085"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Dětství",
+      "votes": 7,
+      "aliases": [
+        "do dětství",
+        "dětská léta",
+        "dětstvím",
+        "dětství své",
+        "dětství mé",
+        "dítě",
+        "děti",
+        "když jsem byl malý",
+        "školka",
+        "školku",
+        "mateřská škola",
+        "základní škola",
+        "základka",
+        "prázdniny",
+        "malý",
+        "malá",
+        "mé dětství",
+        "dětské časy",
+        "batole",
+        "narození",
+        "miminko"
+      ],
+      "answerers": [
+        "a017",
+        "a039",
+        "a054",
+        "a056",
+        "a086",
+        "a088",
+        "a090"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Století",
+      "votes": 6,
+      "aliases": [
+        "sedmdesátá",
+        "padesátá",
+        "devadesátky",
+        "dvacáté století",
+        "šedesátá",
+        "osmdesátky",
+        "léta",
+        "dvacátého",
+        "20. století",
+        "19. století",
+        "devatenácté století",
+        "18. století",
+        "sedmdesátky",
+        "osmdesátá",
+        "šedesátky",
+        "devadesátá",
+        "padesátky",
+        "dvacátá léta",
+        "třicátá léta",
+        "první republika",
+        "normalizace",
+        "komunismus",
+        "socialismus",
+        "totáč",
+        "totalita",
+        "desetiletí",
+        "sedmdesátá léta",
+        "osmdesátá léta",
+        "devadesátá léta",
+        "retro",
+        "hippies"
+      ],
+      "answerers": [
+        "a040",
+        "a047",
+        "a075",
+        "a052",
+        "a053",
+        "a055"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Pravěk",
+      "votes": 4,
+      "aliases": [
+        "pravěku",
+        "doba kamenná",
+        "dinosauři",
+        "prehistorie",
+        "do pravěku",
+        "pravěké",
+        "dinosaurus",
+        "druhohory",
+        "jura",
+        "jurský park",
+        "doba ledová",
+        "pračlověk",
+        "neandrtálci",
+        "mamuti",
+        "mamut",
+        "jeskynní lidé",
+        "prvohory",
+        "třetihory",
+        "doba bronzová",
+        "paleolit",
+        "pravěcí lidé"
+      ],
+      "answerers": [
+        "a011",
+        "a021",
+        "a072",
+        "a074"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Současnost",
+      "votes": 4,
+      "aliases": [
+        "dnešek",
+        "dnes",
+        "přítomnost",
+        "současnosti",
+        "teď",
+        "nyní",
+        "tady a teď",
+        "dnešní doba",
+        "současná doba",
+        "nikam",
+        "zůstal bych",
+        "dneska",
+        "aktuální doba",
+        "moderní doba",
+        "nyní a tady",
+        "žádné",
+        "nikde",
+        "tady",
+        "teďka"
+      ],
+      "answerers": [
+        "a012",
+        "a015",
+        "a062",
+        "a082"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Renesance",
+      "votes": 3,
+      "answerers": [
+        "a004",
+        "a034",
+        "a068"
+      ]
+    },
+    {
+      "text": "Republika",
+      "votes": 2,
+      "answerers": [
+        "a027",
+        "a046"
+      ]
+    },
+    {
+      "text": "Baroko",
+      "votes": 1,
+      "answerers": [
+        "a009"
+      ]
+    },
+    {
+      "text": "Důchod",
+      "votes": 1,
+      "answerers": [
+        "a023"
+      ]
+    },
+    {
+      "text": "Vánoce",
+      "votes": 1,
+      "answerers": [
+        "a036"
+      ]
+    },
+    {
+      "text": "Křesťanství",
+      "votes": 1,
+      "answerers": [
+        "a058"
+      ]
+    },
+    {
+      "text": "Revoluce",
+      "votes": 1,
+      "answerers": [
+        "a099"
+      ]
+    },
+    {
+      "text": "Babička",
+      "votes": 1,
+      "answerers": [
+        "a096"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Renesance",
+      "answer": "Renesance"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "baroko",
+      "answer": "Baroko"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "pravěk",
+      "answer": "Pravěk"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "současnost",
+      "answer": "Současnost"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "současnost",
+      "answer": "Současnost"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a017",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "oldrich-jihlava",
+      "raw": "Dětství",
+      "answer": "Dětství"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Budoucnosti",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Pravěk",
+      "answer": "Pravěk"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "důchody",
+      "answer": "Důchod"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "první republika",
+      "answer": "Republika"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "renesance",
+      "answer": "Renesance"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "mladost",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Vánoce",
+      "answer": "Vánoce"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "dětství",
+      "answer": "Dětství"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "sedmdesátá",
+      "answer": "Století"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "míň",
+      "answer": null
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "doletionda",
+      "answer": null
+    },
+    {
+      "answerer": "a045",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "stepan-klatovy",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "předválečná Praha",
+      "answer": "Republika"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "padesátá",
+      "answer": "Století"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "aneta-holesovice",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "devadesátky",
+      "answer": "Století"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "devadesátky",
+      "answer": "Století"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "dětství",
+      "answer": "Dětství"
+    },
+    {
+      "answerer": "a055",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "dvacátého",
+      "answer": "Století"
+    },
+    {
+      "answerer": "a056",
+      "model": "x-ai/grok-4.3",
+      "persona": "dagmar-teplice",
+      "raw": "dětství",
+      "answer": "Dětství"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "křesťanství",
+      "answer": "Křesťanství"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a060",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "persona": "jaroslava-ostrava",
+      "raw": "M",
+      "answer": null
+    },
+    {
+      "answerer": "a061",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "denisa-jicin",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "dnešek",
+      "answer": "Současnost"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Mládi",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "Renesance",
+      "answer": "Renesance"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "Pravěk",
+      "answer": "Pravěk"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "Pravěk",
+      "answer": "Pravěk"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "padesátá",
+      "answer": "Století"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "Kralovec",
+      "answer": null
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a079",
+      "model": "z-ai/glm-4.6",
+      "persona": "pavel-stodulky",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Středověk",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Dnes.",
+      "answer": "Současnost"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "do minulosti",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "příští století",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "prošlost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a086",
+      "model": "minimax/minimax-01",
+      "persona": "stanislav-mikulov",
+      "raw": "Dětství",
+      "answer": "Dětství"
+    },
+    {
+      "answerer": "a087",
+      "model": "amazon/nova-micro-v1",
+      "persona": "sarka-most",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Dětství",
+      "answer": "Dětství"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "do mládí",
+      "answer": "Mládí"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "dětství",
+      "answer": "Dětství"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Středověku",
+      "answer": "Středověk"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Do minulosti",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "K babičce",
+      "answer": "Babička"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "minulost",
+      "answer": "Minulost"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "budoucnost",
+      "answer": "Budoucnost"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Průmyslová revoluce",
+      "answer": "Revoluce"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Mládí",
+      "answer": "Mládí"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:47:01.478Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1305,
+    "durationMs": 161585,
+    "failed": 1,
+    "clusters": 16,
+    "topShare": 0.212
+  }
+}

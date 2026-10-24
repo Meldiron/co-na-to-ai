@@ -1,0 +1,1117 @@
+{
+  "date": "2026-10-06",
+  "number": 6,
+  "questionId": "spiz",
+  "question": "Co nesmí chybět ve spíži?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Mouka",
+      "votes": 34,
+      "aliases": [
+        "mouky",
+        "mouku",
+        "moučka",
+        "hladká mouka",
+        "polohrubá mouka",
+        "hrubá mouka",
+        "mouce",
+        "moukou",
+        "hladká",
+        "polohrubá",
+        "hrubá",
+        "pšeničná mouka",
+        "žitná mouka",
+        "celozrnná mouka",
+        "špaldová mouka",
+        "pečení",
+        "mouční"
+      ],
+      "answerers": [
+        "a002",
+        "a003",
+        "a005",
+        "a006",
+        "a007",
+        "a008",
+        "a009",
+        "a012",
+        "a019",
+        "a020",
+        "a021",
+        "a024",
+        "a026",
+        "a027",
+        "a028",
+        "a030",
+        "a031",
+        "a033",
+        "a041",
+        "a045",
+        "a049",
+        "a050",
+        "a054",
+        "a061",
+        "a063",
+        "a066",
+        "a069",
+        "a070",
+        "a071",
+        "a074",
+        "a078",
+        "a084",
+        "a091",
+        "a095"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Chleba",
+      "votes": 17,
+      "aliases": [
+        "chléb",
+        "pečivo",
+        "chlebík",
+        "chlebíček",
+        "bochník",
+        "rohlíky",
+        "brot",
+        "jídlo",
+        "chleby",
+        "chlebů",
+        "rohlík",
+        "houska",
+        "housky",
+        "bageta",
+        "bagety",
+        "veka",
+        "toast",
+        "toastový chleba",
+        "svačina",
+        "jídla",
+        "krajíc",
+        "knäckebrot",
+        "kaiserka",
+        "dalamánek",
+        "pečiva"
+      ],
+      "answerers": [
+        "a011",
+        "a013",
+        "a014",
+        "a016",
+        "a037",
+        "a038",
+        "a044",
+        "a046",
+        "a058",
+        "a059",
+        "a065",
+        "a075",
+        "a082",
+        "a085",
+        "a090",
+        "a100",
+        "a083"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Sůl",
+      "votes": 10,
+      "aliases": [
+        "sol",
+        "soli",
+        "solnička",
+        "kuchyňská sůl",
+        "mořská sůl",
+        "jodidovaná sůl",
+        "koření",
+        "solení",
+        "sůl a pepř",
+        "pepř"
+      ],
+      "answerers": [
+        "a017",
+        "a018",
+        "a022",
+        "a042",
+        "a051",
+        "a057",
+        "a060",
+        "a067",
+        "a077",
+        "a099"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Cukr",
+      "votes": 7,
+      "aliases": [
+        "cukru",
+        "cukřík",
+        "krystal",
+        "moučkový cukr",
+        "kostkový cukr",
+        "cukry",
+        "cukrem",
+        "cukříček",
+        "krupicový cukr",
+        "třtinový cukr",
+        "sladidlo",
+        "med",
+        "sladkosti",
+        "sladké",
+        "cukrovinky"
+      ],
+      "answerers": [
+        "a001",
+        "a010",
+        "a015",
+        "a034",
+        "a039",
+        "a079",
+        "a089"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Těstoviny",
+      "votes": 6,
+      "aliases": [
+        "těstovin",
+        "špagety",
+        "nudle",
+        "makarony",
+        "těstovárna",
+        "těstovina",
+        "moučné těstoviny",
+        "špageta",
+        "nudličky",
+        "penne",
+        "vřetena",
+        "kolínka",
+        "fusilli",
+        "farfalle",
+        "mašličky",
+        "lasagne",
+        "tagliatelle",
+        "flíčky",
+        "polévkové nudle",
+        "pasta",
+        "rýže",
+        "luštěniny",
+        "čočka"
+      ],
+      "answerers": [
+        "a025",
+        "a053",
+        "a055",
+        "a068",
+        "a081",
+        "a087"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Máslo",
+      "votes": 3,
+      "aliases": [
+        "másla",
+        "máselko",
+        "máslíčko",
+        "másle",
+        "máslem",
+        "másílko",
+        "tuk",
+        "margarín",
+        "rama",
+        "sádlo",
+        "olej",
+        "oleje",
+        "tuky",
+        "pomazánkové máslo",
+        "přepuštěné máslo",
+        "ghí"
+      ],
+      "answerers": [
+        "a040",
+        "a096",
+        "a098"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Pivo",
+      "votes": 2,
+      "aliases": [
+        "piva",
+        "pivko",
+        "pivečko",
+        "pivka",
+        "lahváč",
+        "pivem",
+        "lahváče",
+        "plechovka",
+        "plzeň",
+        "plzeňské",
+        "gambrinus",
+        "kozel",
+        "budvar",
+        "pilsner",
+        "staropramen",
+        "radegast",
+        "bernard",
+        "velkopopovický",
+        "alkohol",
+        "chlast",
+        "pití",
+        "pitíčko",
+        "desítka",
+        "dvanáctka",
+        "ležák",
+        "točené",
+        "nealko pivo",
+        "rum",
+        "vodka",
+        "basa piv",
+        "basa"
+      ],
+      "answerers": [
+        "a032",
+        "a062"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Káva",
+      "votes": 2,
+      "aliases": [
+        "kafe",
+        "kávu",
+        "kafíčko",
+        "kávy",
+        "kafčo",
+        "kávička",
+        "zrnková káva",
+        "mletá káva",
+        "instantní káva",
+        "rozpustná káva",
+        "turek",
+        "espresso",
+        "presso",
+        "nescafé",
+        "jacobs",
+        "tchibo",
+        "kapsle",
+        "kávové kapsle",
+        "kofein",
+        "caffé"
+      ],
+      "answerers": [
+        "a004",
+        "a094"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Mléko",
+      "votes": 1,
+      "answerers": [
+        "a023"
+      ]
+    },
+    {
+      "text": "Slivovice",
+      "votes": 1,
+      "answerers": [
+        "a029"
+      ]
+    },
+    {
+      "text": "Uzenina",
+      "votes": 1,
+      "answerers": [
+        "a035"
+      ]
+    },
+    {
+      "text": "Cibule",
+      "votes": 1,
+      "answerers": [
+        "a048"
+      ]
+    },
+    {
+      "text": "Krupice",
+      "votes": 1,
+      "answerers": [
+        "a047"
+      ]
+    },
+    {
+      "text": "Čaj",
+      "votes": 1,
+      "answerers": [
+        "a052"
+      ]
+    },
+    {
+      "text": "Hlíva",
+      "votes": 1,
+      "answerers": [
+        "a064"
+      ]
+    },
+    {
+      "text": "Brambory",
+      "votes": 1,
+      "answerers": [
+        "a072"
+      ]
+    },
+    {
+      "text": "Chipsy",
+      "votes": 1,
+      "answerers": [
+        "a073"
+      ]
+    },
+    {
+      "text": "Víno",
+      "votes": 1,
+      "answerers": [
+        "a086"
+      ]
+    },
+    {
+      "text": "Zavařenina",
+      "votes": 1,
+      "answerers": [
+        "a088"
+      ]
+    },
+    {
+      "text": "Oběd",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Cukr",
+      "answer": "Cukr"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Káva",
+      "answer": "Káva"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "cukr",
+      "answer": "Cukr"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "chleba",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "chléb",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "chleba",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "cukr",
+      "answer": "Cukr"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "pečivo",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "mléko",
+      "answer": "Mléko"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "Těstovárna",
+      "answer": "Těstoviny"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "slivovice",
+      "answer": "Slivovice"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "cukr",
+      "answer": "Cukr"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "uzenina",
+      "answer": "Uzenina"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "kapesník",
+      "answer": null
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Chleba",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "chleb",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Cukr",
+      "answer": "Cukr"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "Máslo",
+      "answer": "Máslo"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "poduška",
+      "answer": null
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "Chléb",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a045",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "stepan-klatovy",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "chléb",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "krupicový",
+      "answer": "Krupice"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "Cibule",
+      "answer": "Cibule"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "aneta-holesovice",
+      "raw": "sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "čaj",
+      "answer": "Čaj"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "těstoviny",
+      "answer": "Těstoviny"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "těstoviny",
+      "answer": "Těstoviny"
+    },
+    {
+      "answerer": "a056",
+      "model": "z-ai/glm-4.6",
+      "persona": "dagmar-teplice",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "chléb",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "chléb",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a060",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "jaroslava-ostrava",
+      "raw": "sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a061",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "denisa-jicin",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "hlíva",
+      "answer": "Hlíva"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "chleba",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "těstoviny",
+      "answer": "Těstoviny"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "brambory",
+      "answer": "Brambory"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "čipsy",
+      "answer": "Chipsy"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "chleba",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "}",
+      "answer": null
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "sůl",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a079",
+      "model": "x-ai/grok-4.3",
+      "persona": "pavel-stodulky",
+      "raw": "Cukr",
+      "answer": "Cukr"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Oběd",
+      "answer": "Oběd"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Moučné těstoviny.",
+      "answer": "Těstoviny"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Chléb",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "jídlo",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "brot",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a086",
+      "model": "bytedance-seed/seed-2.0-lite",
+      "persona": "stanislav-mikulov",
+      "raw": "Víno",
+      "answer": "Víno"
+    },
+    {
+      "answerer": "a087",
+      "model": "minimax/minimax-01",
+      "persona": "sarka-most",
+      "raw": "Těstoviny",
+      "answer": "Těstoviny"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "zavařenina",
+      "answer": "Zavařenina"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "Cukr",
+      "answer": "Cukr"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "chleba",
+      "answer": "Chleba"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "klíče",
+      "answer": null
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "překryv",
+      "answer": null
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Káva",
+      "answer": "Káva"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "mouka",
+      "answer": "Mouka"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Máslo",
+      "answer": "Máslo"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "peníze",
+      "answer": null
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "máslo",
+      "answer": "Máslo"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "sol a soľ",
+      "answer": "Sůl"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Chleba",
+      "answer": "Chleba"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:14:17.629Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1045,
+    "durationMs": 54629,
+    "failed": 1,
+    "clusters": 20,
+    "topShare": 0.343
+  }
+}

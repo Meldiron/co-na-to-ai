@@ -1,0 +1,1093 @@
+{
+  "date": "2026-10-14",
+  "number": 14,
+  "questionId": "jmeno-pro-psa",
+  "question": "Jaké jméno dáte psovi?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Rex",
+      "votes": 33,
+      "aliases": [
+        "reks",
+        "rexík",
+        "rexi",
+        "rexe",
+        "rexíku",
+        "komisař rex",
+        "rexovi",
+        "rexíček"
+      ],
+      "answerers": [
+        "a003",
+        "a004",
+        "a006",
+        "a008",
+        "a014",
+        "a018",
+        "a019",
+        "a032",
+        "a034",
+        "a041",
+        "a042",
+        "a045",
+        "a048",
+        "a049",
+        "a050",
+        "a051",
+        "a054",
+        "a055",
+        "a057",
+        "a058",
+        "a062",
+        "a063",
+        "a064",
+        "a065",
+        "a068",
+        "a071",
+        "a072",
+        "a078",
+        "a089",
+        "a091",
+        "a094",
+        "a095",
+        "a096"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Alík",
+      "votes": 14,
+      "aliases": [
+        "alíku",
+        "alíček",
+        "alíkovi",
+        "alíčku",
+        "ali",
+        "alda"
+      ],
+      "answerers": [
+        "a002",
+        "a007",
+        "a027",
+        "a028",
+        "a030",
+        "a031",
+        "a039",
+        "a052",
+        "a056",
+        "a061",
+        "a069",
+        "a073",
+        "a076",
+        "a100"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Max",
+      "votes": 12,
+      "aliases": [
+        "maxík",
+        "maxi",
+        "maxe",
+        "maxíku",
+        "maxovi",
+        "maxíček",
+        "maxmilián",
+        "maxim"
+      ],
+      "answerers": [
+        "a009",
+        "a012",
+        "a015",
+        "a020",
+        "a023",
+        "a026",
+        "a033",
+        "a037",
+        "a038",
+        "a066",
+        "a077",
+        "a088"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Azor",
+      "votes": 5,
+      "aliases": [
+        "azore",
+        "azorek",
+        "azora",
+        "azorku",
+        "azík",
+        "azorovi",
+        "azorík",
+        "azoreček"
+      ],
+      "answerers": [
+        "a021",
+        "a067",
+        "a070",
+        "a074",
+        "a086"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Ben",
+      "votes": 3,
+      "aliases": [
+        "benny",
+        "benek",
+        "bena",
+        "beníku",
+        "beník",
+        "benjamin",
+        "bene",
+        "benda",
+        "beníček",
+        "benji"
+      ],
+      "answerers": [
+        "a011",
+        "a017",
+        "a053"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Bobík",
+      "votes": 3,
+      "aliases": [
+        "bobby",
+        "bobeš",
+        "bob",
+        "bobe",
+        "bobíku",
+        "bobíček",
+        "bobina",
+        "bobeši",
+        "bobíkovi"
+      ],
+      "answerers": [
+        "a010",
+        "a040",
+        "a013"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Bára",
+      "votes": 2,
+      "aliases": [
+        "báruška",
+        "barunka",
+        "barča",
+        "báro",
+        "barbora",
+        "barbara",
+        "bárinka",
+        "barči",
+        "barbie",
+        "bárinko",
+        "baruš",
+        "báru"
+      ],
+      "answerers": [
+        "a022",
+        "a079"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Blesk",
+      "votes": 2,
+      "aliases": [
+        "blesku",
+        "blesky",
+        "bleskík",
+        "blesek",
+        "bleskáč",
+        "bleskovi",
+        "blesk mcqueen"
+      ],
+      "answerers": [
+        "a024",
+        "a025"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Šarik",
+      "votes": 2,
+      "answerers": [
+        "a075",
+        "a059"
+      ]
+    },
+    {
+      "text": "Bella",
+      "votes": 2,
+      "answerers": [
+        "a098",
+        "a001"
+      ]
+    },
+    {
+      "text": "Punta",
+      "votes": 1,
+      "answerers": [
+        "a005"
+      ]
+    },
+    {
+      "text": "Boraň",
+      "votes": 1,
+      "answerers": [
+        "a016"
+      ]
+    },
+    {
+      "text": "Brok",
+      "votes": 1,
+      "answerers": [
+        "a029"
+      ]
+    },
+    {
+      "text": "Bors",
+      "votes": 1,
+      "answerers": [
+        "a035"
+      ]
+    },
+    {
+      "text": "Všeteček",
+      "votes": 1,
+      "answerers": [
+        "a036"
+      ]
+    },
+    {
+      "text": "Ravadilic",
+      "votes": 1,
+      "answerers": [
+        "a043"
+      ]
+    },
+    {
+      "text": "Šárka",
+      "votes": 1,
+      "answerers": [
+        "a044"
+      ]
+    },
+    {
+      "text": "Líba",
+      "votes": 1,
+      "answerers": [
+        "a046"
+      ]
+    },
+    {
+      "text": "Bureš",
+      "votes": 1,
+      "answerers": [
+        "a047"
+      ]
+    },
+    {
+      "text": "Oskar",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    },
+    {
+      "text": "Žofie",
+      "votes": 1,
+      "answerers": [
+        "a081"
+      ]
+    },
+    {
+      "text": "Filípek",
+      "votes": 1,
+      "answerers": [
+        "a082"
+      ]
+    },
+    {
+      "text": "Budík",
+      "votes": 1,
+      "answerers": [
+        "a083"
+      ]
+    },
+    {
+      "text": "Háček",
+      "votes": 1,
+      "answerers": [
+        "a084"
+      ]
+    },
+    {
+      "text": "Máček",
+      "votes": 1,
+      "answerers": [
+        "a085"
+      ]
+    },
+    {
+      "text": "Špunda",
+      "votes": 1,
+      "answerers": [
+        "a087"
+      ]
+    },
+    {
+      "text": "Baryk",
+      "votes": 1,
+      "answerers": [
+        "a090"
+      ]
+    },
+    {
+      "text": "Milan",
+      "votes": 1,
+      "answerers": [
+        "a092"
+      ]
+    },
+    {
+      "text": "Fifinka",
+      "votes": 1,
+      "answerers": [
+        "a097"
+      ]
+    },
+    {
+      "text": "Buddy",
+      "votes": 1,
+      "answerers": [
+        "a099"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Běla",
+      "answer": "Bella"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Punta",
+      "answer": "Punta"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "Bobby",
+      "answer": "Bobík"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "Ben",
+      "answer": "Ben"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "Bobeš",
+      "answer": "Bobík"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "Maxík",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "Boraň",
+      "answer": "Boraň"
+    },
+    {
+      "answerer": "a017",
+      "model": "openai/gpt-5.2",
+      "persona": "oldrich-jihlava",
+      "raw": "Ben",
+      "answer": "Ben"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Azor",
+      "answer": "Azor"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "Bára",
+      "answer": "Bára"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Blesk",
+      "answer": "Blesk"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "Blesk",
+      "answer": "Blesk"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "Brok",
+      "answer": "Brok"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "}Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "Bors",
+      "answer": "Bors"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Všeteček",
+      "answer": "Všeteček"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Max.",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "Bobi",
+      "answer": "Bobík"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "Ravadilic",
+      "answer": "Ravadilic"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "Šárka",
+      "answer": "Šárka"
+    },
+    {
+      "answerer": "a045",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "stepan-klatovy",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "Líba",
+      "answer": "Líba"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "Bureš",
+      "answer": "Bureš"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "aneta-holesovice",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "Ben",
+      "answer": "Ben"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a056",
+      "model": "x-ai/grok-4.3",
+      "persona": "dagmar-teplice",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "Šarlik",
+      "answer": "Šarik"
+    },
+    {
+      "answerer": "a060",
+      "model": "z-ai/glm-4.6",
+      "persona": "jaroslava-ostrava",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a061",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "denisa-jicin",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "Reks",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "Azor",
+      "answer": "Azor"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Azor",
+      "answer": "Azor"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "Azor",
+      "answer": "Azor"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "Šarik",
+      "answer": "Šarik"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "Alík",
+      "answer": "Alík"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a079",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "pavel-stodulky",
+      "raw": "Bára",
+      "answer": "Bára"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Oskar",
+      "answer": "Oskar"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Žofie",
+      "answer": "Žofie"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Filipek.",
+      "answer": "Filípek"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "Budík",
+      "answer": "Budík"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "Háček",
+      "answer": "Háček"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "Máček",
+      "answer": "Máček"
+    },
+    {
+      "answerer": "a086",
+      "model": "minimax/minimax-01",
+      "persona": "stanislav-mikulov",
+      "raw": "Azor",
+      "answer": "Azor"
+    },
+    {
+      "answerer": "a087",
+      "model": "amazon/nova-micro-v1",
+      "persona": "sarka-most",
+      "raw": "Špunda",
+      "answer": "Špunda"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Max",
+      "answer": "Max"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "Baryk",
+      "answer": "Baryk"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Milan",
+      "answer": "Milan"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Rr",
+      "answer": null
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Rex",
+      "answer": "Rex"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "Fifinka",
+      "answer": "Fifinka"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Bella",
+      "answer": "Bella"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Buddy",
+      "answer": "Buddy"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Alík",
+      "answer": "Alík"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:37:43.182Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.0997,
+    "durationMs": 39096,
+    "failed": 1,
+    "clusters": 30,
+    "topShare": 0.333
+  }
+}

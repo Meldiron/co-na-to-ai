@@ -1,5 +1,182 @@
 [
   {
+    "id": "koreni-ceska-kuchyne",
+    "date": "2026-10-01",
+    "text": "Jaké koření nesmí chybět v české kuchyni?",
+    "tags": [
+      "jídlo",
+      "kuchyně"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "suplik-na-vsechno",
+    "date": "2026-10-02",
+    "text": "Co najdete v šuplíku, kam se doma dává všechno?",
+    "tags": [
+      "domov"
+    ],
+    "status": "used"
+  },
+  {
+    "id": "usnuti-mimo-postel",
+    "date": "2026-10-03",
+    "text": "Kde nejčastěji usnete jinde než v posteli?",
+    "tags": [
+      "spánek"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "zvire-na-den",
+    "date": "2026-10-03",
+    "text": "Jakým zvířetem byste chtěli být na jeden den?",
+    "tags": [
+      "zvířata",
+      "fantazie"
+    ],
+    "status": "used"
+  },
+  {
+    "id": "zabijacka",
+    "date": "2026-10-04",
+    "text": "Co patří k pořádné zabijačce?",
+    "tags": [
+      "jídlo",
+      "tradice"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "chlebicek",
+    "date": "2026-10-05",
+    "text": "Co nesmí chybět na pořádném chlebíčku?",
+    "tags": [
+      "jídlo",
+      "oslava"
+    ],
+    "status": "used"
+  },
+  {
+    "id": "zubar-strach",
+    "date": "2026-10-06",
+    "text": "Čeho se u zubaře bojíte nejvíc?",
+    "tags": [
+      "zdraví"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "doma-ztracite",
+    "date": "2026-10-07",
+    "text": "Co doma ztrácíte nejčastěji?",
+    "tags": [
+      "domov"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "stroj-casu",
+    "date": "2026-10-07",
+    "text": "Do které doby byste se vydali strojem času?",
+    "tags": [
+      "historie",
+      "fantazie"
+    ],
+    "status": "used"
+  },
+  {
+    "id": "pokazi-se-doma",
+    "date": "2026-10-08",
+    "text": "Co se doma pokazí vždycky v nejhorší chvíli?",
+    "tags": [
+      "domov"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "uklidneni-po-dni",
+    "date": "2026-10-09",
+    "text": "Co vás nejlíp uklidní po náročném dni?",
+    "tags": [
+      "odpočinek"
+    ],
+    "status": "used"
+  },
+  {
+    "id": "omacka",
+    "date": "2026-10-10",
+    "text": "Jakou omáčku máte nejradši?",
+    "tags": [
+      "jídlo"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "slavny-cech-na-veceri",
+    "date": "2026-10-10",
+    "text": "Jakého slavného Čecha byste pozvali na večeři?",
+    "tags": [
+      "osobnosti"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "radost-mamince",
+    "date": "2026-10-11",
+    "text": "Čím uděláte radost mamince?",
+    "tags": [
+      "rodina"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "nepouzivana-vec",
+    "date": "2026-10-12",
+    "text": "Jakou věc máte doma, ale nikdy ji nepoužíváte?",
+    "tags": [
+      "domov"
+    ],
+    "status": "used"
+  },
+  {
+    "id": "vypadne-z-ruky",
+    "date": "2026-10-13",
+    "text": "Co vám nejčastěji vypadne z ruky?",
+    "tags": [
+      "domov"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "jmeno-pro-psa",
+    "date": "2026-10-14",
+    "text": "Jaké jméno dáte psovi?",
+    "tags": [
+      "zvířata"
+    ],
+    "status": "used"
+  },
+  {
+    "id": "doma-zima",
+    "date": "2026-10-15",
+    "text": "Co si doma vezmete na sebe, když je vám zima?",
+    "tags": [
+      "podzim",
+      "domov"
+    ],
+    "status": "rejected"
+  },
+  {
+    "id": "zakazat-ve-meste",
+    "date": "2026-10-16",
+    "text": "Co byste ve městě nejradši zakázali?",
+    "tags": [
+      "město"
+    ],
+    "status": "used"
+  },
+  {
     "id": "kocovina",
     "text": "Co vám nejlíp pomůže na kocovinu?",
     "tags": [
