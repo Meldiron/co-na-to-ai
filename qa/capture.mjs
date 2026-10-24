@@ -56,6 +56,10 @@ const lost = game({
   hints: [0, 0, 0, 1, 0, 0, 0, 0],
   clues: [2],
 })
+const almostWon = game({
+  found: [0, 1, 2, 3, 4, 5, 6],
+  guesses: ["jidlo", "pivo", "obleceni", "spacak", "kniha", "naradi", "deka"].map((text, index) => ({ text, result: "hit", index })),
+})
 const won = game({
   found: [0, 1, 2, 3, 4, 5, 6, 7],
   guesses: ["jidlo", "pivo", "obleceni", "spacak", "kniha", "naradi", "deka", "telefon"].map((text, index) => ({ text, result: "hit", index })),
@@ -70,6 +74,7 @@ const scenarios = [
   { id: "guide-tile", url: "/", act: "openGuide", shots: [{ at: "viewport" }] },
   { id: "game-menu", url: "/", storage: { [`hra:${TODAY}`]: midGame }, act: "openGameMenu", shots: [{ at: "here" }] },
   { id: "menu-sheet", url: "/", act: "openMenuSheet", shots: [{ at: "viewport" }] },
+  { id: "win-live", url: "/", storage: { [`hra:${TODAY}`]: almostWon }, act: "winGame", shots: [{ at: "here" }] },
   { id: "lose-live", url: "/", act: "loseGame", shots: [{ at: "here" }] },
   { id: "home-midgame", url: "/", storage: { [`hra:${TODAY}`]: midGame }, shots: [{ at: "top" }] },
   { id: "home-hint-menu", url: "/", storage: { [`hra:${TODAY}`]: midGame }, act: "openHint", shots: [{ at: "board" }] },
@@ -143,6 +148,10 @@ const actions = {
     await page.eval(() => document.querySelector('[aria-label="Nápověda k odpovědi číslo 1"]')?.focus({ focusVisible: true }))
     for (const type of ["keyDown", "keyUp"]) await page.send("Input.dispatchKeyEvent", { type, key: "Tab", code: "Tab", windowsVirtualKeyCode: 9 })
     await sleep(400)
+  },
+  async winGame(page) {
+    await guess(page, "telefon")
+    await sleep(900)
   },
   async loseGame(page) {
     for (const word of ["lednice", "klavír", "tramvaj", "sopka", "žirafa"]) {

@@ -5,6 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { useGame } from "@/hooks/use-game"
 import { formatShort } from "@/lib/day"
 import { personaOf } from "@/lib/cast"
+import { celebrate } from "@/lib/celebrate"
 import { personaClue } from "@/lib/clue"
 import { focusContainer } from "@/lib/focus"
 import { CLEAR_BONUS, MAX_STRIKES, hintsUsed, pointsFor, pointsWord, scoreLines } from "@/lib/game"
@@ -69,6 +70,7 @@ export function Game({ payload, today }: { payload: PuzzlePayload; today: string
     const ended = wasPlaying.current === true && !playing
     wasPlaying.current = playing
     if (!ended || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    if (state.status === "won") void celebrate()
     const timer = setTimeout(() => document.getElementById("vysledek")?.scrollIntoView({ behavior: "smooth", block: "start" }), 1800)
     return () => clearTimeout(timer)
   }, [ready, state.status])
