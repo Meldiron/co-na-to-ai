@@ -116,7 +116,7 @@ Live at https://ai100.appwrite.network. It runs in the Appwrite project *Playgro
 
 | Resource | ID | Notes |
 | --- | --- | --- |
-| Site | `ai100` | TanStack Start, SSR, `npm ci` and `npm run build`, output `./dist`. The per-request key is scoped to `sessions.write`, `rows.*`, `files.*` and `execution.*`. |
+| Site | `ai100` | TanStack Start, SSR, `npm ci` and `npm run build`, output `./dist`. The per-request key is scoped to `sessions.write`, `rows.*`, `files.*` and `execution.*`. Secret variable `APPWRITE_API_KEY` (a stored key with the same scopes) wins over the per-request key when set; it was added on 2026-10-25, when Appwrite started rejecting the site's per-request keys. Delete it once those work again. |
 | Function | `custom-game` | Node 22, 900 s timeout, scopes `files.read` and `files.write`, no public execute. Secret variable `OPENROUTER_API_KEY`. Runs one custom game (the 100 calls plus the judge) and saves it to the bucket. |
 | Function | `daily-puzzles` | Node 22, 900 s timeout, runs every hour (`0 * * * *`), scopes `rows.read` and `rows.write`. Secret variable `OPENROUTER_API_KEY`. Makes sure today and the next 3 days have a board, and that this week and next week have a Finále. |
 | Bucket | `custom-games` | One JSON file per custom game, server access only. |
