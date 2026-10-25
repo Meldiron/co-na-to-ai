@@ -1,0 +1,1119 @@
+{
+  "date": "2026-10-28",
+  "number": 28,
+  "questionId": "cesky-vynalez",
+  "question": "Jmenujte český vynález nebo výrobek, který zná svět.",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Pivo",
+      "votes": 21,
+      "aliases": [
+        "piva",
+        "pivko",
+        "pivečko",
+        "ležák",
+        "budvar",
+        "budějovice",
+        "pivní",
+        "české pivo",
+        "plzeňské pivo",
+        "pivka",
+        "ležáky",
+        "lahváč",
+        "chlast",
+        "alkohol",
+        "budějovický budvar",
+        "budweiser",
+        "kozel",
+        "velkopopovický kozel",
+        "gambrinus",
+        "radegast",
+        "staropramen",
+        "bernard",
+        "krušovice",
+        "desítka",
+        "dvanáctka",
+        "pivní čepovací systém",
+        "pivovar",
+        "točené"
+      ],
+      "answerers": [
+        "a002",
+        "a008",
+        "a013",
+        "a015",
+        "a022",
+        "a024",
+        "a027",
+        "a028",
+        "a030",
+        "a035",
+        "a045",
+        "a054",
+        "a059",
+        "a062",
+        "a066",
+        "a071",
+        "a072",
+        "a087",
+        "a095",
+        "a096",
+        "a034"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Škoda",
+      "votes": 15,
+      "aliases": [
+        "škodovka",
+        "škoda auto",
+        "auto škoda",
+        "octavia",
+        "fabia",
+        "škodovky",
+        "škoda auto a.s.",
+        "auto",
+        "auta",
+        "automobil",
+        "automobily",
+        "oktávka",
+        "felicie",
+        "superb",
+        "favorit",
+        "tatra",
+        "tatrovka",
+        "škodovák",
+        "autíčko",
+        "mladá boleslav"
+      ],
+      "answerers": [
+        "a003",
+        "a007",
+        "a014",
+        "a020",
+        "a025",
+        "a037",
+        "a038",
+        "a039",
+        "a040",
+        "a041",
+        "a044",
+        "a058",
+        "a070",
+        "a077",
+        "a088"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Semtex",
+      "votes": 12,
+      "aliases": [
+        "semtexu",
+        "semtech",
+        "plastická trhavina",
+        "trhavina",
+        "výbušnina",
+        "výbušniny",
+        "exploziv",
+        "bomba",
+        "plastická výbušnina"
+      ],
+      "answerers": [
+        "a004",
+        "a006",
+        "a009",
+        "a029",
+        "a042",
+        "a056",
+        "a064",
+        "a065",
+        "a067",
+        "a078",
+        "a079",
+        "a089"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Čočky",
+      "votes": 10,
+      "aliases": [
+        "čočka",
+        "kontaktní čočky",
+        "kontaktní čočka",
+        "kontaktníčočky",
+        "gelové čočky",
+        "kontaktní",
+        "kontaktovky",
+        "kontaktní čoček",
+        "měkké čočky",
+        "wichterle",
+        "otto wichterle",
+        "hydrogel"
+      ],
+      "answerers": [
+        "a019",
+        "a021",
+        "a026",
+        "a031",
+        "a033",
+        "a050",
+        "a068",
+        "a083",
+        "a084",
+        "a090"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Pilsner",
+      "votes": 6,
+      "aliases": [
+        "pilsner urquell",
+        "plzeň",
+        "plzeňský prazdroj",
+        "prazdroj",
+        "plzeňské",
+        "plzenka",
+        "pils",
+        "pilsener",
+        "urquell"
+      ],
+      "answerers": [
+        "a005",
+        "a010",
+        "a016",
+        "a017",
+        "a048",
+        "a061"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Sklo",
+      "votes": 4,
+      "aliases": [
+        "skla",
+        "české sklo",
+        "křišťál",
+        "bohemia",
+        "sklíčko",
+        "křišťálové sklo",
+        "bohemia crystal",
+        "moser",
+        "lustr",
+        "lustry",
+        "sklenice",
+        "sklenička",
+        "broušené sklo",
+        "bižuterie",
+        "jablonecká bižuterie",
+        "vánoční ozdoby",
+        "foukané sklo",
+        "porcelán"
+      ],
+      "answerers": [
+        "a001",
+        "a047",
+        "a069",
+        "a018"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Boty",
+      "votes": 4,
+      "aliases": [
+        "bota",
+        "botasky",
+        "botasy",
+        "baťa",
+        "obuv",
+        "baťovky",
+        "botaska",
+        "boty baťa",
+        "tomáš baťa",
+        "tenisky",
+        "bačkory",
+        "polobotky",
+        "zlín",
+        "sandály",
+        "kecky"
+      ],
+      "answerers": [
+        "a052",
+        "a053",
+        "a060",
+        "a093"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Kostka",
+      "votes": 2,
+      "aliases": [
+        "kostky",
+        "krychlové kostky",
+        "kostka cukru",
+        "kostkový cukr",
+        "kostičky",
+        "krychle",
+        "stavebnice",
+        "merkur",
+        "hrací kostka",
+        "cukr v kostce"
+      ],
+      "answerers": [
+        "a049",
+        "a074"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Tramvaj",
+      "votes": 2,
+      "answerers": [
+        "a032",
+        "a091"
+      ]
+    },
+    {
+      "text": "Zbraně",
+      "votes": 2,
+      "answerers": [
+        "a012",
+        "a055"
+      ]
+    },
+    {
+      "text": "Kniha",
+      "votes": 2,
+      "answerers": [
+        "a092",
+        "a023"
+      ]
+    },
+    {
+      "text": "Cukr",
+      "votes": 1,
+      "answerers": [
+        "a063"
+      ]
+    },
+    {
+      "text": "Robot",
+      "votes": 1,
+      "answerers": [
+        "a097"
+      ]
+    },
+    {
+      "text": "Tesla",
+      "votes": 1,
+      "answerers": [
+        "a051"
+      ]
+    },
+    {
+      "text": "Kohinoor",
+      "votes": 1,
+      "answerers": [
+        "a076"
+      ]
+    },
+    {
+      "text": "Kofola",
+      "votes": 1,
+      "answerers": [
+        "a094"
+      ]
+    },
+    {
+      "text": "Aspirin",
+      "votes": 1,
+      "answerers": [
+        "a081"
+      ]
+    },
+    {
+      "text": "Kolače",
+      "votes": 1,
+      "answerers": [
+        "a098"
+      ]
+    },
+    {
+      "text": "Svíčková",
+      "votes": 1,
+      "answerers": [
+        "a085"
+      ]
+    },
+    {
+      "text": "Čokovínka",
+      "votes": 1,
+      "answerers": [
+        "a080"
+      ]
+    },
+    {
+      "text": "Krtek",
+      "votes": 1,
+      "answerers": [
+        "a036"
+      ]
+    },
+    {
+      "text": "Konzerva",
+      "votes": 1,
+      "answerers": [
+        "a099"
+      ]
+    },
+    {
+      "text": "Klobouky",
+      "votes": 1,
+      "answerers": [
+        "a100"
+      ]
+    },
+    {
+      "text": "Rašple",
+      "votes": 1,
+      "answerers": [
+        "a075"
+      ]
+    },
+    {
+      "text": "Sirup",
+      "votes": 1,
+      "answerers": [
+        "a073"
+      ]
+    },
+    {
+      "text": "Karbanátek",
+      "votes": 1,
+      "answerers": [
+        "a057"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Sklo",
+      "answer": "Sklo"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Pilsner",
+      "answer": "Pilsner"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Kontaktní čočky? Most common answers: Tatra? Škoda? Semtex? Kontaktní čočky (two words). Robot (word). Most common probably \"čočky\" or \"Škoda\". As old textile worker... \"Škoda\".\n\nŠkoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "pilsner",
+      "answer": "Pilsner"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "kuchyň",
+      "answer": null
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "pistole",
+      "answer": "Zbraně"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "Pilsner",
+      "answer": "Pilsner"
+    },
+    {
+      "answerer": "a017",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "oldrich-jihlava",
+      "raw": "Pilsner",
+      "answer": "Pilsner"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Křišťál",
+      "answer": "Sklo"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Kontaktní čočky",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Kontaktní čočky",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "knihovna",
+      "answer": "Kniha"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a025",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "natalie-pisek",
+      "raw": "Škodovka",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "kontaktní čočky",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "čočky",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Tramvaj",
+      "answer": "Tramvaj"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Kontaktníčočky",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "Budbudovice",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Liška Bystrouška",
+      "answer": "Krtek"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "Škodovka",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "prazáksy",
+      "answer": null
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "Skoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a045",
+      "model": "mistralai/mistral-small-2603",
+      "persona": "stepan-klatovy",
+      "raw": "ležák",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "koleno",
+      "answer": null
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "sklo",
+      "answer": "Sklo"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "Pilsner",
+      "answer": "Pilsner"
+    },
+    {
+      "answerer": "a049",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "pavla-brno",
+      "raw": "kostka",
+      "answer": "Kostka"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "kontaktní čočky",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a051",
+      "model": "mistralai/mistral-saba",
+      "persona": "aneta-holesovice",
+      "raw": "Tesla",
+      "answer": "Tesla"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "boty",
+      "answer": "Boty"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "boty",
+      "answer": "Boty"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a055",
+      "model": "deepseek/deepseek-v4-flash",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "zbrojovka",
+      "answer": "Zbraně"
+    },
+    {
+      "answerer": "a056",
+      "model": "deepseek/deepseek-v4-pro",
+      "persona": "dagmar-teplice",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Karbaš",
+      "answer": "Karbanátek"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "Skoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a060",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "jaroslava-ostrava",
+      "raw": "botasky",
+      "answer": "Boty"
+    },
+    {
+      "answerer": "a061",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "denisa-jicin",
+      "raw": "Pilsner",
+      "answer": "Pilsner"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "cukr",
+      "answer": "Cukr"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "kontaktní čočky",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "sklo",
+      "answer": "Sklo"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "Pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "sirup",
+      "answer": "Sirup"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "krychlové kostky",
+      "answer": "Kostka"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "rašple",
+      "answer": "Rašple"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "koh-i-noor",
+      "answer": "Kohinoor"
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "Škoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a079",
+      "model": "x-ai/grok-4.3",
+      "persona": "pavel-stodulky",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Čokovínka",
+      "answer": "Čokovínka"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Aspirin.",
+      "answer": "Aspirin"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Václav.",
+      "answer": null
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "Kontaktní čočky",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "kontaktní čočka",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "Svíčková na smetaně",
+      "answer": "Svíčková"
+    },
+    {
+      "answerer": "a086",
+      "model": "z-ai/glm-4.6",
+      "persona": "stanislav-mikulov",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a087",
+      "model": "minimax/minimax-01",
+      "persona": "sarka-most",
+      "raw": "Pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "skoda",
+      "answer": "Škoda"
+    },
+    {
+      "answerer": "a089",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "miroslav-usti",
+      "raw": "Semtex",
+      "answer": "Semtex"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "kontaktní čočka",
+      "answer": "Čočky"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Tramvaj",
+      "answer": "Tramvaj"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Lepněná kniha",
+      "answer": "Kniha"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "Baťa",
+      "answer": "Boty"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Kofola",
+      "answer": "Kofola"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "pivo",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Pivní čepovací systém",
+      "answer": "Pivo"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "robot",
+      "answer": "Robot"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Kolache",
+      "answer": "Kolače"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Konzerva",
+      "answer": "Konzerva"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Klobouky",
+      "answer": "Klobouky"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T22:02:15.425Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1261,
+    "durationMs": 60151,
+    "failed": 1,
+    "clusters": 26,
+    "topShare": 0.212
+  }
+}

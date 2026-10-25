@@ -1,0 +1,1221 @@
+{
+  "date": "2026-10-27",
+  "number": 27,
+  "questionId": "pohadkova-postava",
+  "question": "Jakou pohádkovou postavou byste chtěli být?",
+  "asked": 100,
+  "answered": 99,
+  "answers": [
+    {
+      "rank": 1,
+      "text": "Popelka",
+      "votes": 22,
+      "aliases": [
+        "popelkou",
+        "popelku",
+        "popelky",
+        "popelce",
+        "popelčin",
+        "cenuška",
+        "popelečka",
+        "popelko",
+        "cenuškou",
+        "popelka z pohádky",
+        "tři oříšky pro popelku",
+        "oříšky",
+        "tři oříšky",
+        "popelčina",
+        "cinderella",
+        "popelušku",
+        "popeluška",
+        "libuše šafránková",
+        "šafránková"
+      ],
+      "answerers": [
+        "a001",
+        "a010",
+        "a012",
+        "a013",
+        "a019",
+        "a024",
+        "a025",
+        "a026",
+        "a027",
+        "a028",
+        "a031",
+        "a038",
+        "a046",
+        "a048",
+        "a049",
+        "a050",
+        "a051",
+        "a053",
+        "a066",
+        "a082",
+        "a090",
+        "a085"
+      ]
+    },
+    {
+      "rank": 2,
+      "text": "Princezna",
+      "votes": 10,
+      "aliases": [
+        "princeznou",
+        "princezny",
+        "princeznu",
+        "princezně",
+        "princeznička",
+        "princezničkou",
+        "princezničky",
+        "pohádková princezna",
+        "zakletá princezna",
+        "princezna se zlatou hvězdou",
+        "princezna ze mlejna",
+        "šípková růženka",
+        "růženka",
+        "locika",
+        "dcera krále",
+        "královská dcera",
+        "princesa",
+        "princess",
+        "princezky"
+      ],
+      "answerers": [
+        "a008",
+        "a022",
+        "a023",
+        "a030",
+        "a054",
+        "a061",
+        "a081",
+        "a083",
+        "a088",
+        "a098"
+      ]
+    },
+    {
+      "rank": 3,
+      "text": "Král",
+      "votes": 7,
+      "aliases": [
+        "králem",
+        "krále",
+        "králové",
+        "králi",
+        "králík pohádkový",
+        "králíček",
+        "královi",
+        "pohádkový král",
+        "král majestát",
+        "majestát",
+        "panovník",
+        "vladař",
+        "monarcha",
+        "císař",
+        "císařem",
+        "korunovaný",
+        "koruna",
+        "trůn",
+        "král pohádky",
+        "král lávra",
+        "dobrý král"
+      ],
+      "answerers": [
+        "a011",
+        "a021",
+        "a029",
+        "a033",
+        "a052",
+        "a072",
+        "a077"
+      ]
+    },
+    {
+      "rank": 4,
+      "text": "Víla",
+      "votes": 6,
+      "aliases": [
+        "vílou",
+        "víly",
+        "vílu",
+        "vílka",
+        "víle",
+        "vílkou",
+        "vílky",
+        "kouzelná víla",
+        "dobrá víla",
+        "sudička",
+        "sudičkou",
+        "sudičky",
+        "lesní víla",
+        "rusalka",
+        "rusalkou",
+        "amálka",
+        "víla amálka",
+        "zvonilka",
+        "vodní víla",
+        "kmotřička víla",
+        "zlatovláska"
+      ],
+      "answerers": [
+        "a005",
+        "a009",
+        "a034",
+        "a040",
+        "a063",
+        "a068"
+      ]
+    },
+    {
+      "rank": 5,
+      "text": "Princ",
+      "votes": 5,
+      "aliases": [
+        "princem",
+        "prince",
+        "princové",
+        "princátko",
+        "princi",
+        "princátkem",
+        "pohádkový princ",
+        "princ na bílém koni",
+        "princ krasoň",
+        "krasoň",
+        "královský syn",
+        "kralevic",
+        "kralevicem",
+        "princ bajaja",
+        "bajaja",
+        "princ jaroslav",
+        "rytíř",
+        "rytířem",
+        "korunní princ"
+      ],
+      "answerers": [
+        "a002",
+        "a020",
+        "a043",
+        "a045",
+        "a095"
+      ]
+    },
+    {
+      "rank": 6,
+      "text": "Křemílek",
+      "votes": 4,
+      "aliases": [
+        "křemílkem",
+        "křemílka",
+        "křemílci",
+        "vochomůrka",
+        "vochomůrkou",
+        "křemílek a vochomůrka",
+        "pasekáři",
+        "pasekář",
+        "pasekářem",
+        "skřítek",
+        "skřítkem",
+        "skřítci",
+        "mužíček",
+        "mužíčkem",
+        "trpaslík",
+        "trpaslíkem",
+        "trpaslíci",
+        "hajný robátko",
+        "robátko"
+      ],
+      "answerers": [
+        "a004",
+        "a047",
+        "a058",
+        "a069"
+      ]
+    },
+    {
+      "rank": 7,
+      "text": "Honza",
+      "votes": 4,
+      "aliases": [
+        "honzou",
+        "hloupý honza",
+        "honzík",
+        "hloupý",
+        "honzu",
+        "honzy",
+        "honzíkem",
+        "hloupým honzou",
+        "hloupým",
+        "jan",
+        "janek",
+        "jeníček",
+        "jeníčkem",
+        "honzíček",
+        "honza z pohádky",
+        "chytrý honza",
+        "bajaja honza",
+        "hrdina",
+        "hrdinou",
+        "truhlář honza",
+        "nejmladší syn"
+      ],
+      "answerers": [
+        "a014",
+        "a041",
+        "a067",
+        "a055"
+      ]
+    },
+    {
+      "rank": 8,
+      "text": "Rumcajs",
+      "votes": 3,
+      "aliases": [
+        "rumcajsem",
+        "rumcajse",
+        "loupežník rumcajs",
+        "rumcajz",
+        "rumcajsové",
+        "loupežník",
+        "loupežníkem",
+        "loupežníci",
+        "manka",
+        "mankou",
+        "cipísek",
+        "cipískem",
+        "jičín",
+        "řáholec",
+        "lesní loupežník",
+        "rumcajsová",
+        "švec",
+        "ševcem",
+        "lapka",
+        "lapkou",
+        "zbojník",
+        "zbojníkem"
+      ],
+      "answerers": [
+        "a007",
+        "a084",
+        "a089"
+      ]
+    }
+  ],
+  "others": [
+    {
+      "text": "Ježibaba",
+      "votes": 3,
+      "answerers": [
+        "a070",
+        "a093",
+        "a071"
+      ]
+    },
+    {
+      "text": "Čaroděj",
+      "votes": 2,
+      "answerers": [
+        "a039",
+        "a079"
+      ]
+    },
+    {
+      "text": "Drak",
+      "votes": 2,
+      "answerers": [
+        "a003",
+        "a073"
+      ]
+    },
+    {
+      "text": "Babička",
+      "votes": 2,
+      "answerers": [
+        "a059",
+        "a060"
+      ]
+    },
+    {
+      "text": "Sněhurka",
+      "votes": 2,
+      "answerers": [
+        "a074",
+        "a097"
+      ]
+    },
+    {
+      "text": "Krakonoš",
+      "votes": 2,
+      "answerers": [
+        "a035",
+        "a042"
+      ]
+    },
+    {
+      "text": "Královna",
+      "votes": 2,
+      "answerers": [
+        "a096",
+        "a080"
+      ]
+    },
+    {
+      "text": "Harry",
+      "votes": 1,
+      "answerers": [
+        "a006"
+      ]
+    },
+    {
+      "text": "Kubatong",
+      "votes": 1,
+      "answerers": [
+        "a015"
+      ]
+    },
+    {
+      "text": "Šermíř",
+      "votes": 1,
+      "answerers": [
+        "a016"
+      ]
+    },
+    {
+      "text": "Vodník",
+      "votes": 1,
+      "answerers": [
+        "a017"
+      ]
+    },
+    {
+      "text": "Čestmír",
+      "votes": 1,
+      "answerers": [
+        "a018"
+      ]
+    },
+    {
+      "text": "Rychloun",
+      "votes": 1,
+      "answerers": [
+        "a032"
+      ]
+    },
+    {
+      "text": "Vlk",
+      "votes": 1,
+      "answerers": [
+        "a036"
+      ]
+    },
+    {
+      "text": "Karel",
+      "votes": 1,
+      "answerers": [
+        "a037"
+      ]
+    },
+    {
+      "text": "Kráska",
+      "votes": 1,
+      "answerers": [
+        "a044"
+      ]
+    },
+    {
+      "text": "Kozlík",
+      "votes": 1,
+      "answerers": [
+        "a057"
+      ]
+    },
+    {
+      "text": "Čert",
+      "votes": 1,
+      "answerers": [
+        "a062"
+      ]
+    },
+    {
+      "text": "Superman",
+      "votes": 1,
+      "answerers": [
+        "a064"
+      ]
+    },
+    {
+      "text": "Ježek",
+      "votes": 1,
+      "answerers": [
+        "a065"
+      ]
+    },
+    {
+      "text": "Maková",
+      "votes": 1,
+      "answerers": [
+        "a075"
+      ]
+    },
+    {
+      "text": "Rybář",
+      "votes": 1,
+      "answerers": [
+        "a086"
+      ]
+    },
+    {
+      "text": "Kopretina",
+      "votes": 1,
+      "answerers": [
+        "a087"
+      ]
+    },
+    {
+      "text": "Elf",
+      "votes": 1,
+      "answerers": [
+        "a091"
+      ]
+    },
+    {
+      "text": "Lobek",
+      "votes": 1,
+      "answerers": [
+        "a092"
+      ]
+    },
+    {
+      "text": "Kocour",
+      "votes": 1,
+      "answerers": [
+        "a094"
+      ]
+    },
+    {
+      "text": "Věštkyně",
+      "votes": 1,
+      "answerers": [
+        "a099"
+      ]
+    },
+    {
+      "text": "Rumburak",
+      "votes": 1,
+      "answerers": [
+        "a100"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "answerer": "a001",
+      "model": "anthropic/claude-haiku-4.5",
+      "persona": "marie-pribram",
+      "raw": "Popelkou",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a002",
+      "model": "anthropic/claude-haiku-5.5",
+      "persona": "libor-prerov",
+      "raw": "Princ",
+      "answer": "Princ"
+    },
+    {
+      "answerer": "a003",
+      "model": "anthropic/claude-sonnet-4.6",
+      "persona": "adam-rokycany",
+      "raw": "drak",
+      "answer": "Drak"
+    },
+    {
+      "answerer": "a004",
+      "model": "anthropic/claude-sonnet-5",
+      "persona": "radek-smichov",
+      "raw": "Křemílek",
+      "answer": "Křemílek"
+    },
+    {
+      "answerer": "a005",
+      "model": "anthropic/claude-sonnet-5.5",
+      "persona": "helena-trutnov",
+      "raw": "Víla",
+      "answer": "Víla"
+    },
+    {
+      "answerer": "a006",
+      "model": "anthropic/claude-opus-4.5",
+      "persona": "matyas-vinohrady",
+      "raw": "Harry",
+      "answer": "Harry"
+    },
+    {
+      "answerer": "a007",
+      "model": "anthropic/claude-opus-5.5",
+      "persona": "vlastimil-svitavy",
+      "raw": "Rumcajs",
+      "answer": "Rumcajs"
+    },
+    {
+      "answerer": "a008",
+      "model": "anthropic/claude-sonnet-4.5",
+      "persona": "veronika-bruntal",
+      "raw": "princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a009",
+      "model": "openai/gpt-4o",
+      "persona": "jarmila-litomysl",
+      "raw": "víla",
+      "answer": "Víla"
+    },
+    {
+      "answerer": "a010",
+      "model": "openai/gpt-4o-mini",
+      "persona": "eliska-prosek",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a011",
+      "model": "openai/gpt-4.1",
+      "persona": "martin-decin",
+      "raw": "král",
+      "answer": "Král"
+    },
+    {
+      "answerer": "a012",
+      "model": "openai/gpt-4.1-mini",
+      "persona": "barbora-vsetin",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a013",
+      "model": "openai/gpt-4.1-nano",
+      "persona": "emilie-prachatice",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a014",
+      "model": "openai/gpt-5",
+      "persona": "rudolf-cheb",
+      "raw": "Honza",
+      "answer": "Honza"
+    },
+    {
+      "answerer": "a015",
+      "model": "openai/gpt-5-mini",
+      "persona": "marek-hradec-kralove",
+      "raw": "Kubatong",
+      "answer": "Kubatong"
+    },
+    {
+      "answerer": "a016",
+      "model": "openai/gpt-5-nano",
+      "persona": "michal-vyskov",
+      "raw": "šermíř",
+      "answer": "Šermíř"
+    },
+    {
+      "answerer": "a017",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "persona": "oldrich-jihlava",
+      "raw": "Vodník",
+      "answer": "Vodník"
+    },
+    {
+      "answerer": "a018",
+      "model": "openai/gpt-5.4-mini",
+      "persona": "jan-tabor",
+      "raw": "Cestmír",
+      "answer": "Čestmír"
+    },
+    {
+      "answerer": "a019",
+      "model": "openai/gpt-5.6-luna",
+      "persona": "renata-tisnov",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a020",
+      "model": "openai/gpt-6-luna",
+      "persona": "filip-brandys",
+      "raw": "Princ",
+      "answer": "Princ"
+    },
+    {
+      "answerer": "a021",
+      "model": "openai/gpt-6-sol",
+      "persona": "bohumil-plzen",
+      "raw": "Král",
+      "answer": "Král"
+    },
+    {
+      "answerer": "a022",
+      "model": "openai/gpt-oss-120b",
+      "persona": "blanka-cesky-krumlov",
+      "raw": "princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a023",
+      "model": "openai/gpt-oss-20b",
+      "persona": "monika-opava",
+      "raw": "Princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a024",
+      "model": "google/gemini-2.5-flash",
+      "persona": "sona-domazlice",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a025",
+      "model": "google/gemini-2.5-flash-lite",
+      "persona": "natalie-pisek",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a026",
+      "model": "google/gemini-2.5-pro",
+      "persona": "lenka-pardubice",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a027",
+      "model": "google/gemini-3-flash-preview",
+      "persona": "katerina-prostejov",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a028",
+      "model": "google/gemini-3.1-pro-preview",
+      "persona": "alena-sumperk",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a029",
+      "model": "google/gemini-3.5-flash",
+      "persona": "antonin-uherske-hradiste",
+      "raw": "král",
+      "answer": "Král"
+    },
+    {
+      "answerer": "a030",
+      "model": "google/gemini-3.7-flash",
+      "persona": "simona-breclav",
+      "raw": "princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a031",
+      "model": "google/gemini-4-argon",
+      "persona": "vera-dejvice",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a032",
+      "model": "google/gemma-3-12b-it",
+      "persona": "tadeas-sokolov",
+      "raw": "Rychloun",
+      "answer": "Rychloun"
+    },
+    {
+      "answerer": "a033",
+      "model": "google/gemma-3-27b-it",
+      "persona": "bohdan-spindleruv-mlyn",
+      "raw": "Král",
+      "answer": "Král"
+    },
+    {
+      "answerer": "a034",
+      "model": "google/gemma-4-31b-it",
+      "persona": "jana-kutna-hora",
+      "raw": "víla",
+      "answer": "Víla"
+    },
+    {
+      "answerer": "a035",
+      "model": "google/gemma-4-26b-a4b-it",
+      "persona": "ladislav-zatec",
+      "raw": "Krkonošskárábí",
+      "answer": "Krakonoš"
+    },
+    {
+      "answerer": "a036",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "persona": "robert-trebon",
+      "raw": "Bílého vlka",
+      "answer": "Vlk"
+    },
+    {
+      "answerer": "a037",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "persona": "frantisek-olomouc",
+      "raw": "Karel IV.",
+      "answer": "Karel"
+    },
+    {
+      "answerer": "a038",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "persona": "lukas-ricany",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a039",
+      "model": "meta-llama/llama-4-maverick",
+      "persona": "jaroslav-blansko",
+      "raw": "Čaroděj",
+      "answer": "Čaroděj"
+    },
+    {
+      "answerer": "a040",
+      "model": "meta-llama/llama-4-scout",
+      "persona": "irena-rakovnik",
+      "raw": "Víla",
+      "answer": "Víla"
+    },
+    {
+      "answerer": "a041",
+      "model": "meta/muse-spark-1.3",
+      "persona": "petr-benesov",
+      "raw": "Honza",
+      "answer": "Honza"
+    },
+    {
+      "answerer": "a042",
+      "model": "meta/muse-glimmer-30b",
+      "persona": "vit-jesenik",
+      "raw": "Krkonoš",
+      "answer": "Krakonoš"
+    },
+    {
+      "answerer": "a043",
+      "model": "mistralai/mistral-nemo",
+      "persona": "bedrich-jablonec",
+      "raw": "Princ",
+      "answer": "Princ"
+    },
+    {
+      "answerer": "a044",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "persona": "vladimira-havirov",
+      "raw": "Kráska",
+      "answer": "Kráska"
+    },
+    {
+      "answerer": "a045",
+      "model": "openai/gpt-5.6-terra",
+      "persona": "stepan-klatovy",
+      "raw": "princ",
+      "answer": "Princ"
+    },
+    {
+      "answerer": "a046",
+      "model": "mistralai/ministral-8b-2512",
+      "persona": "kristyna-branik",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a047",
+      "model": "mistralai/ministral-14b-2512",
+      "persona": "hana-letnany",
+      "raw": "Křemílek",
+      "answer": "Křemílek"
+    },
+    {
+      "answerer": "a048",
+      "model": "mistralai/mistral-medium-3-5",
+      "persona": "petra-plzen",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a049",
+      "model": "mistralai/mistral-medium-3.1",
+      "persona": "pavla-brno",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a050",
+      "model": "mistralai/mistral-large-4-0",
+      "persona": "jitka-susice",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a051",
+      "model": "google/gemini-3.1-flash-lite",
+      "persona": "aneta-holesovice",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a052",
+      "model": "deepseek/deepseek-chat",
+      "persona": "jiri-chodov",
+      "raw": "král",
+      "answer": "Král"
+    },
+    {
+      "answerer": "a053",
+      "model": "deepseek/deepseek-v3.2",
+      "persona": "tereza-zizkov",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a054",
+      "model": "deepseek/deepseek-r1-0528",
+      "persona": "zuzana-karlovy-vary",
+      "raw": "princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a055",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "persona": "kamil-havlickuv-brod",
+      "raw": "Hloupý",
+      "answer": "Honza"
+    },
+    {
+      "answerer": "a056",
+      "model": "z-ai/glm-4.6",
+      "persona": "dagmar-teplice",
+      "raw": "",
+      "answer": null
+    },
+    {
+      "answerer": "a057",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "persona": "zdenek-karvina",
+      "raw": "Kozlík",
+      "answer": "Kozlík"
+    },
+    {
+      "answerer": "a058",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "persona": "radim-kromeriz",
+      "raw": "Křemílek",
+      "answer": "Křemílek"
+    },
+    {
+      "answerer": "a059",
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "persona": "bozena-kyjov",
+      "raw": "Babička",
+      "answer": "Babička"
+    },
+    {
+      "answerer": "a060",
+      "model": "x-ai/grok-4.3",
+      "persona": "jaroslava-ostrava",
+      "raw": "babička",
+      "answer": "Babička"
+    },
+    {
+      "answerer": "a061",
+      "model": "moonshotai/kimi-k2-0905",
+      "persona": "denisa-jicin",
+      "raw": "Princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a062",
+      "model": "qwen/qwen3.7-plus",
+      "persona": "vaclav-ceske-budejovice",
+      "raw": "čert",
+      "answer": "Čert"
+    },
+    {
+      "answerer": "a063",
+      "model": "qwen/qwen3.7-max",
+      "persona": "adela-znojmo",
+      "raw": "víla",
+      "answer": "Víla"
+    },
+    {
+      "answerer": "a064",
+      "model": "qwen/qwen3.8-flash",
+      "persona": "daniel-usti-nad-orlici",
+      "raw": "Superman",
+      "answer": "Superman"
+    },
+    {
+      "answerer": "a065",
+      "model": "x-ai/grok-4.20",
+      "persona": "josef-kladno",
+      "raw": "Ježek",
+      "answer": "Ježek"
+    },
+    {
+      "answerer": "a066",
+      "model": "x-ai/grok-4.5",
+      "persona": "stepanka-orlova",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a067",
+      "model": "x-ai/grok-4.7",
+      "persona": "roman-brno",
+      "raw": "Honza",
+      "answer": "Honza"
+    },
+    {
+      "answerer": "a068",
+      "model": "moonshotai/kimi-k2.5",
+      "persona": "michaela-chrudim",
+      "raw": "Víla",
+      "answer": "Víla"
+    },
+    {
+      "answerer": "a069",
+      "model": "moonshotai/kimi-k2.6",
+      "persona": "olga-litovel",
+      "raw": "Křemílek",
+      "answer": "Křemílek"
+    },
+    {
+      "answerer": "a070",
+      "model": "moonshotai/kimi-k3",
+      "persona": "zbynek-ceska-lipa",
+      "raw": "Ježibaba",
+      "answer": "Ježibaba"
+    },
+    {
+      "answerer": "a071",
+      "model": "z-ai/glm-4.7",
+      "persona": "ludmila-hodonin",
+      "raw": "čarodějnice",
+      "answer": "Ježibaba"
+    },
+    {
+      "answerer": "a072",
+      "model": "z-ai/glm-5",
+      "persona": "vojtech-zbraslav",
+      "raw": "Král",
+      "answer": "Král"
+    },
+    {
+      "answerer": "a073",
+      "model": "z-ai/glm-5.1",
+      "persona": "simon-semily",
+      "raw": "drak",
+      "answer": "Drak"
+    },
+    {
+      "answerer": "a074",
+      "model": "z-ai/glm-5.3",
+      "persona": "ales-krnov",
+      "raw": "Sněhurka",
+      "answer": "Sněhurka"
+    },
+    {
+      "answerer": "a075",
+      "model": "minimax/minimax-m2.5",
+      "persona": "zdenka-nymburk",
+      "raw": "Maková",
+      "answer": "Maková"
+    },
+    {
+      "answerer": "a076",
+      "model": "minimax/minimax-m3",
+      "persona": "sabina-roznov",
+      "raw": "}{",
+      "answer": null
+    },
+    {
+      "answerer": "a077",
+      "model": "cohere/command-r-08-2024",
+      "persona": "jakub-brno",
+      "raw": "Král",
+      "answer": "Král"
+    },
+    {
+      "answerer": "a078",
+      "model": "cohere/command-a",
+      "persona": "gabriela-trebic",
+      "raw": "Vraždící",
+      "answer": null
+    },
+    {
+      "answerer": "a079",
+      "model": "minimax/minimax-01",
+      "persona": "pavel-stodulky",
+      "raw": "čaroděj",
+      "answer": "Čaroděj"
+    },
+    {
+      "answerer": "a080",
+      "model": "amazon/nova-lite-v1",
+      "persona": "dominik-frydek-mistek",
+      "raw": "Královna zimnice",
+      "answer": "Královna"
+    },
+    {
+      "answerer": "a081",
+      "model": "amazon/nova-pro-v1",
+      "persona": "klara-kolin",
+      "raw": "Princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a082",
+      "model": "amazon/nova-2-lite-v1",
+      "persona": "david-slany",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a083",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "persona": "tomas-mlada-boleslav",
+      "raw": "Princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a084",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "persona": "lubos-pelhrimov",
+      "raw": "Rumcajs",
+      "answer": "Rumcajs"
+    },
+    {
+      "answerer": "a085",
+      "model": "microsoft/phi-4",
+      "persona": "iveta-zdar",
+      "raw": "Cenuška",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a086",
+      "model": "amazon/nova-micro-v1",
+      "persona": "stanislav-mikulov",
+      "raw": "Rybář",
+      "answer": "Rybář"
+    },
+    {
+      "answerer": "a087",
+      "model": "cohere/command-r7b-12-2024",
+      "persona": "sarka-most",
+      "raw": "kopretina",
+      "answer": "Kopretina"
+    },
+    {
+      "answerer": "a088",
+      "model": "tencent/hy3",
+      "persona": "ivana-litomerice",
+      "raw": "Princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a089",
+      "model": "xiaomi/mimo-v2.6-flash",
+      "persona": "miroslav-usti",
+      "raw": "Rumcajs",
+      "answer": "Rumcajs"
+    },
+    {
+      "answerer": "a090",
+      "model": "stepfun/step-3.7-flash",
+      "persona": "lucie-modrany",
+      "raw": "Popelka",
+      "answer": "Popelka"
+    },
+    {
+      "answerer": "a091",
+      "model": "inception/mercury-3",
+      "persona": "rostislav-nachod",
+      "raw": "Jelf",
+      "answer": "Elf"
+    },
+    {
+      "answerer": "a092",
+      "model": "ibm-granite/granite-4.2-8b",
+      "persona": "ondrej-karlin",
+      "raw": "Lobek",
+      "answer": "Lobek"
+    },
+    {
+      "answerer": "a093",
+      "model": "upstage/solar-pro4",
+      "persona": "miroslava-zlin",
+      "raw": "BábaJaga",
+      "answer": "Ježibaba"
+    },
+    {
+      "answerer": "a094",
+      "model": "nousresearch/hermes-4-405b",
+      "persona": "kamila-liberec",
+      "raw": "Kocour",
+      "answer": "Kocour"
+    },
+    {
+      "answerer": "a095",
+      "model": "reflection/beam-1.0-501b-a23b",
+      "persona": "patrik-ostrava",
+      "raw": "Princ",
+      "answer": "Princ"
+    },
+    {
+      "answerer": "a096",
+      "model": "writer/palmyra-x5",
+      "persona": "milan-melnik",
+      "raw": "Královna",
+      "answer": "Královna"
+    },
+    {
+      "answerer": "a097",
+      "model": "liquid/lfm-2.5-24b-a2b",
+      "persona": "martina-beroun",
+      "raw": "Sněhurka",
+      "answer": "Sněhurka"
+    },
+    {
+      "answerer": "a098",
+      "model": "inclusionai/ling-3.1-flash",
+      "persona": "nikola-chomutov",
+      "raw": "Princezna",
+      "answer": "Princezna"
+    },
+    {
+      "answerer": "a099",
+      "model": "rekaai/reka-flash-3",
+      "persona": "anezka-trinec",
+      "raw": "Věštkyně",
+      "answer": "Věštkyně"
+    },
+    {
+      "answerer": "a100",
+      "model": "meituan/longcat-2.0",
+      "persona": "karel-novy-jicin",
+      "raw": "Rumburak",
+      "answer": "Rumburak"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-10-24T13:57:53.422Z",
+    "judgeModel": "anthropic/claude-opus-5.5",
+    "costUsd": 0.1292,
+    "durationMs": 66936,
+    "failed": 1,
+    "clusters": 36,
+    "topShare": 0.222
+  }
+}

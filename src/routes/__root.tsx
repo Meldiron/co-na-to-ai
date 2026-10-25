@@ -1,4 +1,4 @@
-import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-router"
+import { HeadContent, Link, Scripts, createRootRoute, useRouter, type ErrorComponentProps } from "@tanstack/react-router"
 import { AccountDialog, AccountProvider } from "@/components/account"
 import { HowToPlay } from "@/components/how-to-play"
 import { SiteFooter } from "@/components/site-footer"
@@ -36,6 +36,7 @@ export const Route = createRootRoute({
     ],
   }),
   notFoundComponent: NotFound,
+  errorComponent: Failure,
   shellComponent: RootDocument,
 })
 
@@ -55,6 +56,34 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
+  )
+}
+
+function Failure({ reset }: ErrorComponentProps) {
+  const router = useRouter()
+  return (
+    <>
+      <SiteHeader tone="ground" />
+      <section className="page py-24 md:py-40">
+        <h1 className="display">Něco se pokazilo</h1>
+        <p className="mt-5 max-w-[50ch]">Stránku se teď nepodařilo načíst. Zkuste to prosím znovu, nebo se vraťte na dnešní hru.</p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              reset()
+              void router.invalidate()
+            }}
+            className="inline-flex h-12 items-center bg-red px-6 font-semibold text-red-ink hover:bg-red/90"
+          >
+            Zkusit znovu
+          </button>
+          <Link to="/" className="inline-flex h-12 items-center bg-paper px-6 font-semibold transition-colors hover:bg-paper-step">
+            Na dnešní hru
+          </Link>
+        </div>
+      </section>
+    </>
   )
 }
 

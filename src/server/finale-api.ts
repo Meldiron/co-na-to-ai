@@ -26,9 +26,15 @@ export const getFinale = createServerFn({ method: "GET" })
   .validator(week)
   .handler(async ({ data }) => {
     const target = resolve(data.week)
-    if (!appwrite()) return { week: target, current: target === currentWeek(), enabled: false, ready: false, past: [] as Array<string> }
-    const [questions, weeks] = await Promise.all([loadFinale(target), finaleWeeks()])
-    return { week: target, current: target === currentWeek(), enabled: true, ready: !!questions, past: weeks.filter((w) => w !== target) }
+    const unavailable = { week: target, current: target === currentWeek(), enabled: false, ready: false, past: [] as Array<string> }
+    if (!appwrite()) return unavailable
+    try {
+      const [questions, weeks] = await Promise.all([loadFinale(target), finaleWeeks()])
+      return { ...unavailable, enabled: true, ready: !!questions, past: weeks.filter((w) => w !== target) }
+    } catch (error) {
+      console.error("Could not load the finále:", error)
+      return unavailable
+    }
   })
 
 export const getFinaleState = createServerFn({ method: "GET" })

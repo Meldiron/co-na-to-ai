@@ -17,7 +17,6 @@ import { Route as ObnovaHeslaRouteImport } from './routes/obnova-hesla'
 import { Route as ObsazeniRouteImport } from './routes/obsazeni'
 import { Route as OgDotpngRouteImport } from './routes/og[.]png'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ApiDiagRouteImport } from './routes/api.diag'
 import { Route as FinaleIndexRouteImport } from './routes/finale.index'
 import { Route as FinaleTydenRouteImport } from './routes/finale.$tyden'
 import { Route as HraDatumRouteImport } from './routes/hra.$datum'
@@ -64,11 +63,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiDiagRoute = ApiDiagRouteImport.update({
-  id: '/api/diag',
-  path: '/api/diag',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FinaleIndexRoute = FinaleIndexRouteImport.update({
   id: '/finale/',
   path: '/finale/',
@@ -104,7 +98,6 @@ export interface FileRoutesByFullPath {
   '/obsazeni': typeof ObsazeniRoute
   '/og.png': typeof OgDotpngRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/api/diag': typeof ApiDiagRoute
   '/finale/$tyden': typeof FinaleTydenRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
@@ -120,7 +113,6 @@ export interface FileRoutesByTo {
   '/obsazeni': typeof ObsazeniRoute
   '/og.png': typeof OgDotpngRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/api/diag': typeof ApiDiagRoute
   '/finale/$tyden': typeof FinaleTydenRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
@@ -137,7 +129,6 @@ export interface FileRoutesById {
   '/obsazeni': typeof ObsazeniRoute
   '/og.png': typeof OgDotpngRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/api/diag': typeof ApiDiagRoute
   '/finale/$tyden': typeof FinaleTydenRoute
   '/hra/$datum': typeof HraDatumRoute
   '/og/$datum': typeof OgDatumRoute
@@ -155,7 +146,6 @@ export interface FileRouteTypes {
     | '/obsazeni'
     | '/og.png'
     | '/sitemap.xml'
-    | '/api/diag'
     | '/finale/$tyden'
     | '/hra/$datum'
     | '/og/$datum'
@@ -171,7 +161,6 @@ export interface FileRouteTypes {
     | '/obsazeni'
     | '/og.png'
     | '/sitemap.xml'
-    | '/api/diag'
     | '/finale/$tyden'
     | '/hra/$datum'
     | '/og/$datum'
@@ -187,7 +176,6 @@ export interface FileRouteTypes {
     | '/obsazeni'
     | '/og.png'
     | '/sitemap.xml'
-    | '/api/diag'
     | '/finale/$tyden'
     | '/hra/$datum'
     | '/og/$datum'
@@ -204,7 +192,6 @@ export interface RootRouteChildren {
   ObsazeniRoute: typeof ObsazeniRoute
   OgDotpngRoute: typeof OgDotpngRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  ApiDiagRoute: typeof ApiDiagRoute
   FinaleTydenRoute: typeof FinaleTydenRoute
   HraDatumRoute: typeof HraDatumRoute
   OgDatumRoute: typeof OgDatumRoute
@@ -270,13 +257,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/diag': {
-      id: '/api/diag'
-      path: '/api/diag'
-      fullPath: '/api/diag'
-      preLoaderRoute: typeof ApiDiagRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/finale/': {
       id: '/finale/'
       path: '/finale'
@@ -324,7 +304,6 @@ const rootRouteChildren: RootRouteChildren = {
   ObsazeniRoute: ObsazeniRoute,
   OgDotpngRoute: OgDotpngRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  ApiDiagRoute: ApiDiagRoute,
   FinaleTydenRoute: FinaleTydenRoute,
   HraDatumRoute: HraDatumRoute,
   OgDatumRoute: OgDatumRoute,

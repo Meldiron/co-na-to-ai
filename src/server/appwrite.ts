@@ -13,7 +13,7 @@ function project() {
 
 export function appwrite() {
   const target = project()
-  const key = getRequestHeader("x-appwrite-key") ?? process.env.APPWRITE_API_KEY
+  const key = process.env.APPWRITE_API_KEY ?? getRequestHeader("x-appwrite-key")
   if (!target || !key) return null
   const sdk = new Client().setEndpoint(target.endpoint).setProject(target.id).setKey(key).setLocale("cs")
   return { storage: new Storage(sdk), functions: new Functions(sdk), tables: new TablesDB(sdk), account: new Account(sdk) }
