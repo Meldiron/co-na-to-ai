@@ -37,6 +37,7 @@ A good question:
 - has an open but finite answer space: roughly 8 to 15 answers that several people would give;
 - has no single dominant answer: the most common answer must stay well under 45 % ("Co nosíte v dešti?" fails, everyone says deštník);
 - is answered with single words, ideally common nouns, not phrases or sentences;
+- does not name the answers in its own wording: "Jaký kabát nebo bundu nosíte v zimě?" gets "bunda" and "kabát" back, "Jakou knedlíkovou dobrotu máte nejradši?" gets "knedlíky";
 - draws its answers from a shared, everyday set: avoid personal or unbounded answers such as nicknames, song or film titles, names of people, or anything where nearly everyone answers differently;
 - is about ordinary Czech life: home, food, family, work, school, shopping, travel, seasons, holidays, hobbies, Czech habits;
 - is not political, religious, sexual, offensive or grim, and is not trivia with one correct answer.

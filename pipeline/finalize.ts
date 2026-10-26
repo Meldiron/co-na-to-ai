@@ -3,16 +3,25 @@ import type { RawResponse } from "./ask.ts"
 import { resolveAliases, writeAliases } from "./aliases.ts"
 import { BOARD_SIZE, gate, group } from "./build.ts"
 import { judge } from "./cluster.ts"
+import { review, withoutRejected } from "./review.ts"
 
 export async function finalize(sdk: OpenRouter, question: string, responses: Array<RawResponse>, opts: { aliasesOnFail?: boolean } = {}) {
   const answered = responses.filter((r) => r.raw !== null)
-  const { judgement, costUsd: judgeCost } = await judge(sdk, question, answered.map((r) => r.raw ?? ""))
+  const raws = answered.map((r) => r.raw ?? "")
+  const { judgement: clustered, costUsd: clusterCost } = await judge(sdk, question, raws)
+  const { rejected, costUsd: reviewCost } = await review(
+    sdk,
+    question,
+    clustered.clusters.map((c) => ({ canonical: c.canonical, examples: c.members.map((i) => raws[i]) })),
+  )
+  const judgement = withoutRejected(clustered, rejected)
+  const judgeCost = clusterCost + reviewCost
   const grouped = group(responses, judgement)
   const verdict = gate(grouped, answered.length, judgement)
   if (!verdict.passed && !opts.aliasesOnFail) return { judgement, grouped, gate: verdict, costUsd: judgeCost }
 
   const board = grouped.slice(0, BOARD_SIZE)
-  const outside = grouped.slice(BOARD_SIZE).map((g) => g.canonical)
+  const outside = [...grouped.slice(BOARD_SIZE).map((g) => g.canonical), ...judgement.rejected.map((r) => r.canonical)]
   const rawOf = new Map(answered.map((r) => [r.answerer, r.raw ?? ""]))
   const { answers, costUsd: aliasCost } = await writeAliases(
     sdk,

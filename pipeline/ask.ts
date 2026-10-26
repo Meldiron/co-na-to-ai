@@ -40,6 +40,7 @@ export function systemPrompt(persona: Persona, structured: boolean): string {
     "- odpověz jedním jediným slovem, česky, se správnou diakritikou",
     "- žádné vysvětlení, žádná věta, žádný výčet, žádné spojení dvou věcí",
     "- pokud to jde, podstatné jméno v 1. pádě",
+    "- neopakuj slovo z otázky, odpověz na to, na co se ptáme (na „Jaký kabát nosíte?“ neodpovídej „kabát“)",
     structured
       ? 'Vrať pouze JSON ve tvaru {"odpoved": "…"}.'
       : "Napiš jen samotnou odpověď, nic dalšího.",

@@ -179,10 +179,11 @@ export default async ({ req, res, log, error }: Context) => {
 
         log(`finále ${week}/${slot}: asking "${question.text}"`)
         const { puzzle } = await generatePuzzle({ date: week, number: finaleNumber(week), questionId: question.id, question: question.text })
-        const passed = puzzle.answered >= FINALE_MIN_ANSWERED && puzzle.answers.length >= FINALE_MIN_ANSWERS
+        const valid = [...puzzle.answers, ...puzzle.others].reduce((sum, a) => sum + a.votes, 0)
+        const passed = valid >= FINALE_MIN_ANSWERED && puzzle.answers.length >= FINALE_MIN_ANSWERS
         const board = { answered: puzzle.answered, answers: puzzle.answers.map(({ rank, text, votes, aliases }) => ({ rank, text, votes, aliases })) }
         const costUsd = puzzle.meta.costUsd + check.costUsd
-        await recordFinale(week, slot, question, passed, { board, answered: puzzle.answered, costUsd, note: passed ? null : `Odpovědělo ${puzzle.answered}, odpovědí ${puzzle.answers.length}` })
+        await recordFinale(week, slot, question, passed, { board, answered: puzzle.answered, costUsd, note: passed ? null : `Platných odpovědí ${valid}, na tabuli ${puzzle.answers.length}` })
         log(passed ? `finále ${week}/${slot}: saved · ${puzzle.answers.map((a) => `${a.text} ${a.votes}`).join(", ")} · $${costUsd.toFixed(2)}` : `finále ${week}/${slot}: board too thin`)
         if (passed) generated.push(`finále ${week}/${slot}`)
       }
